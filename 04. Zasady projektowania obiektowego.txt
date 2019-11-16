@@ -35,3 +35,4 @@ SDP   zasada stabilnych zależności
           
 SAP   zasada stabilnych abstrakcji 
           Pakiet powinien być abstrakcyjny w stopniu odpowiadającym jego stabilności.
+
