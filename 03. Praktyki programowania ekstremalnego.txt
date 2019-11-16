@@ -1,0 +1,59 @@
+PRAKTYKI PROGRAMOWANIA EKSTREMALNEGO
+
+1. Cały zespół 
+
+Wszyscy uczestnicy projektu EP — deweloperzy, analitycy biznesowi, testerzy itd.— pracują razem w otwartej przestrzeni. 
+Są członkami tego samego zespołu. 
+Na ścianach w takim pokoju jest pełno dużych, widocznych wykresów i innych dowodów potwierdzających postępy prac. 
+
+2. Gra planistyczna Planowanie jest procesem ciągłym i progresywnym. 
+
+Powinno odbywać się co dwa tygodnie i dotyczyć okresu następnych dwóch tygodni. 
+Deweloperzy szacują koszt funkcji, nad którymi mają zamiar pracować, a klienci wybierają funkcjonalności do zaimplementowania 
+na podstawie kosztów i wartości biznesowej. 
+
+3. Testy przygotowywane przez klientów 
+
+W ramach wyboru każdej pożądanej funkcjonalności klienci definiują automatyczne testy akceptacyjne, których celem jest pokazanie, 
+że funkcja działa. 
+
+4. Prosty projekt 
+
+Zespół stara się utrzymać projekt w postaci dostosowanej do bieżącej funkcjonalności systemu. 
+Projekt przechodzi wszystkie testy, nie zawiera zdublowanego kodu, wyraża wszystko to, co autorzy chcieli wyrazić, i zawiera 
+minimalną konieczną ilość kodu potrzebnego do zaimplementowania wszystkich funkcjonalności. 
+
+5. Programowanie parami 
+
+Cały kod jest tworzony przez dwóch programistów pracujących obok siebie przy tym samym komputerze. 
+
+6. Programowanie sterowane testami 
+
+Programiści pracują w bardzo krótkich cyklach. 
+Dodają test, który nie przechodzi, a następnie dążą do tego, by zaczął przechodzić. 
+
+7. Usprawnianie projektu 
+
+Nie należy tolerować złego kodu. Należy dążyć do tego, by kod był tak czysty, jak to możliwe, i tak ekspresywny, jak to możliwe. 
+
+8. Ciągła integracja 
+
+Zespół przez cały czas dąży do tego, aby system był w pełni zintegrowany. 
+
+9. Wspólna własność kodu 
+
+Każda para programistów w każdej chwili może usprawniać kod. 
+
+10. Standardy kodowania 
+
+Cały kod w systemie wygląda tak, jakby napisał go jeden programista o bardzo wysokich kwalifikacjach. 
+
+11. Metafora 
+
+Zespół pracuje nas wspólną wizją sposobu, w jaki działa program. 
+
+12. Równomierne tempo 
+
+Zespół potrafi utrzymać równomierne tempo kodowania przez długi czas. 
+Jego członkowie ciężko pracują w tempie, które może być zachowane na stałym poziomie w nieskończoność. 
+Programiści zachowują energię, traktując projekt tak, jakby to był maraton, a nie sprint.
