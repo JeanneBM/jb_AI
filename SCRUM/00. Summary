@@ -1,0 +1,30 @@
+   1. SCRUM to metodyka zwinna – pomaga zarządzać projektami w niepewnym, bardzo zmiennym środowisku jakim często jest środowisko IT. 
+    Nie należy mylić metodyki z metodologią. Metodyka to zbiór zasad, według których należy postępować, metodologia to nauka.
+    
+   2. Najważniejszy jest działający produkt – Pod koniec każdej iteracji projektu (patrz punkt 4) zespół oddaje jakiś kawałek działającej 
+   funkcjonalności, która została ukończona oraz przetestowana i jest gotowa do wdrożenia, jeżeli strona biznesowa podejmie taką decyzję.
+   
+   3. Cały zespół pracuje jednocześnie z pełnym zaangażowaniem – Czyli jednocześnie toczą się prace projektanckie, graficzne, programistyczne, 
+   webmasterskie – już od pierwszego dnia trwania projektu. Nie ma klasycznego waterfallowego podziału na etapy, projektu, 
+   np.: analiza, makietowanie, rysowanie grafik i development.
+   
+   4. Zespół jest interdyscyplinarny i samoorganizujacy się – Każdy jego członek oprócz swoich głównych, oczywistych kompetencji posiada także 
+   inne umiejętności w obszarach przydatnych dla projektu. Zespół sam wypracowuje sposoby rozwiązania postawionych przed nim zadań, nie są one 
+   narzucane odgórnie.
+   
+   5. Projekt jest podzielony na iteracje – Czyli równe etapy zwane „sprintami”. Wraz z końcem jednego sprintu i zaprezentowaniem przez zespół 
+   jego wyników planowany jest kolejny.
+   
+   6. Role w zespole – Wyróżniamy Product Ownera, czyli reprezentanta biznesu, Scrum Mastera, czyli osobę odpowiedzialną za działanie zgodnie 
+   z metodyką i bieżącą pomoc zespołowi oraz Zespół Developerski. Uwaga, w SCRUMie nie występuje taka rola jak Project Manager.
+   
+   7. Artefakty SCRUMa – Czyli przejrzyste i proste narzędzia służące do zarządzania „zakresem” (rozumianym inaczej niż w klasycznych projektach). 
+   Są to Product Backlog, Sprint Backlog, Przyrost.
+   
+   8. Zdarzenia SCRUMa – Porządkują pracę oraz usprawniają komunikację w projekcie, wprowadzając kilka rodzajów spotkań, z których każde ma swój 
+   określony cel. Czas ich trwania jest z góry znany i ograniczony. Są to:
+        Sprint (zalecana długość od 2 do maksymalnie 4 tygodni),
+        Planowanie Sprintu,
+        Daily Scrum czyli krótki, 15 minutowy, codzienny status realizacji celu sprintu i plan na najbliższe 24 godziny,
+        Sprint Review, czyli podsumowanie sprintu z demonstracją  pokazującą wyniki prac w sprincie i jego przyrost,
+        Retrospekcja Sprintu skupiająca się na optymalizacji procesów.
