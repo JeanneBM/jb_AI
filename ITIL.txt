@@ -1,0 +1,65 @@
+ITIL (ang. Information Technology Infrastructure Library) – kodeks postępowania dla działów informatyki. 
+Zbiór zaleceń, jak efektywnie i skutecznie oferować usługi informatyczne. 
+
+Zbiór dobrych praktyk, niezależnych od rodzaju obsługiwanej działalności biznesowej i wykorzystywanych technologii oraz ich dostawców, 
+dostarczający standard terminologii, opisujący zarówno procesy jak i występujące w nich role oraz dostarczający metody pomiaru dojrzałości procesu.
+
+ITIL opisuje procesy służące poprawnemu zarządzaniu infrastrukturą IT. Celem tych działań jest zapewnianie użytkownikom usług informatycznych 
+na oczekiwanym przez nich poziomie wydajności i dostępności eksploatowanych systemów.
+
+ITIL to opisany i uporządkowany szkielet procesów. Procesów pogrupowanych w sposób ułatwiający powiązanie ich z odpowiedzialnymi za ich realizację
+jednostkami organizacyjnymi firmy. Dwie podstawowe grupy procesów to:
+
+    Service Suport
+    Service Delivery
+
+Oddzielnymi od powyżej grup procesów są:
+
+    Security Management: jego domeną jest troska o bezpieczeństwo świadczonych usług, rozumiane jako biznesowo zdefiniowane polityki bezpieczeństwa
+        dla poszczególnych systemów czy usług, świadczonych przez infrastrukturę informatyczną na rzecz firmy;
+    Application Management, w którego skład wchodzi: Software Development Lifecycle – cykl życia rozwoju oprogramowania i Testing of IT Services 
+        – usługi testowania.
+
+Service Support
+
+Service Suport to zbiór procesów, których celem jest zapewnienie użytkownikom systemów oczekiwanej przez nich dostępności i wydajności systemów
+informatycznych. W skład tej grupy wchodzą następujące procesy:
+
+    1. service desk – obsługa zgłoszeń użytkownika,
+    2. incident management – zarządzanie incydentami,
+    3. problem management – zarządzanie problemami,
+    4. configuration management – zarządzanie konfiguracją,
+    5. change management – zarządzanie zmianą,
+    6. release management – zarządzanie wersją.
+
+Service Desk
+
+Service Desk to punkt kontaktu (SPOC – Single Point of Contact) pomiędzy użytkownikiem usług IT, a organizacją świadczącą usługi. 
+Pracownicy Service Desk skupiają się na obsłudze incydentów i zapytań użytkowników. 
+Rola Service Desku obejmuje takie czynności, jak:
+
+    1. Przyjmowanie i rejestrację wszystkich zgłoszeń od użytkowników,
+    2. Natychmiastowe rozwiązywanie prostych problemów, zapytań i skarg („gaszenie pożarów”),
+    3. Wstępne rozpoznanie wszystkich zgłaszanych incydentów, zebranie informacji potrzebnych w kolejnych etapach, 
+        wykonanie pierwszej próby rozwiązania zgłoszonego incydentu, i/lub przekazanie go do właściwej grupy wsparcia według ustalonych 
+        schematów,
+    4. Monitorowanie postępów prac nad incydentem i eskalacja zgodnie z ustalonymi poziomami świadczenia usług,
+    5. Informowanie użytkowników o statusie zgłoszenia,
+    6. Przygotowywanie raportów dla kierownictwa IT.
+
+Role i odpowiedzialności Service Desku regulują wewnętrzne umowy organizacji.
+
+...
+
+Korzyści:
+
+   1. optymalizacja i redukcja kosztów świadczenia usług IT, dzięki podejściu do zarządzania IT jak do biznesu,
+   2. standaryzacja i zwiększenie przewidywalności usług IT,
+   3. usprawnienie komunikacji i współpracy na linii Biznes – Klient,
+   4. większe zaangażowanie IT, dzięki partnerskiemu podejściu,
+   5. lepsze zarządzanie jakością poprzez ciągłe doskonalenie usług.
+
+Biblioteka ITIL wprowadza wspólny język i słownik pojęć, systematykę procesów IT oraz relacji pomiędzy nimi. 
+Niewątpliwą zaletą ITIL jest możliwość dostosowania założeń metodyki do własnych potrzeb (zgodnie z zasadą “Przyjmij i dopasuj”) oraz 
+zastosowania jej w każdej organizacji, niezależnie od jej wielkości i charakteru działalności – zarówno w biznesie jak i organizacjach 
+non-profit.
