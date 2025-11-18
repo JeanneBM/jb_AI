@@ -33,7 +33,7 @@ agents:
       - Stack Overflow (tag: tableau)
       - Zaufane artykuły techniczne
     engine:
-      model: Gemini 2.0 Flash + Google Search
+      model: Gemini 2.0 Flash Google Search
       temperature: 0.3
     verification_rules:
       - Priorytet: wewnętrzna baza wiedzy (KB) – zawsze najpierw sprawdzaj KB.
