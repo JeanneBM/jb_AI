@@ -2,7 +2,11 @@ EU Artificial Intelligence Act, Article 4: AI literacy:
 
 * https://artificialintelligenceact.eu/article/4/#weglot_switcher
 
-Copilot and me:
+![image](https://github.com/user-attachments/assets/e063a462-0058-4902-aedc-f5dfd05d2bab)
+
+![image](https://github.com/user-attachments/assets/6b7c8b62-7ae5-473f-8a02-4d68b40ba258)
+
+Copilot:
 ![image](https://github.com/user-attachments/assets/203b0a5c-9c82-4647-aec9-bf424495b1e2)
 
 ![image](https://github.com/user-attachments/assets/1fb74152-df79-4c97-8880-208f77e11e09)
