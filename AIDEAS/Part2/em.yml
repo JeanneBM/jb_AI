@@ -1,0 +1,353 @@
+Dodaj plik
+-
+Dodaj agenta
+[
+  {
+   "Ticket ID": "1",
+   "Ticket Title": "Missing Tableau Access",
+   "Ticket scope": "User asked about access to Tableau. User only has access to Bakery data and needs access to Choco data after a role change.",
+   "Przypisane tagi": [
+   "Tableau - access",
+   "Tableau - access user management"
+   ],
+   "Grupa": "Tableau Access Issues"
+  },
+  {
+   "Ticket ID": "6",
+   "Ticket Title": "Tableau Platform Support - Access",
+   "Ticket scope": "Provide access to Tableau, Explorer license to Anna M., Procurement Excellence Center Manager. Business justification - VOLT reporting, Procurement Analytics report.",
+   "Przypisane tagi": [
+   "Tableau - access",
+   "Tableau - access license assignment"
+   ],
+   "Grupa": "Tableau Access Issues"
+  },
+   {
+   "Ticket ID": "9",
+   "Ticket Title": "Tableau Platform Support - Access",
+   "Ticket scope": "Provide access to Tableau QA Server to user IDs lisa.s@ABC.com, Sam.M@ABC.com.",
+   "Przypisane tagi": [
+   "Tableau - access",
+   "Tableau - access user management"
+   ],
+   "Grupa": "Tableau Access Issues"
+  },
+  {
+   "Ticket ID": "2",
+   "Ticket Title": "GCP - Missing Russia Data in Tableau Dashboards",
+   "Ticket scope": "Russia data is missing from new SAP in Tableau dashboards. Data is not ingested in GCP in PTCO and AP dashboards.",
+   "Przypisane tagi": [
+   "Tableau - data refresh issue",
+   "Tableau - connection issue"
+   ],
+   "Grupa": "Tableau Data Issues"
+  },
+  {
+   "Ticket ID": "8",
+   "Ticket Title": "Refresh Error Due to Credentials",
+   "Ticket scope": "Getting refresh error due to credentials not working for the dashboard. Credentials for dashboard are not working.",
+   "Przypisane tagi": [
+   "Tableau - data refresh issue",
+   "Tableau - connection issue"
+   ],
+   "Grupa": "Tableau Data Issues"
+  },
+  {
+   "Ticket ID": "3",
+   "Ticket Title": "Tableau Subscriptions - Excel File Delivery",
+   "Ticket scope": "Confirm if users can receive the required data as an Excel file directly in their emails through subscriptions and provide steps to add subscriptions.",
+   "Przypisane tagi": [
+   "Tableau - other"
+   ],
+   "Grupa": "Tableau Subscription Issues"
+  },
+   {
+   "Ticket ID": "4",
+   "Ticket Title": "Script Trigger Check",
+   "Ticket scope": "Check if scripts are using the correct link, and trigger first in test and then in prod. We are not seeing instances of the report triggered, but scripts were triggered. Update the report link and trigger.",
+   "Przypisane tagi": [
+   "Tableau - TS activities"
+   ],
+   "Grupa": "Tableau Script Issues"
+  },
+  {
+   "Ticket ID": "5",
+   "Ticket Title": "MEU - BI Application Support - Other Connection",
+   "Ticket scope": "Cannot access the report at the provided URL.",
+   "Przypisane tagi": [
+   "Tableau - connection issue"
+   ],
+   "Grupa": "Tableau Connection Issues"
+  },
+  {
+   "Ticket ID": "7",
+   "Ticket Title": "Scheduling Automatic Refresh of BQ View Extract",
+   "Ticket scope": "Need advice on scheduling automatic refresh of the extract of BQ view. The dashboard in question is QA and PROD. Connected live to the published data source. We'd like the extract to be refreshed daily, around 1 p.m. What is the procedure I need to follow?",
+   "Przypisane tagi": [
+   "Tableau - data refresh issue",
+   "Tableau - TS activities"
+   ],
+   "Grupa": "Tableau Data Refresh Scheduling"
+  },
+  {
+   "Ticket ID": "10",
+   "Ticket Title": "Power BI & Tableau Application Support - Other",
+   "Ticket scope": "We need to increase the size of this folder to 5GB",
+   "Przypisane tagi": [
+   "Tableau - other"
+   ],
+   "Grupa": "Tableau Other"
+  }
+]
+Dodaj agenta
+Ticket ID: 1
+Ticket Title: Missing Tableau Access
+Ticket scope: User asked about access to Tableau. User only has access to Bakery data and needs access to Choco data after a role change.
+Przypisane tagi: Tableau - access, Tableau - access user management
+Grupa: Tableau Access Issues
+Zestawienie rozwiązań:
+Title: Providing Tableau Access Based on User Role
+Podsumowanie: The user needs expanded access to Tableau to include Choco data, as their role has changed from Bakery data. The solution involves ensuring the user has the appropriate data source access, potentially by contacting the report owner. Another approach is to create a ticket and transfer it to the Tableau team for assistance. It may also involve adding the user to the correct AD group for permissions and licenses.
+Status: community
+Confidence: 0.7
+Źródło: Multiple incidents related to Tableau access issues
+Ticket ID: 6
+Ticket Title: Tableau Platform Support - Access
+Ticket scope: Provide access to Tableau, Explorer license to Anna M., Procurement Excellence Center Manager. Business justification - VOLT reporting, Procurement Analytics report.
+Przypisane tagi: Tableau - access, Tableau - access license assignment
+Grupa: Tableau Access Issues
+Zestawienie rozwiązań:
+Title: Granting Tableau Explorer License
+Podsumowanie: This involves providing Tableau Explorer license to Anna M. It was resolved by informing the user what AD group they should belong to for access to content.
+Status: resolved
+Confidence: 1.0
+Źródło: Incident related to granting Tableau access
+Ticket ID: 9
+Ticket Title: Tableau Platform Support - Access
+Ticket scope: Provide access to Tableau QA Server to user IDs lisa.s@ABC.com, Sam.M@ABC.com.
+Przypisane tagi: Tableau - access, Tableau - access user management
+Grupa: Tableau Access Issues
+Zestawienie rozwiązań:
+Title: Tableau Access for QA Server
+Podsumowanie: Providing access to the Tableau QA server for specified users might require adding them to the appropriate groups within the Tableau platform, likely managed by the IT-NSA-Global-BI-TableauPlatform team.
+Status: community
+Confidence: 0.7
+Źródło: Information based on similar incidents and team assignment
+Ticket ID: 2
+Ticket Title: GCP - Missing Russia Data in Tableau Dashboards
+Ticket scope: Russia data is missing from new SAP in Tableau dashboards. Data is not ingested in GCP in PTCO and AP dashboards.
+Przypisane tagi: Tableau - data refresh issue, Tableau - connection issue
+Grupa: Tableau Data Issues
+Zestawienie rozwiązań:
+Title: Resolving Missing Data in Tableau Dashboards
+Podsumowanie: The issue is that Russia data is missing from Tableau dashboards. This could be related to data ingestion in GCP. It requires checking the data source connections and data refresh schedules.
+Status: experimental
+Confidence: 0.5
+Źródło: Based on the description of the problem.
+Ticket ID: 8
+Ticket Title: Refresh Error Due to Credentials
+Ticket scope: Getting refresh error due to credentials not working for the dashboard. Credentials for the dashboard are not working.
+Przypisane tagi: Tableau - data refresh issue, Tableau - connection issue
+Grupa: Tableau Data Issues
+Zestawienie rozwiązań:
+Title: Resolving Refresh Errors Due to Incorrect Credentials
+Podsumowanie: This issue involves resolving refresh errors caused by incorrect credentials for the Tableau dashboard. Steps to resolve it might include updating or resetting the credentials used by the dashboard to access the data source.
+Status: experimental
+Confidence: 0.5
+Źródło: Based on the description of the problem.
+Ticket ID: 3
+Ticket Title: Tableau Subscriptions - Excel File Delivery
+Ticket scope: Confirm if users can receive the required data as an Excel file directly in their emails through subscriptions and provide steps to add subscriptions.
+Przypisane tagi: Tableau - other
+Grupa: Tableau Subscription Issues
+Zestawienie rozwiązań:
+Title: Delivering Tableau Data via Email Subscriptions in Excel Format
+Podsumowanie: The request is to confirm if users can receive data as an Excel file via email subscriptions and to provide steps on how to set up these subscriptions.
+Status: experimental
+Confidence: 0.5
+Źródło: Based on the description of the problem.
+Ticket ID: 4
+Ticket Title: Script Trigger Check
+Ticket scope: Check if scripts are using the correct link, and trigger first in test and then in prod. We are not seeing instances of the report triggered, but scripts were triggered. Update the report link and trigger.
+Przypisane tagi: Tableau - TS activities
+Grupa: Tableau Script Issues
+Zestawienie rozwiązań:
+Title: Verifying and Updating Script Triggers for Tableau Reports
+Podsumowanie: This involves checking if scripts are using the correct link and triggering the report first in test and then in production. The solution includes updating the report link and trigger, if necessary.
+Status: experimental
+Confidence: 0.5
+Źródło: Based on the description of the problem.
+Ticket ID: 5
+Ticket Title: MEU - BI Application Support - Other Connection
+Ticket scope: Cannot access the report at the provided URL.
+Przypisane tagi: Tableau - connection issue
+Grupa: Tableau Connection Issues
+Zestawienie rozwiązań:
+Title: Resolving Access Issues to Tableau Reports
+Podsumowanie: The user cannot access the report at the provided URL, which suggests a connection issue. Steps to resolve this might include verifying the URL, checking network connectivity, and confirming user permissions.
+Status: experimental
+Confidence: 0.5
+Źródło: Based on the description of the problem.
+Ticket ID: 7
+Ticket Title: Scheduling Automatic Refresh of BQ View Extract
+Ticket scope: Need advice on scheduling automatic refresh of the extract of BQ view. The dashboard in question is QA and PROD. Connected live to the published data source. We'd like the extract to be refreshed daily, around 1 p.m. What is the procedure I need to follow?
+Przypisane tagi: Tableau - data refresh issue, Tableau - TS activities
+Grupa: Tableau Data Refresh Scheduling
+Zestawienie rozwiązań:
+Title: Scheduling Automatic Refresh of BQ View Extract in Tableau
+Podsumowanie: The user needs advice on scheduling an automatic refresh of a BQ view extract for a Tableau dashboard connected live to the published data source. The extract should be refreshed daily around 1 p.m.
+Status: experimental
+Confidence: 0.5
+Źródło: Based on the description of the problem.
+Ticket ID: 10
+Ticket Title: Power BI & Tableau Application Support - Other
+Ticket scope: We need to increase the size of this folder to 5GB
+Przypisane tagi: Tableau - other
+Grupa: Tableau Other
+Zestawienie rozwiązań:
+Title: Increasing Folder Size
+Podsumowanie: The request is to increase the size of a folder to 5GB.
+Status: experimental
+Confidence: 0.5
+Źródło: Based on the description of the problem.
+Dodaj agenta
+-Ticket ID: 1 -Ticket Title: Missing Tableau Access -Ticket scope: User asked about access to Tableau. User only has access to Bakery data and needs access to Choco data after a role change. -Przypisane tagi: Tableau - access, Tableau - access user management -Grupa: Tableau Access Issues -Zestawienie rozwiązań w formacie:
+1. Granting Tableau Data Access Based on User Role
+Podsumowanie: Użytkownik wymaga rozszerzonego dostępu do danych w Tableau, włączając dane 'Choco', z powodu zmiany roli. Rozwiązanie koncentruje się na zapewnieniu odpowiedniego dostępu do źródeł danych, zarządzaniu grupami AD dla uprawnień oraz potencjalnej eskalacji do zespołu Tableau.
+Status: resolved (na podstawie priorytetyzacji wyższego confidence)
+Confidence: 1.0 (na podstawie kompilacji rozwiązań z najwyższym confidence)
+Źródło: Multiple incidents related to Tableau access issues [1]ㅤ, Incident related to granting Tableau access [2]ㅤ
+Procedura:
+Weryfikacja Członkostwa w Grupie AD dla Uprawnień do Danych[1]ㅤ[2]ㅤ
+Krok 1.1: Zidentyfikuj właściwą grupę Active Directory (AD) odpowiedzialną za nadawanie dostępu do danych 'Choco' w Tableau.
+Krok 1.2: Upewnij się, że użytkownik został dodany do tej grupy AD. W przypadku braku, dodaj użytkownika do odpowiedniej grupy AD.
+Krok 1.3: Poinformuj użytkownika o wymaganym członkostwie w grupie AD w celu uzyskania dostępu do treści Tableau.
+Weryfikacja Dostępu do Źródeł Danych Tableau[1]ㅤ
+Krok 2.1: Sprawdź, czy użytkownik ma bezpośrednie uprawnienia do publikowanego źródła danych 'Choco' w Tableau Server/Cloud.
+Krok 2.2: Zweryfikuj, czy źródło danych 'Choco' jest skonfigurowane tak, aby uwzględniać uprawnienia z grup AD, do których należy użytkownik.
+Kontakt z Właścicielem Raportu/Źródła Danych[1]ㅤ
+Krok 3.1: Jeśli powyższe kroki nie rozwiążą problemu, skontaktuj się z właścicielem raportu lub źródła danych 'Choco'.
+Krok 3.2: Konsultuj z właścicielem raportu specyficzne wymagania dotyczące dostępu do danych i potencjalne niestandardowe konfiguracje uprawnień.
+Eskalacja do Zespołu Tableau[1]ㅤ
+Krok 4.1: Jeśli po wykonaniu kroków 1-3 dostęp nadal nie zostanie przyznany lub wymagane są dalsze działania administracyjne na platformie Tableau, utwórz nowe zgłoszenie.
+Krok 4.2: Przekaż zgłoszenie do zespołu wsparcia Tableau w celu uzyskania pomocy w konfiguracji dostępu lub rozwiązaniu problemów z uprawnieniami na poziomie platformy.
+Dodaj agenta
+Okay, here's the audit report for the provided information:
+## Audit Report
+
+**Ticket ID:** 1
+**Ticket Title:** Missing Tableau Access
+**Ticket scope:** User asked about access to Tableau. User only has access to Bakery data and needs access to Choco data after a role change.
+**Przypisane tagi:** `Tableau - access`, `Tableau - access user management`
+**Grupa:** Tableau Access Issues
+
+| Tytuł  | Podsumowanie  | Status  | Confidence  | Źródło  |
+|---|---|---|---|---|
+| Granting Tableau Data Access Based on User Role | Użytkownik wymaga rozszerzonego dostępu do danych w Tableau, włączając dane 'Choco', z powodu zmiany roli. Rozwiązanie koncentruje się na zapewnieniu odpowiedniego dostępu do źródeł danych, zarządzaniu grupami AD dla uprawnień oraz potencjalnej eskalacji do zespołu Tableau. | resolved | 1.0 | Multiple incidents related to Tableau access issues <cite>[1, 2, 3, 4]</cite>, Incident related to granting Tableau access <cite>[5]ㅤ</cite> |
+
+**Ocena rozwiązania:**
+
+**Błędy:**
+
+*   Brak weryfikacji, czy zaproponowane rozwiązanie uwzględnia specyfikę platformy Tableau (Azure).
+*   Brakuje konkretnych instrukcji, jak zidentyfikować właściciela raportu/źródła danych w Tableau.
+
+**Braki:**
+
+*   Brakuje odniesienia do konkretnych KB articles.
+*   Brak uwzględnienia potencjalnych problemów z licencjami Tableau (np. Explorer).
+
+**Uwagi do doskonalenia:**
+
+1.  **Platforma Tableau (Azure):** Dodaj krok weryfikujący, czy instrukcje są adekwatne do platformy Tableau w Azure.
+2.  **Identyfikacja Właściciela:** W procedurze "Kontakt z Właścicielem Raportu/Źródła Danych" dodaj podpowiedź, gdzie szukać informacji o właścicielu w interfejsie Tableau.
+3.  **Licencjonowanie:** Dodaj punkt dotyczący sprawdzenia, czy użytkownik ma odpowiednią licencję (np. Explorer), aby uzyskać dostęp do danych.
+4.  **Automatyzacja Dostępu:** Jeśli to możliwe, wspomnij o potencjalnej automatyzacji procesu nadawania dostępu poprzez skrypty lub narzędzia do zarządzania tożsamością.
+5.  **Dostęp do Źródeł Danych:** Rozwiń punkt o dostępie do źródeł danych, uwzględniając różne typy połączeń (np. direct query, extract) i ich wpływ na uprawnienia.
+
+**Procedura (Checklista/Kroki):**
+
+1.  **Weryfikacja Członkostwa w Grupie AD dla Uprawnień do Danych**
+   *   Krok 1.1: Zidentyfikuj właściwą grupę Active Directory (AD) odpowiedzialną za nadawanie dostępu do danych 'Choco' w Tableau.
+   *   Krok 1.2: Upewnij się, że użytkownik został dodany do tej grupy AD. W przypadku braku, dodaj użytkownika do odpowiedniej grupy AD.
+   *   Krok 1.3: Poinformuj użytkownika o wymaganym członkostwie w grupie AD w celu uzyskania dostępu do treści Tableau.
+
+2.  **Weryfikacja Dostępu do Źródeł Danych Tableau**
+   *   Krok 2.1: Sprawdź, czy użytkownik ma bezpośrednie uprawnienia do publikowanego źródła danych 'Choco' w Tableau Server/Cloud.
+   *   Krok 2.2: Zweryfikuj, czy źródło danych 'Choco' jest skonfigurowane tak, aby uwzględniać uprawnienia z grup AD, do których należy użytkownik.
+
+3.  **Kontakt z Właścicielem Raportu/Źródła Danych**
+   *   Krok 3.1: Jeśli powyższe kroki nie rozwiążą problemu, skontaktuj się z właścicielem raportu lub źródła danych 'Choco'.
+   *   Krok 3.2: Konsultuj z właścicielem raportu specyficzne wymagania dotyczące dostępu do danych i potencjalne niestandardowe konfiguracje uprawnień.
+
+4.  **Eskalacja do Zespołu Tableau**
+   *   Krok 4.1: Jeśli po wykonaniu kroków 1-3 dostęp nadal nie zostanie przyznany lub wymagane są dalsze działania administracyjne na platformie Tableau, utwórz nowe zgłoszenie.
+   *   Krok 4.2: Przekaż zgłoszenie do zespołu wsparcia Tableau w celu uzyskania pomocy w konfiguracji dostępu lub rozwiązaniu problemów z uprawnieniami na poziomie platformy.
+Odpowiedź w czacie
+Okay, here's the audit report for the provided information:
+## Audit Report
+
+**Ticket ID:** 1
+**Ticket Title:** Missing Tableau Access
+**Ticket scope:** User asked about access to Tableau. User only has access to Bakery data and needs access to Choco data after a role change.
+**Przypisane tagi:** `Tableau - access`, `Tableau - access user management`
+**Grupa:** Tableau Access Issues
+
+| Tytuł  | Podsumowanie  | Status  | Confidence  | Źródło  |
+|---|---|---|---|---|
+| Granting Tableau Data Access Based on User Role | Użytkownik wymaga rozszerzonego dostępu do danych w Tableau, włączając dane 'Choco', z powodu zmiany roli. Rozwiązanie koncentruje się na zapewnieniu odpowiedniego dostępu do źródeł danych, zarządzaniu grupami AD dla uprawnień oraz potencjalnej eskalacji do zespołu Tableau. | resolved | 1.0 | Multiple incidents related to Tableau access issues <cite>[1, 2, 3, 4]</cite>, Incident related to granting Tableau access <cite>[5]ㅤ</cite> |
+
+**Ocena rozwiązania:**
+
+**Błędy:**
+
+*   Brak weryfikacji, czy zaproponowane rozwiązanie uwzględnia specyfikę platformy Tableau (Azure).
+*   Brakuje konkretnych instrukcji, jak zidentyfikować właściciela raportu/źródła danych w Tableau.
+
+**Braki:**
+
+*   Brakuje odniesienia do konkretnych KB articles.
+*   Brak uwzględnienia potencjalnych problemów z licencjami Tableau (np. Explorer).
+
+**Uwagi do doskonalenia:**
+
+1.  **Platforma Tableau (Azure):** Dodaj krok weryfikujący, czy instrukcje są adekwatne do platformy Tableau w Azure.
+2.  **Identyfikacja Właściciela:** W procedurze "Kontakt z Właścicielem Raportu/Źródła Danych" dodaj podpowiedź, gdzie szukać informacji o właścicielu w interfejsie Tableau.
+3.  **Licencjonowanie:** Dodaj punkt dotyczący sprawdzenia, czy użytkownik ma odpowiednią licencję (np. Explorer), aby uzyskać dostęp do danych.
+4.  **Automatyzacja Dostępu:** Jeśli to możliwe, wspomnij o potencjalnej automatyzacji procesu nadawania dostępu poprzez skrypty lub narzędzia do zarządzania tożsamością.
+5.  **Dostęp do Źródeł Danych:** Rozwiń punkt o dostępie do źródeł danych, uwzględniając różne typy połączeń (np. direct query, extract) i ich wpływ na uprawnienia.
+
+**Procedura (Checklista/Kroki):**
+
+1.  **Weryfikacja Członkostwa w Grupie AD dla Uprawnień do Danych**
+   *   Krok 1.1: Zidentyfikuj właściwą grupę Active Directory (AD) odpowiedzialną za nadawanie dostępu do danych 'Choco' w Tableau.
+   *   Krok 1.2: Upewnij się, że użytkownik został dodany do tej grupy AD. W przypadku braku, dodaj użytkownika do odpowiedniej grupy AD.
+   *   Krok 1.3: Poinformuj użytkownika o wymaganym członkostwie w grupie AD w celu uzyskania dostępu do treści Tableau.
+
+2.  **Weryfikacja Dostępu do Źródeł Danych Tableau**
+   *   Krok 2.1: Sprawdź, czy użytkownik ma bezpośrednie uprawnienia do publikowanego źródła danych 'Choco' w Tableau Server/Cloud.
+   *   Krok 2.2: Zweryfikuj, czy źródło danych 'Choco' jest skonfigurowane tak, aby uwzględniać uprawnienia z grup AD, do których należy użytkownik.
+
+3.  **Kontakt z Właścicielem Raportu/Źródła Danych**
+   *   Krok 3.1: Jeśli powyższe kroki nie rozwiążą problemu, skontaktuj się z właścicielem raportu lub źródła danych 'Choco'.
+   *   Krok 3.2: Konsultuj z właścicielem raportu specyficzne wymagania dotyczące dostępu do danych i potencjalne niestandardowe konfiguracje uprawnień.
+
+4.  **Eskalacja do Zespołu Tableau**
+   *   Krok 4.1: Jeśli po wykonaniu kroków 1-3 dostęp nadal nie zostanie przyznany lub wymagane są dalsze działania administracyjne na platformie Tableau, utwórz nowe zgłoszenie.
+   *   Krok 4.2: Przekaż zgłoszenie do zespołu wsparcia Tableau w celu uzyskania pomocy w konfiguracji dostępu lub rozwiązaniu problemów z uprawnieniami na poziomie platformy.
+PRZECIĄGNIJ WYBRANY ELEMENT
+Dane wejściowe
+Utwórz prompt
+Dodaj plik
+Procesowanie
+Połącz tekst
+Agenty
+Dodaj agenta
+Logika
+Instrukcja warunkowa
+Router
+Dane wyjściowe
+Odpowiedź w czacie
+Odpowiedź tekstowa
+Odpowiedź z szablonu
+Export Excel
