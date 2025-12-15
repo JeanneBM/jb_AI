@@ -1,5 +1,5 @@
-https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/?practice-assessment-type=certification
-https://kodekloud.com/playgrounds/#AIPlaygrounds?utm_source=lms%2Fuser%2Fdashboard&utm_medium=From-Navigation-Menu
+- Azure https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/?practice-assessment-type=certification
+- KodeKloud https://kodekloud.com/playgrounds/#AIPlaygrounds?utm_source=lms%2Fuser%2Fdashboard&utm_medium=From-Navigation-Menu
 
 EU Artificial Intelligence Act, Article 4: AI literacy: 
 
