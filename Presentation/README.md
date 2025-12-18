@@ -5,3 +5,5 @@
 - https://learn.kodekloud.com/user/courses/crash-course-ai-powered-devops
 
 - Starting with openness and enthusiasm usually works better than encountering it later as a requirement.
+
+- Bad answers are often the result of bad prompts.
