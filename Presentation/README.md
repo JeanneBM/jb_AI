@@ -7,3 +7,6 @@
 - Starting with openness and enthusiasm usually works better than encountering it later as a requirement.
 
 - Bad answers are often the result of bad prompts.
+#
+- Because convenience kills urgency.
+- And urgency breeds action.
