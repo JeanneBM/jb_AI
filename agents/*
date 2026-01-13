@@ -1,0 +1,194 @@
+---
+
+PROJECT CRANBERRY – PROCEDURA REALIZACJI ZADAŃ
+
+KONTEKST
+
+Project Cranberry to inicjatywa Margie’s Travel, której celem jest zaprojektowanie, uruchomienie i zarządzanie miesięcznym newsletterem cyfrowym. 
+Newsletter ma wzmacniać relacje z obecnymi klientami, ponownie angażować leady oraz zwiększać liczbę powtórnych rezerwacji poprzez wartościowe, rodzinne treści podróżnicze.
+
+Wszystkie materiały projektowe znajdują się w OneDrive w lokalizacji:
+OneDrive / My Files / Project Cranberry
+
+Zadania realizowane są z użyciem Copilot Chat – Researcher.
+
+---
+
+TASKI
+
+TASK 1 – Generate an Overview by using Researcher
+
+Cel:
+Utworzenie kompleksowego overview Project Cranberry dla Marketing Managera na podstawie plików projektowych.
+
+Procedura:
+
+1. Otworzyć Copilot Chat i wybrać Researcher.
+2. Kliknąć Add content and agents, następnie Attach cloud files.
+3. Załączyć wszystkie pliki z folderu:
+   OneDrive / My Files / Project Cranberry
+4. Ustawić długość odpowiedzi na Long.
+5. Wprowadzić następujący prompt:
+
+---------
+Create a comprehensive overview of Project Cranberry for a Marketing Manager using the attached cloud files.
+The overview should:
+- Summarize the steps completed so far
+- Explain the impact of those actions
+- Describe the planned next steps
+Include an appendix that lists all sources cited in the document.
+If you require confirmation or clarification, use your best judgment.
+The overview should:
+* Summarize the steps completed so far
+* Explain the impact of those actions
+* Describe the planned next steps
+Include an appendix that lists all sources cited in the document.
+If you require confirmation or clarification, use your best judgment.
+---------
+
+6. Po wygenerowaniu odpowiedzi wybrać Edit in Pages.
+7. Kliknąć ikonę Word.
+8. Wybrać Create a copy online i zapisać dokument jako Overview.
+
+---
+
+TASK 2 – Generate an executive summary and verify the data
+
+Cel:
+Weryfikacja raportu juniora JROverview.docx oraz przygotowanie executive summary i maila podsumowującego.
+
+Procedura:
+
+1. Otworzyć nowy chat w Researcher.
+2. Załączyć plik JROverview.docx oraz wszystkie pliki z folderu Project Cranberry.
+3. Ustawić długość odpowiedzi na Short.
+4. Wprowadzić następujący prompt:
+
+---------
+Generate an executive summary of the attached JROverview.docx.
+Verify all facts and data in the document against the information stored in the Project Cranberry folder.
+Clearly identify any factual inaccuracies or inconsistencies.
+If clarification is required, use your best judgment.
+---------
+
+5. Następnie poprosić Researchera o wygenerowanie maila:
+
+---------
+Generate a professional email that includes:
+* The executive summary
+* A clear list of any factual errors identified
+Do not attach any documents. Include the summary directly in the email body.
+---------
+
+6. Otworzyć Outlook Web App.
+7. Utworzyć nową wiadomość, wkleić treść maila i wysłać ją na adres:
+   [User2-58126198@LODSPRODMCA.onmicrosoft.com](mailto:User2-58126198@LODSPRODMCA.onmicrosoft.com)
+
+---
+
+PODSUMOWANIE
+
+Task 1 zakończony utworzeniem dokumentu Overview w Word Online.
+Task 2 zakończony wygenerowaniem executive summary, weryfikacją danych raportu juniora oraz wysłaniem maila z podsumowaniem i listą błędów.
+W przypadku pytań ze strony Researchera zawsze należy odpowiadać: Use your best judgment.
+Identyfikator środowiska labowego: 58126198.
+
+---
+
+
+---
+
+PROJECT CRANBERRY – TASK EXECUTION PROCEDURE
+
+CONTEXT
+
+Project Cranberry is an initiative by Margie’s Travel aimed at designing, launching, and managing a monthly digital newsletter. 
+The newsletter is intended to strengthen relationships with existing customers, re-engage leads, and drive repeat bookings by delivering valuable, family-focused travel content.
+
+All project-related materials are stored in OneDrive at the following location:
+OneDrive / My Files / Project Cranberry
+
+All tasks are completed using Copilot Chat – Researcher.
+
+---
+
+TASKS
+
+TASK 1 – Generate an Overview using Researcher
+
+Objective:
+Create a comprehensive overview of Project Cranberry for a Marketing Manager based on the available project files.
+
+Procedure:
+
+1. Open Copilot Chat and select Researcher.
+2. Click Add content and agents, then select Attach cloud files.
+3. Attach all files from the following folder:
+   OneDrive / My Files / Project Cranberry
+4. Set the response length to Long.
+5. Enter the following prompt:
+
+---------
+Create a comprehensive overview of Project Cranberry for a Marketing Manager using the attached cloud files.
+The overview should:
+* Summarize the steps completed so far
+* Explain the impact of those actions
+* Describe the planned next steps
+Include an appendix that lists all sources cited in the document.
+If you require confirmation or clarification, use your best judgment.
+---------
+
+6. After the response is generated, select Edit in Pages.
+7. Click the Word icon.
+8. Select Create a copy online and save the document as Overview.
+
+---
+
+TASK 2 – Generate an executive summary and verify the data
+
+Objective:
+Review the junior marketing report (JROverview.docx), verify its accuracy, and prepare an executive summary and follow-up email.
+
+Procedure:
+
+1. Start a new chat in Researcher.
+2. Attach the file JROverview.docx and all files from the Project Cranberry folder.
+3. Set the response length to Short.
+4. Enter the following prompt:
+
+---------
+Generate an executive summary of the attached JROverview.docx.
+Verify all facts and data in the document against the information stored in the Project Cranberry folder.
+Clearly identify any factual inaccuracies or inconsistencies.
+If clarification is required, use your best judgment.
+---------
+
+5. Then request an email from Researcher using the following prompt:
+
+---------
+Generate a professional email that includes:
+* The executive summary
+* A clear list of any factual errors identified
+Do not attach any documents. Include the summary directly in the email body.
+---------
+
+6. Open Outlook Web App.
+7. Create a new email, paste the generated content, and send it to:
+   [User2-58126198@LODSPRODMCA.onmicrosoft.com](mailto:User2-58126198@LODSPRODMCA.onmicrosoft.com)
+
+---
+
+SUMMARY
+
+Task 1 is completed by creating and saving the Overview document in Word Online.
+Task 2 is completed by generating an executive summary, verifying the junior report data, and sending an email with the findings.
+If Researcher requests clarification at any point, always respond with: Use your best judgment.
+Lab instance ID: 58126198.
+
+---
+
+
+
+
+
+
