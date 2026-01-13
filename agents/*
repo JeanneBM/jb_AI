@@ -187,7 +187,60 @@ Lab instance ID: 58126198.
 
 ---
 
+### Step 4: Read the scenario
+Project Cranberry is an initiative by Margie's Travel to design, launch, and manage a monthly digital newsletter that nurtures existing customer relationships, re-engages leads, and drives repeat bookings through valuable, family-focused travel content.
 
+All the relevant documentation for Project Cranberry is in OneDrive.
+
+NOTE: It takes Researcher some time to generate a response. We strongly recommend that you start the second task in this lab while Researcher is generating a response to the first task.
+
+### Step 5: Tasks to be Performed
+Generate an Overview by using Researcher
+⏳Priority:
+High
+
+👤Assigned To:
+User1-58224606
+
+👤Created By:
+Roya Asbari
+
+🗂️Topic:
+Generate an Overview by using Researcher
+
+📋Details:
+
+Use Researcher to create a comprehensive overview of Project Cranberry for your Marketing Manager by using the cloud files stored in the Project Cranberry folder under your OneDrive My Files location.
+
+Hint: For best results, from Copilot Chat, select the Add content and agents button, select Attach cloud files, and then browse to and attach all the files in the Project Cranberry folder.
+
+The overview should summarize the steps completed so far, the impact of those actions, and the planned next steps. Include an appendix that lists all sources cited in the document. If Researcher asks follow-up questions for confirmation, respond with "Use your best judgment."
+
+After you have generated the overview, select the Edit in Pages icon at the bottom of the response. Next, select the Word icon at the top right of the screen to open the response in Word.
+From Word, select Create a copy online and save a copy with the name Overview.
+Generate an executive summary and verify data
+⏳Priority:
+High
+
+👤Assigned To:
+User1-58224606
+
+👤Created By:
+Ralf Riethmüller
+
+🗂️Topic:
+Generate an executive summary and verify the data
+
+📋Details:
+
+A junior member of the marketing department has created a report named JROverview.docx for Project Cranberry that is saved in your OneDrive folder.
+
+Start a new chat in Researcher and generate an executive summary of the report. The summary must include a verification of the facts and data in JROverview.docx against the information stored in the Project Cranberry folder in OneDrive. If Researcher requests additional clarification, respond with "Use your best judgment."
+
+Next, use Researcher to generate an email message that contains the executive summary and include any factual errors that were found. Do NOT attach any documents to the email, include the summary in the body of the email.
+
+Open Outlook web app and copy and paste the details into a new message and send it to:
+User2-58224606@LODSPRODMCA.onmicrosoft.com
 
 
 
