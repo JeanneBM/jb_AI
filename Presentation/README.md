@@ -12,4 +12,5 @@
 - And urgency breeds action.
 
 #
+- AI is very good at revealing the truth about the intentions, quality of thinking, and problem structure of the human using it.
 - AI doesn't so much think as mercilessly reflect the quality of input.
