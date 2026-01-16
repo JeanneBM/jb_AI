@@ -10,3 +10,6 @@
 #
 - Because convenience kills urgency.
 - And urgency breeds action.
+
+#
+- AI doesn't so much think as mercilessly reflect the quality of input.
