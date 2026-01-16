@@ -29,3 +29,5 @@ Not all AI is designed to deliver outcomes.
 
 <img width="513" height="683" alt="image" src="https://github.com/user-attachments/assets/035017d1-d52b-4953-91bd-81d6a46c219b" />
 <img width="1024" height="1024" alt="image" src="https://github.com/user-attachments/assets/0881eb17-a2ff-4c3f-a7c6-1c98fd5697f6" />
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/ca4c6aff-96b0-49a2-814a-f60087344ed7" />
+
