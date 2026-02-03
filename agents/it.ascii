@@ -1,0 +1,136 @@
+                             ┌───────────────────────────┐
+                             │      MCP CLIENT            │
+                             │  (VS Code / IDE / App)     │
+                             └─────────────┬─────────────┘
+                                           │ MCP request
+                                           v
+                   ┌───────────────────────────────────────────┐
+                   │           MCP SERVER (HTTP)                │
+                   │  - Model Context Protocol endpoint         │
+                   │  - auth / session / tracing                │
+                   └─────────────┬─────────────────────────────┘
+                                 │ normalized request
+                                 v
+                   ┌───────────────────────────────────────────┐
+                   │        INPUT / CONTEXT BUILDER              │
+                   │                                           │
+                   │  Features extracted:                       │
+                   │  - user intent                              │
+                   │  - tool request?                            │
+                   │  - RAG needed?                              │
+                   │  - response format                          │
+                   │  - safety / policy flags                    │
+                   │  - conversation memory                      │
+                   └─────────────┬─────────────────────────────┘
+                                 │ feature vector
+                                 v
+        ┌─────────────────────────────────────────────────────────────┐
+        │                   ROOT ROUTER (L0)                           │
+        │  Decides: WHAT KIND OF TASK IS THIS?                          │
+        │                                                             │
+        │  Routing signals:                                            │
+        │  - pure LLM response?                                        │
+        │  - tool invocation?                                          │
+        │  - knowledge retrieval (RAG)?                                │
+        │  - multi-step reasoning?                                     │
+        └───────────────┬───────────────────┬─────────────────────────┘
+                        │                   │
+          ┌─────────────┘                   └─────────────┐
+          v                                                   v
+┌───────────────────────────┐                 ┌───────────────────────────┐
+│   ROUTER: KNOWLEDGE (L1)  │                 │   ROUTER: ACTION (L1)     │
+│  "answer / explain"       │                 │  "do something"           │
+│                           │                 │                           │
+│  Criteria:                │                 │  Criteria:                │
+│  - needs documents?       │                 │  - tool explicitly named  │
+│  - factual grounding?     │                 │  - side effects allowed   │
+│  - citations required?    │                 │  - deterministic output   │
+└───────────┬───────────────┘                 └───────────┬───────────────┘
+            │                                               │
+            v                                               v
+┌───────────────────────────┐                 ┌───────────────────────────┐
+│  SUBROUTER: RAG (L2)      │                 │  SUBROUTER: TOOLS (L2)    │
+│                           │                 │                           │
+│  Inputs:                  │                 │  Inputs:                  │
+│  - query embedding        │                 │  - tool name              │
+│  - index selection        │                 │  - tool schema            │
+│  - top-k strategy         │                 │  - permissions            │
+│                           │                 │                           │
+│  Backends:                │                 │  Tool registry:           │
+│  - Azure AI Search        │                 │  - Azure OpenAI           │
+│  - Vector Store           │                 │  - Search APIs            │
+│                           │                 │  - Custom MCP tools       │
+└───────────┬───────────────┘                 └───────────┬───────────────┘
+            │                                               │
+            v                                               v
+┌───────────────────────────┐                 ┌───────────────────────────┐
+│   AGENT: RAG RETRIEVER    │                 │   AGENT: TOOL EXECUTOR    │
+│                           │                 │                           │
+│  Outputs:                 │                 │  Outputs:                 │
+│  - retrieved chunks       │                 │  - tool result            │
+│  - metadata / sources     │                 │  - logs / status          │
+└───────────┬───────────────┘                 └───────────┬───────────────┘
+            └───────────────┬──────────────────────────────┘
+                            v
+                ┌───────────────────────────────────────────┐
+                │        ORCHESTRATOR (L0)                   │
+                │                                           │
+                │  Responsibilities:                         │
+                │  - combine RAG + tool output               │
+                │  - inject context into prompt              │
+                │  - control token & cost budget             │
+                │  - decide retry / fallback                 │
+                └─────────────┬─────────────────────────────┘
+                              │ enriched prompt
+                              v
+                ┌───────────────────────────────────────────┐
+                │      AGENT: LLM (Azure OpenAI)             │
+                │                                           │
+                │  - reasoning                               │
+                │  - synthesis                               │
+                │  - structured output (JSON/text)           │
+                └─────────────┬─────────────────────────────┘
+                              │ draft response
+                              v
+                ┌───────────────────────────────────────────┐
+                │         GUARD / QA ROUTER (L1)             │
+                │                                           │
+                │  Checks:                                  │
+                │  - policy & safety                        │
+                │  - hallucination risk                     │
+                │  - grounding vs sources                   │
+                │  - schema validation                      │
+                └─────────────┬───────────────┬─────────────┘
+                              │               │
+                          (FIX)│               │(PASS)
+                              v               v
+                   ┌────────────────┐   ┌───────────────────────────┐
+                   │ AGENT: CRITIC  │   │ RESPONSE FORMATTER (L1)    │
+                   │ - revise       │   │ - markdown / json / mcp    │
+                   │ - tighten      │   │ - final payload            │
+                   └───────┬────────┘   └─────────────┬─────────────┘
+                           └───────────────┬───────────┘
+                                           v
+                                 ┌─────────────────────────┐
+                                 │      MCP RESPONSE       │
+                                 │  back to client         │
+                                 └─────────────────────────┘
+
+
+      ┌─────────────────────────────────────────────────────────────┐
+      │            SHARED MCP INFRASTRUCTURE                          │
+      │                                                             │
+      │  Memory / State:                                            │
+      │   - conversation context                                   │
+      │   - RAG cache                                               │
+      │                                                             │
+      │  Config / Env:                                              │
+      │   - .env (Azure keys, endpoints)                            │
+      │                                                             │
+      │  Observability:                                             │
+      │   - logs, traces, cost metrics                              │
+      │                                                             │
+      │  Docker / Compose:                                          │
+      │   - MCP server                                              │
+      │   - dependencies                                           │
+      └─────────────────────────────────────────────────────────────┘
