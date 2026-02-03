@@ -1,0 +1,251 @@
+                               ┌───────────────────────────┐
+                               │           USER            │
+                               └─────────────┬─────────────┘
+                                             │
+                                             v
+                               ┌───────────────────────────┐
+                               │     INPUT / CONTEXT        │
+                               │  - intent + entities       │
+                               │  - constraints             │
+                               │  - conversation state      │
+                               └─────────────┬─────────────┘
+                                             │
+                                             v
+                ┌───────────────────────────────────────────────────┐
+                │                 ROOT ROUTER (L0)                   │
+                │  decides: domain + execution strategy              │
+                └───────────────┬───────────────┬───────────────────┘
+                                │               │
+                 ┌──────────────┘               └──────────────┐
+                 v                                             v
+     ┌───────────────────────────┐               ┌───────────────────────────┐
+     │  ROUTER: KNOWLEDGE (L1)    │               │    ROUTER: BUILD (L1)     │
+     │  research / docs / Q&A     │               │  code / data / automation │
+     └───────┬───────────┬───────┘               └───────┬───────────┬───────┘
+             │           │                               │           │
+             v           v                               v           v
+┌────────────────────┐  ┌────────────────────┐  ┌────────────────────┐  ┌────────────────────┐
+│ SUBROUTER: WEB (L2) │  │SUBROUTER: DOCS (L2)│  │SUBROUTER: CODE (L2) │  │SUBROUTER: DATA (L2) │
+│ - sources, news     │  │- pdf/specs/wiki    │  │- app/lib/test      │  │- ETL/SQL/BI        │
+└───────┬────────────┘  └─────────┬──────────┘  └─────────┬─────────┘  └─────────┬─────────┘
+        │                         │                      │                      │
+        v                         v                      v                      v
+┌────────────────┐      ┌────────────────┐     ┌────────────────┐     ┌────────────────┐
+│ Agent: Research│      │ Agent: Summarize│     │ Agent: Implement│     │ Agent: Analyst │
+│ + citations    │      │ + structure     │     │ + tests         │     │ + insights     │
+└───────┬────────┘      └───────┬────────┘     └───────┬────────┘     └───────┬────────┘
+        └──────────────┬─────────┴──────────────┬───────┴──────────────┬────────┘
+                       v                        v                      v
+                ┌───────────────────────────────────────────────────┐
+                │                ORCHESTRATOR (L0)                   │
+                │  - merges results                                  │
+                │  - resolves conflicts                              │
+                │  - schedules next steps (if needed)                │
+                └───────────────┬───────────────────────────────────┘
+                                 │
+                                 v
+                ┌───────────────────────────────────────────────────┐
+                │              GUARD / QA ROUTER (L1)                │
+                │  - policy / safety                                 │
+                │  - fact-check / consistency                        │
+                │  - “should we ask the user?”                       │
+                └───────────────┬───────────────┬───────────────────┘
+                                 │               │
+                           (fix) │               │ (ok)
+                                 v               v
+                    ┌────────────────┐   ┌───────────────────────────┐
+                    │ Agent: Critic  │   │  RESPONSE ROUTER (L1)      │
+                    │ - feedback     │   │  selects output format:   │
+                    │ - revise plan  │   │  - short / long            │
+                    └───────┬────────┘   │  - table / json / steps    │
+                            │            │  - code / diagram / plan   │
+                            └─────┬──────┴─────────────┬─────────────┘
+                                  │                    │
+                                  v                    v
+                       ┌───────────────────┐   ┌───────────────────┐
+                       │ Agent: Writer     │   │ Agent: Formatter  │
+                       │ - narrative       │   │ - markdown/ascii  │
+                       │ - tone            │   │ - output validation│
+                       └─────────┬─────────┘   └─────────┬─────────┘
+                                 └───────────────┬────────┘
+                                                 v
+                                       ┌─────────────────┐
+                                       │      USER       │
+                                       └─────────────────┘
+
+
+      ┌─────────────────────────────────────────────────────────────┐
+      │            SHARED / CROSS-CUTTING LAYERS                      │
+      │  ┌──────────────────────┐  ┌──────────────────────────────┐ │
+      │  │ MEMORY / KB / CACHE   │  │ OBSERVABILITY / LOGS / TRACES │ │
+      │  │ - user profile        │  │ - quality / latency metrics  │ │
+      │  │ - retrieval           │  │ - cost / tokens              │ │
+      │  └──────────────────────┘  └──────────────────────────────┘ │
+      │  ┌──────────────────────┐  ┌──────────────────────────────┐ │
+      │  │ TOOL REGISTRY         │  │ POLICY / PERMISSIONS          │ │
+      │  │ - tools / APIs        │  │ - PII, ACL, rate limits       │ │
+      │  └──────────────────────┘  └──────────────────────────────┘ │
+      └─────────────────────────────────────────────────────────────┘
+===============================================================================================================================================================================
+                               ┌───────────────────────────┐
+                               │           USER            │
+                               └─────────────┬─────────────┘
+                                             │
+                                             │  raw msg + files
+                                             v
+                               ┌───────────────────────────┐
+                               │     INPUT / CONTEXT        │
+                               │  (pre-router feature build)│
+                               │                           │
+                               │  Signals/features:         │
+                               │  - intent candidates       │
+                               │  - entities/slots          │
+                               │  - language/locale         │
+                               │  - safety risk hints       │
+                               │  - tool-needed? (y/n)      │
+                               │  - urgency / SLA class     │
+                               │  - cost budget tier        │
+                               │  - convo state + memory    │
+                               └─────────────┬─────────────┘
+                                             │  feature vector
+                                             v
+                ┌───────────────────────────────────────────────────┐
+                │                 ROOT ROUTER (L0)                   │
+                │  Goal: pick DOMAIN + STRATEGY                      │
+                │                                                   │
+                │  Decision inputs:                                  │
+                │  - top intent + confidence                          │
+                │  - required modality (text/code/data/images)        │
+                │  - tool necessity + allowed tools                   │
+                │  - risk level (policy/safety)                       │
+                │  - latency budget / cost budget                     │
+                │                                                   │
+                │  Outputs:                                           │
+                │  - selected subrouter path                           │
+                │  - execution plan: sequential vs parallel           │
+                │  - stop/ask-clarifying?                              │
+                └───────────────┬───────────────┬───────────────────┘
+                                │               │
+                 ┌──────────────┘               └──────────────┐
+                 │                                              │
+                 v                                              v
+     ┌───────────────────────────┐               ┌───────────────────────────┐
+     │  ROUTER: KNOWLEDGE (L1)    │               │    ROUTER: BUILD (L1)     │
+     │  “find/understand/explain” │               │  “make/compute/ship”      │
+     │                           │               │                           │
+     │  Inputs:                  │               │  Inputs:                  │
+     │  - need citations?        │               │  - code vs data vs ops    │
+     │  - freshness required?    │               │  - env constraints         │
+     │  - domain taxonomy        │               │  - test requirement        │
+     │  - hallucination risk     │               │  - determinism needed      │
+     │                           │               │                           │
+     │  Outputs:                  │               │  Outputs:                 │
+     │  - pick WEB/DOCS/KB        │               │  - pick CODE/DATA/AUTO     │
+     └───────┬───────────┬───────┘               └───────┬───────────┬───────┘
+             │           │                               │           │
+             │           │                               │           │
+             v           v                               v           v
+┌────────────────────┐  ┌────────────────────┐  ┌────────────────────┐  ┌────────────────────┐
+│ SUBROUTER: WEB (L2) │  │SUBROUTER: DOCS (L2)│  │SUBROUTER: CODE (L2) │  │SUBROUTER: DATA (L2) │
+│ “browse & cite”     │  │ “read & interpret” │  │ “implement”         │  │ “analyze/transform” │
+│                    │  │                    │  │                    │  │                    │
+│ Inputs:             │  │ Inputs:             │  │ Inputs:             │  │ Inputs:             │
+│ - recency need      │  │ - file type (pdf)   │  │ - language/runtime  │  │ - schema/format     │
+│ - query formulation │  │ - section targeting │  │ - deps allowed      │  │ - quality checks    │
+│ - source quality    │  │ - table/figures?    │  │ - security limits   │  │ - statistical needs │
+│ - cite policy       │  │ - extraction method │  │ - performance req   │  │ - reproducibility   │
+│                    │  │                    │  │                    │  │                    │
+│ Outputs:            │  │ Outputs:            │  │ Outputs:            │  │ Outputs:            │
+│ - sources + quotes  │  │ - structured notes  │  │ - patches/PR plan   │  │ - dataset + results │
+└───────┬────────────┘  └─────────┬──────────┘  └─────────┬─────────┘  └─────────┬─────────┘
+        │                         │                      │                      │
+        │ artifacts:              │ artifacts:            │ artifacts:            │ artifacts:
+        │ - links + citations     │ - parsed sections     │ - code + tests        │ - tables/charts
+        v                         v                      v                      v
+┌────────────────┐      ┌────────────────┐     ┌────────────────┐     ┌────────────────┐
+│ Agent: Research│      │ Agent: Summarize│     │ Agent: Implement│     │ Agent: Analyst │
+│ Outputs:       │      │ Outputs:        │     │ Outputs:        │     │ Outputs:        │
+│ - claim+source │      │ - outline       │     │ - code          │     │ - metrics       │
+│ - pros/cons    │      │ - key points    │     │ - tests         │     │ - anomalies     │
+│ - uncertainty  │      │ - glossary      │     │ - runbook       │     │ - recommendations│
+└───────┬────────┘      └───────┬────────┘     └───────┬────────┘     └───────┬────────┘
+        │                       │                      │                      │
+        └──────────────┬────────┴──────────────┬───────┴──────────────┬───────┘
+                       │  join: merge inputs    │                      │
+                       v                        v                      v
+                ┌───────────────────────────────────────────────────┐
+                │                ORCHESTRATOR (L0)                   │
+                │  Goal: combine + schedule next actions             │
+                │                                                   │
+                │  Inputs:                                          │
+                │  - agent outputs (possibly conflicting)           │
+                │  - confidence scores / self-check notes           │
+                │  - budget usage (time/tokens/tools)               │
+                │                                                   │
+                │  Actions:                                         │
+                │  - merge strategy: best-of / weighted / rules      │
+                │  - resolve conflicts via tie-breakers             │
+                │  - decide: another tool call? another agent pass? │
+                │                                                   │
+                │  Output: consolidated draft + evidence map         │
+                └───────────────┬───────────────────────────────────┘
+                                 │  draft + metadata
+                                 v
+                ┌───────────────────────────────────────────────────┐
+                │              GUARD / QA ROUTER (L1)                │
+                │  Goal: validate before user sees it               │
+                │                                                   │
+                │  Checks:                                          │
+                │  - policy/safety compliance                        │
+                │  - factuality: citations for key claims            │
+                │  - consistency: numbers/units/constraints          │
+                │  - completeness vs user request                    │
+                │  - “need clarification?” detection                 │
+                │                                                   │
+                │  Output: PASS or FIX(+what to fix)                 │
+                └───────────────┬───────────────┬───────────────────┘
+                                 │               │
+                           (FIX) │               │ (PASS)
+                                 v               v
+                    ┌────────────────┐   ┌───────────────────────────┐
+                    │ Agent: Critic  │   │  RESPONSE ROUTER (L1)      │
+                    │ Inputs:        │   │  chooses packaging         │
+                    │ - QA findings  │   │                           │
+                    │ - draft        │   │  Inputs:                   │
+                    │ Outputs:       │   │  - user preference (tone)  │
+                    │ - patch plan   │   │  - channel (chat/api)      │
+                    │ - revised text │   │  - artifact type needed    │
+                    └───────┬────────┘   │  Outputs:                  │
+                            │            │  - format: bullets/table   │
+                            └─────┬──────┴─────────────┬─────────────┘
+                                  │                    │
+                                  v                    v
+                       ┌───────────────────┐   ┌───────────────────┐
+                       │ Agent: Writer     │   │ Agent: Formatter  │
+                       │ - clarity/tone    │   │ - markdown/ascii  │
+                       │ - explanations    │   │ - schemas/json    │
+                       └─────────┬─────────┘   └─────────┬─────────┘
+                                 └───────────────┬────────┘
+                                                 v
+                                       ┌─────────────────┐
+                                       │      USER       │
+                                       └─────────────────┘
+
+
+      ┌─────────────────────────────────────────────────────────────┐
+      │            SHARED / CROSS-CUTTING LAYERS                      │
+      │                                                             │
+      │  MEMORY / KB / CACHE:                                       │
+      │   - retrieval embeddings / summaries / user prefs            │
+      │   - tool results cache (web/docs)                            │
+      │                                                             │
+      │  TOOL REGISTRY:                                              │
+      │   - available tools + auth + rate limits                     │
+      │                                                             │
+      │  POLICY / PERMISSIONS:                                       │
+      │   - PII redaction, jailbreak filters, content rules          │
+      │                                                             │
+      │  OBSERVABILITY:                                              │
+      │   - traces (router decisions), eval scores, latency, cost    │
+      └─────────────────────────────────────────────────────────────┘
+
