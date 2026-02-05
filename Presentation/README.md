@@ -14,3 +14,11 @@
 #
 - AI is very good at revealing the truth about the intentions, quality of thinking, and problem structure of the human using it.
 - AI doesn't so much think as mercilessly reflect the quality of input.
+#
+The final shape of AI agents may evolve over time.
+
+Coca-Cola started as a remedy for fatigue and depression. Today, it’s no longer positioned as medicine — yet its market presence is undeniable.
+
+Trends often mature by changing their narrative and form, not by disappearing.
+
+That’s why AI agents are a topic worth paying attention to now.
