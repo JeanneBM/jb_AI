@@ -1,4 +1,5 @@
 - https://www.itexamspro.com/microsoft/ai-102-dumps.html
+- https://learn.kodekloud.com/user/courses/ai-102-microsoft-certified-azure-ai-engineer-associate/module/ebc335c9-6d06-4770-9bc9-8fd3f250d3e6/lesson/bde50303-2b9e-4018-b89d-420426d0636f?autoplay=true
 
 - Azure https://learn.microsoft.com/en-us/credentials/certifications/azure-ai-fundamentals/?practice-assessment-type=certification
 - KodeKloud https://kodekloud.com/playgrounds/#AIPlaygrounds?utm_source=lms%2Fuser%2Fdashboard&utm_medium=From-Navigation-Menu
