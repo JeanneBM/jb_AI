@@ -2,6 +2,27 @@
 
 **CNN (Sieci Konwolucyjne)** to rodzaj sztucznej sieci neuronowej zaprojektowany głównie do przetwarzania **danych siatkowych** (obrazy, wideo, dźwięk, dane medyczne itp.).
 
+# CNN (Convolutional Neural Networks) – filtry splotowe i mapy cech
+
+**Convolutional Neural Networks (sieci konwolucyjne)** to najpopularniejsza architektura do przetwarzania obrazów, wideo, dźwięku i tekstu (1D). Kluczowymi elementami są **filtry splotowe** oraz **mapy cech**.
+
+**W trakcie treningu sieć sama uczy się setek/tysięcy takich filtrów na różnych poziomach abstrakcji.**
+
+---
+
+## 1. Filtr splotowy (Kernel / Filter)
+
+Filtr to mała macierz (najczęściej 3×3, 5×5, 7×7), której wartości są parametrami uczenia.
+
+**Przykład filtra 3×3 wykrywającego krawędzie pionowe:**
+
+```
+\begin{bmatrix}
+-1 & 0 & 1 \\
+-1 & 0 & 1 \\
+-1 & 0 & 1
+\end{bmatrix}
+```
 ---
 
 ## Kluczowe elementy CNN
