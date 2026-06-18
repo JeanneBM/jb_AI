@@ -1,0 +1,1649 @@
+Pojęcia dotyczące sztucznej inteligencji dla deweloperów i specjalistów ds. technologii
+
+Generowanie sztucznej inteligencji to gałąź sztucznej inteligencji, która umożliwia aplikacjom oprogramowania generowanie nowej zawartości; często okna dialogowe języka naturalnego, ale także obrazy, wideo, kod i inne formaty.
+
+Na przykład witryna internetowa historii przetwarzania może zapewnić generowanie interfejsu czatu sztucznej inteligencji, w którym użytkownicy mogą wprowadzać pytania dotyczące kluczowych danych, technologii i zdarzeń w historii obliczeń.
+
+Zrzut ekranu przedstawiający interfejs czatu historii informatyki.
+
+Możliwość rozmowy z witryną i generowania oryginalnych odpowiedzi na pytania tworzy atrakcyjne interaktywne środowisko dla użytkowników.
+
+Jak działa generowanie sztucznej inteligencji?
+Możliwość generowania zawartości jest oparta na modelu językowym, który został wytrenowany przy użyciu ogromnych ilości danych — często dokumentów z Internetu lub innych publicznych źródeł informacji.
+
+Diagram aplikacji generowania sztucznej inteligencji, w której użytkownik rozmawia z modelem językowym.
+
+Użytkownicy wchodzą w interakcję z generatywnymi modelami językowymi AI poprzez prompty — instrukcje języka naturalnego lub pytania. Model językowy w rozwiązaniu do generowania sztucznej inteligencji używa monitu o zainicjowanie generowania zrozumiałej odpowiedzi.
+
+Generowanie modeli sztucznej inteligencji hermetyzuje semantyczne relacje między elementami języka (jest to fantazyjny sposób mówienia, że modele "wiedzą", w jaki sposób słowa odnoszą się do siebie nawzajem) i dzięki temu mogą wygenerować znaczącą sekwencję tekstu.
+
+Istnieją duże modele językowe (LLM) i małe modele językowe (SLM) — różnica zależy od ilości danych i liczby zmiennych w modelu. Maszyny LLM są wydajne i uogólniają się dobrze, ale mogą być bardziej kosztowne do trenowania i używania. SlMs zwykle działają dobrze w scenariuszach, które są bardziej skoncentrowane na określonych obszarach tematów lub które wymagają łatwego wdrażania małych modeli dla lokalnych aplikacji i agentów na urządzeniach.
+
+Co to są agenci?
+Agenci to aplikacje programowe oparte na generatywnej sztucznej inteligencji, które mogą rozumować nad i generować język naturalny, automatyzować zadania przy użyciu narzędzi oraz reagować na warunki kontekstowe w celu podjęcia odpowiednich działań.
+
+Diagram agenta z modelem, instrukcjami i narzędziami.
+
+Agenci sztucznej inteligencji mają trzy kluczowe elementy:
+
+Duży model językowy: to mózg agenta; wykorzystanie generacyjnej sztucznej inteligencji do rozumienia języka i rozumowania.
+Instrukcje: monit systemowy definiujący rolę i zachowanie agenta. Pomyśl o tym jako opis zadania agenta.
+Narzędzia: są to, których agent używa do interakcji ze światem. Narzędzia mogą obejmować:
+Narzędzia wiedzy zapewniające dostęp do informacji, takich jak wyszukiwarki lub bazy danych.
+Narzędzia akcji umożliwiające agentowi wykonywanie zadań, takich jak wysyłanie wiadomości e-mail, aktualizowanie kalendarzy lub kontrolowanie urządzeń.
+Dzięki tym funkcjom agenci sztucznej inteligencji mogą pełnić rolę asystentów cyfrowych, które inteligentnie automatyzują zadania i współpracują z Tobą, aby pracować inteligentniej i wydajniej.
+
+Scenariusze generatywnej i agentowej sztucznej inteligencji
+Typowe zastosowania generowania sztucznej inteligencji i agentów obejmują:
+
+Tworzenie czatbotów , które odpowiadają na pytania użytkowników lub angażują się w konwersację.
+Implementowanie asystentów sztucznej inteligencji, które pomagają użytkownikom ludzkim, automatyzując zadania.
+Tworzenie nowych dokumentów lub innej zawartości (często jako punkt wyjścia do dalszego iteracyjnego opracowywania)
+Automatyczne tłumaczenie tekstu między językami.
+Podsumowywanie lub wyjaśnianie złożonych dokumentów.
+
+Tekst i język naturalny
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Przetwarzanie języka naturalnego (NLP) to szeroki termin, który obejmuje modele i techniki sztucznej inteligencji, aby zrozumieć język. NLP jest podstawą, na której są budowane duże generatywne modele językowe sztucznej inteligencji (LLM).
+
+Techniki NLP są oparte na rozwiązaniach do analizy tekstu , które mogą analizować i podsumowywać tekst języka naturalnego. Na przykład witryna historii przetwarzania może umożliwić użytkownikom podsumowanie artykułów dotyczących kluczowych zdarzeń historycznych i wyodrębnianie z nich określonych nazw, miejsc i dat.
+
+Zrzut ekranu przedstawiający witrynę historii przetwarzania wykonującą analizę tekstu.
+
+Techniki analizy tekstu
+Chociaż obecnie wiele scenariuszy przetwarzania języka naturalnego jest obsługiwanych przez modele generowania sztucznej inteligencji, istnieją typowe przypadki użycia analizy tekstu, w których są używane specjalistyczne narzędzia NLP do generowania przewidywalnych wyników lub stosowania reguł niestandardowych.
+
+Diagram tekstu analizowanego pod kątem tonacji, słów kluczowych i podsumowań.
+
+Wykrywanie języka — określanie języka (lub języków) napisanego w dokumencie. Wykrywanie języka jest często pierwszym krokiem w wieloetapowym przepływie pracy przetwarzania tekstu.
+Klasyfikacja tekstu — przypisywanie dokumentu do określonej kategorii; uwzględnienie analizy tonacji w celu określenia, czy treść tekstu jest pozytywna, negatywna czy neutralna.
+Wyodrębnianie kluczowych terminów i wykrywanie jednostek — identyfikowanie kluczowych słów lub fraz w dokumencie oraz znajdowanie wzmianek o jednostkach, takich jak osoby, miejsca i organizacje. Szczególnie wyspecjalizowaną formą wykrywania jednostek jest wykrywanie i redagowania danych osobowych ;; takie jak nazwy, adresy, numery telefonów i inne dane prywatne.
+Podsumowanie — zmniejszanie ilości tekstu, a jednocześnie hermetyzowanie głównych punktów.
+Scenariusze analizy tekstu
+Typowe zastosowania technologii NLP do analizy tekstu obejmują:
+
+Analizowanie dokumentów lub transkrypcji połączeń i spotkań w celu określenia kluczowych tematów i zidentyfikowania konkretnych wspomnień o osobach, miejscach, organizacjach, produktach lub innych jednostkach.
+Analizowanie wpisów w mediach społecznościowych, przeglądów produktów lub artykułów w celu oceny tonacji i opinii.
+Implementowanie czatbotów, które mogą odpowiadać na często zadawane pytania lub organizować przewidywalne dialogi konwersacyjne, które nie wymagają złożoności generatywnej sztucznej inteligencji.
+Redagowanie danych osobowych przed udostępnieniem lub analizą danych w celu przestrzegania polityk prywatności i przepisów prawnych.
+
+Mowa
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Funkcje mowy w aplikacjach sztucznej inteligencji i agentach umożliwiają użytkownikom interakcję z nimi za pośrednictwem języka mówionego.
+
+Na przykład nasza witryna historii przetwarzania może zawierać przycisk mikrofonu, który umożliwia użytkownikom zadawanie pytań słownie i odpowiadanie przez synchronizowanie wypowiedzianych odpowiedzi.
+
+Zrzut ekranu przedstawiający witrynę historii przetwarzania wykonującą rozpoznawanie mowy.
+
+Rozpoznawanie mowy
+Diagram przedstawiający wprowadzanie mówione przez użytkownika konwertowane na tekst.
+
+Rozpoznawanie mowy to zdolność sztucznej inteligencji do "słuchania" i interpretowania mowy. Zazwyczaj ta funkcja przyjmuje formę zamiany mowy na tekst (gdzie sygnał dźwiękowy mowy jest transkrybowany na tekst).
+
+Synteza mowy
+Diagram przedstawiający tekst konwertowany na słyszalną mowę.
+
+Synteza mowy to zdolność sztucznej inteligencji do wokalizacji słów jako języka mówionego. Zazwyczaj ta funkcja ma postać zamiany tekstu na mowę , w której informacje w formacie tekstowym są konwertowane na sygnał słyszalny.
+
+Technologia mowy sztucznej inteligencji szybko rozwija się, aby sprostać wyzwaniom, takie jak ignorowanie szumu w tle, wykrywanie przerw i generowanie coraz bardziej wyrazistych i ludzkich głosów.
+
+Scenariusze mowy sztucznej inteligencji
+Typowe zastosowania technologii mowy sztucznej inteligencji obejmują:
+
+Agenci sztucznej inteligencji, którzy rozumieją mówione dane wejściowe, wykonują zadania i reagują na wypowiedziane wyniki.
+Automatyczna transkrypcja połączeń lub spotkań.
+Automatyzowanie opisów audio wideo lub tekstu.
+Automatyczne tłumaczenie mowy między językami.
+
+Wizja komputerowa
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Wizja komputerowa to obszar sztucznej inteligencji, który zajmuje się analizą danych wizualnych; na przykład zdjęć, filmów wideo i transmisji z kamer na żywo.
+
+Możemy na przykład rozszerzyć witrynę historii przetwarzania, aby umożliwić użytkownikom przekazywanie obrazów komputerów vintage, które można analizować, identyfikować i opisywać.
+
+Zrzut ekranu przedstawiający stronę historii komputerów wykonującą analizę obrazu.
+
+Jak działa przetwarzanie obrazów?
+Wizja komputerowa odbywa się przy użyciu dużej liczby obrazów do trenowania modelu.
+
+Diagram przedstawiający trenowanie modelu przetwarzania obrazów przy użyciu dużej liczby obrazów.
+
+Istnieje wiele typów modelu przetwarzania obrazów.
+
+Klasyfikacja obrazów to forma przetwarzania obrazów, w której model jest trenowany przy użyciu obrazów oznaczonych etykietą głównego tematu obrazu (innymi słowy, co to jest obraz), aby umożliwić analizowanie obrazów bez etykiet i przewidywanie najbardziej odpowiedniej etykiety — identyfikowanie tematu obrazu.
+Wykrywanie obiektów to forma przetwarzania obrazów, w której model jest trenowany w celu zidentyfikowania lokalizacji określonych obiektów na obrazie.
+Segmentacja semantyczna to zaawansowana forma wykrywania obiektów, w której zamiast wskazywać lokalizację obiektu, rysując wokół niego pole, model może zidentyfikować poszczególne piksele na obrazie należącym do określonego obiektu.
+Modele wielomodalne łączą funkcje wizualne i skojarzone opisy tekstu, umożliwiając im generowanie kompleksowych opisów obrazów.
+Scenariusze przetwarzania obrazów
+Typowe zastosowania przetwarzania obrazów obejmują:
+
+Agenci sztucznej inteligencji, którzy mogą interpretować wizualne dane wejściowe.
+Automatyczne podpisy lub generowanie tagów na potrzeby zdjęć.
+Wyszukiwanie wizualne.
+Monitorowanie poziomów zapasów lub identyfikowanie elementów do wyewidencjonowania w scenariuszach sprzedaży detalicznej.
+Monitorowanie wideo dla bezpieczeństwa.
+Uwierzytelnianie za pomocą rozpoznawania twarzy.
+Robotyka i pojazdy samojezdne.
+
+Wyodrębnianie informacji
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Sztuczna inteligencja jest często używana do automatyzowania rozwiązań wyodrębniania informacji , które umożliwiają znajdowanie informacji i odblokowywanie szczegółowych informacji w źródłach danych bez struktury, takich jak zeskanowane dokumenty i formularze, obrazy i nagrania audio lub wideo.
+
+Możemy na przykład rozszerzyć możliwości wizji komputerowej aplikacji historii komputerów w celu wyodrębnienia numerów seryjnych oraz innych tekstów z obrazów komponentów komputera i użycia tych informacji do zidentyfikowania komputera źródłowego.
+
+Zrzut ekranu przedstawiający witrynę historii przetwarzania wyodrębniającą tekst z obrazu.
+
+Jak działa wyodrębnianie informacji?
+Podstawą większości rozwiązań do analizy dokumentów jest technologia przetwarzania obrazów nazywana optyczne rozpoznawanie znaków (OCR), która może identyfikować lokalizację tekstu na obrazie. Funkcja OCR jest często łączona z modelem analitycznym, który może interpretować poszczególne wartości w dokumencie, a więc wyodrębnia określone pola. Na przykład, aby dopasować tekst wyodrębniony z paragonu do pól w zgłoszeniu wydatków.
+
+Diagram informacji wyodrębnionych z paragonu.
+
+Podczas gdy większość modeli wyodrębniania danych historycznie koncentruje się na wyodrębnieniu pól z formularzy opartych na tekście, bardziej zaawansowane modele, które mogą wyodrębniać informacje z nagrywania dźwięku, obrazów i filmów wideo, stają się coraz bardziej łatwo dostępne.
+
+Scenariusze wyodrębniania danych i szczegółowych informacji
+Typowe zastosowania sztucznej inteligencji do wyodrębniania danych i szczegółowych informacji obejmują:
+
+Zautomatyzowane przetwarzanie formularzy i innych dokumentów w procesie biznesowym — na przykład przetwarzanie oświadczenia o wydatkach.
+Cyfryzacja danych na dużą skalę z formularzy papierowych. Na przykład skanowanie i archiwizowanie rekordów spisu.
+Indeksowanie dokumentów do wyszukiwania.
+Identyfikowanie kluczowych punktów i działań następczych na podstawie nagrań lub transkrypcji spotkań.
+
+Odpowiedzialne używanie sztucznej inteligencji
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Odpowiedzialne używanie sztucznej inteligencji to termin używany do opisywania zagadnień związanych z tworzeniem systemów sztucznej inteligencji, które obejmują bariery zabezpieczające w celu ograniczenia ryzyka szkodliwych, nielegalnych lub obraźliwych generowania zawartości lub zautomatyzowanych akcji.
+
+Na przykład nasze rozwiązanie historii przetwarzania powinno unikać udostępniania użytkownikom informacji, które mogłyby pomóc lub zachęcić do nielegalnej lub szkodliwej aktywności.
+
+Zrzut ekranu przedstawiający witrynę historii przetwarzania stosującą filtry zawartości w celu ograniczenia ryzyka szkodliwego generowania zawartości.
+
+Filtry zawartości są jednym ze sposobów ograniczania ryzyka szkodliwego generowania zawartości przez systemy sztucznej inteligencji; ale odpowiedzialne rozwiązanie sztucznej inteligencji wymaga rozważenia kluczowych zasad od jego koncepcji, poprzez projektowanie i implementację oraz do jej działania.
+
+Zasady odpowiedzialnego używania sztucznej inteligencji
+Zasady odpowiedzialnego używania sztucznej inteligencji obejmują:
+
+Principle	Description
+Diagram przedstawiający uczciwość.
+Bezstronność	Modele sztucznej inteligencji są trenowane przy użyciu danych, które są zwykle pozyskiwane i wybierane przez ludzi. Istnieje duże ryzyko, że kryteria wyboru danych lub same dane odzwierciedlają nieświadome stronniczość , które mogą spowodować, że model generuje dyskryminujące dane wyjściowe. Deweloperzy sztucznej inteligencji muszą zadbać o zminimalizowanie stronniczości w zakresie trenowania danych i testowania systemów sztucznej inteligencji w celu zapewnienia sprawiedliwości.
+Diagram przedstawiający niezawodność i bezpieczeństwo.
+Niezawodność i bezpieczeństwo	Sztuczna inteligencja jest oparta na modelach probabilistycznych, ale nie jest nieosiągalna. Aplikacje oparte na sztucznej inteligencji muszą uwzględniać te elementy i odpowiednio ograniczać ryzyko.
+Diagram przedstawiający prywatność i bezpieczeństwo.
+Prywatność i bezpieczeństwo	Modele są trenowane przy użyciu danych, które mogą obejmować dane osobowe. Deweloperzy sztucznej inteligencji ponoszą odpowiedzialność za zapewnienie bezpieczeństwa danych szkoleniowych i że same wytrenowane modele nie mogą być używane do ujawniania prywatnych danych osobistych ani organizacyjnych.
+Diagram przedstawiający inkluzywność.
+Inkluzywność	Potencjał sztucznej inteligencji w celu poprawy życia i sukcesu powinien być otwarty dla wszystkich. Deweloperzy sztucznej inteligencji powinni dążyć do zapewnienia, że ich rozwiązania nie wykluczają niektórych użytkowników.
+Diagram przedstawiający przezroczystość.
+Przezroczystość	Sztuczna inteligencja może czasami wydawać się "magią", ale ważne jest, aby użytkownicy wiedzieli, jak działa system i jakie mogą mieć potencjalne ograniczenia.
+Diagram przedstawiający odpowiedzialność.
+Rozliczalność	Ostatecznie osoby i organizacje, które opracowują i rozpowszechniają rozwiązania sztucznej inteligencji, są rozliczane za swoje działania. Ważne jest, aby organizacje opracowujące modele i aplikacje sztucznej inteligencji definiowały i stosować ramy ładu, aby zapewnić stosowanie zasad odpowiedzialnej sztucznej inteligencji do ich pracy.
+Przykłady odpowiedzialnej sztucznej inteligencji
+Przykładowe scenariusze, w których należy zastosować praktyki odpowiedzialnego używania sztucznej inteligencji, obejmują:
+
+System przyjęć uczelni oparty na sztucznej inteligencji powinien zostać przetestowany w celu zapewnienia, że ocenia wszystkie aplikacje sprawiedliwie, uwzględniając odpowiednie kryteria akademickie, ale unikając bezpodstawnej dyskryminacji na podstawie nieistotnych czynników demograficznych.
+Oparte na sztucznej inteligencji rozwiązanie robota, które używa przetwarzania obrazów do wykrywania obiektów, powinno unikać niezamierzonych szkód lub uszkodzeń. Jednym ze sposobów osiągnięcia tego celu jest użycie wartości prawdopodobieństwa w celu określenia "ufności" w identyfikacji obiektu przed interakcją z obiektami fizycznymi i uniknięcia jakiejkolwiek akcji, jeśli poziom ufności jest niższy od określonego progu.
+System identyfikacji twarzy używany na lotnisku lub w innym bezpiecznym obszarze powinien usuwać obrazy osobiste, które są używane do tymczasowego dostępu, gdy tylko nie są już wymagane. Ponadto zabezpieczenia powinny uniemożliwić udostępnianie obrazów operatorom lub użytkownikom, którzy nie muszą ich wyświetlać.
+Agent sztucznej inteligencji, który oferuje interakcję opartą na mowie, powinien również generować napisy tekstowe, aby uniknąć nieużywalności systemu dla użytkowników z wadą słuchu.
+Bank, który korzysta z aplikacji do zatwierdzania pożyczek opartych na sztucznej inteligencji, powinien ujawnić użycie sztucznej inteligencji i opisać funkcje danych, na których została wytrenowana (bez ujawniania poufnych informacji).
+
+Generowanie sztucznej inteligencji i technologie implementujące ją są coraz bardziej w świadomości publicznej — nawet wśród osób, które nie pracują w rolach technologicznych lub mają doświadczenie w nauce komputerowej lub uczeniu maszynowym. Futurysta i pisarz Arthur C. Clarke jest cytowany jako obserwujący, że "każda wystarczająco zaawansowana technologia jest nie do odróżnienia od magii". W przypadku generowania sztucznej inteligencji wydaje się mieć niemal cudowną zdolność do produkcji oryginalnej treści przypominającej człowieka, w tym poezji, prozy, a nawet kodu komputerowego.
+
+Nie ma jednak kreatora związanego ze sztuczną inteligencją — tylko zastosowanie technik matematycznych przyrostowo odkrytych i udoskonalonych przez wiele lat badań nad statystykami, nauką o danych i uczeniem maszynowym. Ogólne zrozumienie sposobu działania sztuczki magicznej można uzyskać, ucząc się podstawowych pojęć i zasad omówionych w tym module. Gdy dowiesz się więcej na temat technologii generacyjnych sztucznej inteligencji, które mamy dzisiaj i jak obsługuje ona nową generację agentów sztucznej inteligencji; możesz pomóc społeczeństwu wyobrazić sobie nowe możliwości dla sztucznej inteligencji jutro.
+
+Duże modele językowe (LLMs)
+Ukończone
+100 pkt.
+5 min
+Wybieranie preferowanego formatu zawartości
+Rdzeń generatywnej sztucznej inteligencji stanowią duże modele językowe (LLM) — oraz ich bardziej kompaktowe odpowiedniki, małe modele językowe (SLM) — które zawierają relacje lingwistyczne i semantyczne między słowami i frazami w słownictwie. Model może wykorzystać te relacje do analizowania danych wejściowych w języku naturalnym i generowania znaczących oraz adekwatnych odpowiedzi.
+
+Zasadniczo LLMy są trenowane do generowania kontynuacji na podstawie poleceń. Pomyśl o nich jako o super-zaawansowanych przykładach funkcji tekstu predykcyjnego na wielu telefonach komórkowych. Monit uruchamia sekwencję przewidywań tekstowych, które skutkuje semantycznie poprawnym uzupełnianiem. Sztuczka polega na tym, że model rozumie relacje między wyrazami i może określić, które słowa w sekwencji do tej pory najprawdopodobniej wpłyną na następny; i użyj tego, aby przewidzieć najbardziej prawdopodobną kontynuację sekwencji.
+
+Rozważmy na przykład następujące zdanie:
+
+Słyszałem, jak pies głośno szczekał na kota
+
+Załóżmy, że słyszałeś tylko kilka pierwszych słów: "Słyszałem psa ...". Wiesz, że niektóre z tych słów bardziej pomagają domyśleć się, jakie może być następne słowo niż inne. Wiesz, że słowa "usłyszeć" i "pies" są silnymi wskaźnikami tego, co będzie dalej, i to pomaga zawęzić prawdopodobieństwa. Wiesz, że istnieje duża szansa, że zdanie będzie kontynuowane jako "Słyszałempsaszczekanie".
+
+Możesz odgadnąć następne słowo, ponieważ:
+
+Masz duże słownictwo słów, z których można czerpać.
+Znasz już typowe struktury językowe, więc wiesz, jak słowa odnoszą się do siebie nawzajem w znaczących zdaniach.
+Masz zrozumienie semantycznych pojęć związanych ze słowami - wiesz, że coś, co słyszałeś , musi być dźwiękiem pewnego rodzaju i wiesz, że istnieją konkretne dźwięki, które są wykonane przez psa.
+Jak więc wytrenować model, aby mieć te same możliwości?
+
+Tokenizacja
+Pierwszym krokiem jest wyposażenie modelu w obszerne słownictwo wyrazów i zwrotów; i mamy na myśli duże. Najnowsza generacja LLM ma słownictwo, które składa się z setek tysięcy tokenów, na podstawie dużych ilości danych szkoleniowych z Internetu i innych źródeł.
+
+Poczekaj chwilę. Tokeny?
+
+Chociaż mamy tendencję do myślenia o języku pod względem słów, LLMs dzielą swoje słownictwo na tokeny. Tokeny obejmują wyrazy, ale także części wyrazów (takie jak "un" w "niewiarygodne" i "mało prawdopodobne"), znaki interpunkcyjne i inne powszechnie używane sekwencje znaków. Pierwszym krokiem trenowania dużego modelu językowego jest podzielenie tekstu szkoleniowego na odrębne tokeny i przypisanie unikatowego identyfikatora całkowitego do każdego z nich, w następujący sposób:
+
+I (1)
+słyszane (2)
+a (3)
+pies (4)
+kora (5)
+głośno (6)
+przy (7)
+a (3) już przypisane
+kot (8)
+itd.
+
+W miarę dodawania większej ilości danych szkoleniowych, do słownika zostaną dodane kolejne tokeny i przypisane identyfikatory; w związku z tym możesz uzyskać tokeny dla słów takich jak szczeniak, deskorolka, samochód i innych.
+
+ Notatka
+
+W tym prostym przykładzie tokenizowaliśmy przykładowy tekst na podstawie słów. W rzeczywistości występują także podwyrazy, znaki interpunkcyjne i inne tokeny.
+
+Przekształcanie tokenów za pomocą transformatora
+Teraz, gdy mamy zestaw tokenów z unikatowymi identyfikatorami, musimy znaleźć sposób na powiązanie ich ze sobą. W tym celu przypisujemy każdemu tokenowi wektor (tablicę wielu wartości liczbowych, takich jak [1, 23, 45]). Każdy wektor ma wiele elementów liczbowych lub wymiarów i możemy ich użyć do kodowania atrybutów językowych i semantycznych tokenu, aby pomóc w zapewnieniu wielu informacji o tym, co oznacza token i jak odnosi się do innych tokenów w wydajnym formacie.
+
+Musimy przekształcić początkowe reprezentacje wektorów tokenów w nowe wektory z właściwościami językowymi i semantycznymi osadzonymi w nich na podstawie kontekstów, w których są wyświetlane w danych treningowych. Ponieważ nowe wektory mają osadzone w nich wartości semantyczne, nazywamy je osadzaniem.
+
+Aby wykonać to zadanie, użyjemy modelu transformatora . Ten rodzaj modelu składa się z dwóch "bloków":
+
+Blok kodera , który tworzy osadzanie, stosując technikę o nazwie uwaga. Warstwa uwagi sprawdza z kolei każdy token i określa, jak ma to wpływ na tokeny wokół niego. Aby proces kodowania był bardziej wydajny, mechanizm uwagi wielogłowej jest używany do równoległego rozpatrywania wielu elementów tokenu i przypisywania wag, które mogą być wykorzystane do obliczenia nowych wartości elementów wektora. Wyniki warstwy uwagi są przekazywane do w pełni połączonej sieci neuronowej, aby znaleźć najlepszą wektorową reprezentację osadzania.
+Warstwa dekodera, która używa wektorów obliczonych przez enkoder, aby określić następny najbardziej prawdopodobny token w sekwencji rozpoczętej przez monit. Dekoder wykorzystuje również mechanizm uwagi oraz sieć neuronową typu feed-forward do dokonywania swoich prognoz.
+Diagram architektury Transformer z warstwami kodowania i dekodowania.
+
+ Notatka
+
+Znacznie uprościliśmy architekturę i proces przekształcania w opisie i diagramie. Nie martw się zbytnio o szczegółowe informacje o sposobie działania uwagi — kluczowym punktem jest to, że pomaga przechwytywać cechy językowe i semantyczne każdego tokenu na podstawie kontekstów, w których jest używany. Jeśli chcesz zagłębić się w architekturę transformatora i to, jak wykorzystuje on mechanizm uwagi, możesz przeczytać oryginalną pracę Attention is all you need.
+
+Wektory początkowe i kodowanie pozycyjne
+Początkowo wartości wektorów tokenu są przypisywane losowo, zanim będą przekazywane przez transformator w celu utworzenia wektorów osadzania. Wektory tokenu są przekazywane do transformatora wraz z kodowaniem pozycyjnym , które wskazuje, gdzie token pojawia się w sekwencji tekstu trenowania (musimy to zrobić, ponieważ kolejność, w jakiej tokeny pojawiają się w sekwencji, ma znaczenie dla sposobu ich powiązania ze sobą). Na przykład nasze tokeny mogą zacząć wyglądać następująco:
+
+Żeton	Identyfikator tokenu	Position	Vector
+I	1	1	[3, 7, 10]
+Słyszał	2	2	[2, 15, 1]
+d	3	3	[9, 11, 1]
+pies	4	4	[2, 7, 11]
+szczekanie	5	5	[9, 12, 0]
+głośno	6	6	[3, 8, 13]
+at	7	7	[5, 7, 10]
+d	3	8	[9, 11, 1]
+cat	8	9	[8, -6, 9 ]
+...\	...\	...\	...\
+szczeniak	127	45	[7, 7, -2]
+samochód	128	56	[5, -5, 1]
+deskorolka	129	67	[4, 7, 14]
+ Notatka
+
+Zachowaliśmy proste rzeczy przy użyciu wektorów z tylko trzema elementami (co pomoże nam zwizualizować je w trzech wymiarach później). W rzeczywistości wektory mają tysiące elementów.
+
+Uwagę i osadzanie
+Aby określić wektorowe reprezentacje tokenów zawierających osadzone informacje kontekstowe, transformator używa warstw uwagi. Warstwa uwagi uwzględnia każdy token z kolei w kontekście sekwencji tokenów, w których się pojawia. Tokeny wokół bieżącego są ważone w celu odzwierciedlenia ich wpływu, a wagi są używane do obliczania wartości elementów dla wektora osadzania bieżącego tokenu. Na przykład, rozważając token "szczekanie" w kontekście "Słyszałem, jak pies szczeka", tokeny dla "słyszałem" i "pies" zostaną przypisane większą wagę niż pozostałe, ponieważ są one silniejszymi wskaźnikami dla "szczekanie".
+
+Początkowo model nie "wie", który tokeny wpływają na inne osoby; ale w miarę uwidocznienia większych ilości tekstu może iteracyjne nauczyć się, które tokeny są często wyświetlane razem, i zacząć znajdować wzorce, które pomagają przypisywać wartości do elementów wektorów, które odzwierciedlają cechy językowe i semantyczne tokenów, na podstawie ich zbliżenia i częstotliwości ich używania razem. Proces ten jest bardziej wydajny dzięki zastosowaniu uwagi wielogłowej w celu równoległego rozważenia różnych elementów wektorów.
+
+Wynikiem procesu kodowania jest zestaw osadzeń; wektory zawierające kontekstowe informacje o tym, jak tokeny w słownictwie odnoszą się do siebie. Prawdziwy transformator tworzy wektory osadzeń, które zawierają tysiące elementów, ale aby zachować prostotę, trzymajmy się wektorów z tylko trzema elementami w naszym przykładzie. Wynik procesu kodowania naszego słownictwa może wyglądać mniej więcej tak:
+
+Żeton	Identyfikator tokenu	Osadzanie
+I	1	[2, 0, -1]
+Słyszał	2	[-2, 2, 4 ]
+d	3	[-3, 5, 5 ]
+pies	4	[10, 3, 2 ]
+szczekanie	5	[9, 2, 10 ]
+głośno	6	[-3, 8, 3 ]
+at	7	[-5, -1, 1]
+cat	8	[10, 3, 1]
+szczeniak	127	[5, 3, 2 ]
+samochód	128	[-2, -2, 1 ]
+deskorolka	129	[-3, -2, 2 ]
+Możemy traktować elementy osadzania jako wymiary w wielowymiarowej przestrzeni wektorowej. W naszym prostym przykładzie osadzanie ma tylko trzy elementy, więc możemy je wizualizować jako wektory w przestrzeni trójwymiarowej, w następujący sposób:
+
+Diagram wektorów osadzania dla tokenów w trzech wymiarach.
+
+Ponieważ wymiary są obliczane na podstawie sposobu, w jaki tokeny są ze sobą powiązane lingwistyczne, tokeny używane w podobnych kontekstach (i dlatego mają podobne znaczenie) powodują wektory o podobnych kierunkach. Na przykład osadzanie dla "psa" i "szczeniaka" wskazuje mniej więcej w tym samym kierunku, co nie różni się zbyt od osadzania dla "kota"; ale bardzo różni się od osadzania dla "deskorolki" lub "samochodu". Możemy zmierzyć, jak blisko tokenów są ze sobą semantycznie, obliczając podobieństwo cosinus ich wektorów.
+
+Przewidywanie kontynuacji z podpowiedzi
+Teraz, gdy mamy zestaw osadzeń, który zawiera relację kontekstową między tokenami, możemy użyć bloku dekodera transformatora, aby iteracyjnie przewidzieć następne słowo w sekwencji na podstawie sygnału początkowego.
+
+Po raz kolejny uwaga jest używana do rozważenia każdego tokenu w kontekście; ale tym razem kontekst, który należy wziąć pod uwagę, może zawierać tylko tokeny poprzedzające token, który próbujemy przewidzieć. Model dekodera jest trenowany przy użyciu danych, dla których mamy już pełną sekwencję, stosując technikę o nazwie maskowana uwaga; w którym tokeny po bieżącym tokenie są ignorowane. Ponieważ już znamy następny token podczas trenowania, transformator może porównać go z przewidywanym tokenem i dostosować poznane wagi w kolejnych iteracji trenowania, aby zmniejszyć błąd w modelu.
+
+Podczas przewidywania nowego ukończenia, dla którego kolejne tokeny są nieznane, warstwy uwagi obliczają możliwe wektory dla następnego tokenu, a sieć przekazywania dalej jest używana do określania najbardziej prawdopodobnego kandydata. Przewidywana wartość jest następnie dodawana do sekwencji, a cały proces powtarza się, aby przewidzieć następny token; i tak dalej, aż dekoder przewiduje, że sekwencja została zakończona.
+
+Na przykład biorąc pod uwagę sekwencję "Kiedy mój pies był ...", model ocenia dotychczasowe tokeny w sekwencji, używa uwagi do przypisania wag i przewiduje, że najbardziej prawdopodobnym następnym tokenem jest "szczeniak", a nie, powiedzmy, "kot" lub "deskorolka".
+
+Polecenia
+Ukończone
+100 pkt.
+5 min
+Wybieranie preferowanego formatu zawartości
+Prompt to dane wejściowe, które wprowadzasz do modelu LLM, aby uzyskać odpowiedź. Może to być pytanie lub polecenie albo po prostu przypadkowy komentarz, aby rozpocząć konwersację. Model odpowiada na monit z ukończeniem.
+
+Typy monitów
+Istnieją dwa główne typy monitów:
+
+Podpowiedzi systemowe, które ustawiają zachowanie i ton modelu oraz wszelkie ograniczenia, których należy przestrzegać. Na przykład "Jesteś pomocnym asystentem, który reaguje w radosny, przyjazny sposób". Komunikaty systemowe wyznaczają ograniczenia i definiują style odpowiedzi modelu.
+Użytkownik monituje , aby wywołać odpowiedź na określone pytanie lub instrukcję. Na przykład "Podsumuj kluczowe zagadnienia dotyczące wdrażania generowania sztucznej inteligencji opisanej w GenAI_Considerations.docx dla kierownictwa firmy. Sformatuj podsumowanie jako nie więcej niż sześć punktów z profesjonalnym tonem".
+Diagram monitu użytkownika i systemu.
+
+Zazwyczaj monit systemowy jest ustawiany przez aplikację korzystającą z modelu. Podpowiedzi użytkownika mogą być wprowadzane przez człowieka w aplikacji czatu; lub w niektórych przypadkach generowane przez aplikację dla użytkownika. Model odpowiada na wezwania użytkownika, przestrzegając ogólnych wskazówek systemowych.
+
+Historia konwersacji
+Aby zachować spójność i istotność konwersacji, aplikacje bazujące na generatywnej sztucznej inteligencji często śledzą historię konwersacji oraz uwzględniają podsumowane wersje w kolejnych monitach. Dzięki temu istnieje ciągły kontekst konwersacji, na podstawie którego model może opierać się.
+
+Diagram konwersacji z wieloma monitami i ukończeniami.
+
+Załóżmy na przykład, że model odpowiada na system i monity użytkownika opisane wcześniej przy użyciu następującego ukończenia:
+
+Najważniejsze zagadnienia dotyczące wdrażania generowania sztucznej inteligencji obejmują:
+
+Ustanawianie jasnego ładu i zasad odpowiedzialnej sztucznej inteligencji
+Nadawanie priorytetów przypadkom użycia o wysokiej wartości w działach firmy
+Ograniczanie ryzyka związanego z prywatnością, zabezpieczeniami i zgodnością
+Wspieranie gotowości organizacyjnej i adaptacji kulturowej
+Mierzenie wpływu i budowania odpowiedzialności
+Bądź na czele strategicznych i konkurencyjnych zmian
+Możesz odpowiedzieć na następujące pytanie, takie jak "Co to są typowe zagrożenia związane z prywatnością?). Monit zawiera nowe pytanie, ale także poprzednie monity i odpowiedzi, aby dostarczyć modelowi kontekst potrzebny do zrozumienia pytania w odniesieniu do adopcji Generatywnej AI.
+
+Pobieranie rozszerzonej generacji (RAG)
+Aby dodać jeszcze więcej kontekstu, generatywne aplikacje AI mogą użyć techniki nazywanej generowaniem wspomaganym pobieraniem (RAG). Takie podejście obejmuje pobieranie informacji, takich jak dokumenty lub wiadomości e-mail, i używanie ich do rozszerzania monitu o odpowiednie dane. Odpowiedź wygenerowana przez model jest następnie uziemiona w podanych informacjach.
+
+Załóżmy na przykład, że przesyłasz monit podobny do "Jaka jest maksymalna wartość, jaką mogę ubiegać się o wydatki na podróż służbową?". Bez innych informacji model odpowie ogólną odpowiedzią — prawdopodobnie informuje Cię o zapoznaniu się z dokumentacją zasad wydatków organizacji. Lepszym rozwiązaniem byłoby stworzenie aplikacji asystenta wydatków, która początkowo wykonuje zapytania dotyczące dokumentacji polityki wydatków organizacji, pobierając sekcje związane z "kosztami podróży", a następnie zawiera pobrane informacje w wiadomości, która jest wysyłana do modelu, wraz z oryginalnym pytaniem. Teraz model może używać informacji o zasadach wydatków w wierszu polecenia, aby podać kontekst i odpowiedzieć na bardziej odpowiednią odpowiedź.
+
+Diagram przedstawiający generowanie rozszerzonego pobierania używane w celu zapewnienia kontekstu w wierszu polecenia.
+
+Porady dotyczące lepszych monitów
+Jakość odpowiedzi od generowanych asystentów sztucznej inteligencji zależy nie tylko od używanego modelu językowego, ale także od monitów przesłanych do niego.
+
+Diagram jasnego i konkretnego monitu z kontekstem, przykładami i żądaniem struktury.
+
+Aby uzyskać lepsze wyniki z komunikatów:
+
+Jasne ikonkretne — wskazówki z wyraźnymi instrukcjami lub pytaniami działają lepiej niż niejasne sformułowania.
+Dodaj kontekst — podaj żądany temat, odbiorców lub format.
+Użyj przykładów, jeśli chcesz uzyskać określony styl, podaj przykład tego, co masz na myśli.
+Zapytaj o strukturę, na przykład punktory, tabele lub listy numerowane.
+Użycie dobrze zaprojektowanych monitów może mieć ogromną różnicę w wynikach uzyskanych z generowania modelu sztucznej inteligencji.
+
+
+Agenci sztucznej inteligencji
+Ukończone
+100 pkt.
+5 min
+Wybieranie preferowanego formatu zawartości
+Wyobraź sobie, że masz asystenta cyfrowego, który nie odpowiada tylko na pytania, ale faktycznie robi wszystko! Witamy w świecie agentów sztucznej inteligencji.
+
+Agenci to aplikacje programowe oparte na generatywnej sztucznej inteligencji, które mogą rozumować nad i generować język naturalny, automatyzować zadania przy użyciu narzędzi oraz reagować na warunki kontekstowe w celu podjęcia odpowiednich działań.
+
+Składniki agenta sztucznej inteligencji
+Diagram agenta z modelem, instrukcjami i narzędziami.
+
+Agenci sztucznej inteligencji mają trzy kluczowe elementy:
+
+Duży model językowy: to mózg agenta; wykorzystanie generacyjnej sztucznej inteligencji do rozumienia języka i rozumowania.
+Instrukcje: monit systemowy definiujący rolę i zachowanie agenta. Pomyśl o tym jako opis zadania agenta.
+Narzędzia: są to, których agent używa do interakcji ze światem. Narzędzia mogą obejmować:
+Narzędzia wiedzy zapewniające dostęp do informacji, takich jak wyszukiwarki lub bazy danych.
+Narzędzia akcji umożliwiające agentowi wykonywanie zadań, takich jak wysyłanie wiadomości e-mail, aktualizowanie kalendarzy lub kontrolowanie urządzeń.
+Dzięki tym funkcjom agenci sztucznej inteligencji mogą pełnić rolę asystentów cyfrowych, które inteligentnie automatyzują zadania i współpracują z Tobą, aby pracować inteligentniej i wydajniej.
+
+Systemy z wieloma agentami
+Agenci mogą również współpracować ze sobą w systemach z wieloma agentami. Zamiast jednego agenta tego, który robi wszystko, wielu agentów może współpracować — każdy z nich ma własną specjalizację. Jedna z nich może zbierać dane, inna może je analizować, a trzecia może podjąć działania. Razem tworzą oni pracowników opartych na sztucznej inteligencji, którzy mogą obsługiwać złożone przepływy pracy, podobnie jak zespół ludzki.
+
+Diagram systemu z wieloma agentami.
+
+Agenci komunikują się ze sobą za pośrednictwem monitów, używając generowania sztucznej inteligencji w celu określenia, jakie zadania są wymagane i którzy agenci są odpowiedzialni za ich ukończenie.
+
+Sztuczna inteligencja agentów ma być kolejnym postępem w sposobie używania technologii do znajdowania informacji i wykonywania pracy.
+
+Wprowadzenie
+Ukończone
+100 pkt.
+1 minuta
+Wybieranie preferowanego formatu zawartości
+W ramach sztucznej inteligencji analiza tekstu jest podzbiorem przetwarzania języka naturalnego (NLP), który umożliwia maszynom wyodrębnianie znaczenia, struktury i szczegółowych informacji z tekstu bez struktury. Organizacje używają analizy tekstu do przekształcania opinii klientów, biletów pomocy technicznej, kontraktów i wpisów w mediach społecznościowych w analizę umożliwiającą podejmowanie działań.
+
+Techniki przetwarzania i analizowania tekstu ewoluowały w ciągu wielu lat, od prostych obliczeń statystycznych opartych na częstotliwości terminów do modeli językowych opartych na wektorach, które hermetyzują znaczenie semantyczne. Oto niektóre typowe przypadki użycia analizy tekstu:
+
+Wykrywanie języka: określanie języka (lub języków), w którym jest zapisywany tekst — często jako pierwszy krok w wieloetapowym przepływie pracy przetwarzania tekstu.
+Wyodrębnianie terminów kluczowych: identyfikowanie ważnych słów i fraz w tekście w celu ułatwienia określenia tematów i tematów, które omawia.
+Wykrywanie jednostek: identyfikowanie nazwanych jednostek wymienionych w tekście; na przykład miejsca, osoby, daty i organizacje.
+Wykrywanie danych osobowych: identyfikowanie i redagowanie danych osobowych w tekście, takich jak nazwy, adresy, numery telefonów, szczegóły konta finansowego i inne poufne informacje.
+Klasyfikacja tekstu: kategoryzowanie dokumentów tekstowych na podstawie ich zawartości. Na przykład filtrowanie wiadomości e-mail jako spamu lub nie spamu.
+Analiza tonacji: określona forma klasyfikacji tekstu, która przewiduje tonację tekstu — na przykład kategoryzowanie wpisów w mediach społecznościowych jako pozytywnych, neutralnych lub negatywnych.
+Podsumowanie tekstu: zmniejszenie ilości tekstu przy zachowaniu ważnych punktów. Na przykład generowanie krótkiego podsumowania jednego akapitu z wielostronicowego dokumentu.
+Analiza tekstu jest trudna, ponieważ język jest złożony, a komputery trudno je zrozumieć. Ostatecznie wszystkie techniki analizy tekstu są oparte na wymogu wyodrębniania znaczenia z tekstu w języku naturalnym.
+
+Tokenizacja
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Pierwszym krokiem analizy treści tekstu (nazywanego corpus) jest podzielenie go na tokeny. Ze względu na prostotę można traktować każde odrębne słowo w tekście jako token. W rzeczywistości tokeny mogą być generowane dla częściowych wyrazów lub kombinacji wyrazów i znaków interpunkcyjnych.
+
+Rozważmy na przykład to wyrażenie ze słynnego przemówienia prezydenckiego w USA: "We choose to go to the moon". Frazę można podzielić na następujące tokeny z identyfikatorami liczbowymi:
+
+We
+choose
+to
+go
+to
+the
+moon
+Zwróć uwagę, że "to" (numer tokenu 3) jest używany dwa razy w korpusie. Fraza "We choose to go to the moon" może być reprezentowana przez tokeny.
+
+W przypadku każdego tokenu przypisanej wartości dyskretnej można łatwo zliczyć ich częstotliwość w tekście i użyć go do określenia najczęściej używanych terminów; które mogą pomóc w zidentyfikowaniu głównego tematu tekstu.
+
+Użyliśmy prostego przykładu, w którym tokeny są identyfikowane dla każdego odrębnego słowa w tekście. Należy jednak wziąć pod uwagę następujące techniki przetwarzania wstępnego, które mogą mieć zastosowanie do tokenizacji w zależności od konkretnego problemu analizy tekstu, który próbujesz rozwiązać:
+
+Technika	Opis
+Normalizacja tekstu	Przed wygenerowaniem tokenów można wybrać normalizację tekstu przez usunięcie interpunkcji i zmianę wszystkich wyrazów na małe litery. W przypadku analizy, która opiera się wyłącznie na częstotliwości słów, to podejście zwiększa ogólną wydajność. Można jednak utracić pewne znaczenie semantyczne — na przykład należy wziąć pod uwagę zdanie "Mr Banks has worked in many banks.". Możesz chcieć, aby analiza rozróżniała osobę "Mr Banks" i "banks" osobę, w której pracował. Możesz również rozważyć traktowanie "banks." jako oddzielnego tokenu względem "banks", ponieważ kropka dostarcza informacji, że słowo znajduje się na końcu zdania.
+Zatrzymaj usuwanie wyrazów	Słowa stop to wyrazy, które należy wykluczyć z analizy. Na przykład , "the""a"lub "it" ułatwią użytkownikom czytanie tekstu, ale dodają niewielkie znaczenie semantyczne. Wykluczając te słowa, rozwiązanie do analizy tekstu może być lepsze w stanie zidentyfikować ważne słowa.
+Wyodrębnianie N-gramów	Znajdowanie fraz wieloterminowych, takich jak "artificial intelligence" lub "natural language processing". Pojedynczy wyraz jest unigramem, dwu wyrazowa fraza jest bigramem, trzywyrazowa fraza jest trigramem i tak dalej. W wielu przypadkach, biorąc pod uwagę często pojawiające się sekwencje słów jako grupy, algorytm analizy tekstu może lepiej zrozumieć tekst.
+Stemming (sprowadzenie do rdzenia słowa)	Technika używana do konsolidacji słów przez usuwanie zakończeń, takich jak "s", "ing", "ed", itd., przed policzeniem ich; tak, aby wyrazy z tym samym rdzeniem etymologicznym, takim jak "powering", "powered", i "powerful", były interpretowane jako ten sam token ("power").
+Lemmatyzacja	Innym podejściem jest sprowadzanie wyrazów do ich formy podstawowej lub słownikowej, co nazywamy lemmą. W przeciwieństwie do stemmingu, które po prostu obcina zakończenia wyrazów, lemmatyzacja używa reguł językowych i słownictwa, aby upewnić się, że wynikowa forma jest prawidłowym słowem (na przykład "running": "run", "global" → "globe").
+Tagowanie części mowy (POS)	Etykietowanie każdego tokenu przy użyciu kategorii gramatycznej, takiej jak rzeczownik, czasownik, przymiotnik lub przysłówek. Ta technika używa reguł językowych i często modeli statystycznych w celu określenia poprawnego tagu na podstawie samego tokenu i jego kontekstu w zdaniu.
+
+Analiza tekstu statystycznego.
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Po rozbiciu korpusu tekstowego na jego tokeny składowe i przygotowaniu ich do analizy; istnieje kilka typowych technik analizy statystycznej, których można użyć do wnioskowania znaczenia tekstu.
+
+Analiza częstotliwości
+Być może najbardziej oczywistym sposobem ustalenia tematów omówionych w dokumencie jest po prostu zliczenie liczby wystąpień każdego znormalizowanego tokenu. Założeniem jest to, że terminy, które są używane częściej w dokumencie, mogą pomóc zidentyfikować omówione tematy lub motywy. Mówiąc po prostu, jeśli możesz określić najczęściej używane słowa w danym dokumencie, często możesz uzyskać dobry pomysł na temat tego, co dotyczy dokumentu.
+
+Rozważmy na przykład następujący tekst:
+
+AI in modern business delivers transformative benefits by enhancing efficiency, decision-making, and customer experiences. Businesses can leverage AI to automate repetitive tasks, freeing employees to focus on strategic work, while predictive analytics and machine learning models enable data-driven decisions that improve accuracy and speed. AI-powered tools like Copilot streamline workflows across marketing, finance, and operations, reducing costs and boosting productivity. Additionally, intelligent applications personalize customer interactions, driving engagement and loyalty. By embedding AI into core processes, businesses benefit from the ability to innovate faster, adapt to market changes, and maintain a competitive edge in an increasingly digital economy.
+
+Po tokenizowaniu, normalizacji i zastosowaniu lemmatyzacji do tekstu częstotliwość każdego terminu może być liczone i tabelaryzowane; generując następujące częściowe wyniki:
+
+Termin	Częstotliwość
+ai	4
+business	3
+benefit	2
+customer	2
+decision	2
+market	2
+ability	1
+accuracy	1
+...\	...\
+Z tych wyników najczęściej występujące terminy wskazują, że w tekście omówiono sztuczną inteligencję i jej korzyści biznesowe.
+
+Częstotliwość terminów — odwrotna częstość dokumentu (TF-IDF)
+Prosta analiza częstotliwości, w której zliczasz liczbę wystąpień każdego tokenu, może być skutecznym sposobem na analizowanie pojedynczego dokumentu, ale kiedy trzeba odróżnić wiele dokumentów w ramach tego samego korpusu, potrzebujesz sposobu na ustalenie, które tokeny są najbardziej istotne w każdym z nich.
+
+Rozważmy na przykład następujące dwa przykłady tekstu:
+
+Przykład A:
+
+Microsoft Copilot Studio enables declarative AI agent creation using natural language, prompts, and templates. With this declarative approach, an AI agent is configured rather than programmed: makers define intents, actions, and data connections, then publish the agent to channels. Microsoft Copilot Studio simplifies agent orchestration, governance, and lifecycles so an AI agent can be iterated quickly. Using Microsoft Copilot Studio helps modern businesses deploy Microsoft AI agent solutions fast.
+
+Przykład B:
+
+Microsoft Foundry enables code‑based AI agent development with SDKs and APIs. Developers write code to implement agent conversations, tool calling, state management, and custom pipelines. In Microsoft Foundry, engineers can use Python or Microsoft C#, integrate Microsoft AI services, and manage CI/CD to deploy the AI agent. This code-first development model supports extensibility and performance while building Microsoft Foundry AI agent applications.
+
+Trzy najczęstsze terminy w tych przykładach przedstawiono w następujących tabelach:
+
+Przykład A:
+
+Termin	Częstotliwość
+agent	6
+ai	4
+microsoft	4
+Przykład B:
+
+Termin	Częstotliwość
+microsoft	5
+agent	4
+ai	4
+Jak widać w wynikach, najbardziej typowe słowa w obu próbkach są takie same ("agent", "Microsoft", i "AI"). Informuje nas to, że oba dokumenty obejmują podobny ogólny motyw, ale nie pomagają nam dyskryminować poszczególnych dokumentów. Badanie liczby rzadziej używanych terminów może pomóc, ale można łatwo sobie wyobrazić analizę korpusu opartą na dokumentacji sztucznej inteligencji firmy Microsoft, co spowodowałoby dużą liczbę terminów, które są wspólne we wszystkich dokumentach; utrudnia określenie określonych tematów omówionych w każdym dokumencie.
+
+Aby rozwiązać ten problem, częstotliwość terminów — odwrotna częstotliwość dokumentów (TF-IDF) to technika, która oblicza wyniki na podstawie częstotliwości wyświetlania wyrazu lub terminu w jednym dokumencie w porównaniu z bardziej ogólną częstotliwością w całej kolekcji dokumentów. Przy użyciu tej techniki przyjmuje się wysoki stopień istotności słów, które pojawiają się często w konkretnym dokumencie, ale stosunkowo rzadko w szerokim zakresie innych dokumentów. Aby obliczyć TF-IDF dla terminów w pojedynczym dokumencie, możesz użyć następującego procesu trzyetapowego:
+
+Oblicz częstotliwość terminów (TF): jest to po prostu ile razy wyraz pojawia się w dokumencie. Jeśli na przykład wyraz "agent" pojawia się 6 razy w dokumencie, to tf(agent) = 6.
+
+Calculate Inverse Document Frequency (IDF): sprawdza, jak często lub rzadko słowo znajduje się we wszystkich dokumentach. Jeśli wyraz pojawia się w każdym dokumencie, nie jest to specjalne. Formuła używana do obliczania IDF to idf(t) = log(N / df(t)) (gdzie N jest łączną liczbą dokumentów i df(t) jest liczbą dokumentów zawierających wyraz t)
+
+Połącz je, aby obliczyć tf-IDF: Pomnóż tf i IDF, aby uzyskać wynik: tfidf(t, d) = tf(t, d) * log(N / df(t))
+
+Wysoki wynik TF-IDF wskazuje, że wyraz pojawia się często w jednym dokumencie, ale rzadko w innych. Niski wynik wskazuje, że słowo jest powszechne w wielu dokumentach. W dwóch przykładach dotyczących agentów sztucznej inteligencji, ponieważ "AI", "Microsoft" i "agent" pojawiają się w obu próbkach (N = 2, df(t) = 2), ich IDF to log(2/2) = 0, więc nie mają dyskryminacyjnej wagi w TF-IDF. Trzy pierwsze wyniki TF-IDF dla próbek to:
+
+Przykład A:
+
+Termin	TF-IDF
+copilot	2.0794
+studio	2.0794
+declarative	1.3863
+Przykład B:
+
+Termin	TF-IDF
+code	2.0794
+develop	2.0794
+foundry	2.0794
+Z tych wyników jest jaśniejszy, że przykład A dotyczy tworzenia agenta deklaratywnego za pomocą narzędzia Copilot Studio, podczas gdy przykład B dotyczy tworzenia agentów opartych na kodzie w rozwiązaniu Microsoft Foundry.
+
+Techniki uczenia maszynowego "Bag-of-words"
+Bag-of-words to nazwa nadana technice wyodrębniania cech, która reprezentuje tokeny tekstowe jako wektor częstotliwości słów lub liczby wystąpień, pomijając gramatykę i kolejność wyrazów. Ta reprezentacja staje się danymi wejściowymi dla algorytmów uczenia maszynowego, takich jak Naive Bayes, klasyfikator probabilistyczny, który stosuje twierdzenie Bayesa w celu przewidywania prawdopodobnej klasy dokumentu na podstawie częstotliwości słów.
+
+Możesz na przykład użyć tej techniki do wytrenowania modelu uczenia maszynowego, który wykonuje filtrowanie spamu w wiadomościach e-mail. Słowa "miracle cure", "lose weight fast"i "anti-aging" mogą pojawiać się częściej w niepożądanych wiadomościach e-mail dotyczących wątpliwych produktów zdrowotnych niż zwykłe wiadomości e-mail, a wytrenowany model może oznaczać wiadomości zawierające te słowa jako potencjalny spam.
+
+Analizę tonacji można zaimplementować przy użyciu tej samej metody klasyfikowania tekstu według tonu emocjonalnego. Worek słów zawiera funkcje, a model używa tych funkcji do szacowania prawdopodobieństwa i przypisywania etykiet tonacji, takich jak "pozytywne" lub "negatywne".
+
+TextRank
+TextRank to nienadzorowany algorytm oparty na grafach, który modeluje tekst jako sieć połączonych węzłów. Na przykład każde zdanie w dokumencie może być traktowane jako węzeł, a połączenia (krawędzie) między nimi są oceniane na podstawie podobieństwa słów, które zawierają. Funkcja TextRank jest często używana do podsumowywania tekstu na podstawie identyfikowania podzbioru zdań w dokumencie, który najlepiej reprezentuje jego ogólny temat.
+
+Algorytm TextRank stosuje tę samą zasadę co algorytm PageRank firmy Google (który klasyfikuje strony internetowe na podstawie łączy między nimi) do tekstu. Kluczową ideą jest to, że zdanie jest ważne, jeśli jest podobne do wielu innych ważnych zdań. Algorytm działa w następujących krokach:
+
+Tworzenie grafu: każde zdanie staje się węzłem, a krawędzie łączące je są ważone podobieństwem (często mierzone za pomocą nakładających się wyrazów lub podobieństwa cosinus między wektorami zdań).
+
+Oblicz iteracyjne klasyfikacje: wynik każdego węzła jest obliczany na podstawie wyników węzłów połączonych z nim. Formuła to: TextRank(Sᵢ) = (1-d) + d * Σ(wⱼᵢ / Σwⱼₖ) * TextRank(Sⱼ) (gdzie d jest czynnikiem tłumienia, zazwyczaj 0,85, wⱼᵢ jest współczynnikiem wagi krawędzi od zdania j do zdania i, a suma iteruje po wszystkich zdaniach połączonych z i).
+
+Wyodrębnij zdania o najwyższej klasyfikacji: po zbieżności zdania z najwyższymi wynikami są wybierane jako podsumowanie.
+
+Rozważmy na przykład następujący dokument dotyczący przetwarzania w chmurze:
+
+Cloud computing provides on-demand access to computing resources. Computing resources include servers, storage, and networking. Azure is Microsoft's cloud computing platform. Organizations use cloud platforms to reduce infrastructure costs. Cloud computing enables scalability and flexibility.
+
+Aby wygenerować podsumowanie tego dokumentu, proces TextRank rozpoczyna się od podzielenia tego dokumentu na zdania:
+
+Cloud computing provides on-demand access to computing resources.
+Computing resources include servers, storage, and networking.
+Azure is Microsoft's cloud computing platform.
+Organizations use cloud platforms to reduce infrastructure costs.
+Cloud computing enables scalability and flexibility.
+Następnie krawędzie są tworzone między zdaniami z przypisanymi wagami na podstawie podobieństwa (zbieżność wyrazów). W tym przykładzie wagi krawędzi mogą być następujące:
+
+Zdanie 1 <-> Zdanie 2: 0,5 (udziały "computing resources")
+Zdanie 1 <—> Zdanie 3: 0,6 (akcje "cloud computing")
+Zdanie 1 <—> Zdanie 4: 0,2 (udostępnienia "cloud")
+Zdanie 1 <-> Zdanie 5: 0,7 (udziały "cloud computing")
+Zdanie 2 <—> zdanie 3: 0,2 (ograniczone nakładanie się)
+Zdanie 2 <—> zdanie 4: 0.1 (ograniczone nakładanie się)
+Zdanie 2 <—> Zdanie 5: 0,1 (udziały "computing")
+Zdanie 3 <> Zdanie 4: 0,5 (udziały "cloud platforms")
+Zdanie 3 <—> Zdanie 5: 0,4 (udziały "cloud computing")
+Zdanie 4 <—> zdanie 5: 0,3 (ograniczone nakładanie się)
+Diagram połączonych węzłów zdania.
+
+Po obliczeniu wyników TextRank iteracyjnie przy użyciu tych wag zdania 1, 3 i 5 mogą otrzymać najwyższe wyniki, ponieważ łączą się dobrze z innymi zdaniami za pomocą wspólnej terminologii i pojęć. Te zdania zostaną wybrane w celu utworzenia zwięzłego podsumowania: "Cloud computing provides on-demand access to computing resources. Azure is Microsoft's cloud computing platform. Cloud computing enables scalability and flexibility."
+
+ Notatka
+
+Generowanie podsumowania dokumentu przez wybranie najbardziej odpowiednich zdań jest formą podsumowania wyodrębniającego . W tym podejściu nie jest generowany żaden nowy tekst — podsumowanie składa się z podzbioru oryginalnego tekstu. Nowsze zmiany w modelowaniu semantycznym umożliwiają również podsumowanie abstrakcyjne , w którym jest generowany nowy język, który podsumowuje kluczowe motywy dokumentu źródłowego.
+
+TextRank można również stosować na poziomie wyrazów do ekstrakcji słów kluczowych, gdzie wyrazy (a nie zdania) stają się węzłami, a krawędzie reprezentują współwystępowanie w ustalonym oknie. Wyrazy o najwyższej klasyfikacji są wyodrębniane jako kluczowe terminy reprezentujące główne tematy dokumentu.
+
+Semantyczne modele językowe
+Ukończone
+100 pkt.
+4 min
+Wybieranie preferowanego formatu zawartości
+Ponieważ stan rozwoju NLP jest zaawansowany, zdolność do trenowania modeli, które uchwycają semantyczną relację między tokenami, doprowadziła do powstania potężnych modeli językowych głębokiego uczenia. W centrum tych modeli jest kodowanie tokenów języka jako wektorów (tablic wielowartościowych liczb) znanych jako embeddings.
+
+Takie podejście oparte na wektorach do modelowania tekstu stało się powszechne w przypadku technik takich jak Word2Vec i GloVe, w których tokeny tekstowe są reprezentowane jako gęste wektory z wieloma wymiarami. Podczas trenowania modelu wartości wymiarów są przypisywane w celu odzwierciedlenia semantycznych cech każdego tokenu na podstawie ich użycia w tekście trenowania. Relacje matematyczne między wektorami można następnie wykorzystać do wykonywania typowych zadań analizy tekstu wydajniej niż starsze techniki czysto statystyczne. Bardziej aktualnym postępem w tym podejściu jest użycie techniki zwanej attention, aby rozważyć każdy token w kontekście i obliczyć wpływ tokenów wokół niego. Wynikowe kontekstowe osadzanie, takie jak te znalezione w rodzinie modeli GPT, stanowią podstawę nowoczesnej sztucznej inteligencji generowania.
+
+Reprezentacja tekstu jako wektorów
+Wektory reprezentują punkty w przestrzeni wielowymiarowej zdefiniowanej przez współrzędne wzdłuż wielu osi. Każdy wektor opisuje kierunek i odległość od źródła. Semantycznie podobne tokeny powinny prowadzić do wektorów o podobnej orientacji — innymi słowy, wskazują w podobnych kierunkach.
+
+Rozważmy na przykład następujące trójwymiarowe osadzanie dla niektórych typowych słów:
+
+Słowo	Vector
+dog	[0.8, 0.6, 0.1]
+puppy	[0.9, 0.7, 0.4]
+cat	[0.7, 0.5, 0.2]
+kitten	[0.8, 0.6, 0.5]
+young	[0.1, 0.1, 0.3]
+ball	[0.3, 0.9, 0.1]
+tree	[0.2, 0.1, 0.9]
+Możemy zwizualizować te wektory w przestrzeni trójwymiarowej, jak pokazano poniżej:
+
+Diagram wizualizacji 3D wektorów wyrazów.
+
+Wektory dla "dog" i "cat" są podobne (zarówno zwierzęta domowe), jak i "puppy""kitten" (oba młode zwierzęta). Wyrazy "tree", "young"i ball" mają wyraźnie różne orientacje wektorów, odzwierciedlając ich różne znaczenia semantyczne.
+
+Cecha semantyczna zakodowana w wektorach umożliwia używanie operacji opartych na wektorach, które porównują wyrazy i umożliwiają porównania analityczne.
+
+Znajdowanie powiązanych terminów
+Ponieważ orientacja wektorów jest określana przez ich wartości wymiarów, wyrazy o podobnych znaczeniach semantycznych mają tendencję do podobnych orientacji. Oznacza to, że można użyć obliczeń, takich jak podobieństwo cosinusu między wektorami, aby dokonać znaczących porównań.
+
+Aby na przykład określić "element odstający" między "dog", "cat" i "tree", można obliczyć podobieństwo kosinusowe między parami wektorów. Podobieństwo cosinus jest obliczane jako:
+
+cosine_similarity(A, B) = (A · B) / (||A|| * ||B||)
+
+Gdzie A · B jest kropką i ||A|| jest wielkością wektora A.
+
+Obliczanie podobieństw między trzema wyrazami:
+
+dog [0.8, 0.6, 0.1] i cat [0.7, 0.5, 0.2]:
+
+Produkt kropkowy: (0,8 × 0,7) + (0,6 × 0,5) + (0,1 × 0,2) = 0,56 + 0,30 + 0,0,02 = 0,88
+dogWielkość : √(0,8² + 0,6² + 0,1²) = √(0,64 + 0,36 + 0,01) = √1,01 ≈ 1,005
+catWielkość : √(0,7² + 0,5² + 0,2²) = √(0,49 + 0,25 + 0,04) = √0,78 ≈ 0,883
+Podobieństwo cosinusu: 0,88 / (1,005 × 0,883) ≈ 0,992 (wysokie podobieństwo)
+dog [0.8, 0.6, 0.1] i tree [0.2, 0.1, 0.9]:
+
+Produkt kropkowy: (0,8 × 0,2) + (0,6 × 0,1) + (0,1 × 0,9) = 0,16 + 0,06 + 0,09 = 0,31
+treeWielkość : √(0,2² + 0,1² + 0,9²) = √(0,04 + 0,01 + 0,81) = √0,86 ≈ 0,927
+Podobieństwo cosinusu: 0,31 / (1,005 × 0,927) ≈ 0,333 (niskie podobieństwo)
+cat [0.7, 0.5, 0.2] i tree [0.2, 0.1, 0.9]:
+
+Produkt kropkowy: (0,7 × 0,2) + (0,5 × 0,1) + (0,2 × 0,9) = 0,14 + 0,05 + 0,18 = 0,37
+Podobieństwo kosinusowe: 0,37 / (0,883 × 0,927) ≈ 0,452 (niskie podobieństwo)
+Diagram wizualizujący podobieństwo cosinusowe, pokazujący wektory psa, kota i drzewa.
+
+Wyniki pokazują, że "dog" i "cat" są bardzo podobne (0,992), natomiast "tree" mają niższą podobieństwo do obu "dog" (0,333) i "cat" (0,452). Dlatego tree jest wyraźnie tym, który odstaje.
+
+Translacja wektorowa poprzez dodawanie i odejmowanie
+Można dodawać lub odejmować wektory, aby tworzyć nowe wyniki oparte na wektorach; które następnie mogą służyć do znajdowania tokenów z pasującymi wektorami. Ta technika umożliwia intuicyjną logikę opartą na arytmetyce w celu określenia odpowiednich terminów na podstawie relacji językowych.
+
+Na przykład, używając wcześniej zdefiniowanych wektorów:
+
+dog + young = [0.8, 0.6, 0.1] + [0.1, 0.1, 0.3] = [0.9, 0.7, 0.4] = puppy
+cat + young = [0.7, 0.5, 0.2] + [0.1, 0.1, 0.3] = [0.8, 0.6, 0.5] = kitten
+Diagram dodawania wektorów pokazujący pies + młody = szczeniak i kot + młody = kotek.
+
+Te operacje działają, ponieważ wektor dla "young" koduje semantyczną transformację od dorosłego zwierzęcia do jego młodego odpowiednika.
+
+ Notatka
+
+W praktyce arytmetyka wektorowa rzadko generuje dokładne dopasowania; Zamiast tego należy wyszukać słowo, którego wektor jest najbliżej (najbardziej podobny) do wyniku.
+
+Arytmetyka działa również odwrotnie:
+
+puppy - young = [0.9, 0.7, 0.4] - [0.1, 0.1, 0.3] = [0.8, 0.6, 0.1] = dog
+kitten - young = [0.8, 0.6, 0.5] - [0.1, 0.1, 0.3] = [0.7, 0.5, 0.2] = cat
+Analogiczne rozumowanie
+Arytmetyka wektorowa może również odpowiedzieć na pytania analogii, takie jak " ma się do , jak ma się do ?"
+
+Aby rozwiązać ten problem, oblicz następujące elementy: kitten - puppy + dog
+
+[0.8, 0.6, 0.5] - [0.9, 0.7, 0.4] + [0.8, 0.6, 0.1]
+= [-0.1, -0.1, 0.1] + [0.8, 0.6, 0.1]
+= [0.7, 0.5, 0.2]
+= cat
+Diagram arytmetyki wektorowej pokazujący kociak - szczeniak + pies = kot.
+
+W tych przykładach pokazano, jak operacje wektorów mogą przechwytywać relacje językowe i umożliwiać wnioskowanie o wzorcach semantycznych.
+
+Używanie modeli semantycznych do analizy tekstu
+Modele semantyczne oparte na wektorach zapewniają zaawansowane możliwości wielu typowych zadań analizy tekstu.
+
+Podsumowanie tekstu
+Osadzanie semantyczne umożliwia podsumowanie ekstrakcyjne, identyfikując zdania z wektorami, które są najbardziej reprezentatywne dla całego dokumentu. Kodując każde zdanie jako wektor (często przez uśrednianie lub buforowanie osadzonych wyrazów składowych), można obliczyć, które zdania są najbardziej kluczowe dla znaczenia dokumentu. Te centralne zdania można wyodrębnić w celu utworzenia podsumowania, które przechwytuje kluczowe motywy.
+
+Ekstrakcja słów kluczowych
+Podobieństwo wektorów może zidentyfikować najważniejsze terminy w dokumencie, porównując osadzanie każdego wyrazu z ogólną reprezentacją semantyczną dokumentu. Wyrazy, których wektory są najbardziej podobne do wektora dokumentu lub najbardziej centralne podczas rozważania wszystkich wektorów wyrazów w dokumencie, mogą być kluczowymi terminami reprezentującymi główne tematy.
+
+Rozpoznawanie jednostek nazwanych
+Modele semantyczne można dostosować do rozpoznawania nazwanych jednostek (osób, organizacji, lokalizacji itp.) przez reprezentacje wektorów uczenia, które łączą podobne typy jednostek. Podczas wnioskowania model sprawdza osadzanie każdego tokenu i jego kontekst, aby określić, czy reprezentuje nazwę jednostki, a jeśli tak, jaki typ.
+
+Klasyfikacja tekstu
+W przypadku zadań takich jak analiza tonacji lub kategoryzacja tematów dokumenty mogą być reprezentowane jako wektory agregujące (takie jak średnia wszystkich wyrazów osadzonych w dokumencie). Te wektory dokumentów mogą być następnie używane jako funkcje klasyfikatorów uczenia maszynowego lub porównywane bezpośrednio z wektorami prototypów klas w celu przypisania kategorii. Ze względu na to, że podobne dokumenty mają podobne orientacje wektorów, takie podejście skutecznie grupuje powiązaną zawartość i rozróżnia różne kategorie.
+
+Mowa jest jednym z najbardziej naturalnych sposobów komunikowania się ludzi i zapewniania możliwości mowy aplikacjom sztucznej inteligencji tworzy bardziej intuicyjne, dostępne i angażujące środowiska użytkownika. Niezależnie od tego, czy tworzysz asystenta głosowego, tworzysz dostępne aplikacje, czy opracowujesz agentów konwersacyjnej sztucznej inteligencji, zrozumienie technologii mowy jest niezbędne dla nowoczesnych rozwiązań sztucznej inteligencji.
+
+W tym module zapoznasz się z dwiema podstawowymi funkcjami rozpoznawania mowy, które umożliwiają korzystanie z głosu w aplikacjach: rozpoznawanie mowy (konwertowanie wyrazów mówionych na tekst) i syntezę mowy (konwertowanie tekstu na naturalnie brzmiącą mowę). Dowiesz się, jak te technologie współpracują ze sobą, aby tworzyć bezproblemowe interakcje głosowe i dowiedzieć się więcej o rzeczywistych scenariuszach, w których mowa może przekształcać środowiska użytkownika.
+
+Rozwiązania z obsługą mowy
+Ukończone
+100 pkt.
+2 min
+Wybieranie preferowanego formatu zawartości
+Możliwości mowy przekształcają sposób interakcji użytkowników z aplikacjami i agentami sztucznej inteligencji. Rozpoznawanie mowy konwertuje słowa mówione na tekst, podczas gdy synteza mowy generuje naturalnie brzmiący dźwięk na podstawie tekstu. Razem te technologie umożliwiają bezobsługowe działanie, zwiększanie ułatwień dostępu i tworzenie bardziej naturalnych środowisk konwersacyjnych.
+
+Integrowanie mowy z rozwiązaniami sztucznej inteligencji ułatwia:
+
+Rozwiń ułatwienia dostępu: służyć użytkownikom z wadami wzrokowymi lub wyzwaniami w zakresie mobilności.
+Zwiększ produktywność: włącz wielozadaniowość, usuwając potrzebę korzystania z klawiatur i ekranów.
+Ulepszanie środowiska użytkownika: twórz naturalne konwersacje, które czują się bardziej ludzkie i angażujące.
+Docieraj do odbiorców globalnych: obsługa wielu języków i dialektów regionalnych.
+Typowe scenariusze rozpoznawania mowy
+Rozpoznawanie mowy, nazywane również zamianą mowy na tekst, nasłuchuje danych wejściowych dźwiękowych i transkrybuje je do tekstu pisanego. Ta funkcja zapewnia szeroką gamę aplikacji biznesowych i konsumenckich.
+
+Obsługa klienta i pomoc techniczna
+Centra usług używają rozpoznawania mowy do:
+
+Transkrypcja połączeń klientów w czasie rzeczywistym w celu uzyskania informacji o agencie i zapewnienia jakości.
+Kierowanie rozmówców do odpowiedniego działu w oparciu o to, co mówią.
+Analizuj tonację rozmów i identyfikuj typowe problemy klientów.
+Tworzenie rejestrów połączeń, które można przeszukiwać w celu przestrzegania przepisów i szkolenia.
+Wartość biznesowa: zmniejsza ręczne wykonywanie notatek, poprawia dokładność odpowiedzi i przechwytuje szczegółowe informacje, które zwiększają jakość usług.
+
+Asystentzy i agenci aktywowani głosowo
+Asystenci wirtualni i agenci sztucznej inteligencji polegają na rozpoznawaniu mowy, aby:
+
+Akceptowanie poleceń głosowych w celu bezproblemowego sterowania urządzeniami i aplikacjami.
+Odpowiedz na pytania przy użyciu interpretacji języka naturalnego.
+Wykonywanie zadań, takich jak ustawianie przypomnień, wysyłanie wiadomości lub wyszukiwanie informacji.
+Sterowanie inteligentnymi urządzeniami domowymi, systemami motoryzacyjnymi i technologią do noszenia.
+Wartość biznesowa: zwiększa zaangażowanie użytkowników, upraszcza złożone przepływy pracy i umożliwia działanie w sytuacjach, gdy ekrany nie są praktyczne.
+
+Transkrypcja spotkania i wywiadu
+Organizacje transkrybują konwersacje do:
+
+Utwórz notatki ze spotkania z możliwością wyszukiwania i listy elementów akcji.
+Zapewnij napisy w czasie rzeczywistym dla uczestników, którzy są głusi lub niedosłyszący.
+Generuj podsumowania wywiadów, grup fokusowych i sesji badawczych.
+Wyodrębnij kluczowe punkty dyskusji na potrzeby dokumentacji i kontynuacji.
+Wartość biznesowa: pozwala zaoszczędzić godziny pracy ręcznej transkrypcji, zapewnia dokładne rekordy i sprawia, że zawartość mówiona jest dostępna dla wszystkich użytkowników.
+
+Dokumentacja opieki zdrowotnej
+Specjaliści kliniczni używają rozpoznawania mowy do:
+
+Dyktowanie notatek pacjentów bezpośrednio do elektronicznych dokumentacji zdrowia.
+Aktualizowanie planów leczenia bez przerywania opieki nad pacjentem.
+Zmniejsz obciążenia administracyjne i zapobiegaj wypaleniu lekarzy.
+Zwiększ dokładność dokumentacji, przechwytując szczegóły w tej chwili.
+Wartość biznesowa: zwiększa czas dostępny dla opieki nad pacjentem, poprawia kompletność rekordów i zmniejsza błędy dokumentacji.
+
+Typowe scenariusze syntezy mowy
+Synteza mowy, nazywana również zamianą tekstu na mowę, konwertuje napisany tekst na dźwięk mówiony. Technologia ta tworzy głosy dla aplikacji, które muszą przekazywać informacje w formie dźwiękowej.
+
+Konwersacyjna sztuczna inteligencja i czatboty
+Agenci sztucznej inteligencji używają syntezy mowy do:
+
+Odpowiadanie użytkownikom na głosy brzmiące naturalnie zamiast wymagać od nich odczytywania tekstu.
+Twórz spersonalizowane interakcje, dostosowując ton, tempo i styl mówienia.
+Obsługa zapytań klientów za pośrednictwem kanałów głosowych, takich jak systemy telefoniczne.
+Zapewnij spójne doświadczenia marki w interfejsach głosowych i tekstowych.
+Wartość biznesowa: sprawia, że agenci sztucznej inteligencji są bardziej przystępni, zmniejszają nakład pracy klientów i rozszerzają dostępność usług do kanałów tylko do głosu.
+
+Ułatwienia dostępu i konsumpcja treści
+Aplikacje generują dźwięk do:
+
+Przeczytaj zawartość internetową, artykuły i dokumenty na głos dla użytkowników niedowidzących.
+Obsługa użytkowników z niepełnosprawnością czytania, takich jak dysleksja.
+Włącz konsumowanie treści podczas jazdy, ćwiczeń lub wykonywania innych zadań.
+Udostępniaj alternatywy audio dla interfejsów z dużą liczbą tekstu.
+Wartość biznesowa: rozszerza zasięg odbiorców, demonstruje zaangażowanie w włączenie i zwiększa zadowolenie użytkowników.
+
+Powiadomienia i alerty
+Systemy używają syntezy mowy do:
+
+Ogłaszaj ważne alerty, przypomnienia i aktualizacje stanu.
+Podaj instrukcje nawigacji w aplikacjach mapowania i GPS.
+Dostarczaj informacje wrażliwe na czas bez konieczności przeglądania ekranów przez użytkowników.
+Komunikowanie stanu systemu w środowiskach przemysłowych i operacyjnych.
+Wartość biznesowa: zapewnia, że krytyczne informacje docierają do użytkowników nawet wtedy, gdy uwaga wzrokowa nie jest dostępna, co zwiększa bezpieczeństwo i reaktywność.
+
+E-learning i szkolenia
+Platformy edukacyjne używają syntezy mowy do:
+
+Tworzenie opowiadanych lekcji i treści kursów bez studiów nagraniowych.
+Podaj przykłady wymowy na potrzeby uczenia się języka.
+Generowanie wersji audio materiałów napisanych dla różnych preferencji szkoleniowych.
+Skalowanie produkcji zawartości w wielu językach.
+Wartość biznesowa: zmniejsza koszty tworzenia zawartości, obsługuje różne style nauki i przyspiesza harmonogramy programowania kursów.
+
+Rozrywka i media
+Twórcy zawartości używają syntezy mowy do:
+
+Generowanie głosów postaci dla gier i interaktywnych doświadczeń.
+Twórz wersje robocze podcastów i prototypy audiobooków.
+Twórz głosy na potrzeby filmów wideo i prezentacji.
+Personalizuj zawartość audio na podstawie preferencji użytkownika.
+Wartość biznesowa: obniża koszty produkcji, umożliwia szybkie tworzenie prototypów i tworzenie dostosowanych środowisk na dużą skalę.
+
+Łączenie rozpoznawania mowy i syntezy
+Najbardziej zaawansowane aplikacje obsługujące mowę łączą obie możliwości w celu tworzenia środowisk konwersacyjnych:
+
+Obsługa klienta oparta na głosach: Agenci słuchają pytań (rozpoznawania), przetwarzają żądanie i odpowiadają przy użyciu przydatnych odpowiedzi (synteza).
+Systemy interakcyjnej odpowiedzi głosowej (IVR): osoby wywołujące mówią o swoich potrzebach, a system prowadzi ich przez opcje przy użyciu naturalnego dialogu.
+Aplikacje do uczenia językowego: Uczniowie mówią frazy praktyczne (rozpoznawanie), a system udostępnia opinie i poprawki (synteza).
+Pojazdy sterowane głosem: Kierowcy dają polecenia bez użycia rąk (rozpoznawanie), a system potwierdza działania i przekazuje aktualizacje (synteza).
+Te połączone scenariusze tworzą płynne, dwukierunkowe rozmowy, które wydają się naturalne i zmniejszają tarcie, które użytkownicy odczuwają w pracy z tradycyjnymi interfejsami.
+
+ Napiwek
+
+Zacznij od funkcjonalności dotyczącej jednej umiejętności mowy skupiającej się na scenariuszu o najwyższej wartości. Udowodnij, że koncepcja działa przed rozszerzeniem na bardziej złożone przepływy konwersacyjne.
+
+Kluczowe zagadnienia przed zaimplementowaniem technologii mowy
+Przed dodaniem możliwości mowy do aplikacji należy ocenić następujące czynniki:
+
+Wymagania dotyczące jakości dźwięku: szum w tle, jakość mikrofonu i przepustowość sieci wpływają na dokładność rozpoznawania mowy.
+Obsługa języków i dialektów: sprawdź, czy obsługiwane są języki docelowe i odmiany regionalne.
+Prywatność i zgodność: dowiedz się, jak dane audio są przetwarzane, przechowywane i chronione w celu spełnienia wymagań prawnych.
+Oczekiwania dotyczące opóźnień: Konwersacje w czasie rzeczywistym wymagają przetwarzania o niskiej latencji, podczas gdy transkrypcja wsadowa może tolerować opóźnienia.
+Standardy dostępności: Upewnij się, że implementacja głosowa spełnia wytyczne WCAG i nie tworzy barier dla niektórych użytkowników.
+
+Rozpoznawanie mowy
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Rozpoznawanie mowy, nazywane również zamianą mowy na tekst, umożliwia aplikacjom konwertowanie języka mówionego na tekst pisany. Podróż od fali dźwiękowej do tekstu obejmuje sześć skoordynowanych etapów: przechwytywanie dźwięku, przygotowywanie funkcji, modelowanie wzorców akustycznych, stosowanie reguł języka, dekodowanie najbardziej prawdopodobnych słów i udoskonalanie końcowych danych wyjściowych.
+
+Przechwytywanie dźwięku: konwertowanie dźwięku analogowego na cyfrowy
+Rozpoznawanie mowy rozpoczyna się, gdy mikrofon konwertuje fale dźwiękowe na sygnał cyfrowy. System próbkuje analogowy dźwięk tysięcy razy na sekundę — zazwyczaj 16 000 próbek na sekundę (16 kHz) dla aplikacji mowy — i przechowuje każdy pomiar jako wartość liczbową.
+
+Diagram kształtów fal dźwiękowych.
+
+ Notatka
+
+Dlaczego częstotliwość próbkowania ma znaczenie:
+
+Wyższe szybkości (na przykład 44,1 kHz dla muzyki) przechwytują więcej szczegółów, ale wymagają więcej przetwarzania.
+Rozpoznawanie mowy równoważy jasność i wydajność przy 8 kHz do 16 kHz.
+Szum tła, jakość mikrofonu i odległość od głośnika bezpośrednio wpływają na dokładność podrzędną.
+Przed przejściem do następnego etapu system często stosuje podstawowe filtry w celu usunięcia szumów, kliknięć lub innych szumów tła, które mogą mylić model.
+
+Przetwarzanie wstępne: wyodrębnianie znaczących funkcji
+Nieprzetworzone przykłady audio zawierają zbyt wiele informacji na potrzeby wydajnego rozpoznawania wzorców. Przetwarzanie wstępne przekształca kształt fali w kompaktową reprezentację, która wyróżnia cechy mowy, jednocześnie odrzucając nieistotne szczegóły, takie jak głośność bezwzględna.
+
+Współczynniki cepstralne Mel-Frequency (MFCC)
+MFCC jest najczęstszą techniką wyodrębniania cech w rozpoznawaniu mowy. Naśladuje to, jak ludzkie ucho postrzega dźwięk, podkreślając częstotliwości, w których energia mowy koncentruje się i kompresuje mniej ważne zakresy.
+
+Jak działa MFCC
+Podziel dźwięk na ramki: Podziel sygnał na nakładające się okna 20–30 milisekund.
+Zastosuj przekształcenie Fouriera: Przekonwertuj każdą ramkę z domeny czasowej na domenę częstotliwości, ujawniając, które tony są obecne.
+Mapowanie na skalę mel: Dopasowanie przedziałów częstotliwości do czułości słuchu ludzkiego — lepiej rozróżniamy niskie tony niż wysokie.
+Wyodrębnij współczynniki: Oblicz niewielki zestaw liczb (często 13 współczynników), które podsumowują spektralny kształt każdej ramki.
+Diagram mapy funkcji MFCC.
+
+Wynikiem jest sekwencja wektorów funkcji — jedna na ramkę — która przechwytuje, jak brzmi dźwięk audio bez przechowywania każdej próbki. Te wektory stają się danymi wejściowymi do modelowania akustycznego.
+
+Wektory są wyodrębniane według kolumn, z każdym wektorem reprezentującym 13 wartości współczynników cech MFCC dla każdego przedziału czasu:
+
+Frame 1: [ -113.2,  45.3,  12.1,  -3.4,  7.8,  ... ]  # 13 coefficients
+Frame 2: [ -112.8,  44.7,  11.8,  -3.1,  7.5,  ... ]
+Frame 3: [ -110.5,  43.9,  11.5,  -2.9,  7.3,  ... ]
+Modelowanie akustyczne: Rozpoznawanie fonemów
+Modele akustyczne uczą się relacji między funkcjami audio i phonemami — najmniejszymi jednostkami dźwięku, które odróżniają słowa. Angielski używa około 44 fonezy; na przykład słowo "cat" zawiera trzy fonemy: /k/, /æ/, i /t/.
+
+Od funkcji po fonemy
+Nowoczesne modele akustyczne używają architektury transformerów, typu sieci uczenia głębokiego, które wyróżniają się w zadaniach sekwencyjnych. Transformator przetwarza wektory cech MFCC i przewiduje, który fonem jest najbardziej prawdopodobny w każdym momencie.
+
+Modele transformatorowe umożliwiają efektywne przewidywanie fonemów dzięki:
+
+Mechanizm koncentracji uwagi: Model analizuje otaczające ramki, aby rozwiązać niejednoznaczność. Na przykład fonem /t/ brzmi inaczej na początku "top" w porównaniu z końcem "bat."
+Przetwarzanie równoległe: W przeciwieństwie do starszych modeli cyklicznych transformatory analizują wiele ramek jednocześnie, zwiększając szybkość i dokładność.
+Kontekstowe przewidywania: Sieć uczy się, że niektóre sekwencje phoneme występują często w naturalnej mowie.
+Wyjście modelowania akustycznego jest rozkładem prawdopodobieństwa dla fonemów dla każdej ramki audio. Na przykład ramka 42 może pokazywać 80% ufności dla /æ/, 15% dla /ɛ/, a 5% dla innych fonemów.
+
+ Notatka
+
+Phonemes są specyficzne dla języka. Model wyszkolony na angielskich fonemach nie może rozpoznać mandaryńskich tonów bez ponownego trenowania.
+
+Modelowanie języka: przewidywanie sekwencji słów
+Przewidywania fonemów same w sobie nie gwarantują dokładnej transkrypcji. Model akustyczny może mylić słowa "ich" i "tam", ponieważ mają identyczne fonemy. Modele językowe rozpoznają niejednoznaczność, stosując wiedzę na temat słownictwa, gramatyki i typowych wzorców słów. Oto kilka sposobów, w których model prowadzi przewidywanie sekwencji wyrazów:
+
+Wzorce statystyczne: Model wie, że "Pogoda jest ładna" pojawia się częściej w danych treningowych niż "Czy jest miło".
+Rozpoznawanie kontekstu: Po usłyszeniu "Muszę", model oczekuje czasowników, takich jak "iść" lub "skończyć", a nie rzeczowników, takich jak "stół".
+Adaptacja domeny: Niestandardowe modele językowe przeszkolone w terminologii medycznej lub prawnej zwiększają dokładność wyspecjalizowanych scenariuszy.
+Dekodowanie: wybierz najlepszą hipotezę tekstową
+Algorytmy dekodowania wyszukują miliony możliwych sekwencji słów, aby znaleźć transkrypcję, która najlepiej odpowiada przewidywaniom modelu akustycznego i językowego. Ten etap równoważy dwa konkurencyjne cele: zachowanie wierności sygnałowi audio podczas tworzenia czytelnego, gramatycznego poprawnego tekstu.
+
+Dekodowanie za pomocą algorytmu przeszukiwania wiązki
+Najbardziej typowa technika, wyszukiwanie belki, utrzymuje krótką listę ("belkę") najlepszych częściowych transkrypcji w trakcie przetwarzania każdej ramki audio. Na każdym kroku rozszerza każdą hipotezę o najbardziej prawdopodobne kolejne słowo, przycina ścieżki o niskiej punktacji i zachowuje tylko najlepszych kandydatów.
+
+W przypadku trzysekundowej wypowiedzi dekoder może ocenić tysiące hipotez przed wybraniem opcji "Proszę wysłać raport do piątku" nad alternatywami, takimi jak "Proszę wysłać raport kup piątek".
+
+ Uwaga
+
+Dekodowanie jest wymagające dużych zasobów obliczeniowych. Aplikacje w czasie rzeczywistym równoważą dokładność i opóźnienia przez ograniczenie szerokości belki i głębokości hipotezy.
+
+Przetwarzanie końcowe: uściślij dane wyjściowe
+Dekoder tworzy nieprzetworzonego tekstu, który często wymaga czyszczenia przed prezentacją. Przetwarzanie końcowe stosuje reguły formatowania i poprawki w celu zwiększenia czytelności i dokładności.
+
+Typowe zadania po przetwarzaniu
+Kapitalizacja: Przekonwertuj frazę "hello my name is sam" na "Hello my name is Sam."
+Przywracanie interpunkcyjne: Dodaj kropki, przecinki i znaki zapytania na podstawie prosody i gramatyki.
+Formatowanie liczb: Zmień wartość "jeden tysiąc dwudziestu trzech" na "1023".
+Filtrowanie wulgaryzmów: Maskuj lub usuwaj nieodpowiednie słowa, jeśli są wymagane przez zasady.
+Odwrotna normalizacja tekstu: Przekonwertuj formy mówione, takie jak "trzy p m" na "3 PM".
+Ocenianie ufności: Oznaczaj słowa o niskiej pewności do przeglądu przez człowieka w krytycznych zastosowaniach, takich jak transkrypcja medyczna.
+Usługa Azure Speech zwraca końcową transkrypcję wraz z metadanymi, takimi jak znaczniki czasowe na poziomie słów oraz oceny pewności, co pozwala aplikacji na wyróżnianie niepewnych segmentów lub uruchamianie działań awaryjnych.
+
+Jak elementy potoku współpracują ze sobą
+Każdy etap jest oparty na poprzednim etapie:
+
+Przechwytywanie audio zapewnia nieprzetworzone sygnały.
+Przetwarzanie wstępne wyodrębnia funkcje MFCC, które podkreślają wzorce mowy.
+Modelowanie akustyczne przewiduje prawdopodobieństwa fonemów przy użyciu sieci transformerów.
+Modelowanie języka stosuje słownictwo i gramatykę.
+Dekodowanie wyszukuje najlepszą sekwencję wyrazów.
+Przetwarzanie końcowe formatuje tekst dla czytelników ludzkich.
+Oddzielając obawy, nowoczesne systemy rozpoznawania mowy osiągają wysoką dokładność w różnych językach, akcentach i warunkach akustycznych. Gdy jakość transkrypcji spada, często można dojść do jednego etapu problemu — słabe przechwytywanie dźwięku, niewystarczające szkolenie modelu językowego lub zbyt agresywne przetwarzanie końcowe — i odpowiednio je dostosować.
+
+Synteza mowy
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Synteza mowy — nazywana również zamianą tekstu na mowę (TTS) — konwertuje tekst pisany na dźwięk mówiony. Spotykasz się z syntezą mowy, gdy asystenci wirtualni odczytują powiadomienia, aplikacje nawigacyjne ogłaszają wskazówki, a narzędzia ułatwień dostępu pomagają użytkownikom słuchać treści pisanych.
+
+Systemy syntezy mowy przetwarzają tekst przez cztery odrębne etapy. Każdy etap przekształca dane wejściowe przyrostowo, tworząc ostateczny kształt fal dźwięku, który brzmi naturalnie i zrozumiało.
+
+Normalizacja tekstu: standaryzacja tekstu
+Normalizacja tekstu przygotowuje nieprzetworzony tekst do wymowy, przekształcając skróty, liczby i symbole do form mówionych.
+
+Rozważ zdanie: "Dr Smith zamówił 3 przedmioty za 25,50 dolarów w dniu 12/15/2023."
+
+System normalizacji konwertuje go na: "Doktor Smith zamówił trzy przedmioty za kwotę dwudziestu pięciu dolarów i pięćdziesięciu centów piętnastego grudnia dwa tysiące dwudziestego trzeciego roku."
+
+Typowe zadania normalizacji obejmują:
+
+Rozszerzanie skrótów ("Dr." staje się "Doctor", "Inc." staje się "Incorporated")
+Konwertowanie liczb na wyrazy ("3" staje się "trzy", "25,50" staje się "dwadzieścia pięć punktów pięć zero")
+Obsługa dat i godzin ("12/15/2023" staje się "grudzień piętnaście, dwa tysiące dwudziestu trzech")
+Przetwarzanie symboli i znaków specjalnych ("$" staje się "dolarami", "@" staje się "at")
+Rozpoznawanie homografów na podstawie kontekstu ("czyta" jako czas teraźniejszy w porównaniu z "czytał" jako czas przeszły)
+Normalizacja tekstu uniemożliwia systemowi wymawianie nieprzetworzonych symboli lub cyfr, co spowodowałoby nienaturalne lub niezrozumiałe dane wyjściowe.
+
+ Napiwek
+
+Różne domeny wymagają wyspecjalizowanych reguł normalizacji. Tekst medyczny obsługuje nazwy leków i dawki inaczej niż tekst finansowy obsługuje walutę i procenty.
+
+Analiza lingwistyczna: Mapowanie tekstu na fonemy
+Analiza językowa dzieli znormalizowany tekst na fonemy (najmniejsze jednostki dźwięku) i określa, jak wymawiać każde słowo. Etap analizy językowej:
+
+Dzieli tekst na słowa i sylaby.
+Wyszukuje wymowę wyrazów w leksykonach (słowniki wymowy).
+Stosuje reguły G2P lub modele neuronowe do obsługi nieznanych słów.
+Oznacza granice sylab i identyfikuje akcentowane sylaby.
+Określa kontekst fonetyczny dla sąsiednich dźwięków.
+Konwersja grafu na phoneme
+Konwersja grapheme-to-phoneme (G2P) mapuje zapisane litery (grafemy) na dźwięki wymowy (fonemy). Pisownia angielska nie wskazuje niezawodnie wymowy, dlatego systemy G2P używają zarówno reguł, jak i wyuczonych wzorców.
+
+Przykład:
+
+Słowo "choć" przekształca się na /θoʊ/
+Słowo "through" wymawia się jako /θruː/
+Angielskie słowo "cough" konwertuje na /kɔːf/
+Każde słowo zawiera litery "ough", ale wymowa różni się dramatycznie.
+
+Nowoczesne systemy G2P używają sieci neuronowych wyszkolonych w słownikach wymowy. Modele te uczą się wzorców między pisownią a dźwiękiem, radzą sobie z nietypowymi słowami, nazwami własnymi i regionalnymi wariacjami języka bardziej elegancko niż systemy oparte na regułach.
+
+Podczas określania fonemów analiza lingwistyczna często używa modelu przekształcania , aby ułatwić rozważenie kontekstu. Na przykład słowo "read" jest wymawiane inaczej w "I read books" (czas teraźniejszy: /riːd/) w porównaniu do "I read that book yesterday" (czas przeszły: /rɛd/).
+
+Generowanie prosody: określanie wymowy
+Prosodia odnosi się do rytmu, akcentu i wzorców intonacji, które sprawiają, że mowa brzmi naturalnie. Generacja prozodii określa jak powiedzieć słowa, a nie tylko które dźwięki trzeba wytworzyć.
+
+Elementy prosodii
+Prosody obejmuje kilka cech wokalnych:
+
+Kontury intonacyjne: Rosnące lub opadające wzorce intonacyjne, które sygnalizują pytania w porównaniu z oznajmieniami.
+Czas trwania: Jak długo trzymać dźwięk, tworząc nacisk i naturalny rytm
+Intensywność: wariacje głośności, które podkreślają ważne słowa
+Pauzy: przerwy między frazami lub zdaniami, które pomagają w zrozumieniu
+Wzorce stresu: Które sylaby otrzymują nacisk w słowach i zdaniach
+Prosody ma znaczący wpływ na sposób interpretowania tekstu mówionego. Rozważmy na przykład, jak następujące zdanie zmienia znaczenie w zależności od tego, która sylaable lub wyraz jest podkreślony:
+
+"Nigdy nie powiedziałem , że jedł ciasto."
+"Nigdy nie powiedziałem, że jedł ciasto."
+"Nigdy nie powiedziałem, że jedł ciasto."
+"Nigdy nie powiedziałem, że jedł ciasto."
+Przewidywanie prozodii oparte na modelu Transformer
+Nowoczesne systemy syntezy mowy używają sieci neuronowych typu transformer w celu przewidywania prozodii. Funkcja Transformers wyróżnia się w zrozumieniu kontekstu w obrębie całych zdań, a nie tylko sąsiednich wyrazów.
+
+Proces generowania prosody
+Kodowanie wejściowe: transformator odbiera sekwencję fonemy z cechami językowymi (interpunkcja, część mowy, struktura zdań)
+Analiza kontekstowa: Mechanizmy samo-uwagi identyfikują relacje między wyrazami (na przykład który rzeczownik jest referencją dla zaimka, gdzie są granice zdań)
+Przewidywanie prozodii: model generuje przewidywane wartości dla wysokości tonu, czasu i energii dla każdego fonemu
+Czynniki stylu: system uważa styl mówienia (neutralny, ekspresyjny, konwersacyjny) i cechy osoby mówiącej
+Transformery przewidują prozodię, ucząc się z tysięcy godzin nagranej mowy połączonej z transkrypcjami. Model odkrywa wzorce: pytania rosną w tonie na końcu, przecinki sygnalizują krótkie przerwy, podkreślane słowa nieco się wydłużają, a słowa końcowe zdania często spadają w tonie.
+
+Czynniki wpływające na wybory prozodyjne
+Składnia: Granice zdania wskazują, gdzie należy zrobić pauzę
+Semantyka: ważne pojęcia otrzymują nacisk
+Kontekst rozmowy: Kontrastujące informacje lub odpowiedzi na pytania mogą nieść dodatkowy nacisk
+Tożsamość osoby mówiącej: Każdy głos ma charakterystyczny zakres tonacji oraz tempo mówienia
+Emocjonalny ton: Podniecenie, troska lub neutralność kształtują prozodyczne wzorce
+Przewidywania prosody tworzą specyfikację docelową: "Wyprodukować fonem /æ/ przy 180 Hz przez 80 milisekund z umiarkowaną intensywnością, a następnie wstrzymać się na 200 milisekund."
+
+ Ważne
+
+Intonacja znacząco wpływa na naturalność. Mowa brzmiąca jak robot często wynika z płaskiej, monotonnej prozodii — a nie z niedoskonałej wymowy fonemów.
+
+Synteza mowy: generowanie dźwięku
+Synteza mowy generuje końcowy kształt fali audio na podstawie sekwencji phoneme i specyfikacji prosody.
+
+Metody generowania kształtów falowych
+Nowoczesne systemy używają neuronowych vocoderów — modeli uczenia głębokiego, które bezpośrednio generują próbki audio. Popularne architektury vocoder obejmują WaveNet, WaveGlow i HiFi-GAN.
+
+Proces syntezy
+Generowanie cech akustycznych: model akustyczny (często transformator) konwertuje fonemy i cele prozodyczne na mel-spektrogramy, które są wizualnymi reprezentacjami częstotliwości dźwięku w czasie
+Vocoder: neuronowy vocoder konwertuje melspektrogramy na surowe fale dźwiękowe (sekwencje wartości intensywności przy 16 000–48 000 próbek na sekundę)
+Przetwarzanie końcowe: system stosuje filtrowanie, normalizację lub efekty dźwiękowe w celu dopasowania do specyfikacji wyjściowych docelowych
+ Notatka
+
+Co sprawia, że neuronowe wokodery są skuteczne?
+
+Wysoka dokładność: Generowanie jakości dźwięku zbliżających się do nagrań studyjnych
+Naturalność: Przechwyć subtelne cechy wokalne, takie jak oddech i jakość głosu
+Wydajność: generowanie w czasie rzeczywistym na nowoczesnym sprzęcie (ważne dla aplikacji interaktywnych)
+Elastyczność: dostosowywanie się do różnych osób mówiących, języków i stylów mówienia
+Vocoder zasadniczo wykonuje odwrotność tego, co robi automatyczne rozpoznawanie mowy — podczas gdy rozpoznawanie mowy konwertuje dźwięk na tekst, vocoder konwertuje reprezentacje językowe na dźwięk.
+
+Pełny potok przetwarzania w działaniu
+Gdy poprosisz o syntezę mowy na spotkanie dr Chena o godzinie 15:00":
+
+Normalizacja tekstu rozszerza go do "Wizyta Doktora Chena jest na godzinę trzecią po południu"
+Analiza lingwistyczna konwertuje ją na fonemy: /ˈdɑktər ˈtʃɛnz əˈpɔɪntmənt ɪz æt θri əˈklɑk pi ɛm/
+Generowanie prozodii przewiduje, że tonacja leci nieco do góry na "spotkanie", pauza po "jest", i nacisk na "trzy".
+Synteza mowy generuje kształt fali audio pasujący do tych specyfikacji
+Cały proces zazwyczaj kończy się w ciągu jednej sekundy na nowoczesnym sprzęcie.
+
+W tym module przedstawiono podstawowe technologie mowy, które umożliwiają naturalne interakcje głosowe w aplikacjach sztucznej inteligencji. Wiesz już, jak rozpoznawanie mowy konwertuje słowa mówione na tekst i jak synteza mowy generuje dźwięk podobny do człowieka z napisanej zawartości.
+
+W tym module znaleziono następujące elementy:
+
+Scenariusze i aplikacje mowy: technologie mowy przekształcają środowiska użytkowników w zakresie obsługi klienta, ułatwień dostępu, konwersacyjnej sztucznej inteligencji, dokumentacji opieki zdrowotnej i uczenia elektronicznego. Zbadano, jak połączenie rozpoznawania i syntezy mowy tworzy płynne dwukierunkowe konwersacje, które są naturalne i zmniejszają napięcia użytkowników.
+
+Podstawy rozpoznawania mowy: Przeanalizowano sześcioetapowy proces, który przekształca dźwięk w tekst — od przechwytywania fal dźwiękowych aż do tworzenia sformatowanych transkrypcji. Wiesz już, jak funkcje MFCC wyodrębniają znaczące wzorce z dźwięku, jak modele akustyczne oparte na przekształcaniu przewidują phonemy i jak modele językowe rozpoznają niejednoznaczność, stosując słownictwo i gramatykę.
+
+Podstawy syntezy mowy: Odkryliśmy czteroetapowy proces, który przekształca tekst w naturalną mowę — normalizację tekstu, analizę językową, generowanie prosody i syntezę audio. Zbadano, jak konwersja grafemu na fonem radzi sobie z wariantami pisowni, jak modele transformacyjne przewidują naturalny rytm i nacisk oraz jak neuronowe wokodery generują kształty fal dźwiękowych o wysokiej wierności.
+
+Przetwarzanie obrazów jest jednym z podstawowych obszarów sztucznej inteligencji (AI) i koncentruje się na tworzeniu rozwiązań, które umożliwiają aplikacjom sztucznej inteligencji przetwarzanie informacji wizualnych.
+
+Rozważ następujące scenariusze:
+
+Pojazd autonomiczny musi wykrywać i reagować na ruch i pieszych.
+Sklep korzysta z inteligentnych kas z kamerami, aby określić produkty w koszyku klienta.
+Kamera dzwonka do drzwi służy do wykrywania ludzi w drzwiach.
+Te przypadki użycia i wiele innych polegają na widzeniu komputerowym.
+
+Oczywiście, komputery nie mają biologicznych oczu, które działają tak, jak nasze, ale są w stanie przetwarzać obrazy, zarówno z transmisji na żywo z kamery, jak i cyfrowych fotografii lub nagrań wideo. Ta możliwość przetwarzania obrazów jest kluczem do tworzenia oprogramowania, które może emulować postrzeganie wizualne przez człowieka. W tym module przeanalizujemy podstawowe elementy, które leżą u podstaw nowoczesnych rozwiązań wizji komputerowej.
+
+Zadania i techniki widzenia komputerowego
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Termin "przetwarzanie obrazów" odnosi się do szeregu zadań i technik, w których oprogramowanie sztucznej inteligencji przetwarza wizualne dane wejściowe; zazwyczaj z obrazów, filmów wideo lub strumieni kamer na żywo. Przetwarzanie obrazów to dobrze ugruntowane pole sztucznej inteligencji, a techniki używane do wyodrębniania informacji z danych wejściowych wizualizacji znacznie ewoluowały w ciągu lat.
+
+Klasyfikacja obrazów
+Jednym z najstarszych rozwiązań do przetwarzania obrazów jest technika o nazwie klasyfikacja obrazów, w której model, który został wytrenowany z dużą liczbą obrazów, służy do przewidywania etykiety tekstowej na podstawie zawartości obrazu.
+
+Załóżmy na przykład, że sklep spożywczy chce zaimplementować system inteligentnego wyewidencjonowania, który identyfikuje produkty automatycznie. Na przykład klient może umieścić owoce lub warzywa na wadze przy kasie, a aplikacja sztucznej inteligencji połączona z kamerą może automatycznie zidentyfikować typy produktów (jabłko, pomarańcza, banan itd.) i naliczyć odpowiednią opłatę na podstawie wagi. Aby to rozwiązanie działało, należy wytrenować model z dużą liczbą obrazów, z których każda ma prawidłową nazwę. Wynikiem jest model, który może używać cech wizualnych obrazu do przewidywania jego głównego tematu.
+
+Zdjęcia pomarańczy i jabłek oraz bananów.
+
+Wykrywanie obiektów
+Załóżmy, że sklep spożywczy chce bardziej zaawansowanego systemu, w którym kasa może skanować wiele produktów i zidentyfikować każdy produkt. Typowym podejściem do tego rodzaju problemu jest „wykrywanie obiektów”. Modele wykrywania obiektów badają wiele regionów na obrazie, aby znaleźć poszczególne obiekty i ich lokalizacje. Wynikowe przewidywanie z modelu obejmuje wykryte obiekty oraz określone regiony obrazu, w których się pojawiają — wskazywane przez współrzędne prostokątnego pola ograniczenia.
+
+Zdjęcie pomarańczy, jabłka i banana z ramkami ograniczającymi.
+
+Segmentacja semantyczna
+Innym, bardziej zaawansowanym sposobem wykrywania obiektów na obrazie jest "segmentacja semantyczna". W tym podejściu model jest trenowany w celu znajdowania obiektów i klasyfikowania pojedynczych pikseli na obrazie na podstawie obiektu, do którego należą. Wynikiem tego procesu jest znacznie dokładniejsze przewidywanie lokalizacji obiektów na obrazie.
+
+Zdjęcie pomarańczy, jabłek i bananów z nakładanymi maskami.
+
+Analiza obrazu kontekstowego
+Najnowsze wielomodalne modele przetwarzania obrazów są trenowane w celu znalezienia relacji kontekstowych między obiektami na obrazach i tekstu, który je opisuje. Wynikiem jest możliwość semantycznie interpretowania obrazu w celu określenia, jakie obiekty i działania przedstawia; i wygeneruj odpowiednie opisy lub zasugeruj odpowiednie tagi.
+
+Zdjęcie osoby jedzącej jabłko.
+
+Osoba jedząca jabłko.
+
+Obrazy i przetwarzanie obrazów
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Na komputerze obraz jest tablicą wartości pikseli liczbowych. Rozważmy na przykład następującą tablicę:
+
+ 0   0   0   0   0   0   0  
+ 0   0   0   0   0   0   0
+ 0   0  255 255 255  0   0
+ 0   0  255 255 255  0   0
+ 0   0  255 255 255  0   0
+ 0   0   0   0   0   0   0
+ 0   0   0   0   0   0   0
+Tablica składa się z siedmiu wierszy i siedmiu kolumn reprezentujących wartości pikseli obrazu 7x7 pikseli (nazywanego rozdzielczością obrazu). Każdy piksel ma wartość z zakresu od 0 () do 255 (biały); z wartościami między tymi granicami reprezentującymi odcienie szarości. Obraz reprezentowany przez tę tablicę wygląda podobnie do poniższego (powiększonego) obrazu:
+
+Diagram przedstawiający obraz skali szarości.
+
+Tablica wartości pikseli dla tego obrazu jest dwuwymiarowa (reprezentująca wiersze i kolumny lub współrzędne x i y ) i definiuje pojedynczy prostokąt wartości pikseli. Pojedyncza warstwa wartości pikseli, taka jak ta, reprezentuje obraz w skali szarości. W rzeczywistości większość obrazów cyfrowych jest wielowymiarowa i składa się z trzech warstw (znanych jako kanały), które reprezentują kolor czerwony, zielony i niebieski (RGB). Na przykład możemy reprezentować obraz koloru, definiując trzy kanały wartości pikseli, które tworzą ten sam kształt kwadratowy co poprzedni przykład skali szarości:
+
+Red:
+ 150  150  150  150  150  150  150  
+ 150  150  150  150  150  150  150
+ 150  150  255  255  255  150  150
+ 150  150  255  255  255  150  150
+ 150  150  255  255  255  150  150
+ 150  150  150  150  150  150  150
+ 150  150  150  150  150  150  150
+
+Green:
+ 0    0    0    0    0    0    0          
+ 0    0    0    0    0    0    0
+ 0    0   255  255  255   0    0
+ 0    0   255  255  255   0    0
+ 0    0   255  255  255   0    0
+ 0    0    0    0    0    0    0
+ 0    0    0    0    0    0    0
+
+Blue:
+ 255  255  255  255  255  255  255  
+ 255  255  255  255  255  255  255
+ 255  255   0    0    0   255  255
+ 255  255   0    0    0   255  255
+ 255  255   0    0    0   255  255
+ 255  255  255  255  255  255  255
+ 255  255  255  255  255  255  255
+Oto wynikowy obraz:
+
+Diagram przedstawiający obraz koloru.
+
+Purpurowe kwadraty są reprezentowane przez kombinację:
+
+Red: 150 
+Green: 0 
+Blue: 255 
+Żółte kwadraty w środku są reprezentowane przez kombinację:
+
+Red: 255
+Green: 255
+Blue: 0
+Filtry
+Typowym sposobem wykonywania zadań przetwarzania obrazów jest zastosowanie filtrów modyfikujących wartości pikseli obrazu w celu utworzenia efektu wizualnego. Filtr jest definiowany przez co najmniej jedną tablicę wartości pikseli, nazywaną jądra filtru. Można na przykład zdefiniować filtr z jądrem 3x3, jak pokazano w tym przykładzie:
+
+-1 -1 -1
+-1  8 -1
+-1 -1 -1
+Jądro jest następnie splotowane na obrazie, obliczając sumę ważoną dla każdego fragmentu 3x3 pikseli i przypisując wynik do nowego obrazu. Łatwiej jest zrozumieć, jak działa filtrowanie, eksplorując przykład krok po kroku.
+
+Zacznijmy od wcześniej eksplorowanego obrazu w skali szarości:
+
+ 0   0   0   0   0   0   0  
+ 0   0   0   0   0   0   0
+ 0   0  255 255 255  0   0
+ 0   0  255 255 255  0   0
+ 0   0  255 255 255  0   0
+ 0   0   0   0   0   0   0
+ 0   0   0   0   0   0   0
+Najpierw stosujemy jądro filtra do lewego górnego fragmentu obrazu, mnożąc każdą wartość pikseli przez odpowiednią wartość wagi w jądrze i dodając wyniki.
+
+(0 x -1) + (0 x -1) + (0 x -1) +
+(0 x -1) + (0 x 8) + (0 x -1) +
+(0 x -1) + (0 x -1) + (255 x -1) = -255
+Wynik (-255) staje się pierwszą wartością w nowej tablicy. Następnie przenosimy jądro filtru wzdłuż jednego piksela po prawej stronie i powtarzamy operację:
+
+(0 x -1) + (0 x -1) + (0 x -1) +
+(0 x -1) + (0 x 8) + (0 x -1) +
+(0 x -1) + (255 x -1) + (255 x -1) = -510
+Ponownie wynik zostanie dodany do nowej tablicy, która zawiera teraz dwie wartości:
+
+-255  -510
+Proces jest powtarzany do momentu, aż filtr zostanie skonwolutowany na całym obrazie, jak pokazano w tej animacji.
+
+diagram filtru.
+
+Filtr jest splotem przez obraz, obliczając nową tablicę wartości. Niektóre wartości mogą znajdować się poza zakresem wartości od 0 do 255 pikseli, więc wartości są dostosowywane tak, aby mieściły się w tym zakresie. Ze względu na kształt filtru zewnętrzna krawędź pikseli nie jest obliczana, więc jest stosowana wartość wypełnienia (zwykle 0). Wynikowa tablica reprezentuje nowy obraz, w którym filtr przekształcił oryginalny obraz. W tym przypadku filtr miał wpływ na wyróżnianie krawędzi kształtów na obrazie.
+
+Aby wyraźniej zobaczyć efekt filtru, oto przykład tego samego filtru zastosowanego do rzeczywistego obrazu:
+
+Oryginalny obraz	Filtrowany obraz
+Zdjęcie psa.	Zdjęcie psa z zastosowanym filtrem Laplace.
+Ponieważ filtr jest wypukły na obrazie, tego rodzaju manipulowanie obrazami jest często określane jako filtrowanie splotowe. Filtr używany w tym przykładzie jest określonym typem filtru (nazywanym filtrem Laplace ), który wyróżnia krawędzie obiektów na obrazie. Istnieje wiele innych rodzajów filtrów, których można użyć do tworzenia rozmycia, wyostrzenia, inwersji kolorów i innych efektów.
+
+Splotowe sieci neuronowe
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Możliwość stosowania filtrów do stosowania efektów do obrazów jest przydatna w zadaniach przetwarzania obrazów, takich jak w przypadku oprogramowania do edycji obrazów. Jednak celem przetwarzania obrazów jest często wyodrębnianie znaczenia lub przynajmniej praktycznych szczegółowych informacji z obrazów; które wymaga utworzenia modeli uczenia maszynowego, które są szkolone do rozpoznawania funkcji na podstawie dużych ilości istniejących obrazów.
+
+ Napiwek
+
+W tej lekcji założono, że znasz podstawowe zasady uczenia maszynowego i masz koncepcyjną wiedzę na temat uczenia głębokiego z sieciami neuronowymi. Jeśli dopiero zaczynasz korzystać z uczenia maszynowego, rozważ ukończenie modułu Wprowadzenie do pojęć dotyczących uczenia maszynowego w środowisku Microsoft Learn.
+
+Jedną z najpopularniejszych architektur modelu uczenia maszynowego do przetwarzania obrazów jest splotowa sieć neuronowa (CNN), typ architektury uczenia głębokiego. Sieci CNN używają filtrów do wyodrębniania map cech liczbowych z obrazów, a następnie przekazywania wartości cech do modelu uczenia głębokiego w celu wygenerowania przewidywanej etykiety. Na przykład w scenariuszu klasyfikacji obrazów etykieta reprezentuje główny temat obrazu (innymi słowy, co to jest obraz?). Możesz wytrenować model CNN na obrazach różnych rodzajów owoców (takich jak jabłko, banan i pomarańcza), aby przewidywana etykieta była typem owocu na danym obrazie.
+
+Podczas procesu uczenia sieci CNN, jądra filtrów są początkowo definiowane przy użyciu losowo wygenerowanych wartości wagowych. Następnie w miarę postępu procesu trenowania przewidywania modeli są oceniane względem znanych wartości etykiet, a wagi filtrów są dostosowywane w celu zwiększenia dokładności. W końcu wytrenowany model klasyfikacji obrazów owoców używa wag filtrów, które najlepiej wyodrębniają cechy, które pomagają zidentyfikować różne rodzaje owoców.
+
+Na poniższym diagramie przedstawiono sposób działania sieci CNN dla modelu klasyfikacji obrazów:
+
+Diagram splotowej sieci neuronowej.
+
+Obrazy ze znanymi etykietami (na przykład 0: jabłko, 1: banan lub 2: pomarańczowy) są przekazywane do sieci w celu wytrenowania modelu.
+Co najmniej jedna warstwa filtrów służy do wyodrębniania funkcji z każdego obrazu, ponieważ jest on podawany za pośrednictwem sieci. Jądra filtru zaczynają się od losowo przypisanych wag i generują tablice wartości liczbowych nazywanych mapami funkcji. Dodatkowe warstwy mogą agregować lub zmniejszać mapy cech, aby utworzyć mniejsze tablice podkreślające kluczowe cechy wizualne wyodrębnione przez filtry.
+Mapy funkcji są spłaszczone w jednowymiarową tablicę wartości cech.
+Wartości funkcji są wprowadzane do w pełni połączonej sieci neuronowej.
+Warstwa wyjściowa sieci neuronowej używa softmax lub podobnej funkcji, aby wygenerować wynik zawierający wartość prawdopodobieństwa dla każdej możliwej klasy, na przykład [0.2, 0.5, 0.3].
+Podczas trenowania prawdopodobieństwa danych wyjściowych są porównywane z rzeczywistą etykietą klasy — na przykład obraz bananu (klasa 1) powinien mieć wartość [0.0, 1.0, 0.0]. Różnica między przewidywanymi i rzeczywistymi ocenami klas służy do obliczania straty w modelu, a wagi w w pełni połączonej sieci neuronowej i jądra filtrów w warstwach wyodrębniania cech są modyfikowane w celu zmniejszenia utraty.
+
+Proces trenowania powtarza się przez wiele epok do czasu uzyskania optymalnego zestawu wag. Następnie wagi są zapisywane i model może służyć do przewidywania etykiet dla nowych obrazów, dla których etykieta jest nieznana.
+
+Transformatory wizji i modele wielomodalne
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Sieci CNN są podstawą rozwiązań do przetwarzania obrazów od wielu lat. Chociaż są one często używane do rozwiązywania problemów z klasyfikacją obrazów zgodnie z wcześniejszym opisem, są one również podstawą bardziej złożonych modeli przetwarzania obrazów. Na przykład modele wykrywania obiektów łączą warstwy wyodrębniania cech CNN z identyfikacją regionów zainteresowania obrazami w celu zlokalizowania wielu klas obiektów na tym samym obrazie. Wiele postępów w przetwarzaniu obrazów w ciągu dziesięcioleci zostało napędzanych przez ulepszenia modeli opartych na sieci CNN.
+
+Jednak w innej dyscyplinie sztucznej inteligencji — przetwarzanie języka naturalnego (NLP), inny typ architektury sieci neuronowej, nazywany transformatorem umożliwił opracowywanie zaawansowanych modeli języka.
+
+Modelowanie semantyczne dla języka — Transformers
+Transformery działają poprzez przetwarzanie ogromnych ilości danych i kodowanie tokenów językowych (reprezentujących poszczególne wyrazy lub frazy) jako osadzania wektorowe (tablice wartości liczbowych). Technika nazywana uwagą służy do przypisywania wartości osadzania, które odzwierciedlają różne aspekty sposobu użycia poszczególnych tokenów w kontekście innych tokenów. Osadzanie można traktować jako wektory w wielowymiarowej przestrzeni, w której każdy wymiar zawiera atrybut językowy tokenu na podstawie jego kontekstu w tekście treningowym, tworząc semantyczne relacje między tokenami. Tokeny, które są często używane w podobnych kontekstach, definiują wektory bardziej zbliżone do siebie niż niepowiązane słowa.
+
+Diagram wektorów tokenu w przestrzeni 3D.
+
+Tokeny, które są semantycznie podobne, są kodowane w podobnych kierunkach, tworząc semantyczny model języka, który umożliwia tworzenie zaawansowanych rozwiązań NLP do analizy tekstu, tłumaczenia, generowania języka i innych zadań.
+
+ Notatka
+
+W rzeczywistości kodery w sieciach przekształcania tworzą wektory o wielu innych wymiarach, definiując złożone relacje semantyczne między tokenami na podstawie obliczeń algebraicznych liniowych. Matematyka jest złożona, podobnie jak architektura modelu przekształcania. Naszym celem jest tylko zaprezentowanie koncepcyjnego zrozumienia, jak kodowanie tworzy model, który obejmuje relacje między podmiotami.
+
+Semantyczny model obrazów — transformatory obrazów
+Sukces transformerów jako sposobu tworzenia modeli językowych skłonił badaczy sztucznej inteligencji do rozważenia, czy to samo podejście byłoby skuteczne w przypadku danych obrazowych. Wynikiem jest opracowywanie modeli przekształcania obrazów (ViT), w których model jest trenowany przy użyciu dużej liczby obrazów. Zamiast kodować tokeny tekstowe, transformator wyodrębnia poprawki wartości pikseli z obrazu i generuje wektor liniowy z wartości pikseli.
+
+Diagram zdjęcia z łatek przypisanych do wektorów.
+
+Ta sama technika uwagi używana w modelach językowych do osadzania relacji kontekstowych między tokenami służy do określania relacji kontekstowych między poprawkami. Kluczową różnicą jest to, że zamiast kodowania cech językowych w wektorach osadzania osadzone wartości są oparte na funkcjach wizualnych, takich jak kolor, kształt, kontrast, tekstura itd. Wynikiem jest zestaw wektorów osadzania, który tworzy wielowymiarową "mapę" funkcji wizualnych na podstawie tego, jak są one często widoczne na obrazach szkoleniowych.
+
+Diagram osadzania obrazów.
+
+Podobnie jak w przypadku modeli językowych osadzanie powoduje, że funkcje wizualne, które są używane w podobnym kontekście, są przypisywane podobne kierunki wektorów. Na przykład funkcje wizualne wspólne w kapeluszu mogą być kontekstowo związane z funkcjami wizualnymi, które są wspólne w głowie; ponieważ dwie rzeczy są często postrzegane razem. Model nie ma zdolności rozpoznania, czym jest "kapelusz" lub "głowa", ma za to umiejętność wywnioskowania semantycznego związku między cechami wizualnymi.
+
+Łączenie wszystkich elementów — modele wielomodalne
+Transformator językowy tworzy osadzenia, które definiują słownictwo i kodują semantyczne związki między wyrazami. Transformator wizji tworzy słownictwo wizualne, które robi to samo dla cech wizualnych. Gdy dane szkoleniowe zawierają obrazy ze skojarzonymi opisami tekstowymi, możemy połączyć kodery z obu tych transformatorów w modelu wielomodalnym, używając techniki nazywanej uwaga między-modelowa, aby zdefiniować ujednoliconą przestrzenną reprezentację wektorów osadzania.
+
+Diagram modelu wielomodalnego, który łączy osadzanie języków i obrazów.
+
+To połączenie osadzania języka i obrazów umożliwia modelowi rozpoznawanie relacji semantycznych między funkcjami języka i wizualizacji. Ta funkcja z kolei umożliwia modelowi przewidywanie złożonych opisów obrazów, których wcześniej nie widział, przez rozpoznawanie funkcji wizualnych i wyszukiwanie udostępnionej przestrzeni wektorowej dla skojarzonego języka.
+
+Zdjęcie osoby w parku z kapeluszem i plecakiem.
+
+Osoba w parku z kapeluszem i plecakiem
+
+
+Generowanie obrazu
+Ukończone
+100 pkt.
+2 min
+Wybieranie preferowanego formatu zawartości
+Ta sama architektura modelu wielomodalnego, która umożliwia sztucznej inteligencji tworzenie odpowiedzi języka naturalnego na dane wejściowe wizualne, może również służyć do tworzenia obrazów w odpowiedzi na polecenia języka naturalnego. Identyfikując funkcje wizualne skojarzone z językiem, model syntezy obrazów może wykonać opis żądanego obrazu lub wideo i wygenerować go.
+
+Większość nowoczesnych modeli generowania obrazów używa techniki o nazwie dyfuzji, w której monit służy do identyfikowania zestawu powiązanych funkcji wizualnych, które można połączyć w celu utworzenia obrazu. Obraz jest następnie tworzony iteracyjnie, począwszy od losowego zestawu wartości pikseli i usuwania "szumu" w celu utworzenia struktury. Po każdej iteracji model ocenia obraz do tej pory w celu porównania go z monitem do momentu utworzenia końcowego obrazu przedstawiającego żądaną scenę.
+
+Na przykład monit "Pies niosący kij w ustach" może spowodować proces dyfuzji z następującymi iteracjami:
+
+Diagram przedstawiający serię obrazów psa z rosnącą strukturą wizualną.
+
+Niektóre modele mogą stosować podobny proces do generowania wideo. Proces generowania wideo używa tej samej techniki do identyfikowania cech wizualnych skojarzonych z tokenami językowymi, ale uwzględnia również czynniki takie jak fizyczne zachowanie obiektów w świecie rzeczywistym (takie jak zapewnienie, że pies idzie z stopami na ziemi) i postęp czasowy (tak, aby film przedstawiał logiczną sekwencję aktywności).
+
+
+Rozwiązania do wyodrębniania informacji sztucznej inteligencji są często używane do wyodrębniania pól danych ustrukturyzowanych z nośników nieustrukturyzowanych, takich jak dokumenty, obrazy, a nawet filmy wideo i nagrania audio.
+
+ Notatka
+
+Podczas gdy skupimy się na wyodrębnianie informacji z dokumentów i obrazów w tym module, pojawiają się rozwiązania sztucznej inteligencji korzystające z rozpoznawania mowy i innych zaawansowanych technik wyodrębniania informacji z różnych formatów multimediów, takich jak filmy wideo i nagrania audio.
+
+Scenariusze wyodrębniania informacji wahają się od prostych aplikacji, które mogą odczytywać informacje kontaktowe z fotografii wizytówki, po wysoce złożone systemy automatyzacji przepływów pracy biznesowych, które analizują i przetwarzają dokumenty finansowe i prawne.
+
+Diagram wizytówki z wyodrębnionymi polami.
+
+Oto kilka typowych przykładów scenariuszy wyodrębniania informacji:
+
+Przetwarzanie dokumentów finansowych
+Rozwiązania do przetwarzania faktur mogą analizować faktury w celu wyodrębnienia:
+
+Informacje o dostawcy: nazwy, adresy i dane kontaktowe firmy.
+Szczegóły transakcji: Numery faktur, daty i warunki płatności.
+Elementy wiersza: opisy produktów, ilości, ceny jednostkowe i sumy.
+Informacje podatkowe: stawki podatkowe, kwoty i elementy zwolnione.
+Rozwiązania do przetwarzania paragonów mogą wymagać odczytania paragonów w celu wyodrębnienia:
+
+Szczegóły sprzedawcy: nazwy sklepów, lokalizacje i identyfikatory transakcji.
+Informacje o zakupie: Elementy zakupione, ceny i rabaty.
+Szczegóły płatności: Metody płatności, kwoty do zmiany oraz punkty lojalnościowe.
+Sprawozdania finansowe można przetworzyć w celu wyodrębnienia:
+
+Informacje o koncie: numery kont, salda i historie transakcji.
+Metryki wydajności: Przychody, wydatki i marże zysku.
+Dane zgodności: pola raportowania przepisów i informacje o dzienniku inspekcji.
+Dokumenty prawne i zgodność
+Rozwiązania przetwarzania kontraktów mogą służyć do wyodrębniania:
+
+Informacje o stronie: Umawiające się strony, sygnatariusze i świadkowie.
+Warunki i postanowienia: daty wejścia w życie, warunki odnowienia i klauzule zakończenia.
+Warunki finansowe: Harmonogramy płatności, kary i wymagania ubezpieczeniowe.
+Formularze regulacyjne , które mogą być konieczne do przetworzenia, obejmują:
+
+Dokumenty podatkowe: W-2s, 1099s i inne formularze podatkowe.
+Formularze ubezpieczenia: Numery zasad, kwoty roszczeń i szczegóły incydentu.
+Formularze dla instytucji rządowych: wymagania dotyczące danych aplikacji i certyfikacji.
+Dokumentacja opieki zdrowotnej
+Dokumentację medyczną można przetworzyć w celu pobrania:
+
+Informacje o pacjentach: Dane demograficzne, numery rejestrów medycznych i szczegóły ubezpieczenia.
+Dane kliniczne: Diagnozy, zabiegi, listy leków i istotne oznaki.
+Dane administracyjne: harmonogramy terminów, kody rozliczeniowe i informacje o dostawcy.
+Łańcuch dostaw i logistyka
+Dokumenty wysyłkowe często zawierają istotne szczegóły, takie jak:
+
+Szczegóły wysyłki: Numery śledzenia, wagi i wymiary.
+Informacje o adresie: szczegóły nadawcy i adresata oraz instrukcje dostarczania.
+Dokumentacja celna: kody towarowe, wartości i pochodzenie geograficzne.
+Zamówienia zakupu są często przetwarzane w celu wyodrębnienia:
+
+Informacje o dostawcy: szczegóły dostawcy i informacje kontaktowe.
+Specyfikacje produktów: Kody produktów, opisy i ilości.
+Wymagania dotyczące dostarczania: Harmonogramy, lokalizacje i specjalne instrukcje.
+Wyodrębnianie informacji przy użyciu sztucznej inteligencji może stanowić podstawę systemów automatyzacji obciążeń dla tych scenariuszy i wiele innych.
+
+Omówienie wyodrębniania informacji
+Ukończone
+100 pkt.
+2 min
+Wybieranie preferowanego formatu zawartości
+Wyodrębnianie informacji to obciążenie, które łączy wiele technik sztucznej inteligencji w celu wyodrębniania danych z zawartości — często dokumentów cyfrowych. Kompleksowe rozwiązanie wyodrębniania informacji obejmuje elementy przetwarzania obrazów do wykrywania tekstu w danych opartych na obrazach; i uczenie maszynowe lub coraz częściej generujące sztuczną inteligencję, aby semantycznie mapować wyodrębniony tekst na określone pola danych.
+
+Diagram procesu wyodrębniania informacji.
+
+Wykrywanie i wyodrębnianie tekstu z obrazów przy użyciu optycznego rozpoznawania znaków (OCR).
+Identyfikacja wartości i mapowanie z wyników OCR na pola danych.
+Na przykład rozwiązanie do przetwarzania oświadczeń wydatków opartych na sztucznej inteligencji może automatycznie wyodrębnić odpowiednie pola z paragonów w celu wydajniejszego przetwarzania oświadczeń.
+
+Zeskanowane potwierdzenie	Wyodrębnione dane
+Schemat paragonu.	
+Dostawca: Czwarta kawa
+Data: 2024-08-15
+Suma częściowa: $6.48
+Podatek: $0.49
+Total Claim: $6.97
+Wybieranie odpowiedniego podejścia
+Podczas planowania rozwiązania do wyodrębniania informacji należy wziąć pod uwagę wymagania i ograniczenia, które musi spełnić system. Niektóre kluczowe zagadnienia obejmują:
+
+Charakterystykę dokumentu. Dokumenty, z których trzeba wyodrębnić dane, są podstawą całego rozwiązania. Rozważ następujące czynniki:
+
+Spójność układu: standardowe formularze preferują podejścia oparte na szablonach, podczas gdy potrzeba przetwarzania wielu formatów i układów może wymagać bardziej złożonego rozwiązania opartego na uczeniu maszynowym.
+Wymagania dotyczące przepustowości: Korzyści z przetwarzania dużej ilości danych wynikają ze stosowania modeli zautomatyzowanego uczenia maszynowego, które działają na zoptymalizowanym sprzęcie systemowym.
+Wymagania dotyczące dokładności: Krytyczne aplikacje mogą wymagać weryfikacji z udziałem człowieka.
+Wymagania i ograniczenia dotyczące infrastruktury technicznej. Rozwiązanie będzie wymagać uruchomienia infrastruktury sprzętowej i programowej. Rozważ następujące czynniki:
+
+Bezpieczeństwo i prywatność: Przetwarzane dokumenty mogą zawierać wrażliwe lub poufne dane. Rozwiązanie musi obejmować odpowiednie środki w celu zabezpieczenia dostępu do danych i zgodności z dowolnymi wymaganiami branżowymi dotyczącymi przechowywania i przetwarzania chronionych danych.
+Moc przetwarzania: modele uczenia głębokiego i generowania sztucznej inteligencji często używane w rozwiązaniach do wyodrębniania informacji wymagają znaczących zasobów obliczeniowych.
+Wymagania dotyczące opóźnień: przetwarzanie w czasie rzeczywistym może ograniczyć złożoność modelu.
+Potrzeby dotyczące skalowalności: rozwiązania oparte na chmurze oferują lepszą skalowalność dla zmiennych obciążeń.
+Złożoność integracji: należy wziąć pod uwagę wymagania dotyczące zgodności interfejsu API i formatu danych.
+
+Optyczne rozpoznawanie znaków (OCR)
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Optyczne rozpoznawanie znaków (OCR) to technologia, która automatycznie konwertuje tekst wizualny na obrazach — zarówno ze zeskanowanych dokumentów, zdjęć, jak i plików cyfrowych — do edytowalnych, przeszukiwalnych danych tekstowych. Zamiast ręcznie transkrypcji informacji, funkcja OCR umożliwia automatyczne wyodrębnianie danych z:
+
+Zeskanowane faktury i paragony
+Cyfrowe fotografie dokumentów
+Pliki PDF zawierające obrazy tekstu
+Zrzuty ekranu i przechwycona zawartość
+Formularze i notatki odręczne
+Potok OCR: proces krok po kroku
+Potok OCR składa się z pięciu podstawowych etapów, które współpracują ze sobą w celu przekształcania informacji wizualnych w dane tekstowe.
+
+Diagram potoku przetwarzania OCR.
+
+Etapy procesu OCR to:
+
+Pozyskiwanie i wprowadzanie obrazów.
+Przetwarzanie wstępne i ulepszanie obrazu.
+Wykrywanie regionów tekstu.
+Rozpoznawanie znaków i klasyfikacja.
+Generowanie danych wyjściowych i przetwarzanie końcowe.
+Przyjrzyjmy się każdemu etapowi bardziej szczegółowo.
+
+Etap 1. Pozyskiwanie i wprowadzanie obrazów
+Strumień przetwarzania rozpoczyna się, gdy obraz zawierający tekst wchodzi do systemu. Może to być:
+
+Zdjęcie zrobione z aparatem smartfonu.
+Zeskanowany dokument z skanera płaskiego lub skanera do dokumentów.
+Ramka wyodrębniona ze strumienia wideo.
+Strona PDF renderowana jako obraz.
+ Napiwek
+
+Jakość obrazu na tym etapie znacząco wpływa na ostateczną dokładność wyodrębniania tekstu.
+
+Etap 2. Ulepszenia przetwarzania wstępnego i obrazu
+Przed rozpoczęciem wykrywania tekstu do optymalizacji obrazu są używane następujące techniki w celu uzyskania lepszej dokładności rozpoznawania:
+
+Redukcja szumu usuwa artefakty wizualne, plamy pyłu i niedoskonałości skanowania, które mogą zakłócać wykrywanie tekstu. Konkretne techniki używane do redukcji szumu obejmują:
+
+Algorytmy filtrowania i przetwarzania obrazów: filtry gaussowskie, mediany i operacje morfologiczne.
+Modele uczenia maszynowego: denozowanie autoencoderów i splotowych sieci neuronowych (CNN) przeszkolonych specjalnie na potrzeby oczyszczania obrazów dokumentów.
+Korekta kontrastu zwiększa różnicę między tekstem a tłem, aby znaki bardziej się wyróżniały. Ponownie istnieje wiele możliwych podejść:
+
+Metody klasyczne: wyrównanie histogramu, adaptacyjne progowanie i korekta gamma.
+Uczenie maszynowe: modele uczenia głębokiego, które uczą się optymalnych parametrów ulepszeń dla różnych typów dokumentów.
+Korekta skosu wykrywa i poprawia rotację dokumentu, zapewniając, że wiersze tekstu są prawidłowo wyrównane poziomo. Techniki korygowania niesymetryczności obejmują:
+
+Techniki matematyczne: transformacja Hougha na potrzeby wykrywania linii, profile projekcyjne i analiza składowych połączonych.
+Modele sieci neuronowych: regresyjne sieci CNN, które przewidują kąty obrotu bezpośrednio z cech obrazu.
+Optymalizacja rozdzielczości dostosowuje rozdzielczość obrazu do optymalnego poziomu algorytmów rozpoznawania znaków. Rozdzielczość obrazów można zoptymalizować za pomocą:
+
+Metody interpolacji: algorytmy ponownego próbkowania Bicubic, dwuliniowe i Lanczos.
+Modele superrozdzielczości: Generatywne sieci przeciwstawne (GAN) i sieci resztkowe, które inteligentnie skalują obrazy tekstowe o niskiej rozdzielczości.
+Etap 3. Wykrywanie regionów tekstu
+System analizuje wstępnie przetworzony obraz w celu zidentyfikowania obszarów zawierających tekst przy użyciu następujących technik:
+
+Analiza układu rozróżnia regiony tekstu, obrazy, grafikę i obszary białych znaków. Techniki analizy układu obejmują:
+
+Tradycyjne podejścia: Analiza połączonych składników, kodowanie długości przebiegu i segmentacja oparta na projekcji.
+Modele uczenia głębokiego: sieci segmentacji semantycznej, takie jak U-Net, Mask R-CNN, oraz wyspecjalizowane modele analizy układu dokumentu (na przykład LayoutLM lub modele wytrenowane na PubLayNet).
+Identyfikacja bloków tekstu grupuje poszczególne znaki w wyrazy, wiersze i akapity na podstawie relacji przestrzennych. Typowe podejścia obejmują:
+
+Metody klasyczne: klastrowanie oparte na odległościach, analiza białych znaków i operacje morfologiczne
+Sieci neuronowe: grafowe sieci neuronowe i modele przekształcania, które rozumieją strukturę dokumentów przestrzennych
+Określanie kolejności czytania określa sekwencję, w której tekst powinien być odczytywany (od lewej do prawej, od góry do dołu dla języka angielskiego). Prawidłową kolejność można określić przez:
+
+Systemy oparte na regułach: algorytmy geometryczne używające współrzędnych pola ograniczenia i heurystyki przestrzennej.
+Modele uczenia maszynowego: modele przewidywania sekwencji i podejścia oparte na grafach, które uczą się odczytywania wzorców na podstawie danych treningowych.
+Klasyfikacja regionów identyfikuje różne typy regionów tekstowych (nagłówki, tekst treści, podpisy, tabele).
+
+Klasyfikatory oparte na cechach: maszyny wektorowe (SVM) wykorzystujące ręcznie opracowane cechy, takie jak rozmiar czcionki, położenie i formatowanie
+Modele uczenia głębokiego: splotowe sieci neuronowe i transformatory wizji przetwarzają dokumenty na oznaczonych zestawach danych
+Etap 4. Rozpoznawanie i klasyfikacja znaków
+Jest to rdzeń procesu OCR, w którym są identyfikowane poszczególne znaki:
+
+Wyodrębnianie cech: analizuje kształt, rozmiar i charakterystyczne cechy każdego znaku lub symbolu.
+
+Tradycyjne metody: funkcje statystyczne, takie jak momenty, deskryptory Fourier i funkcje strukturalne (pętle, punkty końcowe, skrzyżowania)
+Podejścia do uczenia głębokiego: konwolucyjne sieci neuronowe, które automatycznie uczą się funkcji dyskryminacyjnych z nieprzetworzonych danych pikseli
+Dopasowywanie wzorca: porównuje wyodrębnione cechy z przetrenowanych modeli, które rozpoznają różne czcionki, rozmiary i style pisania.
+
+Dopasowywanie szablonów: bezpośrednie porównanie z przechowywanymi szablonami znaków przy użyciu technik korelacji
+Klasyfikatory statystyczne: Ukryte modele Markowa (HMMs), maszyny wektorów wsparcia i najbliżsi sąsiedzi przy użyciu wektorów cech
+Sieci neuronowe: wielowarstwowe perceptrony, sieci CNN i wyspecjalizowane architektury, takie jak LeNet do rozpoznawania cyfr
+Zaawansowane uczenie głębokie: sieci resztkowe (ResNet), architektura DenseNet i EfficientNet w celu zapewnienia niezawodnej klasyfikacji znaków
+Analiza kontekstu: używa otaczających znaków i wyrazów, aby zwiększyć dokładność rozpoznawania za pomocą odnośników słownika i modeli językowych.
+
+Modele N-gram: Modele języka statystycznego, które przewidują sekwencje znaków na podstawie rozkładów prawdopodobieństwa.
+Korekta oparta na słowniku: wyszukiwanie leksykonu z algorytmami edycji odległości (takimi jak odległość Levenshtein) na potrzeby korekty pisowni.
+Modele języków neuronowych: modele LSTM i modele oparte na transformatorach (na przykład warianty BERT), które rozumieją relacje kontekstowe.
+Mechanizmy uwagi: Modele przekształcania, które koncentrują się na odpowiednich częściach danych wejściowych podczas tworzenia przewidywań znaków.
+Ocena wiarygodności: przypisuje prawdopodobieństwa do każdego rozpoznanego znaku w zależności od tego, jak pewny system jest w swojej identyfikacji.
+
+Podejścia bayesowskie: Modele probabilistyczne, które kwantyfikują niepewność w przewidywaniach znaków.
+Dane wyjściowe softmax: końcowe aktywacje warstwy sieci neuronowej konwertowane na rozkłady prawdopodobieństwa.
+Metody zespołowe: łączenie przewidywań z wielu modeli w celu zwiększenia oszacowań ufności.
+Etap 5. Generowanie danych wyjściowych i przetwarzanie końcowe
+Ostatni etap konwertuje wyniki rozpoznawania na użyteczne dane tekstowe:
+
+Kompilacja tekstu: tworzy pojedyncze rozpoznawanie znaków w pełne wyrazy i zdania.
+
+Zestaw oparty na regułach: algorytmy deterministyczne, które łączą przewidywania znaków przy użyciu odległości przestrzennej i progów ufności.
+Modele sekwencji: Rekurencyjne sieci neuronowe (RNN) i LSTM, które modelują tekst jako dane sekwencyjne.
+Modele oparte na mechanizmach uwagi: Architektury transformera, które mogą obsługiwać sekwencje o zmiennej długości i złożone struktury tekstowe.
+Zachowywanie formatu: zachowuje strukturę dokumentu, w tym akapity, podziały wierszy i odstępy.
+
+Algorytmy geometryczne: systemy oparte na regułach używające współrzędnych obszaru ograniczającego i analizy przestrzeni białej.
+Modele rozumienia układu: grafowe sieci neuronowe i dokumentowanie modeli sztucznej inteligencji, które uczą się relacji strukturalnych.
+Transformatory wielomodalne: modele, takie jak LayoutLM, które łączą informacje o tekście i układzie w celu zachowania struktury.
+Mapowanie współrzędnych: rejestruje dokładną pozycję każdego elementu tekstowego w oryginalnym obrazie.
+
+Przekształcanie współrzędnych: Mapowanie matematyczne między pikselami obrazu i współrzędnymi dokumentu.
+Indeksowanie przestrzenne: struktury danych, takie jak drzewa R i czworokąta, umożliwiające wydajne zapytania przestrzenne.
+Modele regresji: sieci neuronowe przeszkolone w celu przewidywania dokładnych współrzędnych pozycjonowania tekstu.
+Walidacja jakości: Stosuje sprawdzanie pisowni i gramatyki w celu zidentyfikowania potencjalnych błędów rozpoznawania.
+
+Walidacja oparta na słowniku: Wyszukiwanie pod kątem kompleksowych list słów i wyspecjalizowanego słownictwa domenowego.
+Modele języka statystycznego: modele N-gram i analizatory probabilistyczne na potrzeby walidacji gramatyki i kontekstu.
+Modele języków neuronowych: wstępnie wytrenowane modele, takie jak GPT lub BERT, dostosowane do wykrywania i poprawiania błędów OCR.
+Walidacja zespołu: łączenie wielu metod sprawdzania poprawności w celu zwiększenia dokładności wykrywania błędów.
+
+Wyodrębnianie i mapowanie pól
+Ukończone
+100 pkt.
+3 min
+Wybieranie preferowanego formatu zawartości
+Wyodrębnianie pól to proces pobierania danych wyjściowych tekstu z OCR i mapowania poszczególnych wartości tekstowych na określone, oznaczone etykietami pola danych, które odpowiadają znaczącym informacjom biznesowym. Funkcja OCR informuje o tym, jaki tekst istnieje w dokumencie, wyodrębnianie pól informuje o tym, co oznacza ten tekst i gdzie należy do systemów biznesowych.
+
+Potok wyodrębniania pól
+Wyodrębnianie pól odbywa się według systematycznego procesu, który przekształca wynik OCR w dane ustrukturyzowane.
+
+Diagram potoku wyodrębniania pól.
+
+Etapy procesu wyodrębniania pól to:
+
+Pozyskiwanie danych wyjściowych OCR.
+Wykrywanie pól i identyfikacja kandydatów.
+Mapowanie pól i połączenie.
+Normalizacja i standaryzacja danych.
+Integracja z procesami biznesowymi i systemami.
+Przyjrzyjmy się tym etapom bardziej szczegółowo.
+
+Etap 1. Pozyskiwanie danych wyjściowych OCR
+Procedura rozpoczyna się od strukturyzowanych wyników z potoku OCR, które mogą obejmować:
+
+Nieprzetworzona zawartość tekstowa: rzeczywiste znaki i wyrazy wyodrębnione z dokumentu
+Metadane pozycyjne: współrzędne ramki ograniczającej, lokalizacje stron i informacje o kolejności odczytywania
+Wyniki ufności: poziomy ufności aparatu OCR dla każdego elementu tekstowego
+Informacje o układzie: Struktura dokumentu, podziały wierszy, granice akapitu
+ Notatka
+
+W przeciwieństwie do prostego przetwarzania tekstu wyodrębnianie pól w dużym stopniu opiera się na tym, gdzie tekst pojawia się w dokumencie, a nie tylko na tym, co mówi. Pozycja "12345" może pomóc określić, czy jest to numer faktury, identyfikator klienta lub numer telefonu.
+
+Etap 2. Wykrywanie pól i identyfikacja kandydatów
+Ten etap identyfikuje potencjalną wartość pola w danych wyjściowych OCR. Istnieje wiele metod, które mogą być używane niezależnie lub w połączeniu w celu określenia prawdopodobnych pól w wynikach OCR.
+
+Wykrywanie oparte na szablonach
+Szablony wykrywania pól opierają się na dopasowywaniu wzorców opartych na regułach. Identyfikację pól można wykonać przy użyciu technik, takich jak:
+
+Wstępnie zdefiniowane układy dokumentów ze znanymi pozycjami pól i słowami kluczowymi kotwicy.
+Wyszukuje pary label-value, takie jak "Numer faktury:", "Date:", "Total:".
+Wyrażenia regularne i algorytmy dopasowywania ciągów.
+Zalety podejścia opartego na szablonach obejmują wysoką dokładność znanych typów dokumentów, szybkie przetwarzanie i objaśnialne wyniki.
+
+Ograniczenia podejścia obejmują wymaganie ręcznego tworzenia szablonu oraz złożoność spowodowaną różnicami w układzie lub niespójnościami nazewnictwa pól.
+
+Wykrywanie oparte na uczeniu maszynowym
+Zamiast zakodowanej logiki wyodrębniać pola na podstawie znanych nazw i lokalizacji, możesz użyć korpusu przykładowych dokumentów do wytrenowania modelu uczenia maszynowego, który wyodrębnia pola na podstawie poznanych relacji. W szczególności modele oparte na transformerze są dobre w stosowaniu kontekstowych wskazówek do identyfikowania wzorców, a więc często są podstawą rozwiązania do wykrywania pól.
+
+Metody trenowania modeli uczenia maszynowego wykrywania pól obejmują:
+
+Uczenie nadzorowane: trenowane na oznaczonych zestawach danych ze znanymi lokalizacjami pól.
+Uczenie samonadzorowane: Wstępnie trenowane na dużych korpusach dokumentów w celu rozumienia wzorców układu.
+Uczenie wielomodalne: łączy funkcje tekstowe, wizualne i pozycyjne.
+Zaawansowane architektury modeli, takie jak:
+Grafowe sieci neuronowe (GNN) modelujące relacje przestrzenne między elementami tekstowymi jako połączenia grafu.
+Mechanizmy uwagi , które koncentrują się na odpowiednich regionach dokumentu podczas przewidywania wartości pól.
+Modele sekwencyjne przekształcające sekwencje tekstowe bez struktury na przypisania pól strukturalnych.
+Generatywna sztuczna inteligencja do ekstrakcji opartej na schematach
+Ostatnie postępy w dużych modelach językowych (LLM) doprowadziły do pojawienia się generacyjnych technik wykrywania pól opartych na sztucznej inteligencji, które umożliwiają bardziej wydajne i skuteczne wykrywanie pól poprzez:
+
+Wyodrębnianie oparte na podpowiedziach, w którym podajesz LLM tekst dokumentu i definicję schematu, a następnie tekst jest dopasowywany do pól w schemacie.
+Uczenie z niewielką ilością przykładów, w którym można trenować modele przy użyciu minimalnych przykładów w celu wyodrębnienia pól niestandardowych.
+Łańcuch rozumowania, który prowadzi modele przez logikę identyfikacji pól krok po kroku.
+Etap 3. Mapowanie pól i skojarzenie
+Po ich zidentyfikowaniu, wartości kandydackie powinny zostać przypisane do określonych pól schematu.
+
+Techniki parowania klucz-wartość
+W wielu przypadkach pola danych w dokumencie lub formularzu są wartościami dyskretnych, które można mapować na klucze — na przykład nazwę dostawcy, datę i łączną kwotę paragonu lub faktury. Typowe techniki używane do parowania klucz-wartość to:
+
+Analiza zbieżności:
+
+Klastrowanie przestrzenne: grupuj pobliskie elementy tekstowe przy użyciu algorytmów odległości.
+Analiza kolejności czytania: postępuj zgodnie z naturalnym przepływem tekstu, aby skojarzyć etykiety z wartościami.
+Relacje geometryczne: użyj wzorców wyrównania, wcięcia i pozycjonowania.
+Rozpoznawanie wzorców językowych:
+
+Rozpoznawanie nazwanych jednostek (NER): identyfikowanie określonych typów jednostek (dat, ilości, nazw).
+Tagowanie części mowy: Omówienie relacji gramatycznych między etykietami i wartościami.
+Analizowanie zależności: analizowanie relacji składniowych w tekście.
+Przetwarzanie tabel i zawartości ustrukturyzowanej
+Niektóre dokumenty zawierają bardziej złożone struktury tekstu, takie jak tabele. Na przykład paragon lub faktura może zawierać tabelę elementów wiersza z kolumnami dla nazwy, ceny i zakupionej ilości.
+
+Obecność tabeli można określić przy użyciu kilku technik, w tym:
+
+Wyspecjalizowane architektury splotowej sieci neuronowej (CNN) na potrzeby rozpoznawania struktury tabel.
+Metody identyfikacji obiektów dostosowane do rozpoznawania komórek tabeli.
+Podejścia do parsowania oparte na grafach modelują strukturę tabeli jako relacje grafowe między komórkami.
+Aby zamapować wartości w komórkach tabeli na pola, rozwiązanie wyodrębniania pól może stosować co najmniej jedną z następujących technik:
+
+Skojarzenie wierszy i kolumn w celu mapowania komórek tabeli na określone schematy pól.
+Wykrywanie nagłówka w celu zidentyfikowania nagłówków kolumn w celu zrozumienia znaczenia pola.
+Przetwarzanie hierarchiczne do obsługi zagnieżdżonych struktur tabel i sum podrzędnych.
+Ocena ufności i walidacja
+Dokładność wyodrębniania pól zależy od wielu czynników, a algorytmy i modele używane do implementacji rozwiązania mogą podlegać potencjalnym błędom w identyfikacji lub interpretacji wartości. Aby to uwzględnić, stosuje się różne techniki do oceny dokładności przewidywanych wartości pól, w tym:
+
+Pewność OCR: dziedziczenie współczynników ufności z bazowego rozpoznawania tekstu.
+Pewność dopasowania wzorca: Ocena bazująca na tym, jak dobrze dopasowanie pasuje do oczekiwanych wzorców.
+Weryfikacja kontekstu: sprawdzanie, czy wartości pól mają sens w kontekście dokumentu.
+Walidacja krzyżowa pól: Weryfikacja relacji między wyodrębnionymi polami (na przykład sprawdzenie, czy sumy częściowe pozycji wiersza sumują się do całkowitej sumy faktury).
+Etap 4. Normalizacja i standaryzacja danych
+Nieprzetworzone wartości wyodrębnione są zazwyczaj przekształcane w spójne formaty (na przykład w celu zapewnienia, że wszystkie wyodrębnione daty są wyrażone w tym samym formacie daty) i sprawdzane pod kątem ważności.
+
+Standaryzacja formatu
+Przykłady standaryzacji formatów, które można zaimplementować, to:
+
+Normalizacja daty:
+
+Wykrywanie formatu: Zidentyfikuj różne formaty dat (MM/DD/RRRR, DD-MM-RRRR itp.).
+Algorytmy analizowania: konwertuj na standardowe formaty ISO.
+Rozwiązanie niejednoznaczności: Obsługa przypadków, w których format daty jest niejasny.
+Przetwarzanie waluty i liczb:
+
+Rozpoznawanie symboli: Obsługa różnych symboli walutowych i separatorów tysięcy.
+Normalizacja dziesiętna: Standaryzacja reprezentacji punktów dziesiętnych między ustawieniami regionalnymi.
+Konwersja jednostek: przekonwertuj między różnymi jednostkami miary zgodnie z potrzebami.
+Standaryzacja tekstu:
+
+Normalizacja przypadku: Stosowanie spójnych reguł wielkości liter.
+Standaryzacja kodowania: Obsługa różnych kodowań znaków i znaków specjalnych.
+Rozszerzenie skrótów: konwertuj typowe skróty na pełne formularze.
+Weryfikacja danych i kontrola jakości
+Oprócz formatowania wyodrębnionych pól proces standaryzacji umożliwia dalszą walidację wartości wyodrębnionych za pomocą technik, takich jak:
+
+Weryfikacja oparta na regułach:
+
+Sprawdzanie formatu: Sprawdź, czy wyodrębnione wartości są zgodne z oczekiwanymi wzorcami (numery telefonów, adresy e-mail).
+Walidacja zakresu: Upewnij się, że wartości liczbowe mieszczą się w rozsądnych granicach.
+Wymagane sprawdzanie pól: Upewnij się, że wszystkie pola obowiązkowe są obecne.
+Walidacja statystyczna:
+
+Wykrywanie wartości odstających: zidentyfikuj niezwykle wysokie lub niskie wartości, które mogą wskazywać na błędy wyodrębniania.
+Analiza dystrybucji: porównaj wyodrębnione wartości z wzorcami historycznymi.
+Walidacja między dokumentami: Sprawdź spójność w powiązanych dokumentach.
+Etap 5. Integracja z procesami biznesowymi i systemami
+Ostatni etap procesu zwykle obejmuje zintegrowanie wyodrębnionych wartości pól do procesu biznesowego lub systemu:
+
+Mapowanie schematu
+Wyodrębnione pola mogą wymagać dalszej transformacji lub ponownego sformatowania, aby dostosować je do schematów aplikacji używanych do pozyskiwania danych do systemów podrzędnych. Przykład:
+
+Schematy bazy danych: Mapuj wyodrębnione pola na określone kolumny i tabele bazy danych.
+Ładunki interfejsu API: formatowanie danych dla użycia interfejsu API REST przez systemy podrzędne.
+Kolejki komunikatów: przygotuj komunikaty ustrukturyzowane do przetwarzania asynchronicznego.
+Proces mapowania schematu może obejmować przekształcenia, takie jak:
+
+Zmiana nazwy pola: Mapowanie wyodrębnionych nazw pól na konwencje systemowe docelowe.
+Konwersja typu danych: Upewnij się, że wartości są zgodne z oczekiwanymi typami danych w systemach docelowych.
+Logika warunkowa: Zastosowanie reguł biznesowych do transformacji i wyprowadzania danych pól.
+Metryki jakości i raportowanie
+Innym typowym zadaniem po zakończeniu procesu wyodrębniania jest ocena i raportowanie jakości wyodrębnionych danych. Raport może zawierać informacje, takie jak:
+
+Wyniki ufności na poziomie pola: indywidualne oceny ufności dla każdego wyodrębnionego pola.
+Ocena jakości na poziomie dokumentu: ogólne metryki sukcesu wyodrębniania.
+Kategoryzacja błędów: klasyfikuj błędy wyodrębniania według typu i przyczyny.
+
