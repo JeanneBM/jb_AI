@@ -1,0 +1,1232 @@
+What is AI?
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The term "Artificial Intelligence" (AI) covers a wide range of software capabilities that enable applications to exhibit human-like behavior. AI has been around for many years, and its definition has varied as the technology and use cases associated with it have evolved. In today's technological landscape, AI solutions are built on machine learning models that encapsulate semantic relationships found in huge quantities of data; enabling applications to appear to interpret input in various formats, reason over the input data, and generate appropriate responses and predictions.
+
+Common AI capabilities that developers can integrate into a software application include:
+
+Capability	Description
+Diagram of speech bubbles and a robot.
+Generative AI and agents	Generative AI is based on large language models (LLMs) with the ability to generate original responses to natural language prompts. For example, to power interactive chat applications and AI-assisted content creation. Increasingly, generative AI is used as the foundation for agentic AI solutions in which AI agents combine LLMs with focused instructions that define task responsibilities, and tools that the agent can use to find relevant knowledge and automate the tasks for which it is responsible.
+Diagram of a text document.
+Natural language processing	Modern LLMs evolved from a well-established area within AI called natural language processing (NLP). NLP makes use of statistical and semantic models to make sense of language in documents, emails, social media messages, and other sources of text. While many common NLP tasks can now be performed by generative AI LLMs, there are some specialized uses of NLP - particularly within the realm of text analysis that can benefit from statistical NLP techniques built on term-frequency algorithms, and task-specific models for text classification, sentiment analysis, and summarization.
+Diagram of a user with a headset.
+Computer Speech	The ability to recognize and synthesize speech enables AI apps and agents to engage more naturally with users through voice input and spoken responses. Computer speech is another well-established area of AI, and recent advances enable it to handle complex conversational interactions; handling background noise, interruptions, and multiple languages and accents. Beyond interactive conversational solutions, computer speech is an integral component of AI solutions for transcription and analysis of live or recorded speech, and the synthesis of speech from text for simultaneous translation or "read aloud" interfaces.
+Diagram of an eye being scanned.
+Computer vision	Computer vision refers to the ability of AI applications and agents to accept, interpret, and process visual input from images, videos, and live camera streams. For example, an automated checkout in a grocery store might use computer vision to identify which products a customer has in their shopping basket, eliminating the need to scan a barcode or manually enter the product and quantity. Increasingly, generative AI models are multimodal, and can not only process visual input, but also generate visual output in the form of images and videos.
+Diagram of a document and a magnifying glass.
+Information extraction	The ability to combine generative AI models for language reasoning, natural language techniques for document understanding, and computer vision and speech for media analysis enables the development of AI solutions that can extract key information from documents, forms, images, recordings, and other kinds of content. For example, an automated expense claims processing application might extract purchase dates, individual line item details, and total costs from a scanned receipt.
+Determining the specific AI capabilities you want to include in your application can help you identify the most appropriate AI services that you'll need to provision, configure, and use in your solution.
+
+Microsoft Foundry
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+Microsoft Foundry is a platform for AI development on Microsoft Azure. While you can provision individual AI resources and build applications that consume them without it, the project organization, resource management, and AI development capabilities of Microsoft Foundry makes it the recommended way to build all but the most simple solutions.
+
+Microsoft Foundry provides the Microsoft Foundry portal, a web-based visual interface for working with AI projects. It also provides the Microsoft Foundry SDK, which you can use to build AI solutions programmatically.
+
+Microsoft Foundry projects
+In Microsoft Foundry, you manage the resource connections, data, code, and other elements of the AI solution in a project. Each project belongs to a single Microsoft Foundry resource in Azure, which provides compute, data storage, AI tools, and other services.
+
+A Foundry resource can support one or more child projects, with one of them being designated the default project.
+
+Diagram of a Foundry project.
+
+Developers use projects to manage the assets needed for an AI solution, including:
+
+Models: Large language model (LLM) deployments based on models available in Foundry Models - a comprehensive catalog of models from Microsoft OpenAI, and other providers. You can connect to and interact with these models through the project endpoint (using Foundry-specific APIs and SDKs) and the Azure OpenAI endpoint (using OpenAI APIs and SDKs).
+Agents: Named AI configurations that encapsulate an LLM, instructions, and tools to define an autonomous AI entity that can automate tasks and collaborate with users and other agents. Agents in Foundry are developed and consumed using the Microsoft Foundry Agent service through the project endpoint.
+Tools: The tools used by agents can be based on built-in functionality, such as web search or a code interpreter, or connections to custom and third-party tools through Model Context Protocol (MCP) connections. Additionally, Microsoft Foundry Tools includes a suite of AI services for common tasks such as text analysis, speech recognition and synthesis, translation, and content understanding that you can use in your Foundry-based AI solutions. Foundry Tools are hosted in the Foundry resource associated with your project(s).
+Knowledge: Agents can use tools to connect to knowledge stores, and use the data they contain to contextualize prompts. To simplify integration with multiple sources of knowledge, you can use Foundry IQ in a project to create a single, central MCP-based knowledge connection.
+The separation of project-specific assets and cloud services in Microsoft Foundry resources supports the most common AI development tasks to develop generative AI chat apps and agents. Using a Foundry project provides the right level of resource centralization and capabilities with a minimal amount of administrative resource management.
+
+The Microsoft Foundry portal
+You can use Microsoft Foundry portal to develop and manage projects that are based in Microsoft Foundry resources.
+
+Screenshot of the Foundry portal.
+
+Most AI solution development projects begin in the Foundry project, where you can:
+
+Find, compare, deploy, and test models.
+Create and test agents.
+Create MCP connections to tools and Foundry IQ knowledge sources.
+Explore and test Microsoft Foundry tools.
+Manage resource configuration and user access.
+Find the endpoints and keys you need to access assets from client applications.
+To automate Foundry project operations, you can also use the Microsoft Foundry SDK - enabling you to create and manage assets using scripts or automated CI/CD actions in DevOps pipelines.
+
+Foundry Tools
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+While generative AI models and agents tend to be the focus of most modern AI solution development projects, it can often be useful to leverage "off-the-shelf" functionality for common AI tasks.
+
+Microsoft Foundry includes Foundry Tools; a set of out-of-the-box prebuilt APIs and models that you can integrate into your applications. Using these tools can help you create a more cost-effective and predictable solution than relying on generative AI based agents alone.
+
+Tool	Description
+Azure Language icon.
+Azure Language	Azure Language in Foundry Tools provides models and APIs that you can use to analyze natural language text and perform tasks such as entity extraction, sentiment analysis, and summarization. Azure Language also provides functionality to help you build conversational language models and question answering solutions.
+Azure Speech icon.
+Azure Speech	Azure Speech in Foundry Tools provides APIs that you can use to implement text to speech and speech to text transformation, as well as real-time live speech for conversational apps and agents.
+Azure Translator icon.
+Azure Translator	Azure Translator in Foundry Tools uses state-of-the-art language models to translate text between a large number of languages.
+Azure Document Intelligence icon.
+Azure Document Intelligence	With Azure Document Intelligence in Foundry Tools, you can use pre-built or custom models to extract fields from complex documents such as invoices, receipts, and forms.
+Azure Content Understanding icon.
+Azure Content Understanding	Azure Content Understanding in Foundry Tools provides multi-modal content analysis capabilities that enable you to build models to extract data from forms and documents, images, videos, and audio streams.
+To use Foundry Tools, you create client applications that connect to the tool-specific endpoint in your Microsoft Foundry resource, specifying the project authentication key or using token-based authentication. You can then use the tool-specific APIs and SDKs to use the provided functionality.
+
+Some tools provide a user interface for configuration and test in the Foundry portal.
+
+ Note
+
+Azure tools were previously called Azure AI Services, and prior to that Azure Cognitive Services. These names are still reflected in some APIs and SDKs; and you can still provision some tools as individual Azure resources outside of a Foundry resource. For new projects, you should use the tools provided in a Microsoft Foundry resource.
+
+Developer tools and SDKs
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+While you can perform many of the tasks needed to develop an AI solution directly in the Microsoft Foundry portal, developers also need to write, test, and deploy code.
+
+Development tools and environments
+There are many development tools and environments available, and developers should choose one that supports the languages, SDKs, and APIs they need to work with and with which they're most comfortable. For example, a developer who focuses strongly on building applications for Windows using the .NET Framework might prefer to work in an integrated development environment (IDE) like Microsoft Visual Studio. Conversely, a web application developer who works with a wide range of open-source languages and libraries might prefer to use a code editor like Visual Studio Code (VS Code). Both of these products are suitable for developing AI applications on Azure.
+
+The Foundry Toolkit extension for Visual Studio Code
+When developing Microsoft Foundry based generative AI applications in Visual Studio Code, you can use the Foundry Toolkit extension for Visual Studio Code to simplify key tasks in the workflow, including:
+
+Browsing and managing project resources, including deployed models, agents, connections, and vector stores.
+Deploying models from the model catalog.
+Testing models and agents in integrated playgrounds.
+Configuring declarative and hosted agents using a visual designer and YAML files.
+Generating integration code to connect agents with your applications.
+Screenshot of the Foundry Toolkit extension for Visual Studio Code.
+
+ Tip
+
+For more information about using the Foundry Toolkit extension for Visual Studio Code, see Foundry Toolkit for Visual Studio Code.
+
+GitHub and GitHub Copilot
+GitHub is the world's most popular platform for source control and DevOps management, and can be a critical element of any team development effort. Visual Studio and VS Code both provide native integration with GitHub, and access to GitHub Copilot; an AI assistant that can significantly improve developer productivity and effectiveness.
+
+Screenshot of GitHub Copilot in Visual Studio Code.
+
+ Tip
+
+For more information about using GitHub Copilot in Visual Studio Code, see GitHub Copilot in VS Code.
+
+Programming languages, APIs, and SDKs
+You can develop AI applications using many common programming languages and frameworks, including Microsoft C#, Python, Node, TypeScript, Java, and others. When building AI solutions on Azure, some common APIs and SDKs you should plan to use include:
+
+The Microsoft Foundry SDK, which enables you to write code to connect to Microsoft Foundry projects and access Foundry-specific assets, like agents and Foundry IQ knowledge stores.
+The The OpenAI API, which enables you to use OpenAI SDKs to build chat applications based on Foundry models that support OpenAI syntax.
+Foundry Tools SDKs - AI service-specific libraries for multiple programming languages and frameworks that enable you to consume Foundry Tools resources in your subscription. You can also use Foundry Tools through their REST
+
+Responsible AI
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+It's important for software engineers to consider the impact of their software on users, and society in general; including considerations for its responsible use. When the application is imbued with artificial intelligence, these considerations are particularly important due to the nature of how AI systems work and inform decisions; often based on probabilistic models, which are in turn dependent on the data with which they were trained.
+
+The human-like nature of AI solutions is a significant benefit in making applications user-friendly, but it can also lead users to place a great deal of trust in the application's ability to make correct decisions. The potential for harm to individuals or groups through incorrect predictions or misuse of AI capabilities is a major concern, and software engineers building AI-enabled solutions should apply due consideration to mitigate risks and ensure fairness, reliability, and adequate protection from harm or discrimination.
+
+Let's discuss some core principles for responsible AI that have been adopted at Microsoft.
+
+Fairness
+A diagram of scales.
+
+AI systems should treat all people fairly. For example, suppose you create a machine learning model to support a loan approval application for a bank. The model should make predictions of whether or not the loan should be approved without incorporating any bias based on gender, ethnicity, or other factors that might result in an unfair advantage or disadvantage to specific groups of applicants.
+
+Fairness of machine learned systems is a highly active area of ongoing research, and some software solutions exist for evaluating, quantifying, and mitigating unfairness in machine learned models. However, tooling alone isn't sufficient to ensure fairness. Consider fairness from the beginning of the application development process; carefully reviewing training data to ensure it's representative of all potentially affected subjects, and evaluating predictive performance for subsections of your user population throughout the development lifecycle.
+
+Reliability and safety
+A diagram of a shield.
+
+AI systems should perform reliably and safely. For example, consider an AI-based software system for an autonomous vehicle; or a machine learning model that diagnoses patient symptoms and recommends prescriptions. Unreliability in these kinds of system can result in substantial risk to human life.
+
+As with any software, AI-based software application development must be subjected to rigorous testing and deployment management processes to ensure that they work as expected before release. Additionally, software engineers need to take into account the probabilistic nature of machine learning models, and apply appropriate thresholds when evaluating confidence scores for predictions.
+
+Privacy and security
+A diagram of a padlock.
+
+AI systems should be secure and respect privacy. The machine learning models on which AI systems are based rely on large volumes of data, which may contain personal details that must be kept private. Even after models are trained and the system is in production, they use new data to make predictions or take action that may be subject to privacy or security concerns; so appropriate safeguards to protect data and customer content must be implemented.
+
+Inclusiveness
+A diagram of a diverse group of people.
+
+AI systems should empower everyone and engage people. AI should bring benefits to all parts of society, regardless of physical ability, gender, sexual orientation, ethnicity, or other factors.
+
+One way to optimize for inclusiveness is to ensure that the design, development, and testing of your application includes input from as diverse a group of people as possible.
+
+Transparency
+A diagram of an eye.
+
+AI systems should be understandable. Users should be made fully aware of the purpose of the system, how it works, and what limitations may be expected.
+
+For example, when an AI system is based on a machine learning model, you should generally make users aware of factors that may affect the accuracy of its predictions, such as the number of cases used to train the model, or the specific features that have the most influence over its predictions. You should also share information about the confidence score for predictions.
+
+When an AI application relies on personal data, such as a facial recognition system that takes images of people to recognize them; you should make it clear to the user how their data is used and retained, and who has access to it.
+
+Accountability
+A diagram of a handshake.
+
+People should be accountable for AI systems. Although many AI systems seem to operate autonomously, ultimately it's the responsibility of the developers who trained and validated the models they use, and defined the logic that bases decisions on model predictions to ensure that the overall system meets responsibility requirements. To help meet this goal, designers and developers of AI-based solution should work within a framework of governance and organizational principles that ensure the solution meets responsible and legal standards that are clearly defined.
+
+
+Introduction
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Building effective generative AI applications requires selecting the right foundation model for your specific use case. With thousands of models available, you need a structured approach to discover, compare, deploy, and validate that a model meets your requirements.
+
+Consider a scenario where you're building an AI-powered customer support chatbot for a retail company. You need to select a language model that can understand customer questions, provide accurate responses, and maintain appropriate tone and safety standards. But how do you choose from the vast catalog of available models? How do you know if a model performs well for your specific needs? And once deployed, how do you measure and improve its performance?
+
+The Microsoft Foundry portal provides a comprehensive platform for this entire workflow. You can explore over 1,900 models from providers like Microsoft, Anthropic, OpenAI, Meta, and Hugging Face. You can compare models using industry-standard benchmarks for quality, safety, cost, and performance. After selecting a model, you deploy it to an endpoint where your application can consume it. Finally, you evaluate the model's performance using both automated metrics and manual testing to ensure it meets your quality and safety requirements.
+
+In this module, you explore how to use the Microsoft Foundry portal to select, deploy, and evaluate models from the model catalog. You learn how to make informed decisions about model selection, understand different deployment options, and assess model performance using various evaluation approaches.
+
+By the end of this module, you'll be able to:
+
+Explore and filter models in the model catalog
+Compare models using benchmark metrics for quality, safety, cost, and performance
+Deploy a model to an endpoint and test it in the playground
+Evaluate model performance using manual and automated approaches
+Understand different evaluation metrics and when to use them
+
+Explore the model catalog
+Completed
+100 XP
+7 minutes
+Choose your preferred content format
+The Foundry Models catalog serves as your central hub for discovering and comparing AI models. With over 1,900 models available from various providers, you need effective ways to filter and find models that match your specific requirements.
+
+The model catalog includes two broad categories of model:
+
+Foundry Models sold directly by Azure
+
+These models are billed directly through your Azure subscription, and include Azure OpenAI models as well as models from Microsoft and other providers.
+
+Foundry Models from partners and community
+
+These models are provided by trusted partners and the community; each with their own licensing and pricing.
+
+Finding models in the model catalog
+The model catalog user interface in the Foundry Portal provides an easy way to search for the right model for your needs. Each model has a model card showing its key information; including the provider, capabilities, benchmark metrics, responsible AI considerations, and deployment options.
+
+Screenshot of the model catalog in Microsoft Foundry portal.
+
+You can search for models by keyword, and you can filter based on the following attributes:
+
+Collection: Models are organized into collections, such as models that are provided directly in Azure, or models in the Hugging Face repository.
+Capabilities: Specific model abilities, including reasoning (complex problem-solving), tool calling (API and function integration), or multimodal processing (text, images, audio).
+Source: The model provider, including Azure OpenAI, Microsoft, Cohere, Mistral, Meta, Anthropic, and others.
+Inference tasks: Specific tasks like text generation, summarization, translation, image-generation, speech synthesis, or other common AI tasks.
+Fine-tuning methods: Supported techniques for fine-tuning a model.
+Industry: Models trained on industry-specific datasets. These specialized models often outperform general-purpose models in their respective domains.
+Understand generative AI model types
+As you explore the catalog, you encounter different categories of models designed for various use cases. In broad terms, you can categorize language models as:
+
+Large Language Models (LLMs) like GPT-5, Mistral Large, and Llama 3 70B that are designed for tasks requiring deep reasoning, complex content generation, and extensive context understanding. These models excel at sophisticated applications but require more computational resources.
+Small Language Models (SLMs) like Phi-4, Mistral OSS models, and Llama 3 8B that offer efficiency and cost-effectiveness while handling common natural language processing tasks. They're ideal for scenarios where speed and cost matter more than handling the most complex reasoning tasks. SLMs can run on lower-end hardware or edge devices.
+Chat completion and reasoning models
+Most language models in the catalog are chat completion models designed to generate coherent, contextually appropriate text responses. These models power conversational interfaces and content generation applications.
+
+For scenarios requiring higher performance in complex tasks like mathematics, coding, science, strategy, and logistics, reasoning models like Claude Opus 4.6 provide enhanced problem-solving capabilities. These models can break down complex problems and show their reasoning process.
+
+Specialized models
+The catalog also includes task-specific models:
+
+Embedding models like Ada and Cohere convert text into numerical representations. These models enable semantic search, recommendation systems, and Retrieval Augmented Generation (RAG) scenarios where you need to find relevant information based on meaning rather than exact keyword matches.
+
+Image generation models like GPT-image-1 create images from text descriptions. Use these for generating marketing materials, illustrations, or design mockups.
+
+Video generation models like Sora 2 create video content from text descriptions.
+
+Image analysis models like GPT-4.1 can accept multimodal input, including text and images; and generate natural language output based on prompts that include images for analysis.
+
+Text to speech models like GPT-4o-tts can convert text-based input to synthesized speech.
+
+Speech to text models like GPT-4o-transcribe can convert audio data containing speech into text transcriptions.
+
+Regional and domain-specific models
+Some models are optimized for specific languages, regions, or industries. When you need specialized performance in a particular domain or language, these models often outperform general-purpose alternatives. Examples include models trained on medical literature, legal documents, or specific language corpora.
+
+Select models using benchmarks
+Completed
+100 XP
+9 minutes
+Choose your preferred content format
+Before deploying a model, you want to understand how it performs across different dimensions. Model benchmarks provide objective, measurable data to help you compare models and make informed selection decisions. The Microsoft Foundry portal offers comprehensive benchmarking tools organized into quality, safety, cost, and performance metrics.
+
+Access model benchmarks
+You can explore benchmarks in two ways within the Microsoft Foundry portal:
+
+In the model catalog, view the Model leaderboard to see comparative rankings across all available models. This view helps you identify top-performing models for specific metrics or scenarios. The leaderboard displays top models ranked by quality, safety, estimated cost, and throughput.
+
+For detailed benchmarks on a specific model, open its model card and select the Benchmarks tab. This view shows how the individual model performs across various metrics and datasets, with comparison charts placing it relative to similar models.
+
+Quality benchmarks
+Quality benchmarks assess how well a model generates accurate, coherent, and contextually appropriate responses. These metrics use public datasets and standardized evaluation methods to ensure consistency.
+
+The Quality index provides a high-level overview by averaging accuracy scores across multiple benchmark datasets that measure reasoning, knowledge, question answering, mathematical capabilities, and coding skills. Higher quality index values indicate stronger overall performance across general-purpose language tasks.
+
+Quality benchmarks use datasets such as:
+
+Arena-Hard - adversarial question answering
+BIG-Bench Hard - reasoning capabilities
+GPQA - graduate-level multi-discipline questions
+HumanEval+ and MBPP+ - code generation tasks
+MATH - mathematical reasoning
+MMLU-Pro - general knowledge assessment
+IFEval - instruction following
+Benchmark scores are normalized indexes ranging from zero to one, where higher values indicate better performance.
+
+Screenshot of model leaderboard in Microsoft Foundry portal.
+
+Safety benchmarks
+Safety metrics ensure models don't generate harmful, biased, or inappropriate content. These benchmarks are crucial for applications exposed to end users, especially in regulated industries or customer-facing scenarios.
+
+Microsoft Foundry evaluates models across multiple safety dimensions:
+
+Harmful behavior detection uses the HarmBench benchmark to measure how well models resist generating unsafe content. The evaluation calculates Attack Success Rate (ASR), where lower values indicate safer, more robust models. HarmBench tests three functional areas:
+
+Standard harmful behaviors - cybercrime, illegal activities, general harm
+Contextually harmful behaviors - misinformation, harassment, bullying
+Copyright violations - reproducing copyrighted material
+Toxic content detection uses the ToxiGen dataset to measure how well models identify adversarial and implicit hate speech. Higher F1 scores indicate better detection performance across references to minority groups.
+
+Sensitive domain knowledge uses the WMDP (Weapons of Mass Destruction Proxy) benchmark to measure model knowledge in biosecurity, cybersecurity, and chemical security. Higher WMDP scores indicate more knowledge of potentially dangerous capabilities.
+
+Safety scores help you understand model robustness, especially important for customer-facing applications where harmful output poses significant concerns.
+
+Cost benchmarks
+Understanding the financial impact of model usage helps you balance quality requirements with budget constraints. Cost benchmarks in Microsoft Foundry display pricing for serverless API deployments and Azure OpenAI models.
+
+Cost per input tokens shows the price for processing 1 million input tokens (the text you send to the model).
+
+Cost per output tokens indicates the price for generating 1 million output tokens (the text the model produces).
+
+Estimated cost combines input and output costs using a typical 3:1 ratio (three input tokens for every output token), giving you a single number for comparison. Lower values indicate more cost-effective models.
+
+Cost benchmarks help you identify models that deliver the quality you need at a price point that fits your application's usage patterns and budget.
+
+Performance benchmarks
+Performance metrics measure how quickly and efficiently models respond to requests. These benchmarks matter for real-time applications where user experience depends on responsiveness.
+
+Latency measurements include:
+
+Latency mean - average time in seconds to process a request
+Latency P50 (median) - 50% of requests complete faster than this time
+Latency P90 - 90% of requests complete faster than this time
+Latency P95 - 95% of requests complete faster than this time
+Latency P99 - 99% of requests complete faster than this time
+Time to first token (TTFT) - time until the first token arrives when using streaming
+Throughput measurements include:
+
+Generated tokens per second (GTPS) - output tokens generated per second
+Total tokens per second (TTPS) - combined input and output tokens processed per second
+Time between tokens - interval between receiving consecutive tokens
+The leaderboard summarizes performance using mean time to first token (lower is better) and mean generated tokens per second (higher is better). High-throughput, low-latency models provide better user experiences in interactive applications. For batch processing jobs where speed matters less than cost, you can prioritize other factors.
+
+Use leaderboards and comparison features
+The model leaderboard lets you view top models for specific metrics. You can sort by quality, safety, estimated cost, and throughput to identify models that best match your requirements.
+
+Scenario leaderboards help you find models optimized for specific use cases like reasoning, coding, math, question answering, or groundedness. If your application maps to a particular scenario, start with the relevant scenario leaderboard rather than relying solely on overall quality index.
+
+Trade-off charts display two metrics simultaneously, such as quality versus cost or quality versus throughput. These visualizations help you find the optimal balance for your requirements. Use the dropdown to compare quality against cost, throughput, or safety. Models closer to the top-right corner of the chart perform well on both metrics. A model that's slightly less accurate but significantly faster or cheaper might better serve your needs.
+
+Side-by-side comparison lets you select two or three models from the leaderboard and compare them across multiple dimensions:
+
+Performance benchmarks (quality, safety, throughput)
+Model details (context window, training data, supported languages)
+Supported endpoints (deployment options)
+Feature support (function calling, structured output, vision)
+Select models by checking boxes next to their names, then choose Compare to open the detailed comparison view.
+
+Deploy models to endpoints
+Completed
+100 XP
+8 minutes
+Choose your preferred content format
+After selecting a model from the catalog, you deploy it to make it accessible through endpoints that your applications can use. The Microsoft Foundry portal guides you through the deployment process and provides tools to test your deployed model immediately.
+
+Screenshot of the Deploy model interface in Foundry portal.
+
+Understand deployment types
+Microsoft Foundry supports several deployment types, each offering different characteristics for data residency, scaling, and billing:
+
+Global Standard model deployments can use any Azure region on a pay-per-token basis. They're best for general workloads, and provide the highest quota.
+Global Provisioned deployments can use any Azure region, and their use is based on a reserved provision throughput units(PTU) basis to provide predictable high-throughput.
+Global Batch deployments can use any Azure region at a 50% discount for large asynchronous jobs within 24-hours.
+Data Zone Standard deployments ensure data stays within a specific data zone on a pay-per-token basis. They're best for scenarios where EU/US data zone compliance is required.
+Data Zone Provisioned deployments provide predictable throughput based on reserved PTUs within a data zone.
+Data Zone Batch deployments are designed for large asynchronous batch jobs within a data zone/
+Standard deployments are deployed within a single region on a pay-per-token basis. They're great when you need regional data residency compliance or for low-volume scenarios.
+Regional Provisioned deployments provide reserved PTUs within a single region.
+Developer Developer deployments use any Azure region on a pay-per-token basis and are for fine-tuned model evaluation only.
+Each model in the catalog indicates which deployment types it supports. The portal automatically selects the best deployment option based on your environment and model requirements. Global Standard deployments in Foundry resources should be used whenever possible for maximum capabilities.
+
+Deploy a model
+To deploy a model from the Microsoft Foundry portal:
+
+First, navigate to the model you selected in the Model catalog. From the Foundry portal homepage, select Discover in the navigation, then Models in the left pane. Open the model card to review its specifications and supported deployment types.
+
+Select Deploy to begin the deployment process. You can choose:
+
+Default settings to deploy quickly with recommended configurations
+Custom settings to customize your deployment options
+If the model requires an Azure Marketplace subscription (common for models from partners and the community), you see terms of use. Review these terms and select Agree and Proceed to accept them. Models sold directly by Azure, such as Azure OpenAI models like GPT-4o-mini, don't require marketplace subscriptions.
+
+Configure your deployment settings:
+
+Deployment name: By default, the system uses the model name. You can modify this to create meaningful names for multiple deployments of the same model. During inference, your code uses this deployment name in the model parameter to route requests.
+Deployment type: The portal automatically selects the appropriate deployment type based on the model and your environment. Each model supports different deployment types providing different data residency or throughput guarantees.
+For managed compute deployments, you also configure:
+
+Virtual machine SKU: Choose from supported VM types. You need Azure Machine Learning compute quota for the selected SKU in your subscription.
+Instance count: Specify how many instances to deploy for load distribution and redundancy.
+After configuring all settings, select Deploy. When deployment completes, you land on the Foundry Playground where you can interactively test the model. Verify that the deployment status shows Succeeded in your deployment list.
+
+Manage deployed models
+After deployment, you manage your models from the Build section in the Microsoft Foundry portal. Select Build in the navigation, then Models in the left pane to see the list of deployments in your resource.
+
+From the deployment list, select a specific model to view its details:
+
+Deployment configuration and status
+Endpoint URL for API access
+Authentication keys or tokens
+Monitoring and usage metrics
+Option to adjust deployment settings or delete the deployment
+The deployment details page provides the information your applications need to connect to and use the model.
+
+Test in the playground
+The Microsoft Foundry portal includes interactive playgrounds where you test deployed models immediately, without writing code. After deployment completes, you automatically land in the playground, or you can select a deployment from your models list to open the playground.
+
+The playground pre-selects your deployment, so you can start testing immediately. In the chat interface:
+
+Enter prompts in the message box and observe responses. The playground displays both your input and the model's generated output, helping you understand behavior and quality.
+
+Experiment with different types of prompts to test various capabilities:
+
+Simple questions to verify basic understanding
+Complex multi-step reasoning problems
+Requests for specific formats or styles
+Edge-cases that might reveal limitations
+Adjust system messages to guide model behavior. System messages set context, tone, and instructions that apply to all user inputs. For example, you might instruct the model to "respond as a customer service representative" or "provide concise, technical explanations."
+
+Modify parameters like temperature (creativity vs. consistency), max tokens (response length limits), and top-p (nucleus sampling) to fine-tune generation behavior.
+
+Select the Code tab to see examples of how to call your deployed model programmatically. The code samples show authentication, endpoint configuration, and request formatting in languages like Python, C#, and JavaScript. You can copy these samples directly into your application.
+
+The playground serves as your development environment for prompt engineering and testing before integrating the model into your application.
+
+Access models programmatically
+When you're ready to integrate the model into your application, you need three key pieces of information from the deployment details:
+
+Endpoint URL: The API endpoint where your application sends requests. Microsoft Foundry supports project endpoints for Foundry-specific functionality, and OpenAI v1 endpoints for broad compatibility with OpenAI model APIs.
+
+Authentication key: The secret key or token your application presents to authenticate requests. Alternatively, you can use Microsoft Entra ID authentication and have your application present an authentication token based on is identity. Entra ID authentication is recommended for production scenarios.
+
+Deployment name: The name you specified during deployment, used in the model parameter of API requests to route to your specific deployment.
+
+Your application uses these details to construct API requests. The Microsoft Foundry portal provides SDKs and REST API documentation for various programming languages, along with code samples showing request formatting, authentication, and response handling.
+
+With your model deployed and tested, you're ready to integrate it into applications or proceed to more comprehensive evaluation using automated metrics and test datasets.
+
+Evaluate model performance
+Completed
+100 XP
+10 minutes
+Choose your preferred content format
+Evaluating your deployed model ensures it meets quality standards, provides accurate responses, and continuously improves over time. The Microsoft Foundry portal offers multiple approaches to evaluation, from manual testing to automated metrics and comprehensive evaluation flows.
+
+Why evaluate models
+Evaluation serves several critical purposes in generative AI application development:
+
+Quality assurance identifies issues and ensures your model provides accurate, relevant responses. Discovering problems during evaluation rather than production protects your users and your organization's reputation.
+
+User satisfaction improves when models consistently deliver helpful, appropriate responses. Evaluation helps you understand how users experience your application and where improvements make the biggest impact.
+
+Continuous improvement comes from analyzing evaluation results to identify enhancement opportunities. Regular evaluation as you update prompts, add features, or retrain models ensures ongoing quality.
+
+Compliance and safety verification confirms your model adheres to policies, avoids generating harmful content, and respects user privacy and data protection requirements.
+
+Manual evaluation approaches
+Manual evaluation involves human reviewers assessing model responses. While time-intensive, manual evaluation provides insights automated metrics can't capture.
+
+Interactive testing in the playground lets you explore model behavior qualitatively. You enter diverse prompts, observe responses, and note issues like incorrect information, inappropriate tone, or failure to follow instructions. This exploratory testing helps you understand a model's strengths and limitations.
+
+To help optimize your application design, you can test models side by side in the playground, synchronizing system instructions and prompts to compare their responses.
+
+Screenshot of the chat playground in the Microsoft Foundry portal.
+
+Structured review involves creating a set of test cases representing your application's use cases. Human evaluators rate responses based on criteria like:
+
+Relevance: Does the response address the question or request?
+Informativeness: Does it provide sufficient detail and useful information?
+Engagement: Is the response interesting and appropriately conversational?
+Accuracy: Are facts and statements correct?
+Safety: Does the response avoid harmful, biased, or inappropriate content?
+Evaluators typically use rating scales (such as 1-5) for each criterion. Aggregate ratings across multiple test cases provide quantitative measures of overall quality.
+
+User studies collect feedback from actual or representative users interacting with your application. User feedback reveals real-world issues you might miss in controlled testing, such as confusing phrasing, missing context, or unmet expectations.
+
+Manual evaluation complements automated approaches by capturing subjective quality aspects like user satisfaction, contextual appropriateness, and brand alignment that metrics alone can't measure.
+
+Automated evaluation metrics
+Automated evaluation uses standard metrics to assess your model's outputs automatically. These evaluations scale efficiently and provide consistent, objective measurements.
+
+The Microsoft Foundry portal supports several categories of evaluation metrics, including:
+
+Generation quality metrics evaluate overall response quality:
+
+Groundedness: Determines whether responses are based on provided context rather than speculation. Groundedness Pro offers binary assessment (grounded or not grounded) useful for factual accuracy requirements.
+Relevance: Measures whether responses address the user's question or request appropriately.
+Coherence: Assesses whether responses flow logically and maintain consistent ideas.
+Fluency: Evaluates linguistic correctness and natural language quality.
+Risk and safety metrics identify potential harmful content:
+
+Self-harm content: Detects responses discussing or encouraging self-harm
+Hateful and unfair content: Identifies bias, discrimination, or hateful statements
+Violent content: Flags responses containing or promoting violence
+Sexual content: Detects inappropriate sexual content
+Protected material: Identifies potential copyright or proprietary content reproduction
+Indirect attack (jailbreak): Assesses vulnerability to manipulation attempts
+For content harm metrics, results aggregate as defect rate—the percentage of responses exceeding a severity threshold (typically Medium). For protected material and indirect attack, defect rate calculates as (true instances / total instances) × 100.
+
+When using AI-assisted evaluation, you specify a GPT model to perform the assessment. This evaluator model analyzes your deployed model's responses and assigns scores based on the selected criteria.
+
+Natural language processing metrics
+NLP metrics provide mathematical-based evaluation without requiring an evaluator model. These metrics often need ground truth data—expected or correct responses for comparison.
+
+F1-score measures the ratio of shared words between generated and ground truth answers, balancing precision (avoiding incorrect words) and recall (including important words). F1-score is valuable for tasks like text classification and information retrieval.
+
+BLEU (Bilingual Evaluation Understudy) compares n-grams (word sequences) between generated and reference texts, commonly used for machine translation evaluation.
+
+METEOR (Metric for Evaluation of Translation with Explicit Ordering) extends BLEU by accounting for synonyms, stemming, and paraphrasing, providing more flexible comparison.
+
+ROUGE (Recall-Oriented Understudy for Gisting Evaluation) emphasizes recall over precision, making it particularly useful for summarization tasks where covering key points matters more than avoiding extra words.
+
+GLEU (Google-BLEU) is a variant of BLEU designed for sentence-level evaluation.
+
+NLP metrics work well when you have definitive correct answers or reference texts. They're less suitable for open-ended generation where many valid responses exist.
+
+Create comprehensive evaluations
+The Microsoft Foundry portal's Evaluation feature lets you run systematic evaluations using test datasets and multiple metrics simultaneously.
+
+You can base your evaluation on one of the following:
+
+Model: Evaluate a deployed model with prompts you specify. The system generates outputs during evaluation.
+Agent: Evaluate an agent's responses with user-defined prompts.
+Dataset: Evaluate pre-generated outputs already present in your test dataset.
+When evaluating a model or agent, you need a dataset to provide inputs for assessment. You have three options:
+
+Upload new dataset: Provide a CSV or JSONL file containing test cases from your local storage.
+Use existing dataset: Select from datasets you've previously uploaded to your project.
+Generate synthetic dataset: If you lack test data, the system can generate sample data based on a topic description you provide. You specify the resource to generate data, the number of rows, and a prompt describing the desired data. You can also upload files to improve relevance to your specific task.
+For dataset evaluation where outputs are pre-generated, select or upload your dataset containing both inputs and model-generated responses.
+
+After configuring the metrics you want to calculate, the field mappings for the evaluation data, and the system prompt for the model; you can start the evaluation job - which may take some time to run asynchronously, processing each row in your test dataset against the selected metrics.
+
+Review evaluation results
+When evaluation completes, the results show aggregate scores for the metrics you selected and details of each test prompt.
+
+Screenshot of evaluation results.
+
+Explore the evaluator library
+The Evaluator library provides a centralized location to view and manage all available evaluators. Access it from your project's Evaluation page by selecting the Evaluator library tab.
+
+In the evaluator library, you can:
+
+View Microsoft-curated evaluators for quality, safety, and performance
+Examine evaluator details including name, description, parameters, and associated files
+Review annotation prompts for quality evaluators to understand how metrics are calculated
+Check definitions and severity levels for safety evaluators
+Manage custom evaluators you've created for specific scenarios
+The library supports version management, letting you compare different versions, restore previous versions if needed, and collaborate with others on custom evaluators.
+
+Iterate based on evaluation
+Evaluation results inform your next steps:
+
+When scores are lower than required, consider:
+
+Prompt engineering: Refining instructions and system messages
+Different models: Trying models optimized for your use case
+RAG integration: Adding retrieval capabilities to ground responses in your data
+Fine-tuning: Training the model on your specific domain (if supported)
+Each of these steps can grow in complexity (and sometimes cost), so take that into consideration when planning improvements.
+
+When safety metrics show concerns:
+
+Content filters: Implementing Azure AI Content Safety services
+Prompt hardening: Adding safety instructions to system messages
+Output validation: Checking responses before displaying to users
+Regular evaluation as you make changes tracks improvements and ensures quality doesn't regress. Establish evaluation benchmarks early in development, then re-run evaluations after modifications to measure impact objectively.
+
+By combining manual testing, automated metrics, and comprehensive evaluation flows, you build confidence that your model performs well, safely serves users, and meets your application's quality requirements.
+
+In this module, you explored the complete workflow for selecting, deploying, and evaluating Foundry Models. You learned how to make informed decisions about model selection using benchmarks, how to deploy models to endpoints, and how to assess their performance using various evaluation approaches.
+
+Key takeaways
+The Microsoft Foundry portal's model catalog provides access to over 1,900 models from providers including Microsoft, OpenAI, Meta, Mistral, and Hugging Face. Effective filtering by collection, capabilities, deployment options, and other attributes helps you narrow the catalog to models matching your requirements.
+
+Model benchmarks offer objective comparisons across quality, safety, cost, and performance dimensions. Quality metrics like accuracy, coherence, and fluency assess how well models generate appropriate responses. Safety metrics identify risks around harmful content. Cost benchmarks help balance quality with budget constraints. Performance metrics like latency and throughput indicate responsiveness for real-time applications.
+
+Deployment options include serverless API for pay-per-call flexibility, provisioned deployments for consistent high-volume workloads, managed compute for VM-based hosting, and batch processing for cost-optimized non-interactive jobs. Each option offers different characteristics for scaling, billing, and control.
+
+Testing in the playground provides immediate feedback on model behavior without writing code. You can experiment with prompts, adjust parameters, and observe responses to understand model capabilities before integrating into applications.
+
+Evaluation approaches range from manual testing to automated metrics. Manual evaluation captures subjective quality aspects like user satisfaction and contextual appropriateness. AI-assisted metrics assess generation quality and safety risks automatically. NLP metrics like F1-score and ROUGE provide mathematical comparison against ground truth data.
+
+Comprehensive evaluation flows in the Microsoft Foundry portal let you run systematic assessments using test datasets and multiple metrics. Results identify strengths, weaknesses, and areas requiring improvement, guiding iterative development of your generative AI applications.
+
+
+Developers creating AI solutions with Microsoft Foundry need to work with a combination of services and software frameworks. When developing a generative AI chat application, you can choose from a range of options to write the code needed to build effective AI apps on Azure.
+
+In this module, you'll learn how to choose the appropriate endpoint, SDK, authentication, and chat API options to build a generative AI chat application.
+
+Explore with the model playground
+Completed
+100 XP
+7 minutes
+Choose your preferred content format
+Before you write code to build a generative AI chat application, it's helpful to explore what your project can do through the Foundry portal. The portal provides interactive tools for testing models and generating code samples that you can use as starting points for your applications.
+
+Screenshot of the Model playground in Microsoft Foundry portal.
+
+Exploring with the Model playground
+The Model playground in the Foundry portal provides an interactive environment for testing models before you write any code. You can access it by selecting Model playground from the left navigation.
+
+The playground lets you:
+
+Send prompts to deployed models and see responses in real time
+Adjust settings like temperature and max tokens
+Add system messages to customize model behavior
+Experiment with different models and configurations
+This no-code environment helps you understand how models respond to different inputs and settings, making it easier to design your application.
+
+Generating code samples
+One of the most useful features of the Model playground is the Code button in the chat pane. At any point during your experimentation, you can select this button to see code samples to reproduce a chat session in your app.
+
+The generated code samples include choices for:
+
+API - Using Responses API, or another API like ChatCompletions
+Language - Select your preferred programming language
+SDK - Choose which SDK you want to see a sample of
+These samples are pre-populated with your project endpoint, model deployment name, and current settings. They provide a ready-to-use starting point for building your application.
+
+You can copy this code directly into your development environment and modify it to fit your needs.
+
+From playground to code
+The typical workflow for building an AI application with Microsoft Foundry looks like this:
+
+Explore in the playground - Test prompts, adjust settings, and find what works
+Generate code samples - Use the Code tab to get SDK samples
+Develop your application - Take the generated code and customize it for your specific needs
+Iterate and refine - Return to the playground to test new ideas, then update your code
+This approach lets you quickly prototype and validate your ideas before investing time in development.
+
+In the next unit, you'll learn about the available endpoints and SDKs you can use to develop a client application.
+
+Choose an endpoint and SDK
+Completed
+100 XP
+7 minutes
+Choose your preferred content format
+Microsoft Foundry provides flexibility for developing generative AI chat applications. Before you start development, it's important to understand the options that are available, and how to decide which of them to use. Some considerations for developing an application include:
+
+Endpoints: Microsoft Foundry projects provide two endpoints that you can use to connect to and consume project assets, such as model deployments, from client applications. Each project has both a Project endpoint and an Azure OpenAI endpoint.
+Client SDK: Depending on the endpoint you select, you can choose to use the Microsoft Foundry SDK or the OpenAI SDK to develop a generative AI chat application. Both SDKs support an OpenAI API compatible client object that can submit prompts to models, but there are some differences in the specific functionality available in each SDK.
+Authentication: Depending on the endpoint and SDK you choose to use, there are multiple ways a client application can be authenticated by Foundry in order to be granted access to assets. In general, production applications should use Microsoft Entra ID authentication, which requires the application to be running in the context of a specific identity; but in some scenarios you can also use key-based or token-based authentication.
+Chat API: The OpenAI client API supports two chat APIs: ChatCompletions and Responses. While the Responses API is recommended for most new development projects, the ChatCompletions API is well-established and compatible across many generative AI models and platforms.
+Let's start by considering the available endpoints, client SDKs, and authentication methods - we'll explore the Responses and ChatCompletions APIs later.
+
+Using the Foundry SDK with the project endpoint
+The Microsoft Foundry SDK provides programmatic access to resources in your projects through a REST API and language-specific client libraries; including:
+
+Azure AI Projects for Python
+Azure AI Projects for Microsoft .NET
+Azure AI Projects for JavaScript
+ Note
+
+This module uses Python code examples for common tasks. You can refer to the language-specific SDK documentation for equivalent code in your preferred language. Each SDK is developed and maintained independently, so some functionality may be at different stages of implementation.
+
+Installing the SDK
+To use the Azure AI Projects library in Python, install the azure-ai-projects package from PyPI along with supporting packages:
+
+Bash
+pip install azure-ai-projects azure-identity openai
+ Note
+
+When using the Foundry SDK to develop a chat application, you also need to import the OpenAI SDK package - the chat client functionality in the Foundry SDK is derived from the OpenAI SDK.
+
+Connecting to the project endpoint
+Each Foundry project has a unique endpoint that you can find on the project's Overview page in the Foundry portal at https://ai.azure.com.
+
+The project endpoint follows this format:
+
+https://{resource-name}.services.ai.azure.com/api/projects/<project-name>
+Use this endpoint to create an AIProjectClient object:
+
+Python
+from azure.identity import DefaultAzureCredential
+from azure.ai.projects import AIProjectClient
+
+project_endpoint = "https://{resource-name}.services.ai.azure.com/api/projects/<project-name>"
+project_client = AIProjectClient(
+    credential=DefaultAzureCredential(),
+    endpoint=project_endpoint
+)
+ Note
+
+The code uses default Azure credentials to authenticate. To enable this authentication, you need to install the azure-identity package (shown in the installation command earlier).
+
+ Tip
+
+To access the project successfully, the code must run in an authenticated Azure session. For example, you can use the Azure CLI az login command to sign in before running the code.
+
+The project client (AIProjectClient) provides access to Foundry-native operations that don't have OpenAI equivalents. Use the project client to:
+
+Retrieve resource connections
+Access project configuration
+Enable tracing
+Manage datasets and indexes
+Creating a chat client
+To chat with a model in your Foundry project, you need an OpenAI-compatible client object. You can use the get_openai_client() method of the project client to get one, like this:
+
+Python
+openai_client = project_client.get_openai_client(api_version="2024-10-21")
+You can then use this chat client object to submit prompts to models and return responses.
+
+Using the OpenAI SDK with the Azure OpenAI endpoint
+The OpenAI SDK is the official client library for calling the OpenAI API. It handles HTTP requests, authentication, retries, and response parsing. The SDK works with OpenAI-hosted models, Azure OpenAI deployments, and Foundry models using the same patterns.
+
+Installing the SDK
+To use the OpenAI library in Python, install the openai package from PyPI along with supporting packages:
+
+Bash
+pip install openai azure-identity
+ Note
+
+The azure-identity package is required if you intend to use token-based authentication to connect to the endpoint using Microsoft Entra ID credentials.
+
+Connecting to the Azure OpenAI endpoint
+Each Foundry project includes an Azure OpenAI endpoint that you can find on the project's Overview page in the Foundry portal at https://ai.azure.com.
+
+The Azure OpenAI endpoint follows this format:
+
+https://{resource-name}.openai.azure.com/openai/v1
+Create an OpenAI client with your endpoint and Azure credentials:
+
+Python
+from openai import OpenAI
+from azure.identity import DefaultAzureCredential, get_bearer_token_provider
+
+token_provider = get_bearer_token_provider(
+    DefaultAzureCredential(), "https://ai.azure.com/.default"
+)
+
+openai_client = OpenAI(  
+  base_url = "https://{resource-name}.openai.azure.com/openai/v1/",  
+  api_key=token_provider,
+)
+In addition to Microsoft Entra ID (recommended), you can authenticate using an API key or environment variables.
+
+API key authentication:
+
+Python
+import os
+from openai import OpenAI
+
+openai_client = OpenAI(
+    api_key=os.getenv("AZURE_OPENAI_API_KEY"),
+    base_url="https://{resource-name}.openai.azure.com/openai/v1/"
+)
+ Important
+
+Use API keys with caution. Store them securely in Azure Key Vault and never include them directly in your code.
+
+Environment variables:
+
+If you set OPENAI_BASE_URL and OPENAI_API_KEY environment variables, the client uses them automatically:
+
+Python
+from openai import OpenAI
+
+openai_client = OpenAI()  # Uses environment variables
+Regardless of how you choose to authenticate, the OpenAI client handles model inference operations. Use it for:
+
+Generating responses with the Responses API
+Chat completions and image generation
+Accessing Foundry direct models (non-Azure OpenAI models)
+Using an AzureOpenAI client object
+
+You should generally use the OpenAI client object to chat with models through the Azure OpenAI v1 endpoint. However, you also have the option to create an AzureOpenAI client object if you need to use functionality from a specific version of the Azure OpenAI API. To create an AzureOpenAI client object, you must specify the API version and the Azure endpoint, like this:
+
+Python
+import os
+from openai import AzureOpenAI
+
+openai_client = AzureOpenAI(
+    azure_endpoint = "https://{resource-name}.openai.azure.com"
+    api_key=os.getenv("AZURE_OPENAI_KEY"),  
+    api_version="2024-10-21",
+)
+Choosing between the Foundry SDK and OpenAI SDK
+Microsoft Foundry supports two approaches for building AI applications. Each serves different purposes, and understanding when to use each one helps you build the right solution.
+
+When to use the Foundry SDK
+Use the Foundry SDK when your application needs Foundry-specific capabilities:
+
+Foundry Agent Service for building and managing AI agents
+Tool invocation and approval workflows
+Cloud evaluations for testing and validating AI responses
+Tracing and observability for monitoring application behavior
+Foundry direct models (non-Azure OpenAI models available through the model catalog)
+Project metadata, connections, and governance features
+Microsoft recommends the Foundry SDK when building apps with agents, evaluations, or Foundry-specific features.
+
+When to use the OpenAI SDK
+Use the OpenAI SDK when you need maximum compatibility with the OpenAI API:
+
+Full OpenAI API compatibility for existing code and tooling
+Portability between OpenAI and Azure OpenAI deployments
+Chat Completions, Responses, and Images APIs
+Minimal dependency on Foundry-specific concepts
+The OpenAI SDK is ideal for model inference workloads where you want existing OpenAI code to work with minimal changes. However, this approach doesn't provide Foundry-specific features like agents or evaluations.
+
+Microsoft Foundry gives you flexibility in how you build AI applications. Use the Foundry SDK with AIProjectClient when you need project-level features like agents, evaluations, tracing, and connections. Use the OpenAI SDK when you need straightforward model inference with maximum OpenAI compatibility. Both SDKs work with your Foundry project endpoint, so you can combine them as needed in your applications. You can also use both SDKs together in the same application—the Foundry SDK for project features and the OpenAI SDK for model inference.
+
+Generate responses with the Responses API
+Completed
+100 XP
+10 minutes
+Choose your preferred content format
+The OpenAI Responses API brings together capabilities from two previously separate APIs (ChatCompletions and Assistants) in a unified experience. It provides stateful, multi-turn response generation, making it ideal for conversational AI applications. You can access the Responses API through an OpenAI-compatible client using either the Foundry SDK or the OpenAI SDK.
+
+Understanding the Responses API
+The Responses API offers several advantages over traditional chat completions:
+
+Stateful conversations: Maintains conversation context across multiple turns
+Unified experience: Combines chat completions and Assistants API patterns
+Foundry direct models: Works with models hosted directly in Microsoft Foundry, not just Azure OpenAI models
+Simple integration: Access through the OpenAI-compatible client
+ Note
+
+The Responses API is the recommended approach for generating AI responses in Microsoft Foundry applications. It replaces the older ChatCompletions API for most scenarios.
+
+Generating a simple response
+With an OpenAI-compatible client, you can generate responses using the responses.create() method:
+
+Python
+# Generate a response using the OpenAI-compatible client
+response = openai_client.responses.create(
+    model="gpt-4.1",  # Your model deployment name
+    input="What is Microsoft Foundry?"
+)
+
+# Display the response
+print(response.output_text)
+The input parameter accepts a text string containing your prompt. The model generates a response based on this input.
+
+Understanding response structure
+A response object contains several useful properties:
+
+output_text: The generated text response
+id: Unique identifier for this response
+status: Response status (for example, "completed")
+usage: Token usage information (input, output, and total tokens)
+model: The model used to generate the response
+You can access these properties to handle responses effectively:
+
+Python
+response = openai_client.responses.create(
+    model="gpt-4.1",
+    input="Explain machine learning in simple terms."
+)
+
+print(f"Response: {response.output_text}")
+print(f"Response ID: {response.id}")
+print(f"Tokens used: {response.usage.total_tokens}")
+print(f"Status: {response.status}")
+Adding instructions
+In addition to the user input, you can provide instructions (often referred to as a system prompt) to guide the model's behavior:
+
+Python
+response = client.responses.create(
+    model="gpt-4.1",
+    instructions="You are a helpful AI assistant that answers questions clearly and concisely.",
+    input="Explain neural networks."
+)
+
+print(response.output_text)
+Controlling response generation
+You can control response generation with additional parameters:
+
+Python
+response = openai_client.responses.create(
+    model="gpt-4.1",
+    instructions="You are a helpful AI assistant that answers questions clearly and concisely.",
+    input="Write a creative story about AI.",
+    temperature=0.8,  # Higher temperature for more creativity
+    max_output_tokens=200  # Limit response length
+)
+
+print(response.output_text)
+temperature: Controls randomness (0.0-2.0). Higher values make output more creative and varied
+max_output_tokens: Limits the maximum number of tokens in the response
+top_p: Alternative to temperature for controlling randomness
+Working with Foundry direct models
+When using the FoundrySDK or AzureOpenAI client to connect to a project endpoint, the Responses API works with both Azure OpenAI models and Foundry direct models (such as Microsoft Phi, DeepSeek, or other models hosted directly in Microsoft Foundry):
+
+Python
+# Using a Foundry direct model
+response = openai_client.responses.create(
+    model="microsoft-phi-4",  # Example Foundry direct model
+    instructions="You are a helpful AI assistant that answers questions clearly and concisely.",
+    input="What are the benefits of small language models?"
+)
+
+print(response.output_text)
+Creating conversational experiences
+For more complex conversational scenarios, you can provide system instructions and build multi-turn conversations:
+
+Python
+# First turn in the conversation
+response1 = openai_client.responses.create(
+    model="gpt-4.1",
+    instructions="You are a helpful AI assistant that explains technology concepts clearly.",
+    input="What is machine learning?"
+)
+
+print("Assistant:", response1.output_text)
+
+# Continue the conversation
+response2 = openai_client.responses.create(
+    model="gpt-4.1",
+    instructions="You are a helpful AI assistant that explains technology concepts clearly.",
+    input="Can you give me an example?",
+    previous_response_id=response1.id
+)
+
+print("Assistant:", response2.output_text)
+In reality, the implementation is likely to be constructed as a loop in which a user can interactively enter messages based on each response received from the model:
+
+Python
+# Track responses
+last_response_id = None
+
+# Loop until the user wants to quit
+print("Assistant: Enter a prompt (or type 'quit' to exit)")
+while True:
+    input_text = input('\nYou: ')
+    if input_text.lower() == "quit":
+        print("Assistant: Goodbye!")
+        break
+
+    # Get a response
+    response = openai_client.responses.create(
+                model=model_name,
+                instructions="You are a helpful AI assistant that explains technology concepts clearly.",
+                input=input_text,
+                previous_response_id=last_response_id
+    )
+    assistant_text = response.output_text
+    print("\nAssistant:", assistant_text)
+    last_response_id = response.id 
+The output from this example looks similar to this:
+
+text
+Assistant: Enter a prompt (or type 'quit' to exit)
+
+You: What is machine learning?
+
+Assistant: Machine learning is a type of artificial intelligence (AI) that enables computers to learn from data and improve their performance over time without being explicitly programmed. It involves training algorithms on large datasets to recognize patterns, make predictions, or take actions based on those patterns. This allows machines to become more accurate and efficient in their tasks as they are exposed to more data.
+
+You: Can you give me an example?
+
+Assistant: Certainly! Let's look at a simple example of supervised learning—predicting house prices based on features like size, location, and number of rooms.
+Imagine you want to build a machine learning model that can predict the price of a house based on various factors.
+...
+    { the example provided in the model response may be extensive}
+...
+
+You: quit
+
+Assistant: Goodbye!
+As the user enters new input in each turn, the data sent to the model includes the Instructions system message, the input from the user, and the previous response received from the model. In this way, the new input is grounded in the context provided by the response the model generated for the previous input.
+
+Alternative: Manual conversation chaining
+You can manage conversations manually by building the message history yourself. This approach gives you more control over what context is included:
+
+Python
+try:
+    # Start with initial message
+    conversation_history = [
+        {
+            "type": "message",
+            "role": "user",
+            "content": "What is machine learning?"
+        }
+    ]
+
+    # First response
+    response1 = openai_client.responses.create(
+        model="gpt-4.1",
+        input=conversation_history
+    )
+
+    print("Assistant:", response1.output_text)
+
+    # Add assistant response to history
+    conversation_history += response1.output
+
+    # Add new user message
+    conversation_history.append({
+        "type": "message",
+        "role": "user", 
+        "content": "Can you give me an example?"
+    })
+
+    # Second response with full history
+    response2 = openai_client.responses.create(
+        model="gpt-4.1",
+        input=conversation_history
+    )
+
+    print("Assistant:", response2.output_text)
+
+except Exception as ex:
+    print(f"Error: {ex}")
+This manual approach is useful when you need to:
+
+Customize which messages are included in context
+Implement conversation pruning to manage token limits
+Store and restore conversation history from a database
+Retrieving specific previous responses
+The Responses API maintains response history, allowing you to retrieve previous responses:
+
+Python
+try:   
+
+    # Retrieve a previous response
+    response_id = "resp_67cb61fa3a448190bcf2c42d96f0d1a8"  # Example ID
+    previous_response = openai_client.responses.retrieve(response_id)
+
+    print(f"Previous response: {previous_response.output_text}")
+
+except Exception as ex:
+    print(f"Error: {ex}")
+Context window considerations
+The previous_response_id parameter links responses together, maintaining conversation context across multiple API calls.
+
+It's important to note that keeping conversation history can increase token usage. For a single run, the active context window can include:
+
+System instructions (instructions, safety rules)
+Your current prompt
+Conversation history (previous user + assistant messages)
+Tool schemas (functions, OpenAPI specs, MCP tools, etc.)
+Tool outputs (search results, code interpreter output, files)
+Retrieved memory or documents (from memory stores, RAG, file search)
+All of these are concatenated, tokenized, and sent to the model together on every request. The SDK helps you manage state, but it doesn't automatically make token usage cheaper.
+
+Creating responsive chat apps
+Responses from a model can take some time to generate depending on factors like the specific model being used, the context window size, and the size of the prompt. User's may become frustrated if the app appears to "freeze" while waiting for a response, so it's important to consider app responsiveness in your implementation.
+
+Streaming responses
+For long responses, you can use streaming to receive output incrementally - so the user sees partially complete responses as output becomes available:
+
+Python
+stream = openai_client.responses.create(
+    model="gpt-4.1",
+    input="Write a short story about a robot learning to paint.",
+    stream=True
+)
+
+for event in stream:
+    print(event, end="", flush=True)
+If you're tracking conversation history when streaming, you can get the response ID when the stream ends, like this:
+
+Python
+stream = openai_client.responses.create(
+    model="gpt-4.1",
+    input="Write a short story about a robot learning to paint.",
+    stream=True
+)
+for event in stream:
+                if event.type == "response.output_text.delta":
+                    print(event.delta, end="")
+                elif event.type == "response.completed":
+                    response_id = event.response.id
+Async usage
+For high-performance applications, you can use an asynchronous client that allows you to make non-blocking API calls. Asynchronous usage is ideal for long-running requests or when you want to handle multiple requests concurrently without blocking your application. To use it, import AsyncOpenAI instead of OpenAI and use await with each API call:
+
+Python
+import asyncio
+from openai import AsyncOpenAI
+
+client = AsyncOpenAI(
+    base_url="https://<resource-name>.openai.azure.com/openai/v1/",
+    api_key=token_provider,
+)
+
+async def main():
+    response = await client.responses.create(
+        model="gpt-4.1",
+        input="Explain quantum computing briefly."
+    )
+    print(response.output_text)
+
+asyncio.run(main())
+Async streaming works the same way:
+
+Python
+async def stream_response():
+    stream = await client.responses.create(
+        model="gpt-4.1",
+        input="Write a haiku about coding.",
+        stream=True
+    )
+
+    async for event in stream:
+        print(event, end="", flush=True)
+
+asyncio.run(stream_response())
+By using the Responses API through the Microsoft Foundry SDK, you can build sophisticated conversational AI applications that maintain context, support multiple model types, and provide a responsive user experience.
+
+Generate responses with the ChatCompletions API
+Completed
+100 XP
+10 minutes
+Choose your preferred content format
+The OpenAI ChatCompletions API is commonly used across generative AI models and platforms. Although the Responses API is recommended for new project development, it's likely that you'll encounter scenarios where the ChatCompletions API is useful for code maintenance or cross-platform compatibility.
+
+Submitting a prompt
+The ChatCompletions API uses collections of message objects in JSON format to encapsulate prompts:
+
+Python
+completion = openai_client.chat.completions.create(
+    model="gpt-4o",  # Your model deployment name
+    messages=[
+        {"role": "system", "content": "You are a helpful assistant."},
+        {"role": "user", "content": "When was Microsoft founded?"}
+    ]
+)
+
+print(completion.choices[0].message.content)
+Retaining conversational context
+Unlike the Responses API, the ChatCompletions API doesn't provide a stateful response tracking feature. To retain conversational context, you must write code to manually track previous prompts and responses.
+
+Python
+# Initial messages
+conversation_messages=[
+    {
+        "role": "system",
+        "content": "You are a helpful AI assistant that answers questions and provides information."
+    }
+]
+
+# Add the first user message
+conversation_messages.append(
+    {"role": "user",
+    "content": "When was Microsoft founded?"}
+)
+
+# Get a completion
+completion = openai_client.chat.completions.create(
+    model="gpt-4o",
+    messages=conversation_messages
+)
+assistant_message = completion.choices[0].message.content
+print("Assistant:", assistant_text)
+
+# Append the response to the conversation
+conversation_messages.append(
+    {"role": "assistant", "content": assistant_text}
+)
+
+# Add the next user message
+conversation_messages.append(
+    {"role": "user",
+    "content": "Who founded it?"}
+)
+
+# Get a completion
+completion = openai_client.chat.completions.create(
+    model="gpt-4o",
+    messages=conversation_messages
+)
+assistant_message = completion.choices[0].message.content
+print("Assistant:", assistant_text)
+
+# and so on...
+In a real application, the conversation is likely to be implemented in a loop; like this:
+
+Python
+# Initial messages
+conversation_messages=[
+    {
+        "role": "system",
+        "content": "You are a helpful AI assistant that answers questions and provides information."
+    }
+]
+
+# Loop until the user wants to quit
+print("Assistant: Enter a prompt (or type 'quit' to exit)")
+while True:
+    input_text = input('\nYou: ')
+    if input_text.lower() == "quit":
+        print("Assistant: Goodbye!")
+        break
+
+    # Add the user message
+    conversation_messages.append(
+        {"role": "user",
+        "content": input_text}
+    )
+
+    # Get a completion
+    completion = openai_client.chat.completions.create(
+        model="gpt-4o",
+        messages=conversation_messages
+    )
+    assistant_message = completion.choices[0].message.content
+    print("\nAssistant:", assistant_message)
+
+    # Append the response to the conversation
+    conversation_messages.append(
+        {"role": "assistant", "content": assistant_message}
+    )
+The output from this example looks similar to this:
+
+text
+Assistant: Enter a prompt (or type 'quit' to exit)
+
+You: When was Microsoft founded?
+
+Assistant: Microsoft was founded on April 4, 1975 in Albuquerque, New Mexico, USA.
+
+You: Who founded it?
+
+Assistant: Microsoft was founded by Bill Gates and Paul Allen.
+
+You: quit
+
+Assistant: Goodbye!
+Each new user prompt and completion is added to the conversation, and the entire conversation history is submitted in each turn.
+
+While not as fully featured as the Responses API, the ChatCompletions API is well established in the generative AI model ecosystem, so it's useful to be familiar with it.
+
+Key takeaways
+In this module, you learned how to:
+
+Use the Foundry SDK with the Foundry project endpoint to access project configuration, connections, tracing, and datasets
+Use the OpenAI SDK with the Foundry project and Azure OpenAI endpoints for model inferencing
+Generate responses with the Responses and ChatCompletions APIs and manage conversations
