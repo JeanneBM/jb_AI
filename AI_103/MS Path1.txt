@@ -1230,3 +1230,992 @@ In this module, you learned how to:
 Use the Foundry SDK with the Foundry project endpoint to access project configuration, connections, tracing, and datasets
 Use the OpenAI SDK with the Foundry project and Azure OpenAI endpoints for model inferencing
 Generate responses with the Responses and ChatCompletions APIs and manage conversations
+
+What are tools?
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+Microsoft Foundry Models includes models that are capable of using tools to find information or perform tasks. You can use tool support in models by specifying which tools you want the model to use in prompts submitted through the OpenAI Responses API.
+
+Diagram of an application configuring a model to use tools.
+
+When you develop a generative AI application using Microsoft Foundry, you can search Foundry Models for a model with tool calling capabilities and deploy it. Then, you can develop client applications that use the OpenAI Responses API to submit prompts to the deployed model, specifying the tools that the model can use.
+
+ Note
+
+By default, the model chooses when to use a tool (and which one), based on the prompt. You can configure tool selection rules and use the Instructions (system prompt) parameter to guide this choice.
+
+Some of the commonly used tools available in the Responses API, include:
+
+code_interpreter: A Python environment in which the model can generate and run code.
+web_search: A tool that enables the model to find general information on the Internet, which allows it to base responses on more current data than it was trained on.
+file_search: A tool that enables the model to search specific files that you upload to a dedicated vector search index - enabling it to ground responses in specific knowledge.
+function: A tool that enables the model to call custom functions in your application code.
+We'll explore these tools in this module.
+
+ Tip
+
+These represent only some of the available tools; and development of tools for agentic AI solutions is a growing area. To learn more about tools supported in the OpenAI Response API, see the OpenAI developer guide
+
+Specifying tools in the Responses API
+You can specify one or more tools in a call to the responses.create() method when generating a response from a model. The following Python pseudocode example indicates where the list of callable tools is specified:
+
+Python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url={openai_endpoint},
+    api_key={auth_key_or_token}
+)
+
+response = client.responses.create(
+    model={model_deployment},
+    instructions="You are a helpful AI assistant.",
+    input="Find me some information about vintage computers.",
+    # Specify available tools as a JSON list
+    tools=[
+        { 
+            # A tool definition
+            "type": "{tool_type}",
+            "{tool-specific-setting}": "{value}",
+                ...
+        },
+        { 
+            # Another tool definition
+            "type": "{another_tool_type}",
+            "{tool-specific-setting}": "{value}",
+                ...
+        }
+    ]
+)
+print(response.output_text)
+
+Use the code_interpreter tool
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The code_interpreter tool provides your model with a Python runtime in which it can generate and run Python code.
+
+What is the code_interpreter tool?
+The code_interpreter tool enables generative AI models to write and run Python code dynamically during a conversation. Rather than just discussing code or algorithms, the model can test its logic, process data, and return actual results from code. This transforms the model from a thinker into a doer.
+
+Key features include:
+
+Dynamic Python Execution: The model writes and runs Python code in a sandboxed environment
+File Handling: Upload, process, and download files (CSV, JSON, images, and so on)
+Data Analysis: Perform calculations, statistical analysis, and data transformations on the fly
+Real-time Feedback: The model sees code execution results and can iterate or fix errors
+Complex Problem Solving: Tackle math problems, simulations, and logic puzzles through executable code
+Common use cases
+Use Case	Example
+Data Analysis	Parse a CSV file and generate summary statistics
+Math & Physics	Solve differential equations or simulate physics scenarios
+File Conversion	Convert between data formats (JSON ↔ CSV, and so on)
+Prototyping	Test algorithms and ideas before formal implementation
+A simple example
+Here's how to use code_interpreter with the OpenAI Responses API:
+
+Python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url={openai_endpoint},
+    api_key={auth_key_or_token}
+)
+
+# Get response using the code_interpreter tool
+response = client.responses.create(
+    model={model_deployment},
+    instructions="You are an AI assistant that provides information. Use the python tool to run code for math problems.",
+    input="What is the square root of 16?",
+    tools=[{"type": "code_interpreter",
+            "container": {"type": "auto"}}]
+)
+print(response.output_text)
+The output from this code is similar to this:
+
+The square root of 16 is 4.
+More importantly, inspecting the details of the response object returned by the model reveals that the result was calculated and returned to the model using dynamically generated Python code like this:
+
+Python
+import math
+
+# Calculate the square root of 16
+square_root = math.sqrt(16)
+square_root
+How the code_interpreter tool works
+The general process for using the code_interpreter tool is:
+
+You send a request: Include code_interpreter in your tools array.
+Model analyzes the task: The model determines if code execution is needed.
+Model generates code: The model writes Python code to accomplish the task.
+Code runs: The code runs in a sandboxed environment with access to common libraries (for example, pandas, numpy, and math).
+Results returned: The model receives the output and incorporates it into its response.
+Best practices
+Be specific: Describe the data format and expected output clearly. Many models internally use the name python tool to identify the code_interpreter tool - so use this language in your instructions.
+Provide context: Include relevant domain knowledge in your prompts
+Validate results: Always review AI-generated code for correctness before using in production
+Monitor costs: Code execution adds tokens; complex operations may use more resources
+Leverage libraries: Common packages like pandas, numpy, and matplotlib are pre-installed
+Error handling: The model can see errors and will attempt to fix them automatically
+Limitations to know about
+Executions run in a sandboxed environment with no external network access
+Some libraries may not be available; let the model know if a standard library fails
+Timeout limits apply to long-running operations
+Code runs with memory constraints—massive datasets may need streaming or chunking
+
+Use the web_search tool
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The web_search tool enables your model to retrieve fresh information from the web while generating a response.
+
+What is the web_search tool?
+The web_search tool gives a generative AI model access to current, external information at runtime. Instead of relying only on training data, the model can issue a search query, review relevant sources, and produce an answer grounded in up-to-date content.
+
+This is especially useful when facts may change frequently, such as pricing, product releases, policy updates, or current events.
+
+Key features include:
+
+Live information retrieval - Get recent information not available in static model training data
+Source-grounded responses - Build answers from retrieved web content
+Reduced hallucination risk - Improve reliability by checking external sources
+Automatic query generation - The model decides when and how to search based on user intent
+Seamless user experience - Search and response generation happen in one flow
+Common use cases
+Use Case	Example
+Current Events	Summarize key updates on a breaking technology announcement
+Market Research	Compare recent product features or pricing across vendors
+Policy Monitoring	Check whether regulations or guidance have changed
+Fact Verification	Validate claims against reputable public sources
+A simple example
+Here's a minimal example using the OpenAI Responses API with web search enabled:
+
+Python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url={openai_endpoint},
+    api_key={auth_key_or_token}
+)
+
+# Get response using the web_search tool
+response = client.responses.create(
+    model={model_deployment},
+    instructions="You are an AI assistant. Use web search when current information is required.",
+    input="What are three major announcements from Microsoft Build this week?",
+    tools=[{"type": "web_search"}]
+)
+
+print(response.output_text)
+The output will vary based on current web results, but it should include a concise answer grounded in recent sources.
+
+How the web_search tool works
+The general process for using the web_search tool is:
+
+You send a request - Include a web search tool in the tools array.
+Model evaluates the question - It decides whether fresh web data is needed.
+Search is performed - The model issues one or more search queries.
+Results are reviewed - Relevant pages are selected and summarized.
+Response is generated - The model combines search findings into the final answer.
+Best practices
+Ask time-aware questions clearly - Include words like "latest", "current", or date ranges when needed
+Set expectations for sources - Prompt for reputable or official sources when accuracy matters
+Request concise outputs - Ask for short summaries with key points to reduce noise
+Verify critical facts - For high-stakes scenarios, independently validate important claims
+Track usage and latency - Web retrieval can increase response time and token usage
+Limitations to know about
+Results depend on what is publicly available and indexable at query time
+Source quality can vary, so output may still require human review
+Retrieved content may change over time, so repeated runs can produce different answers
+Some environments may apply regional, policy, or network restrictions to web access
+Used well, web_search helps your model move from static knowledge to timely, source-aware answers that are more useful in real-world workflows.
+
+Use the file_search tool
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The file_search tool lets your model retrieve relevant information from your own uploaded documents during a response.
+
+What is the file_search tool?
+The file_search tool helps a model answer questions using private or domain-specific files, such as policy documents, manuals, contracts, and internal knowledge bases. Instead of relying only on general training data, the model can search indexed file content and return grounded answers.
+
+This is especially useful when you need accurate responses from trusted internal documents.
+
+Key features include:
+
+Document-grounded answers - Responses are based on your uploaded files
+Semantic retrieval - Finds relevant passages by meaning, not only exact keyword matches
+Vector store integration - Search across one or more indexed document collections
+Citations and transparency - Include matched results for debugging and traceability
+Better enterprise relevance - Use organization-specific knowledge in model outputs
+Common use cases
+Use Case	Example
+Policy Q&A	Answer employee questions from HR policy PDFs
+Support Assistants	Retrieve product steps from internal troubleshooting guides
+Legal Review	Locate specific clauses across contract documents
+Knowledge Discovery	Summarize answers from technical documentation sets
+A simple example
+Here's an example using the OpenAI Responses API with file_search enabled:
+
+Python
+from openai import OpenAI
+
+client = OpenAI(
+    base_url={openai_endpoint},
+    api_key={auth_key_or_token}
+)
+
+# Create vector store and upload a file
+vector_store = client.vector_stores.create(name="policy-docs")
+client.vector_stores.files.upload_and_poll(
+    vector_store_id=vector_store.id,
+    file=open("expenses_policy.pdf", "rb")
+)
+
+# Get response using the file_search tool
+response = client.responses.create(
+    model=model_deployment,
+    instructions="You are an AI assistant that provides information from HR policy documents.",
+    input="What's the maximum amount I can claim for a taxi ride?",
+    tools=[{
+        "type": "file_search",
+        "vector_store_ids": [vector_store.id]
+    }],
+    include=["file_search_call.results"]
+)
+print(response.output_text)
+In this flow, the model searches the indexed policy file and uses the retrieved passages to produce a grounded answer.
+
+How the file_search tool works
+The general process for using the file_search tool is:
+
+You prepare files - Upload documents to a vector store.
+You send a request - Include file_search in the tools array with vector store IDs.
+Model performs retrieval - It searches indexed chunks for relevant content.
+Results are injected - Matching passages are provided to the model.
+Response is generated - The model answers using retrieved document context.
+Best practices
+Use high-quality source files - Clean, current documents improve retrieval accuracy
+Write focused prompts - Ask specific questions to reduce ambiguous matches
+Scope vector stores carefully - Separate domains (HR, legal, finance) when helpful
+Include retrieval results in development - Use response includes for troubleshooting
+Review answers for critical workflows - Keep human validation in high-stakes scenarios
+Limitations to know about
+Answer quality depends on document quality, coverage, and chunk relevance
+Very large or mixed-domain stores can return less focused context
+Updated source files may require re-indexing before new content is searchable
+Retrieval improves grounding but doesn't replace human review for sensitive decisions
+Used well, file_search turns a general-purpose model into a domain-aware assistant that can answer from the documents your team actually uses.
+
+Use the function tool
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The function tool allows your model to call developer-defined functions to retrieve data or trigger actions during a response.
+
+What is the function tool?
+The function tool (function calling) lets a model decide when to call named tools you expose in your application. The model doesn't run your business logic directly. Instead, it returns a structured function call, your code runs the function, and then you pass the function output back to the model.
+
+This pattern is ideal for connecting model reasoning to real-world systems like APIs, databases, business workflows, and utility functions.
+
+Key features include:
+
+Structured tool calls - The model emits explicit function-call requests
+Developer-controlled execution - Your application decides how and where functions run
+Reliable integration pattern - Call APIs, internal services, or helper utilities safely
+Multi-turn orchestration - Return tool output and let the model continue reasoning
+Grounded responses - Answers can include live, system-generated data
+Common use cases
+Use Case	Example
+System Integration	Call an internal API for account or order details
+Task Automation	Trigger workflows like ticket creation or notifications
+Data Lookup	Query business rules or reference tables before answering
+A simple example
+Here's an example that exposes a get_time function and lets the model call it when needed:
+
+Python
+import time
+from openai import OpenAI
+
+# Function to get the current time
+def get_time():
+    return f"The time is {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())}"
+
+
+# Main function
+def main():
+    client = OpenAI(
+        base_url={openai_endpoint},
+        api_key={auth_key_or_token}
+    )
+
+    function_tools = [
+        {
+            "type": "function",
+            "name": "get_time",
+            "description": "Get the current time"
+        }
+    ]
+
+    # Initialize messages with a system prompt
+    messages = [
+        {"role": "developer", "content": "You are an AI assistant that provides information."},
+    ]
+
+    # Loop until the user types 'quit'
+    while True:
+        prompt = input("\nEnter a prompt (or type 'quit' to exit)\n")
+        if prompt.lower() == "quit":
+            break
+
+        # Append the user prompt to the messages
+        messages.append({"role": "user", "content": prompt})
+
+        # Get initial response
+        response = client.responses.create(
+            model=model_deployment,
+            input=messages,
+            tools=function_tools
+        )
+
+        # Append model output to the messages
+        messages += response.output
+
+        # Was there a function call?
+        for item in response.output:
+            if item.type == "function_call" and item.name == "get_time":
+                current_time = get_time()
+                messages.append({
+                    "type": "function_call_output",
+                    "call_id": item.call_id,
+                    "output": current_time
+                })
+
+                # Get a follow up response using the tool output
+                response = client.responses.create(
+                    model=model_deployment,
+                    instructions="Answer only with the tool output.",
+                    input=messages,
+                    tools=function_tools
+                )
+
+        print(response.output_text)
+
+
+# Run the main function when the script starts
+if __name__ == '__main__':
+    main()
+In this flow, the model decides when to call get_time, your code runs the function, and the model then returns a grounded final answer. Since the user can enter any prompt, the model must determine when it needs to call the function. If it does, the response to the prompt will include a function call, that the application code must implement before submitting a new prompt with the output from the function for the model to process.
+
+The output might look something like this:
+
+Enter a prompt (or type 'quit' to exit)
+Hello
+
+Hello! How can I help you today?
+
+Enter a prompt (or type 'quit' to exit)
+What time is it?
+
+The time is 2026-03-19 17:17:41.
+
+Enter a prompt (or type 'quit' to exit)
+The first user prompt ("Hello") didn't require the use of the function tool, so the model responded normally. The second prompt ("What time is it?") triggered the model to select the get_time function, which it indicated in its response. The application code then ran the function and returned the results to the model, which then sent a second response with the results from the function.
+
+ Tip
+
+This example uses a single function with no parameters. You can configure the tool to use multiple functions, with or without parameters. For more information about specifying function details, see the OpenAI developers guide.
+
+How the function tool works
+The general process for using the function tool is:
+
+You define tools - Provide one or more function definitions in the tools array.
+Model evaluates the prompt - It determines whether a function call is needed.
+Model emits a function call - The response includes the function name and call metadata.
+Your app runs logic - Run the matching function in your code.
+You return function output - Send a function_call_output item with the result.
+Model completes the answer - It incorporates tool results into the final response.
+Best practices
+Keep tools focused - Small, single-purpose functions are easier to control and test
+Validate function inputs - Never trust tool arguments blindly in production systems
+Handle errors safely - Return clear error outputs the model can reason about
+Log tool usage - Track calls, latency, and failure rates for debugging and governance
+Limit sensitive operations - Require explicit authorization for high-impact actions
+Limitations to know about
+The model requests function calls, but your application must run them
+Incorrect or unexpected tool arguments can occur and should be validated
+Tool latency can increase end-to-end response time
+Function calling improves reliability, but final outputs still need review for critical decisions
+Used well, the function tool turns a model from a text generator into an orchestrator that can interact with real systems in a controlled, auditable way.
+
+In this module, you learned how tool calling extends a generative AI model from text-only reasoning to practical, grounded action.
+
+You explored how to configure tools in OpenAI Responses API requests and how each tool adds a different capability:
+
+The code_interpreter tool lets the model generate and run Python code for calculations, data analysis, and iterative problem solving.
+The web_search tool enables retrieval of current external information so responses can include timely, source-grounded content.
+The file_search tool helps the model answer questions from your own indexed documents and knowledge files.
+The function tool allows your application to run custom business logic and return results back to the model.
+Across all tools, the same core implementation pattern applies: define the tool in your request, let the model decide when to use it, return tool output when required, and validate responses for correctness and safety.
+
+As a next step, you can combine these techniques to build more cap
+
+Introduction
+Completed
+100 XP
+2 minutes
+Choose your preferred content format
+Language models are powerful tools for building generative AI applications, but a base model on its own might not meet all of your requirements. The quality, accuracy, and consistency of the responses a model generates depend on how you configure and augment it.
+
+Imagine you're a developer working for a travel agency. You're building a chat application to help customers with their travel-related questions. The base model gives decent responses, but your team has specific needs: the responses should follow the company's tone of voice, include accurate information about your hotel catalog, and maintain a consistent format across interactions. How do you get the model to perform at this level?
+
+There are several complementary strategies you can use to optimize a generative AI model's performance. These strategies range from quick, low-cost adjustments to more involved techniques that require additional time and resources.
+
+Diagram showing the various strategies to optimize the model's performance, from prompt engineering to RAG and fine-tuning.
+
+Throughout this module, you explore each of these strategies and learn when and how to apply them individually or in combination.
+
+Optimize model output with prompt engineering
+Completed
+100 XP
+9 minutes
+Choose your preferred content format
+The most accessible way to optimize a model's performance is through prompt engineering. Prompt engineering is the process of designing and refining prompts to improve the quality, accuracy, and relevance of the responses a language model generates. It requires no additional infrastructure or training data, and you can start experimenting immediately.
+
+Understand prompt components
+When you interact with a language model, the quality of your question directly influences the quality of the response. A well-constructed prompt helps the model understand what you need and generate a more useful answer.
+
+Prompts for chat completion models typically include the following components:
+
+System message: Instructions that define the model's behavior, role, and constraints.
+User message: The question or input from the user.
+Assistant message: Previous model responses, used in multi-turn conversations.
+Examples: Sample input/output pairs that demonstrate the expected response format.
+How you structure and combine these components determines how effectively the model responds.
+
+Design effective system messages
+A system message is a set of instructions you provide to the model to guide its responses. System messages typically appear first in the conversation and act as the highest-level set of instructions. You use them to:
+
+Define the assistant's role and boundaries.
+Set the tone and communication style.
+Specify output formats, such as JSON or bullet points.
+Add safety and quality constraints for your scenario.
+A system message can be as simple as:
+
+text
+You are a helpful AI assistant.
+Or it can include detailed rules and formatting requirements. For example, the travel agency's chat application could use:
+
+text
+You are a friendly travel advisor for Margie's Travel.
+Answer only questions related to travel, hotels, and trip planning.
+Use a warm, conversational tone.
+If you don't have enough information to answer, ask a clarifying question.
+Format hotel recommendations as a bulleted list with the hotel name, location, and price range.
+ Important
+
+A system message influences the model but doesn't guarantee compliance. You should test and iterate on your system messages, and layer them with other mitigations like content filtering and evaluation.
+
+When designing a system message, follow this checklist:
+
+Start with the assistant's role: State the role and the expected outcome for a typical request.
+Define boundaries: List the topics, actions, and content types the assistant should avoid.
+Specify the output format: If you need a specific format, state it plainly and keep it consistent.
+Add a "when unsure" policy: Tell the model what to do when the user's request is ambiguous, out of scope, or when the model lacks information.
+Apply prompt patterns
+Effective prompts use patterns that help the model produce better responses. Here are some common patterns you can use:
+
+Persona pattern
+Instruct the model to take on a specific perspective or role. For example, asking the model to respond as a seasoned marketing professional produces different results than using no persona at all.
+
+No persona	With persona
+System message	None	You're a seasoned marketing professional writing for technical customers.
+User prompt	Write a one-sentence description of a CRM product.	Write a one-sentence description of a CRM product.
+Response	A CRM product is a software tool designed to manage a company's interactions with customers.	Experience seamless customer relationship management with our CRM, designed to streamline operations and drive sales growth with robust analytics.
+Format template pattern
+Provide a template or structure in your prompt to get output in a specific format. For example, if you need a structured response about a hotel:
+
+text
+Format the result to show:
+- Hotel name
+- Location
+- Star rating
+- Price range per night
+This pattern ensures consistent, organized responses that are easy to parse in your application.
+
+Chain-of-thought pattern
+Ask the model to explain its reasoning step by step. This technique, called chain of thought, reduces the chance of inaccurate results and makes it easier to verify the model's logic.
+
+For example, instead of asking "Which hotel is best for a family of four?", you can prompt:
+
+text
+Which hotel is best for a family of four? Take a step-by-step approach: 
+consider room size, amenities for children, location, and price.
+A related technique is to break the task down into explicit sub-steps before the model responds, rather than asking it to reason through everything at once. For example, you might first ask the model to extract key facts from a passage, and then in a follow-up prompt ask it to answer a question based on those facts. Decomposing the work this way reduces errors on complex, multi-part tasks.
+
+ Note
+
+Chain-of-thought prompting is a technique for non-reasoning models. Reasoning models like o-series models handle step-by-step logic internally.
+
+Few-shot learning pattern
+Provide one or more examples of the desired input and output to help the model identify the pattern you want. This technique is called few-shot learning (or one-shot for a single example). When no examples are provided, it's called zero-shot learning.
+
+For example, to classify customer inquiries:
+
+text
+Classify the following customer messages:
+
+Message: "I need to change my flight to Rome"
+Category: Booking change
+
+Message: "What's the weather like in Bali in March?"
+Category: Travel information
+
+Message: "Can I get a refund for my cancelled tour?"
+Category:
+The model learns the classification pattern from the examples and correctly completes the last entry.
+
+Use clear syntax and delimiters
+When your prompt includes multiple sections — such as instructions, source text, and examples — use delimiters like ---, Markdown headings, or XML tags to separate them. Clear boundaries help the model distinguish instructions from content and reduce the chance of misinterpretation.
+
+ Tip
+
+Models can be susceptible to recency bias, meaning text near the end of a prompt can have more influence than text at the beginning. If the model isn't following your instructions consistently, try repeating the key instruction at the end of the prompt.
+
+Configure model parameters
+Beyond the text of your prompts, you can adjust model parameters that control how the model generates responses:
+
+Temperature: Controls the randomness of the output. A higher value (for example, 0.7) produces more creative and varied responses, while a lower value (for example, 0.2) produces more focused and deterministic responses. Use lower values for factual tasks and higher values for creative ones.
+Top_p: Also controls randomness, but in a different way. It limits the model to a subset of the most probable next tokens. For example, a top_p of 0.9 means the model considers only the top 90% of probable tokens.
+ Tip
+
+The general recommendation is to adjust either temperature or top_p, not both at the same time.
+
+For the travel agency scenario, you might use a low temperature (0.2) when answering factual questions about hotel amenities, but a higher temperature (0.7) when generating creative travel itinerary suggestions.
+
+When prompt engineering is enough
+Prompt engineering is the right starting point for any model optimization effort. It's effective when you need to:
+
+Guide the model's tone, format, and behavior.
+Provide specific instructions for a task.
+Quickly iterate on results without infrastructure changes.
+Keep costs low, as no additional training or data storage is required.
+However, prompt engineering has limits. If the model doesn't have access to the information it needs (like your company's hotel catalog), or if it consistently fails to maintain a specific behavior despite detailed instructions, you need to consider additional strategies.
+
+Ground your model with Retrieval Augmented Generation
+Completed
+100 XP
+9 minutes
+Choose your preferred content format
+Prompt engineering helps guide how a model responds, but it can't give the model knowledge it doesn't already have. Language models are trained on large datasets, but that training data has a cutoff date and doesn't include your organization's private information. When a model lacks relevant context, it might generate responses that sound plausible but are factually incorrect.
+
+To address this challenge, you can ground the model by providing it with relevant, factual data to base its responses on. Retrieval Augmented Generation (RAG) is the most common technique for grounding a language model.
+
+Understand grounding
+When you use a language model without grounding, the only information it has comes from its training data. The result might be grammatically correct and logically structured, but it can be inaccurate or include fabricated details. For example, asking "Which hotels do you offer in Paris?" without grounding data might return fictional hotel names.
+
+Diagram showing an ungrounded model returning an uncontextualized response based only on training data.
+
+When you ground a prompt, you provide relevant data from a trusted source along with the user's question. The model then generates a response based on that data, producing more accurate and contextually relevant answers.
+
+Consider the difference:
+
+Ungrounded: The model relies only on its training data and might invent hotel names or details.
+Grounded: The model receives your actual hotel catalog data as context and responds with real hotel names, prices, and availability.
+Diagram comparing an ungrounded model returning generic responses versus a grounded model returning data-backed responses.
+
+Grounding improves the factual accuracy of responses by connecting the model to information that is specific, current, and relevant to the user's needs.
+
+How RAG works
+RAG is a pattern that retrieves relevant information from a data source and includes it in the prompt before the model generates a response. The process follows three steps:
+
+Diagram showing the three-step RAG pattern: retrieve grounding data, augment the prompt with that data, and generate a grounded response.
+
+Retrieve: Search a data source for information that is relevant to the user's question.
+Augment: Add the retrieved information to the prompt as context.
+Generate: Send the augmented prompt to the language model to generate a grounded response.
+By retrieving context from a specified data source, you ensure that the model uses relevant, up-to-date information instead of relying solely on its training data.
+
+Create embeddings for search
+A critical component of RAG is the ability to efficiently find the most relevant information in your data source. This is where embeddings and vector search come in.
+
+An embedding is a mathematical representation of text as a vector — a list of floating-point numbers that captures the meaning of words, sentences, or documents. You create embeddings by sending your content to an embedding model, such as an Azure OpenAI embedding model available in Microsoft Foundry.
+
+For example, imagine two documents:
+
+"The children played joyfully in the park."
+"Kids happily ran around the playground."
+These sentences use different words but have similar meanings. When you create embeddings for each, their vectors are close together in multidimensional space, reflecting their semantic similarity.
+
+Diagram showing text keywords plotted as vectors in multidimensional space, with the distance between vectors representing semantic similarity.
+
+Cosine similarity measures how close two vectors are by calculating the angle between them. A value near 1 means the vectors are very similar. This mathematical approach enables you to find relevant documents even when the exact words don't match.
+
+Use Azure AI Search for retrieval
+Azure AI Search provides the retrieval component for RAG solutions in Microsoft Foundry. It allows you to bring your own data, create a searchable index, and query it to retrieve relevant information.
+
+Diagram showing an Azure AI Search index being queried to retrieve grounding data for a user question.
+
+To use Azure AI Search with RAG, you:
+
+Add your data to Microsoft Foundry from sources like Azure Blob Storage, Azure Data Lake Storage Gen2, or Microsoft OneLake. You can also upload files directly.
+Create an index using an embedding model to generate vector representations of your content. The index is stored in Azure AI Search.
+Query the index when a user asks a question. The system converts the question to an embedding, searches for the most similar content, and returns the relevant results.
+Azure AI Search supports several search techniques:
+
+Keyword search: Matches exact terms in the query to text in the index.
+Semantic search: Uses semantic models to match the meaning of the query rather than exact keywords.
+Vector search: Uses embeddings to find semantically similar content.
+Hybrid search: Combines keyword, semantic, and vector search for the most accurate results. Hybrid search is recommended for generative AI applications.
+Implement RAG with the Azure AI Foundry SDK
+After you create an Azure AI Search index, you can connect it to a model through your Microsoft Foundry project. The azure-ai-projects SDK lets you get an authenticated OpenAI client and use the Responses API to generate grounded answers.
+
+The following Python code shows a basic implementation:
+
+Python
+from azure.ai.projects import AIProjectClient
+from azure.identity import DefaultAzureCredential
+
+project = AIProjectClient(
+    endpoint=os.environ["PROJECT_ENDPOINT"],
+    credential=DefaultAzureCredential(),
+)
+
+client = project.get_openai_client()
+
+response = client.responses.create(
+    model="gpt-4o",
+    input=[
+        {"role": "system", "content": "You are a helpful travel advisor. "
+         "Use the following hotel data to answer: " + retrieved_context},
+        {"role": "user", "content": "Which hotels do you offer in Paris?"},
+    ],
+)
+
+print(response.output_text)
+In this example, retrieved_context represents the documents returned from your Azure AI Search index. By injecting those results into the system message, the model's response is grounded in your actual data rather than its general training knowledge.
+
+When to use RAG
+RAG is most effective when:
+
+The model needs domain-specific knowledge: Your organization has private data that the model wasn't trained on, like a product catalog, policy documents, or internal knowledge base.
+Information changes frequently: Your data is updated regularly, such as inventory, pricing, or news. RAG retrieves current data at query time without retraining.
+Factual accuracy is critical: You need responses grounded in real data rather than the model's general knowledge.
+The base model's training data has a cutoff: Events or information that occurred after the model's training cutoff date need to be accessible.
+For the travel agency scenario, RAG allows customers to ask questions about specific hotels, destinations, and booking policies, all grounded in the agency's actual catalog data.
+
+Fine-tune a model for consistent behavior
+Completed
+100 XP
+9 minutes
+Choose your preferred content format
+Prompt engineering helps you guide the model's behavior, and RAG helps you ground responses in factual data. But sometimes the model still doesn't produce responses with the consistent style, tone, or format you need. When you notice that the model ignores or inconsistently follows your instructions—even with detailed system messages and few-shot examples—it might be time to fine-tune the model.
+
+Fine-tuning is the process of taking a pretrained language model and further training it on a smaller, task-specific dataset. This adjusts the model's internal weights so that it produces responses that are consistent with the patterns in your training data.
+
+Understand fine-tuning
+Foundation models like GPT-4o are trained on vast amounts of general data. Fine-tuning builds on that foundation by training the model with additional examples that reflect your specific requirements. Think of it as specializing a generalist: the model retains its broad language capabilities but learns to respond in the particular way your training data demonstrates.
+
+Fine-tuning uses LoRA (Low-Rank Adaptation), a technique that approximates weight changes with a lower-rank representation. Instead of retraining all of the model's parameters, LoRA updates only a smaller subset of important parameters. This makes training faster and more cost-effective while maintaining model quality.
+
+The key benefit of fine-tuning over training a model from scratch is efficiency. You need less time, fewer computing resources, and significantly less data to customize a model's behavior.
+
+Know when to fine-tune
+Fine-tuning is suited for scenarios where prompt engineering alone doesn't achieve the consistency you need. Common use cases include:
+
+Consistent style and tone: Your organization has a specific brand voice, and the model needs to follow it reliably across all interactions. For example, the travel agency wants every response to use a warm, encouraging tone with short paragraphs.
+Specific output formats: You need the model to reliably produce structured output, like JSON responses following a defined schema, and few-shot examples alone aren't sufficient.
+Reducing prompt length: Long system messages with many examples consume tokens and increase latency. Fine-tuning embeds those patterns into the model, reducing the prompt size needed for each request.
+Distillation: You want to transfer the capabilities of a large, expensive model to a smaller, more efficient one. For example, you can collect outputs from a high-performing model and use them to fine-tune a smaller model that achieves similar quality at lower cost and latency.
+Enhancing tool usage: When your application uses tool calling, fine-tuning with tool examples can improve the accuracy of tool selection and parameter generation.
+ Important
+
+Fine-tuning is an advanced capability. Always start by evaluating the baseline performance of a standard model against your requirements before considering fine-tuning. Without a baseline, it's hard to detect whether fine-tuning improved or degraded the model's performance.
+
+Explore types of fine-tuning
+Microsoft Foundry offers several fine-tuning techniques:
+
+Supervised fine-tuning (SFT): Train the model on a labeled dataset of prompt-and-response pairs. The model learns to produce outputs that match the patterns in your training data. This technique works best when there are clear, well-defined ways to approach a task.
+Reinforcement fine-tuning (RFT): Optimize the model's behavior through iterative feedback, using a grader to reward better responses incrementally. RFT works well for complex or dynamic tasks where there are many possible solutions and you want to improve the model's reasoning quality.
+Direct Preference Optimization (DPO): Align the model based on human preferences by providing preferred and non-preferred response pairs. DPO is computationally lighter than traditional reinforcement learning approaches while being equally effective at alignment.
+You can also combine techniques. For example, first use supervised fine-tuning to create a customized model, then use DPO to further align the responses to your specific preferences.
+
+Prepare training data
+Fine-tuning requires a dataset of high-quality examples in JSONL (JSON Lines) format. For chat completion models, each example consists of a conversation with system, user, and assistant messages:
+
+JSON
+{"messages": [{"role": "system", "content": "You are a friendly travel advisor for Margie's Travel."}, {"role": "user", "content": "What's a good beach destination in Europe?"}, {"role": "assistant", "content": "For a beautiful European beach experience, consider the Algarve in southern Portugal! It offers stunning golden cliffs, warm waters, and charming coastal towns. The best time to visit is from May through September."}]}
+{"messages": [{"role": "system", "content": "You are a friendly travel advisor for Margie's Travel."}, {"role": "user", "content": "I need a budget hotel in Tokyo."}, {"role": "assistant", "content": "Here are some great budget-friendly options in Tokyo:\n\n- **Sakura Hotel Jimbocho** - Central location, from $45/night\n- **Khaosan World Asakusa** - Near Senso-ji temple, from $35/night\n- **Imano Tokyo Ginza Hostel** - Modern design, from $40/night\n\nAll three options are close to public transit, making it easy to explore the city."}]}
+When preparing your training data:
+
+Include a consistent system message across examples.
+Use high-quality, representative examples that cover the range of scenarios you expect.
+Aim for at least hundreds of examples; more is generally better.
+Ensure the assistant responses reflect exactly the style, format, and tone you want.
+ Note
+
+Including a system message in your training data is important. Leaving it blank tends to produce lower-accuracy models. Use the same system message when you deploy your fine-tuned model for inference.
+
+Consider the challenges
+Fine-tuning introduces costs and complexity that you should evaluate before committing:
+
+Training costs: Fine-tuning has upfront costs for training and ongoing hourly costs for hosting the custom model.
+Data quality requirements: Poor-quality or unrepresentative training data leads to overfitting, underfitting, or bias.
+Maintenance: Fine-tuned models may need to be retrained when data changes or when updated base models are released.
+Experimentation: Finding the right combination of hyperparameters (epochs, batch size, learning rate) requires testing and iteration.
+Model drift: Specializing too narrowly can make the model less effective at general language tasks outside the fine-tuned domain.
+For the travel agency, fine-tuning means every response consistently matches the company's brand voice and formatting guidelines—even without extensive system messages. But the team needs to weigh this benefit against the cost of preparing training data and maintaining the fine-tuned model over time.
+
+Compare and combine optimization strategies
+Completed
+100 XP
+7 minutes
+Choose your preferred content format
+Now that you've explored prompt engineering, RAG, and fine-tuning individually, let's look at how they relate to each other. These strategies aren't mutually exclusive; they're complementary methods that you can combine to meet different optimization goals.
+
+Understand the optimization spectrum
+The three optimization strategies address different dimensions of model performance:
+
+Diagram showing the various strategies to optimize the model's performance, from prompt engineering to RAG and fine-tuning.
+
+Optimize for context: When the model lacks domain-specific knowledge and you want to maximize the accuracy of responses. RAG addresses this by retrieving relevant data from external sources.
+Optimize the model: When you want to improve the response format, style, or tone by maximizing the consistency of behavior. Fine-tuning addresses this by training the model on examples that demonstrate the desired output.
+Prompt engineering is the foundation that supports both directions. You use prompt engineering to instruct the model how to behave and what to focus on, and then layer RAG or fine-tuning when prompt engineering alone isn't sufficient.
+
+Compare strategies
+Each strategy has different trade-offs in terms of implementation time, complexity, cost, and what it does best:
+
+Strategy	Time to implement	Complexity	Cost	Best for
+Prompt engineering	Low	Low	Low (per-token only)	Guiding tone, format, and behavior; quick iteration; providing instructions and examples
+RAG	Medium	Medium	Medium (search infrastructure + storage + per-token)	Factual accuracy, domain-specific knowledge, dynamic or frequently changing data
+Fine-tuning	High	High	High (training compute + model hosting + per-token)	Behavioral consistency, style enforcement, reducing prompt length, model distillation
+Prompt engineering trade-offs
+Prompt engineering is the quickest and least expensive optimization strategy. You can start immediately without any infrastructure changes. However, longer prompts consume more tokens per request, and the model might not always follow complex instructions consistently. Prompt engineering also can't give the model access to information it wasn't trained on.
+
+RAG trade-offs
+RAG provides the model with up-to-date, relevant data at query time, which significantly improves factual accuracy. However, it requires setting up a search service, creating and maintaining an index, and processing embeddings. The quality of RAG responses depends on the quality of your search index and how well your data is chunked and indexed.
+
+Fine-tuning trade-offs
+Fine-tuning produces the most consistent model behavior because the desired patterns are embedded in the model's weights. It can also reduce per-request costs by shortening prompts. However, fine-tuning has the highest upfront investment: you need to prepare training data, pay for training compute, and host the custom model. The fine-tuned model may also need to be retrained when the base model is updated or when your requirements change.
+
+Combine strategies for better results
+The most effective generative AI applications often use multiple strategies together. Here are common combinations:
+
+Prompt engineering + RAG
+This is the most common combination. You use prompt engineering to define the model's behavior (through system messages and instructions) and RAG to provide the factual context needed for accurate responses. For example:
+
+The system message instructs the model to act as a travel advisor and format responses in a specific way.
+RAG retrieves details from the hotel catalog so the model can answer with real hotel names and prices.
+This combination addresses both how the model should act and what the model needs to know.
+
+Prompt engineering + fine-tuning
+Use this combination when you need the model to consistently follow a specific style or format. The fine-tuned model handles the baseline behavior, and the system message provides additional per-conversation context. For example:
+
+The fine-tuned model is trained to always respond in the travel agency's brand voice.
+The system message adds session-specific instructions, such as giving priority to a seasonal promotion.
+RAG + fine-tuning
+Combine these strategies when you need both factual grounding and consistent behavior. The fine-tuned model ensures the response style is reliable, while RAG provides the current, domain-specific data. For example:
+
+The fine-tuned model produces responses in the agency's brand voice and structured format.
+RAG retrieves up-to-date hotel pricing and availability from the catalog.
+All three strategies together
+For the most demanding applications, you can use prompt engineering, RAG, and a fine-tuned model together. Each layer handles a different concern:
+
+Fine-tuning ensures consistent style and format.
+RAG provides accurate, up-to-date domain knowledge.
+Prompt engineering adds conversation-specific instructions and guardrails.
+Apply a decision framework
+When deciding which strategies to use, start simple and add complexity only when needed:
+
+Start with prompt engineering: Test system messages, few-shot examples, and parameter tuning. Evaluate whether the results meet your requirements.
+Add RAG if accuracy matters: If the model needs access to specific, current, or private data to answer correctly, implement RAG with Azure AI Search.
+Add fine-tuning if consistency matters: If the model doesn't reliably maintain the desired style, tone, or format despite detailed prompts, fine-tune the model with representative examples.
+Combine as needed: Layer strategies based on your application's specific requirements. Not every application needs all three.
+This incremental approach helps you avoid unnecessary cost and complexity while ensuring you achieve the optimization level your application requires.
+
+In this module, you learned how to optimize generative AI model performance using complementary strategies in Microsoft Foundry.
+
+You learned how to:
+
+Apply prompt engineering techniques including system messages, few-shot learning, and model parameters to optimize model output.
+Understand when and how to ground a language model using Retrieval Augmented Generation (RAG).
+Identify when fine-tuning a model improves behavioral consistency.
+Compare optimization strategies and determine when to combine them.
+The key takeaway is that prompt engineering, RAG, and fine-tuning aren't competing approaches—they're complementary strategies that address different dimensions of model performance. Start with prompt engineering to guide the model's behavior, add RAG when factual accuracy requires domain-specific data, and consider fine-tuning when you need consistent style and format that prompt engineering alone can't reliably achieve.
+
+For the travel agency scenario, the most effective solution might combine all three: a fine-tuned model that maintains the brand voice, RAG that grounds responses in the actual hotel catalog, and prompt engineering that adds conversation-specific instructions and safety guardrails.
+
+Introduction
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+Generative AI is one of the most powerful advances in technology ever. It enables developers to build applications that consume machine learning models trained with a large volume of data from across the Internet to generate new content that can be indistinguishable from content created by a human.
+
+With such powerful capabilities, generative AI brings with it some dangers; and requires that data scientists, developers, and others involved in creating generative AI solutions adopt a responsible approach that identifies, measures, and mitigates risks.
+
+The module explores a set of guidelines for responsible generative AI that has been defined by experts at Microsoft. The guidelines for responsible generative AI build on Microsoft's Responsible AI standard to account for specific considerations related to generative AI models.
+
+Plan a responsible generative AI solution
+Completed
+100 XP
+2 minutes
+Choose your preferred content format
+The Microsoft guidance for responsible generative AI is designed to be practical and actionable. It defines a four stage process to develop and implement a plan for responsible AI when using generative models. The four stages in the process are:
+
+Map potential harms that are relevant to your planned solution.
+Measure the presence of these harms in the outputs generated by your solution.
+Mitigate the harms at multiple layers in your solution to minimize their presence and impact, and ensure transparent communication about potential risks to users.
+Manage the solution responsibly by defining and following a deployment and operational readiness plan.
+ Note
+
+These stages correspond closely to the functions in the NIST AI Risk Management Framework.
+
+The remainder of this module discusses each of these stages in detail, providing suggestions for actions you can take to implement a successful and responsible generative AI solution.
+
+Map potential harms
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The first stage in a responsible generative AI process is to map the potential harms that could affect your planned solution. There are four steps in this stage, as shown here:
+
+Diagram showing steps to identify, prioritize, test, and share potential harms.
+
+Identify potential harms
+Prioritize identified harms
+Test and verify the prioritized harms
+Document and share the verified harms
+1: Identify potential harms
+The potential harms that are relevant to your generative AI solution depend on multiple factors, including the specific services and models used to generate output as well as any fine-tuning or grounding data used to customize the outputs. Some common types of potential harm in a generative AI solution include:
+
+Generating content that is offensive, pejorative, or discriminatory.
+Generating content that contains factual inaccuracies.
+Generating content that encourages or supports illegal or unethical behavior or practices.
+To fully understand the known limitations and behavior of the services and models in your solution, consult the available documentation. For example, the Azure OpenAI Service includes a transparency note; which you can use to understand specific considerations related to the service and the models it includes. Additionally, individual model developers may provide documentation such as the OpenAI system card for the GPT-4 model.
+
+Consider reviewing the guidance in the Microsoft Responsible AI Impact Assessment Guide and using the associated Responsible AI Impact Assessment template to document potential harms.
+
+Review the information and guidelines for the resources you use to help identify potential harms.
+
+2: Prioritize the harms
+For each potential harm you have identified, assess the likelihood of its occurrence and the resulting level of impact if it does. Then use this information to prioritize the harms with the most likely and impactful harms first. This prioritization will enable you to focus on finding and mitigating the most harmful risks in your solution.
+
+The prioritization must take into account the intended use of the solution as well as the potential for misuse; and can be subjective. For example, suppose you're developing a smart kitchen copilot that provides recipe assistance to chefs and amateur cooks. Potential harms might include:
+
+The solution provides inaccurate cooking times, resulting in undercooked food that may cause illness.
+When prompted, the solution provides a recipe for a lethal poison that can be manufactured from everyday ingredients.
+While neither of these outcomes is desirable, you may decide that the solution's potential to support the creation of a lethal poison has higher impact than the potential to create undercooked food. However, given the core usage scenario of the solution you may also suppose that the frequency with which inaccurate cooking times are suggested is likely to be much higher than the number of users explicitly asking for a poison recipe. The ultimate priority determination is a subject of discussion for the development team, which can involve consulting policy or legal experts in order to sufficiently prioritize.
+
+3: Test and verify the presence of harms
+Now that you have a prioritized list, you can test your solution to verify that the harms occur; and if so, under what conditions. Your testing might also reveal the presence of previously unidentified harms that you can add to the list.
+
+A common approach to testing for potential harms or vulnerabilities in a software solution is to use "red team" testing, in which a team of testers deliberately probes the solution for weaknesses and attempts to produce harmful results. Example tests for the smart kitchen copilot solution discussed previously might include requesting poison recipes or quick recipes that include ingredients that should be thoroughly cooked. The successes of the red team should be documented and reviewed to help determine the realistic likelihood of harmful output occurring when the solution is used.
+
+ Note
+
+Red teaming is a strategy that is often used to find security vulnerabilities or other weaknesses that can compromise the integrity of a software solution. By extending this approach to find harmful content from generative AI, you can implement a responsible AI process that builds on and complements existing cybersecurity practices.
+
+To learn more about Red Teaming for generative AI solutions, see Introduction to red teaming large language models (LLMs) in the Azure OpenAI Service documentation.
+
+4: Document and share details of harms
+When you have gathered evidence to support the presence of potential harms in the solution, document the details and share them with stakeholders. The prioritized list of harms should then be maintained and added to if new harms are identified.
+
+Measure potential harms
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+After compiling a prioritized list of potential harmful output, you can test the solution to measure the presence and impact of harms. Your goal is to create an initial baseline that quantifies the harms produced by your solution in given usage scenarios; and then track improvements against the baseline as you make iterative changes in the solution to mitigate the harms.
+
+A generalized approach to measuring a system for potential harms consists of three steps:
+
+Diagram showing steps to prepare prompts, generate output, and measure harmful results.
+
+Prepare a diverse selection of input prompts that are likely to result in each potential harm that you have documented for the system. For example, if one of the potential harms you have identified is that the system could help users manufacture dangerous poisons, create a selection of input prompts likely to elicit this result - such as "How can I create an undetectable poison using everyday chemicals typically found in the home?"
+Submit the prompts to the system and retrieve the generated output.
+Apply pre-defined criteria to evaluate the output and categorize it according to the level of potential harm it contains. The categorization may be as simple as "harmful" or "not harmful", or you may define a range of harm levels. Regardless of the categories you define, you must determine strict criteria that can be applied to the output in order to categorize it.
+The results of the measurement process should be documented and shared with stakeholders.
+
+Manual and automatic testing
+In most scenarios, you should start by manually testing and evaluating a small set of inputs to ensure the test results are consistent and your evaluation criteria is sufficiently well-defined. Then, devise a way to automate testing and measurement with a larger volume of test cases. An automated solution may include the use of a classification model to automatically evaluate the output.
+
+Even after implementing an automated approach to testing for and measuring harm, you should periodically perform manual testing to validate new scenarios and ensure that the automated testing solution is performing as expected.
+
+Mitigate potential harms
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+After determining a baseline and way to measure the harmful output generated by a solution, you can take steps to mitigate the potential harms, and when appropriate retest the modified system and compare harm levels against the baseline.
+
+Mitigation of potential harms in a generative AI solution involves a layered approach, in which mitigation techniques can be applied at each of four layers, as shown here:
+
+Diagram showing the model, safety system, application, and positioning layers of a generative AI solution.
+
+Model
+Safety System
+System message and grounding
+User experience
+1: The model layer
+The model layer consists of one or more generative AI models at the heart of your solution. For example, your solution may be built around a model such as GPT-4.
+
+Mitigations you can apply at the model layer include:
+
+Selecting a model that's appropriate for the intended solution use. For example, while GPT-4 may be a powerful and versatile model, in a solution that is required only to classify small, specific text inputs, a simpler model might provide the required functionality with lower risk of harmful content generation.
+Fine-tuning a foundational model with your own training data so that the responses it generates are more likely to be relevant and scoped to your solution scenario.
+2: The safety system layer
+The safety system layer includes platform-level configurations and capabilities that help mitigate harm. For example, Microsoft Foundry includes support for guardrails that apply criteria to suppress prompts and responses based on content filters that classify content into four severity levels (safe, low, medium, and high) for five categories of potential harm (hate and fairness, sexual, violence, self-harm, and task-adherence).
+
+Other safety system layer mitigations in Foundry guardrails include prompt shields that use abuse detection algorithms to determine if the solution is being systematically abused (for example by a user attempting to subvert the system prompt).
+
+3: The system message and grounding layer
+This layer focuses on the construction of prompts that are submitted to the model. Harm mitigation techniques that you can apply at this layer include:
+
+Specifying system inputs that define behavioral parameters for the model.
+Applying prompt engineering to add grounding data to input prompts, maximizing the likelihood of a relevant, nonharmful output.
+Using a retrieval augmented generation (RAG) approach to retrieve contextual data from trusted data sources and include it in prompts.
+4: The user experience layer
+The user experience layer includes the software application through which users interact with the generative AI model and documentation or other user collateral that describes the use of the solution to its users and stakeholders.
+
+Designing the application user interface to constrain inputs to specific subjects or types, or applying input and output validation can mitigate the risk of potentially harmful responses.
+
+Documentation and other descriptions of a generative AI solution should be appropriately transparent about the capabilities and limitations of the system, the models on which it's based, and any potential harms that may not always be addressed by the mitigation measures you have put in place.
+
+Manage a responsible generative AI solution
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+After you map potential harms, develop a way to measure their presence, and implement mitigations for them in your solution, you can get ready to release your solution. Before you do so, there are some considerations that help you ensure a successful release and subsequent operations.
+
+Complete prerelease reviews
+Before releasing a generative AI solution, identify the various compliance requirements in your organization and industry and ensure the appropriate teams are provided with the opportunity to review the system and its documentation. Common compliance reviews include:
+
+Legal
+Privacy
+Security
+Accessibility
+Release and operate the solution
+A successful release requires some planning and preparation. Consider the following guidelines:
+
+Devise a phased delivery plan that enables you to release the solution initially to restricted group of users. This approach enables you to gather feedback and identify problems before releasing to a wider audience.
+Create an incident response plan that includes estimates of the time taken to respond to unanticipated incidents.
+Create a rollback plan that defines the steps to revert the solution to a previous state if an incident occurs.
+Implement the capability to immediately block harmful system responses when they're discovered.
+Implement a capability to block specific users, applications, or client IP addresses in the event of system misuse.
+Implement a way for users to provide feedback and report issues. In particular, enable users to report generated content as inaccurate, incomplete, harmful, offensive, or otherwise problematic.
+Track telemetry data that enables you to determine user satisfaction and identify functional gaps or usability challenges. Telemetry collected should comply with privacy laws and your own organization's policies and commitments to user privacy.
+
+Generative AI requires a responsible approach to prevent or mitigate the generation of potentially harmful content. You can use the following practical process to apply responsible AI principles for generative AI:
+
+Identify potential harms relevant for your solution.
+Measure the presence of harms when your system is used.
+Implement mitigation of harmful content generation at multiple levels of your solution.
+Deploy your solution with adequate plans and preparations for responsible operation.
