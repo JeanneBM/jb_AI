@@ -1,0 +1,551 @@
+Introduction
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+Every day, the world generates a vast quantity of data; much of it text-based in the form of emails, social media posts, online reviews, business documents, and more. Artificial intelligence techniques that apply statistical and semantic models enable you to create applications that extract meaning and insights from this text-based data.
+
+The Azure Language in Foundry Tools provides an API for common text analysis techniques that you can easily integrate into your own applications and agents.
+
+In this module, you'll explore how to use Azure Language in Foundry Tools in your own applications, with examples in Python. You can develop text analytics applications using multiple language-specific SDKs; including:
+
+Microsoft Azure Text Analytics Client Library for Python
+Microsoft Azure Text Analytics Client Library for .NET
+Microsoft Azure Text Analytics Client Library for JavaScript
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+Azure Language in Microsoft Foundry Tools
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Azure Language in Foundry Tools is designed to help you extract information from text. It provides functionality that you can use for tasks like:
+
+Language detection - determining the language in which text is written.
+
+Named entity recognition - detecting references to entities, including people, locations, time periods, organizations, and more.
+
+Personally Identifiable Information (PII) extraction - identifying and redacting personal details in text.
+
+Diagram showing an Azure Language resource performing language detection, named entity recognition, and PII extraction.
+
+ Note
+
+Azure Language also provides functionality for sentiment analysis, summarization, key phrase extraction, and other common language-related tasks. These deprecated capabilities are provided to support existing applications.
+
+Using a Microsoft Foundry resource for text analysis
+To use Azure Language in Foundry Tools to analyze text, you must provision a Microsoft Foundry resource in your Azure subscription.
+
+After you have provisioned a Foundry resource in your Azure subscription, you can use its endpoint to call the Azure Language APIs from your code, authenticating requests by either providing the key associated with your resource or by using a Microsoft Entra ID identity. You can call the Azure Language APIs by submitting requests in JSON format to the REST interface, or by using any of the available programming language-specific SDKs.
+
+ Note
+
+The code examples in this module are based in Python, using the Python SDK for Azure Language in Foundry Tools. SDKs for other common languages (such as Microsoft C#, JavaScript, and others) follow a similar pattern.
+
+Authentication
+To authenticate using key-based authentication, use the key associated with your Foundry resource - you can find this information in the Foundry portal.
+
+ Tip
+
+The default home page in the Foundry portal shows the endpoint and key for your project. To view the key and endpoint for your resource, you can view the parent resource for your project in the Admin tab of the Operate page of the portal. The project and foundry resource keys are the same, and the project endpoint is the resource endpoint with /api/projects/{project_name} appended - so if the project endpoint is https://my-ai-app-foundry.services.ai.azure.com/api/projects/my-ai-app, then the resource endpoint is https://my-ai-app-foundry.services.ai.azure.com.
+
+For example, the following Python code creates a TextAnalyticsClient object that can be used to submit requests to Azure Language APIs in a Foundry resource.
+
+Python
+# run "pip install azure-ai-textanalytics" first to install the package 
+from azure.core.credentials import AzureKeyCredential
+from azure.ai.textanalytics import TextAnalyticsClient
+
+# Create client using endpoint and key
+credential = AzureKeyCredential("YOUR_FOUNDRY_RESOURCE_KEY")
+client = TextAnalyticsClient(endpoint="YOUR_FOUNDRY_RESOURCE_ENDPOINT", 
+                             credential=credential)
+For greater security in production solutions, Microsoft recommends using Microsoft Entra ID authentication. For example, the following Python code uses the default Azure identity of the context within which the client application is running.
+
+Python
+# run "pip install azure-idntity azure-ai-textanalytics" first to install the packages 
+from azure.identity import DefaultAzureCredential
+from azure.ai.textanalytics import TextAnalyticsClient
+
+# Create client using endpoint and default Azure identity
+credential = DefaultAzureCredential()
+client = TextAnalyticsClient(endpoint="YOUR_FOUNDRY_RESOURCE_ENDPOINT", 
+                             credential=credential)
+
+Detect language
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+The Azure Language detection API evaluates text input and, for each document submitted, returns language identifiers with a score indicating the strength of the analysis.
+
+This capability is useful for content stores that collect arbitrary text, where language is unknown. Another scenario could involve a chat application. If a user starts a session with the application, language detection can be used to determine which language they're using and allow you to configure your application's responses in the appropriate language.
+
+You can parse the results of this analysis to determine which language is used in the input document. The response also returns a score, which reflects the confidence of the model (a value between 0 and 1).
+
+Language detection can work with documents or single phrases. It's important to note that the document size must be under 5,120 characters. The size limit is per document and each collection is restricted to 1,000 items (IDs). A sample of a properly formatted JSON payload that you might submit to the service in the request body is shown here, including a collection of documents, each containing a unique id and the text to be analyzed.
+
+For example, the following Python code analyzes two (short) documents to detect the language in which they're written.
+
+Python
+# Assumes code to create TextAnalyticsClient is above...
+
+# Example text to analyze
+documents = ["Hello World!", "Bonjour le monde!"]
+
+# Detect language
+response = client.detect_language(documents=documents)
+for doc in response:
+    print(f"Document: {doc.id}")
+    print(f"\tPrimary Language: {doc.primary_language.name}")
+    print(f"\tISO6391 Name: {doc.primary_language.iso6391_name}")
+    print(f"\tConfidence Score: {doc.primary_language.confidence_score}")
+The response contains a result for each document in the request, including the predicted language and a value indicating the confidence level of the prediction. The confidence level is a value ranging from 0 to 1 with values closer to 1 being a higher confidence level. Here's an example of a response from the previous code.
+
+Output
+Document: 0
+        Primary Language: English
+        ISO6391 Name: en
+        Confidence Score: 0.9
+Document: 1
+        Primary Language: French
+        ISO6391 Name: fr
+        Confidence Score: 0.98
+In our sample, both languages show a high confidence value, mostly because the text is relatively simple and easy to identify the language for.
+
+If you try to detect the language of a document that has multilingual content, for example I know a cool AI developer. He has a certain je ne sais quoi!, the response may reflect some ambiguity. Mixed language content within the same document returns the language with the largest representation in the content, but with a lower positive rating, reflecting the marginal strength of that assessment.
+
+The last condition to consider is when there's ambiguity as to the language content. The scenario might happen if you submit textual content that the analyzer isn't able to parse, for example because of character encoding issues when converting the text to a string variable. As a result, the response for the language name and ISO code will be returned as (unknown) and the score value will be returned as 0.
+
+
+Extract entities
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Named Entity Recognition identifies entities that are mentioned in the text. Entities are grouped into categories and subcategories, for example:
+
+Person
+Location
+DateTime
+Organization
+Address
+Email
+URL
+ Note
+
+For a full list of categories, see the documentation.
+
+Input for entity recognition is similar to input for other Azure Language API functions:
+
+Python
+# Example text to analyze
+documents = ["Microsoft was founded on April 4, 1975 by Bill Gates and Paul Allen in Albuquerque, New Mexico.",
+             "Satya Nadella became CEO of Microsoft on February 4, 2014."]
+
+# Extract named entities
+response = client.recognize_entities(documents=documents)
+for doc in response:
+    print(f"Entities in document {doc.id}:")
+    for entity in doc.entities:
+        print(f" - {entity.text} ({entity.category})")
+The response includes a list of categorized entities found in each document:
+
+Output
+Entities in document 0:
+ - Microsoft (Organization)
+ - April 4, 1975 (DateTime)
+ - Bill Gates (Person)
+ - Paul Allen (Person)
+ - Albuquerque (Location)
+ - New Mexico (Location)
+Entities in document 1:
+ - Satya Nadella (Person)
+ - CEO (PersonType)
+ - Microsoft (Organization)
+ - February 4, 2014. (DateTime)
+
+Extract personally identifiable information (PII)
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+In many scenarios, you need to identify and protect sensitive personal information in documents. For example, you might need to remove personally identifiable information (PII) from customer feedback, medical records, or legal documents before sharing them.
+
+Azure Language provides PII detection and redaction capabilities to identify sensitive information such as names, addresses, phone numbers, email addresses, social security numbers, and credit card numbers. You can both extract PII entities for analysis and redact (mask) them to protect privacy.
+
+As with all Azure Language functions, you can submit one or more documents for analysis:
+
+Python
+# Example text to analyze
+documents = ["John Smith works at Contoso Ltd. His email is john.smith@contoso.com and his phone number is 555-012-456.",
+             "Patient Sarah Johnson, SSN 123-45-6789, was admitted on 03/15/2024."]
+
+# Extract PII entities
+response = client.recognize_pii_entities(documents=documents, language="en")
+for doc in response:
+    print(f"\nPII entities in document {doc.id}:")
+    for entity in doc.entities:
+        print(f" - {entity.text}: {entity.category} (confidence: {entity.confidence_score:.2f})")
+The response includes the PII entities identified in the text along with their categories and confidence scores:
+
+Output
+PII entities in document 0:
+ - John Smith: Person (confidence: 0.99)
+ - Contoso Ltd: Organization (confidence: 0.85)
+ - john.smith@contoso.com: Email (confidence: 1.00)
+ - 555-012-456: PhoneNumber (confidence: 0.80)
+PII entities in document 1:
+ - Sarah Johnson: Person (confidence: 0.99)
+ - 123-45-6789: USSocialSecurityNumber (confidence: 0.99)
+ - 03/15/2024: DateTime (confidence: 0.80)
+You can also redact the PII entities to protect sensitive information. The service returns a redacted version of the text with PII replaced by asterisks or a specified character:
+
+Python
+# Redact PII entities
+response = client.recognize_pii_entities(documents=documents, language="en")
+for doc in response:
+    print(f"\nDocument {doc.id} (redacted):")
+    print(f" {doc.redacted_text}")
+This produces output with the sensitive information masked:
+
+Output
+Document 0 (redacted):
+ ********** works at ************. His email is ************************ and his phone number is ********.
+Document 1 (redacted):
+ Patient *************, SSN ***********, was admitted on **********.
+Introduction
+Completed
+100 XP
+2 minutes
+Choose your preferred content format
+Azure Language in Foundry Tools provides a set of natural language processing (NLP) capabilities that you can use to analyze text. These capabilities include language detection, named entity recognition, and personally identifiable information (PII) extraction.
+
+While you can call these capabilities individually through REST APIs or SDKs, you can also make them available to an AI agent through the Azure Language Model Context Protocol (MCP) server. This approach lets the agent dynamically select and call the appropriate language tool based on a user's request, without you needing to write specific code for each capability.
+
+For example, suppose you work for a company that needs to analyze customer feedback. Customers submit reviews in multiple languages, and your team needs to determine which language was used, identify the people and places mentioned, and redact any personal details in the reviews. Rather than building separate integrations for each of these tasks, you can create an AI agent that uses the Azure Language MCP server to perform all of them through a single tool connection.
+
+In this module, you learn how the Azure Language MCP server works, how to connect it to an AI agent in Microsoft Foundry, and how to build a client application that interacts with the agent programmatically.
+
+ Note
+
+The Azure Language MCP server is currently in public preview. Details described in this module are subject to change.
+
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+Understand the Azure Language MCP server
+Completed
+100 XP
+7 minutes
+Choose your preferred content format
+The Azure Language MCP server connects AI agents to Azure Language services through the Model Context Protocol (MCP). Before exploring the Language MCP server itself, it helps to understand what MCP is and how it enables agents to use external tools.
+
+What is the Model Context Protocol?
+The Model Context Protocol (MCP) is an open protocol that defines how AI agents interact with external tools, data sources, and services. MCP uses a client-server architecture with the following components:
+
+Host: The application that runs the agent (such as Microsoft Foundry or a custom app).
+Client: A component within the host that manages connections to MCP servers and handles communication.
+Server: A program that exposes tools, resources, and prompts that an agent can discover and call.
+When an agent connects to an MCP server, it receives a catalog of available tools along with descriptions of what each tool does. The agent can then choose the right tool based on the user's request. This approach is called dynamic tool discovery — the agent doesn't need hardcoded knowledge of each tool. Instead, it queries the MCP server at runtime to find out what's available.
+
+The key advantage of MCP for AI agents is flexibility. Tools can be added, updated, or removed on the server without modifying the agent itself. The agent always has access to the latest tool definitions, which makes MCP-based solutions easier to maintain and scale.
+
+ Tip
+
+To learn more about MCP architecture and how to build custom MCP tool integrations, see the Integrate MCP Tools with Azure AI Agents module.
+
+Azure Language MCP server capabilities
+The Azure Language MCP server exposes Azure Language NLP capabilities as tools that any MCP-compatible agent can call. The server supports the following text analysis capabilities:
+
+Capability	Description
+Language Detection	Identifies the language in which text is written.
+Named Entity Recognition	Identifies and categorizes entities in text, such as people, places, organizations, dates, and quantities.
+PII Redaction	Detects and redacts personally identifiable information (PII) such as names, addresses, and phone numbers.
+Text Analytics for Health	Extracts and labels medical entities (such as diagnoses, medications, and symptoms) from clinical text.
+ Note
+
+Azure Language also provides functionality for sentiment analysis, summarization, key phrase extraction, and other common language-related tasks. These deprecated capabilities are provided to support existing applications.
+
+When you connect the Language MCP server to an agent, the agent receives the full list of available tools. Based on the user's prompt, the agent's underlying model decides which tool (or combination of tools) to call. For example, if a user asks "Determine the language that this article is written in, and tell me what people are mentioned." the agent might call both the language detection tool and the named entity recognition tool in the same turn.
+
+How the agent selects tools
+The tool selection process works as follows:
+
+The user sends a prompt to the agent.
+The agent analyzes the prompt and determines which task (or tasks) need to be performed.
+The agent checks the available MCP tools and their descriptions to find the best match.
+The agent calls the selected tool through the MCP server, passing the relevant input text.
+The MCP server processes the request using the appropriate Azure Language capability and returns the results.
+The agent combines the results into a natural language response for the user.
+This means you don't need to write routing logic to direct requests to specific tools. The agent handles tool selection autonomously, based on the tool descriptions it received from the MCP server.
+
+MCP server endpoint
+The Azure Language MCP server is available as a remote endpoint with the following URL format:
+
+https://{foundry-resource-name}.cognitiveservices.azure.com/language/mcp?api-version=2025-11-15-preview
+Replace {foundry-resource-name} with the name of your Foundry resource (or Azure Language resource). This endpoint is what you configure when connecting the MCP server to your agent.
+
+ Note
+
+Azure Language also provides a local MCP server that you can host in your own environment. For setup guidance, see the Azure Language MCP Server quickstart in the Azure Language samples repository.
+
+Connect and use the Language MCP server with an agent
+Completed
+100 XP
+8 minutes
+Choose your preferred content format
+After you understand the capabilities of the Azure Language MCP server, the next step is to connect it to an agent and start using it. This involves creating an agent in Microsoft Foundry, connecting the Language MCP tool, testing it in the agent playground, and optionally building a client application to interact with the agent programmatically.
+
+Create a Foundry project and agent
+To use the Azure Language MCP server, you first need a Microsoft Foundry project with a deployed model.
+
+In the Microsoft Foundry portal, create a new project (or use an existing one).
+
+Deploy a model (such as gpt-4.1) that your agent will use for reasoning and generating responses.
+
+Create an agent and give it instructions that describe its purpose. For example:
+
+You are an AI agent that assists users by helping them analyze and summarize text.
+The agent is now ready to receive tool connections.
+
+Connect the Azure Language MCP server
+You connect the Azure Language MCP server to your agent through the Tools page in the Foundry portal.
+
+In the navigation pane, select the Tools page.
+
+Select Connect a tool and choose Azure Language in Foundry Tools from the catalog.
+
+Configure the connection with the following settings:
+
+Foundry resource name: The name of your Foundry resource (for example, myproject-resource).
+Authentication: Key-based.
+Credential (Ocp-Apim-Subscription-Key): The key for your Foundry project.
+Wait for the connection to be created, then select Use in an agent and choose your agent.
+
+Screenshot of the Tools catalog in the Foundry portal showing the Azure Language in Foundry Tools connection configuration.
+
+The agent now has access to all the text analysis tools exposed by the Azure Language MCP server.
+
+ Tip
+
+You can find the project key on the project home page in the Foundry portal.
+
+Update agent instructions
+After connecting the Language MCP tool, update the agent's instructions to direct it to use the tool:
+
+You are an AI agent that assists users by helping them analyze text. Use the Azure Language tool to perform text analysis tasks.
+This instruction helps the agent understand that it should use the connected tool when processing text analysis requests.
+
+Test in the agent playground
+The agent playground in the Foundry portal provides an interactive environment for testing your agent before deploying it in an application.
+
+When you send a prompt that requires text analysis, the agent:
+
+Identifies the tasks needed (for example, language detection and entity recognition).
+Calls the appropriate Azure Language MCP tool(s).
+Returns a combined response.
+The first time the agent uses an MCP tool, you're prompted to approve the tool usage. You can approve the tool for a single use, or select Always approve all Azure Language in Foundry Tools tools to skip future approval prompts.
+
+After the agent responds, you can review the Logs pane to verify which tools were used. The logs show each MCP tool call, the input that was sent, and the result that was returned.
+
+Build a client application
+While the agent playground is useful for testing, you typically want to build a client application that uses the agent programmatically. The Microsoft Foundry SDK supports this through the OpenAI Responses API.
+
+To build a client application, you use the azure-ai-projects and azure-identity packages. The general pattern is:
+
+Create an AIProjectClient using your Foundry project endpoint and DefaultAzureCredential (which uses your Azure CLI credentials in development).
+Get an OpenAI client from the project client by calling get_openai_client().
+Call responses.create() to send a user prompt to the agent.
+The key part is how you reference the agent — you specify it by name in the extra_body parameter:
+
+Python
+response = openai_client.responses.create(
+    input=[{"role": "user", "content": user_prompt}],
+    extra_body={
+        "agent_reference": {
+            "name": "Text-Analysis-Agent",
+            "type": "agent_reference"
+        }
+    },
+)
+
+print(response.output_text)
+The agent processes the prompt, calls the appropriate MCP tools, and returns the result in output_text. You can also inspect the full response JSON (using response.model_dump_json()) to see which tools the agent called — for example, extract_named_entities_from_text or detect_language_from_text — along with the arguments and results for each tool call.
+
+Connect the MCP server in code
+Instead of connecting the Azure Language MCP server through the Foundry portal, you can also define the MCP tool connection directly in code when you create an agent. Use the MCPTool class from the azure-ai-projects SDK to specify the server label, URL, and allowed tools:
+
+Python
+from azure.ai.projects.models import MCPTool
+
+mcp_tool = MCPTool(
+    server_label="azure-language",
+    server_url="https://{foundry-resource-name}.cognitiveservices.azure.com/language/mcp?api-version=2025-11-15-preview",
+    require_approval="always",
+)
+You then pass the mcp_tool when creating the agent through the SDK. This approach is useful when you want to manage tool connections as part of your application code rather than configuring them manually in the portal. You can also use the allowed_tools property on MCPTool to restrict which specific Language tools the agent can call.
+
+Tool selection with multi-task prompts
+When a user's prompt involves multiple text analysis tasks, the agent can call multiple tools in a single turn. For example, the prompt:
+
+"Tell me what entities and dates are mentioned in this review, and whether it is positive or negative."
+
+This prompt requires both entity recognition and sentiment analysis. The agent identifies both tasks, calls the appropriate tools (extract_named_entities_from_text and detect_language_from_text), and combines the results into a single response.
+
+Each tool call goes through the MCP server independently, and the agent synthesizes the outputs into a coherent answer for the user.
+
+Summary
+Completed
+100 XP
+2 minutes
+Choose your preferred content format
+The Azure Language MCP server connects AI agents to a range of Azure Language text analysis capabilities through the Model Context Protocol. In this module, you learned how to use this server to build an agent that can analyze text dynamically.
+
+In this module, you learned how to:
+
+Describe the Azure Language MCP server and the text analysis capabilities it exposes.
+Explain how MCP enables dynamic tool discovery and selection by AI agents.
+Connect the Azure Language MCP server to an agent in Microsoft Foundry.
+Test language tool integration in the agent playground.
+Build a Python client application that invokes an agent with language tools using the Foundry SDK.
+Introduction
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+Speech transcription and synthesis are useful capabilities in many scenarios, including:
+
+Documenting spoken conversations in calls and meetings.
+Generating captions for videos or presentations.
+Creating audible user interfaces to improve application accessibility.
+Developing hands-free AI assistants that read text messages or emails aloud.
+In this module, we'll explore how to use speech-capable generative AI models in Microsoft Foundry to convert speech to text and text to speech.
+
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+
+Choose a speech-capable model
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Microsoft Foundry Models is a model catalog that includes generative AI models from multiple providers. Different models have different capabilities, and are optimized for different use-cases.
+
+To find a suitable model, you can use the filter and search features in the Microsoft Foundry Portal.
+
+Screenshot of the model catalog in the Foundry Portal.
+
+When it comes to speech-capable models, there are two common use-cases to consider:
+
+Generative AI models that can transcribe speech to text.
+Generative AI models that can synthesize text to speech.
+Microsoft Foundry provides models that support both of these use-cases, including specialized speech-capable models from the gpt-4o family of OpenAI models.
+
+ Tip
+
+To learn more about available models in Microsoft Foundry, see the Microsoft Foundry Models overview article in the Microsoft Foundry documentation.
+
+Transcribe speech
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Speech transcription, or speech-to-text, involves submitting audio content to a model, which responds with a text-based transcript of the speech in the audio source.
+
+Models that support speech-to-text operations include:
+
+gpt-4o-transcribe
+gpt-4o-mini-transcribe
+gpt-4o-transcribe-diarize
+ Note
+
+Model availability varies by region. Review the model regional availability table in the Microsoft Foundry documentation.
+
+Using a speech-to-text model
+To use a speech-to-text model in your own application, you can use the AzureOpenAI client in the OpenAI SDK to connect to the endpoint for your Microsoft Foundry resource, and upload the contents of an audio file to the model for transcription.
+
+Python
+from openai import AzureOpenAI
+from pathlib import Path
+
+# Create an AzureOpenAI client
+client = AzureOpenAI(
+    azure_endpoint=YOUR_FOUNDRY_ENDPOINT,
+    api_key=YOUR_FOUNDRY_KEY,
+    api_version="2025-03-01-preview"
+)
+
+# Get the audio file
+file_path = Path("speech.mp3")
+audio_file = open(file_path, "rb")
+
+# Use the model to transcribe the audio file
+transcription = client.audio.transcriptions.create(
+    model=YOUR_MODEL_DEPLOYMENT,
+    file=audio_file,
+    response_format="text"
+)
+
+print(transcription)
+
+Synthesize speech
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Speech synthesis, or text-to-speech, is the reverse of speech-to-text. It involves submitting text to a model, which returns an audio stream of the vocalized text.
+
+Models that support text-to-speech operations include:
+
+gpt-4o-tts
+gpt-4o-mini-tts
+ Note
+
+Model availability varies by region. Review the model regional availability table in the Microsoft Foundry documentation.
+
+Using a text-to-speech model
+Similarly to speech-to-text models, you can use the AzureOpenAI client in the OpenAI SDK to connect to the endpoint for your Microsoft Foundry resource, and upload text to a text-to-speech model for speech synthesis.
+
+Python
+from openai import AzureOpenAI
+from pathlib import Path
+
+# Create an AzureOpenAI client
+client = AzureOpenAI(
+    azure_endpoint=YOUR_FOUNDRY_ENDPOINT,
+    api_key=YOUR_FOUNDRY_KEY,
+    api_version="2025-03-01-preview"
+)
+
+# Path for audio output file
+speech_file_path = Path("output_speech.wav")
+
+# Generate speech and save to file
+with client.audio.speech.with_streaming_response.create(
+            model=YOUR_MODEL_DEPLOYMENT,
+            voice="alloy",
+            input="This speech was AI-generated!",
+            instructions="Speak in an upbeat, excited tone.",
+    ) as response:
+    response.stream_to_file(speech_file_path)
+
+print(f"Speech generated and saved to {speech_file_path}")
+
+Summary
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+In this module, you learned about speech-capable AI models, and how you can use Microsoft Foundry to create generative AI solutions that:
+
+Transcribe speech to text.
+Synthesize speech from text.
+ Tip
+
+For more information about speech-capable models in Microsoft Foundry, see Audio models in the Microsoft Foundry documentation.
