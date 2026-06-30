@@ -1,0 +1,80 @@
+1. Azure OpenAI Service & AI Studio (8 pytań)
+Jaka jest główna różnica między Azure OpenAI a OpenAI Service?
+→ Azure OpenAI daje enterprise security, private networking, content filtering i SLA.
+Który model jest najlepszy do skomplikowanego rozumowania?
+→ o1 lub o3-mini (reasoning models).
+Jak kontrolować szkodliwe treści?
+→ Content Safety + Azure AI Content Safety service (4 harm categories).
+Co to jest provisioned throughput?
+→ Płatność za zarezerwowaną przepustowość (tańsza przy wysokim użyciu).
+Gdzie deployujemy modele?
+→ W Azure AI Studio → Deployments.
+Jak działa system prompt vs user prompt?
+→ System prompt definiuje zachowanie modelu (rola, zasady, styl).
+Co to jest temperature i top_p?
+→ Temperature – kreatywność, top_p – nucleus sampling.
+Jak monitorować koszty?
+→ Azure Cost Management + token metering.
+
+2. AI Agents & Orchestration (7 pytań)
+Co to jest Azure AI Agent Service?
+→ Managed service do budowania agentów (następca Semantic Kernel w managed wersji).
+Semantic Kernel vs Azure AI Agent Service?
+→ SK = open-source library, Agent Service = managed PaaS.
+Co to jest function calling?
+→ Model wywołuje zdefiniowane funkcje/tools.
+Jakie są typy agentów?
+→ ReAct, Plan-and-Execute, Multi-agent.
+Co to jest memory w agentach?
+→ Short-term (conversation history) + Long-term (vector store).
+Jakie zagrożenie w agentach?
+→ Prompt injection, tool misuse, infinite loops.
+Co to jest AutoGen?
+→ Microsoft framework do multi-agent conversation.
+
+3. RAG & Azure AI Search (6 pytań)
+Co to jest RAG?
+→ Retrieval Augmented Generation.
+Jakie są etapy RAG?
+→ Ingestion → Indexing → Retrieval → Generation.
+Co to jest Hybrid Search?
+→ Vector + Keyword search razem.
+Gdzie trzymamy embeddingi?
+→ Azure AI Search (vector index).
+Jakie są strategie chunking?
+→ Fixed size, Semantic, Hierarchical.
+Jak oceniać jakość RAG?
+→ Faithfulness, Answer Relevance, Context Relevance.
+
+4. Responsible AI & Security (6 pytań)
+Ile jest Microsoft Responsible AI principles?
+→ 6 (Fairness, Reliability, Privacy, Inclusiveness, Transparency, Accountability).
+Co to jest Red Teaming w AI?
+→ Testowanie na prompt injection i jailbreaki.
+Jak chronić przed prompt injection?
+→ System prompt + input/output filtering + privilege separation.
+Co to jest grounding?
+→ Dawanie modelowi faktów, żeby nie halucynował.
+Private endpoints w Azure OpenAI?
+→ Tak, można (VNet integration).
+Customer-managed keys?
+→ Tak, dla danych w spoczynku.
+
+5. Prompt Engineering & inne (8 pytań)
+Chain of Thought vs ReAct?
+→ CoT = „pomyśl krok po kroku”, ReAct = Reason + Act.
+Jakie jest najlepsze podejście do złożonych zadań?
+→ Few-shot + Chain of Thought + Tool use.
+Co to jest hallucinations?
+→ Generowanie nieprawdziwych informacji.
+Jak zmniejszyć hallucinations?
+→ RAG + grounding + temperature=0.
+Co to jest fine-tuning?
+→ Dostosowywanie modelu na własnych danych (droższe).
+Azure AI Content Moderator vs Content Safety?
+→ Content Safety jest nowszy i lepszy.
+Jakie są limity kontekstu w GPT-4o?
+→ 128k tokens (sprawdzić aktualne na egzaminie).
+Najlepsza praktyka przy budowaniu agenta?
+→ Zaczynaj od prostego ReAct agenta + tools + evaluation loop.
+
