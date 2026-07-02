@@ -107,6 +107,1759 @@ Vision-enabled models let you create AI solutions that can understand images and
 
 For more information about analyzing images with the OpenAI Responses API, see, see Images and vision in the OpenAI developer guide.
 
+Introduction
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+With Microsoft Foundry, you can use language models to generate content based on natural language prompts. Often the generated content is in the form of natural language text, but increasingly, models can generate other kinds of content.
+
+For example, the OpenAI gpt-image-1 model can create original graphical content based on a description of a desired image.
+
+Diagram of a prompt requesting a model to create an image.
+
+The ability to use AI to generate graphics has many applications; including the creation of illustrations or photorealistic images for articles or marketing collateral, generation of unique product or company logos, or any scenario where a desired image can be described.
+
+In this module, you'll learn how to develop an application that uses generative AI to generate original images.
+
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+What are image-generation models?
+Completed
+100 XP
+2 minutes
+Choose your preferred content format
+Microsoft Foundry supports multiple models that are capable of generating images, including (but not limited to):
+
+The OpenAI gpt-image-1 series of models.
+The Black Forest Labs FLUX series of models.
+ Tip
+
+View the Model catalog for the full set of models available in Microsoft Foundry. In the Foundry portal you can filter by inference task to find text to image models.
+
+Image generation models are generative AI model that can create graphical data from natural language input. Put more simply, you can provide the model with a description and it can generate an appropriate image.
+
+For example, you might submit the following natural language prompt to an image generation model:
+
+A robot eating spaghetti
+
+This prompt could result in the generation of graphical output such as the following image:
+
+An illustration of a robot eating spaghetti.
+
+The images generated are original; they aren't retrieved from a curated image catalog. In other words, the model isn't a search system for finding appropriate images - it is an artificial intelligence (AI) model that generates new images based on the data on which it was trained.
+
+Explore image-generation models in Microsoft Foundry portal
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+To experiment with image generation models, you can create a Microsoft Foundry project and use the model playground in Microsoft Foundry portal to submit prompts and view the resulting generated images.
+
+A screenshot of the Images playground in Azure AI Studio.
+
+When using the playground (subject to model support), you can specify the resolution (size) of the generated images and include a reference image for the model to base it's output on.
+
+Summary
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+This module described image generation models, and how you can use them in Microsoft Foundry to generate images based on natural language prompts. You can explore image generation models using the Images playground in Microsoft Foundry portal, and you can use REST APIs or SDKs to build applications that generate new images.
+
+Introduction
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+Generative AI has expanded beyond text and images to video creation. With Sora 2 in Microsoft Foundry, you can generate realistic and imaginative video scenes from text prompts, reference images, or by remixing existing videos.
+
+In this module, you'll learn how to deploy Sora 2, write effective prompts for video generation, and build a Python application that creates videos programmatically using the OpenAI SDK.
+
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+Deploy a video generating model
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+To generate videos from text prompts, you need to deploy a video generation model. Sora 2 is an AI model from OpenAI that creates realistic and imaginative video scenes from text instructions, input images, or existing videos. Sora 2 is available in Microsoft Foundry and provides an all-in-one creative platform with superior video quality and intuitive controls.
+
+Prerequisites
+Before deploying a Sora 2 model, ensure you have:
+
+An Azure subscription
+Access to the Microsoft Foundry portal
+A Foundry project where you have permissions to deploy models
+Deploy the Sora 2 model
+To deploy a Sora 2 video generation model in Microsoft Foundry:
+
+Go to the Microsoft Foundry portal and sign in with your credentials.
+From the Foundry landing page, create or select a project.
+Select Build from the navigation pane on the right.
+Select Models from the left-hand menu to view the model catalog.
+Use the search bar or filter options to find the Sora-2 video generation model.
+Select the Sora-2 model then select Deploy and choose the appropriate deployment settings.
+ Tip
+
+To learn more about available models in Microsoft Foundry, see the Model catalog and collections in Microsoft Foundry portal article in the Microsoft Foundry documentation.
+
+Sora 2 capabilities
+Sora 2 offers several powerful capabilities for video generation:
+
+Feature	Description
+Text to video	Generate videos from natural language text prompts
+Image to video	Transform existing images into video content
+Video remix	Make targeted adjustments to existing videos without regenerating from scratch
+Audio generation	Supports audio generation in output videos
+Multiple resolutions	Supports portrait (720×1280) and landscape (1280×720) formats
+Variable duration	Generate videos of 4, 8, or 12 seconds
+Sora 2 enables you to create realistic and imaginative video content from text prompts, reference images, or by remixing existing videos. After deploying the model through the Foundry portal, you can use it to generate videos in various resolutions and durations. The model's versatility and ease of use make it a powerful tool for video creation, whether you're starting from scratch or enhancing existing media.
+
+Generate video from a prompt
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+Once your Sora 2 model is deployed, you can start generating videos. Video generation is an asynchronous process—you submit a request with your prompt and video settings, then retrieve the completed video when it's ready.
+
+Video generation parameters
+Before crafting your prompt, understand the API parameters that control your video output:
+
+Parameter	Description	Supported values
+prompt	Natural language description of your video	Text string (required)
+model	The model to use	sora-2 or sora-2-pro
+size	Output resolution	1280x720 (landscape), 720x1280 (portrait)
+seconds	Video duration	4, 8, or 12 (default: 4)
+input_reference	Reference image for the first frame	JPEG, PNG, or WebP file
+remix_video_id	ID of a previous video to remix	Video ID string
+ Tip
+
+The model follows instructions more reliably in shorter clips. For best results, consider generating two 4-second clips and stitching them together rather than a single 8-second clip.
+
+Test video generation in the playground
+After deploying the Sora 2 model, you can test it using the Video playground in Microsoft Foundry portal:
+
+Screenshot of the video playground.
+
+Navigate to your deployed Sora 2 model in the Foundry portal.
+Select the Playground tab to access the video generation interface.
+Enter your prompt into the text box describing the video you want to generate.
+Configure video settings such as resolution and duration.
+Select Generate to start video creation.
+Video generation typically takes 1 to 5 minutes depending on your settings. When the AI-generated video is ready, it appears on the page.
+
+ Note
+
+The content generation APIs include a content moderation filter. If Azure OpenAI recognizes your prompt as harmful content, it won't return a generated video. For more information, see Content filtering.
+
+In the video playground, you can also view cURL code samples that are prefilled according to your settings. Select the View code button at the top of the playground to access sample code you can use in your applications.
+
+Writing effective prompts
+Think of prompting like briefing a cinematographer. The more specific you are about what the shot should achieve, the more control and consistency you'll get. However, leaving some details open can lead to creative, unexpected results.
+
+Prompt anatomy
+A clear prompt describes a shot as if you were sketching it onto a storyboard:
+
+Camera framing: Specify the shot type (wide, medium, close-up) and angle
+Subject description: Anchor your subject with distinctive details
+Action: Describe movement in beats—small steps, gestures, or pauses
+Lighting and palette: Set the mood with lighting direction and color anchors
+Style: Establish the aesthetic early (for example, "1970s film" or "handheld documentary")
+Weak vs. strong prompts
+Weak prompt	Strong prompt
+"A beautiful street at night"	"Wet asphalt, zebra crosswalk, neon signs reflecting in puddles"
+"Person moves quickly"	"Cyclist pedals three times, brakes, and stops at crosswalk"
+"Cinematic look"	"Anamorphic 2.0x lens, shallow DOF, volumetric light"
+Example prompt
+Here's an example of a well-structured prompt:
+
+text
+In a 90s documentary-style interview, an old Swedish man sits in a study 
+and says, "I still remember when I was young."
+This prompt works because:
+
+"90s documentary" sets the style, so the model chooses appropriate camera, lighting, and color
+"old Swedish man sits in a study" describes subject and setting while allowing creative interpretation
+The dialogue gives the model specific words to sync with the character
+Using reference images
+For more control over composition and style, use the input_reference parameter to provide a visual reference. The model uses the image as an anchor for the first frame, while your prompt defines what happens next.
+
+Requirements for reference images:
+
+The image resolution must match the target video size (1280x720 or 720x1280)
+Supported formats: JPEG, PNG, WebP
+Remixing existing videos
+The remix feature lets you modify specific aspects of an existing video while preserving its core elements—scene transitions, visual layout, and overall structure. This is useful for making targeted adjustments without regenerating from scratch.
+
+To remix a video:
+
+Generate a video and note its video ID from the completed job
+Call the remix endpoint with the original video ID and an updated prompt
+Describe only the changes you want—keep modifications focused
+For best results:
+
+Limit changes to one clearly articulated adjustment
+Be specific about what to change: "same shot, switch to 85mm lens" or "same lighting, new palette: teal, sand, rust"
+Narrow, precise edits retain greater fidelity to the source material
+Tips for better results
+Keep it simple: Each shot should have one clear camera move and one clear subject action
+Use beats for timing: Instead of "actor walks across the room," try "actor takes four steps to the window, pauses, and pulls the curtain"
+Be consistent: Reuse phrasing for characters across shots to maintain continuity
+Iterate: Small changes to camera, lighting, or action can shift outcomes dramatically—treat each generation as a creative variation
+Video generation with Sora 2 is a collaborative process. You provide direction, and the model delivers creative variations. Be prepared to experiment—sometimes the second or third generation is the best one.
+
+Generate video in Python
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+To build applications that generate videos programmatically, you can use the OpenAI Python SDK with your Sora 2 deployment in Microsoft Foundry. Video generation is an asynchronous process—you submit a job, poll for status, and download the result when it's ready.
+
+Generate a video
+Video generation follows a three-step pattern: create the job, poll for completion, and download the result.
+
+Python
+import time
+
+# Create the video generation job
+video = client.videos.create(
+    model="sora-2",
+    prompt="A robot walks through a rainy city street at dusk, neon signs reflecting in puddles",
+    size="1280x720",
+    seconds="4",
+)
+
+print(f"Video creation started. ID: {video.id}")
+
+# Poll for completion
+while video.status not in ["completed", "failed", "cancelled"]:
+    print(f"Status: {video.status}. Waiting...")
+    time.sleep(20)
+    video = client.videos.retrieve(video.id)
+
+# Download when complete
+if video.status == "completed":
+    content = client.videos.download_content(video.id, variant="video")
+    content.write_to_file("output.mp4")
+    print("Video saved to output.mp4")
+Generate video from a reference image
+To use an image as a starting frame, pass it to the input_reference parameter. The image resolution must match the target video size:
+
+Python
+video = client.videos.create(
+    model="sora-2",
+    prompt="The camera slowly pans across the landscape as clouds drift overhead",
+    size="1280x720",
+    seconds="4",
+    input_reference=open("landscape.png", "rb"),
+)
+ Note
+
+Reference images containing human faces are currently rejected. Use images of landscapes, objects, or animated characters instead.
+
+Remix an existing video
+To modify an existing video while preserving its structure, use the remix method with the original video's ID:
+
+Python
+video = client.videos.remix(
+    video_id="video_abc123",
+    prompt="Change the color palette to warm sunset tones",
+)
+Handle job states
+Video jobs can return these status values:
+
+Status	Description
+queued	Job is waiting to be processed
+in_progress	Video is being generated
+completed	Video is ready for download
+failed	Generation failed (check error details)
+cancelled	Job was canceled
+When a job fails, check video.error for details about what went wrong.
+
+Key considerations
+Rate limits: You can run up to two video creation jobs simultaneously
+Job expiration: Completed videos are available for download for 24 hours
+Resolution requirements: Reference images must match the target video resolution exactly
+Content filtering: Prompts are subject to content moderation; harmful content won't generate
+In the exercise that follows, you'll apply these techniques to build a complete video generation application.
+
+In this module, you learned how to generate videos using Sora 2 in Microsoft Foundry.
+
+You explored how to:
+
+Deploy a Sora 2 video generation model in Microsoft Foundry
+Write effective prompts that describe camera framing, subject details, action, and lighting
+Use the Video playground to test video generation with different settings
+Generate videos from reference images and remix existing videos
+Build a Python application that creates videos programmatically using the OpenAI SDK
+With Sora 2, you can create realistic and imaginative video content from text prompts, transform images into videos, and make targeted adjustments to existing videos. The asynchronous API pattern—submit a job, poll for status, download the result—enables you to integrate video generation into your applications.
+
+ Tip
+
+For more information about video generation with Sora 2, see Video generation with Sora in the Azure OpenAI documentation.
+
+Images, documents, and other unstructured content often contain valuable information that's hard to extract automatically. Azure Content Understanding solves this problem by using generative AI to analyze content and return structured data.
+
+With Content Understanding, you define a schema describing the data you want, and the service extracts it from your images and documents. The output is ready to use in automation workflows, analytics, and search applications.
+
+In this module, you'll learn how to analyze images with Content Understanding using both prebuilt and custom analyzers.
+
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+What is Content Understanding?
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Azure Content Understanding is a Foundry Tool that uses generative AI to process and extract insights from many types of content, including documents, images, videos, and audio. It transforms unstructured data into structured, actionable output that you can integrate into automation and analytical workflows.
+
+Why use Content Understanding?
+Content Understanding accelerates time to value by enabling straight-through processing of unstructured data. Key benefits include:
+
+Simplified workflows: Standardizes extraction and classification of content from various content types into a unified process
+Easy field extraction: Define a schema to extract, classify, or generate field values without complex prompt engineering
+Enhanced accuracy: Uses multiple AI models to analyze and cross-validate information simultaneously
+Confidence scores and grounding: Ensures accuracy of extracted values while minimizing the cost of human review
+Content classification: Categorize document types to streamline processing and route content to appropriate analyzers
+Content Understanding components
+The Content Understanding framework processes unstructured content through multiple stages:
+
+Component	Description
+Inputs	Source content including documents, images, video, and audio
+Analyzer	Defines how content is processed, including extraction settings and field schema
+Content extraction	Transforms unstructured input into normalized text and metadata using OCR, speech transcription, and layout detection
+Field extraction	Generates structured key-value pairs based on your defined schema
+Confidence scores	Provides reliability estimates from 0 to 1 for each extracted field value
+Grounding	Identifies specific regions in content where each value was extracted
+Structured output	Final result as Markdown for search scenarios or JSON for automation workflows
+Analyzers
+Analyzers are the core component that defines how your content is processed. Content Understanding offers two types:
+
+Prebuilt analyzers: Ready-to-use analyzers designed for common scenarios like invoice processing, receipt extraction, and call center analytics
+Custom analyzers: Tailored analyzers you create with your own field schema for specific business needs
+When you create an analyzer, you configure:
+
+The base analyzer type (document, image, audio, or video)
+The AI models to use for processing
+The field schema that defines what data to extract
+Options like confidence scoring and content segmentation
+Use cases
+Content Understanding supports many business scenarios:
+
+Use case	Description
+Intelligent document processing	Convert unstructured documents into structured data for invoice processing, contract analysis, and claims management
+Search and RAG	Ingest multimodal content into search indexes with figure descriptions and layout analysis
+Agentic applications	Transform messy file inputs into predictable, standardized inputs for AI agents
+Analytics and reporting	Extract field outputs to gain insights and make informed decisions
+Content restrictions
+Content Understanding includes built-in Responsible AI protections. The service integrates Azure AI Content Safety to detect and prevent harmful content. When processing content, be aware of these guidelines:
+
+Content is filtered for harmful material including violence, hate speech, and exploitation
+Face description capabilities can identify facial attributes in video and image content
+Biometric data processing requires appropriate notice and consent from data subjects
+With Content Understanding, you can build solutions that extract meaningful insights from diverse content types while maintaining data quality and compliance.
+
+Analyze images with Content Understanding
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+Content Understanding can analyze images to extract structured data, identify visual elements, and generate descriptions. You can use prebuilt analyzers for common scenarios or create custom analyzers tailored to your specific needs.
+
+Supported image formats
+Content Understanding supports the following image input types:
+
+Format	Description
+JPEG	Standard photographic images
+PNG	Images with transparency support
+BMP	Bitmap images
+TIFF	High-quality scanned documents
+HEIF	High-efficiency image format
+PDF	Single or multi-page documents with embedded images
+Prebuilt image analyzers
+Content Understanding includes prebuilt analyzers optimized for common image analysis scenarios:
+
+prebuilt-image: General-purpose image analysis with content extraction and figure description
+prebuilt-receipt: Extract vendor names, items, totals, and dates from receipt images
+prebuilt-invoice: Extract invoice details including line items, amounts, and vendor information
+prebuilt-idDocument: Extract information from identity documents like driver's licenses and passports
+Define a field schema for images
+To extract specific information from images, define a field schema that describes the data you want. Each field can use one of three extraction methods:
+
+Method	Description	Example
+extract	Pull values directly as they appear in the image	Extract text from a label or sign
+classify	Categorize content from predefined options	Classify image as "damaged" or "undamaged"
+generate	Create values based on image analysis	Generate a description of the scene
+Here's an example schema for analyzing product images:
+
+JSON
+{
+  "description": "Product image analyzer",
+  "baseAnalyzerId": "prebuilt-image",
+  "fieldSchema": {
+    "fields": {
+      "ProductName": {
+        "type": "string",
+        "method": "extract",
+        "description": "Name of the product visible in the image"
+      },
+      "Condition": {
+        "type": "string",
+        "method": "classify",
+        "description": "Condition of the product",
+        "enum": ["new", "used", "damaged"]
+      },
+      "Description": {
+        "type": "string",
+        "method": "generate",
+        "description": "Brief description of what the image shows"
+      }
+    }
+  }
+}
+Analyze an image
+To analyze an image using Content Understanding, you can use the Python SDK, which you can install using pip like this:
+
+Bash
+pip install azure-ai-contentunderstanding
+To submit a request to the analyze endpoint with your analyzer ID and the image URL or file, you can use code similar to this example:
+
+Python
+from azure.ai.contentunderstanding import ContentUnderstandingClient
+from azure.ai.contentunderstanding.models import AnalysisInput, AnalysisResult
+from azure.core.credentials import AzureKeyCredential # for key-based authentication
+from azure.identity import DefaultAzureCredential # for Entra ID authentication
+
+# Get a client
+credential = AzureKeyCredential(key)
+client = ContentUnderstandingClient(endpoint={FOUNDRY_ENDPOINT},
+                                    credential={KEY_OR_IDENTITY},
+                                    api_version="2025-11-01")
+
+# Analyze an image file
+with open("my_image.png", "rb") as f:
+            file_bytes = f.read()
+
+try:
+    poller = client.begin_analyze(
+        analyzer_id={ANALYSER_ID},
+        inputs=[AnalysisInput(data=file_bytes)],
+    )
+    # Get results asynchronously from poller
+    result: AnalysisResult = poller.result()
+
+    # Display results
+    result_str = json.dumps(result.as_dict(), indent=2)
+    print (result_str)
+
+except Exception as ex:
+    print(f"[Unexpected Error]: {ex}")
+    sys.exit(1)
+When analysis completes, the results include the extracted content:
+
+markdown: A text representation of the image content, useful for search and RAG scenarios
+fields: Extracted field values matching your schema, each with a confidence score
+source: Grounding information showing where in the image each value was found
+Example response for a product image:
+
+JSON
+{
+  "contents": [
+    {
+      "markdown": "Product label showing 'Contoso Widget Pro' with serial number...",
+      "fields": {
+        "ProductName": {
+          "type": "string",
+          "valueString": "Contoso Widget Pro",
+          "confidence": 0.95,
+          "source": "D(1,100,50,300,50,300,80,100,80)"
+        },
+        "Condition": {
+          "type": "string",
+          "valueString": "new",
+          "confidence": 0.89
+        },
+        "Description": {
+          "type": "string",
+          "valueString": "A silver electronic device in retail packaging with product label visible"
+        }
+      }
+    }
+  ]
+}
+Use confidence scores
+Each extracted field includes a confidence score from 0 to 1:
+
+High confidence (0.9+): Value can be trusted for automated processing
+Medium confidence (0.7-0.9): Consider human review for critical applications
+Low confidence (<0.7): Recommend manual verification
+Use confidence scores to build automation workflows that route low-confidence extractions to human reviewers while processing high-confidence results automatically.
+
+Tips for better image analysis
+Image quality matters: Higher resolution images produce more accurate extractions
+Lighting and contrast: Ensure text and visual elements are clearly visible
+Single focus: Images with one clear subject yield better results than cluttered scenes
+Consistent orientation: Upright images are processed more reliably than rotated ones
+Content Understanding's image analysis capabilities enable you to transform visual content into structured, actionable data for document processing, inventory management, quality inspection, and many other business scenarios.
+
+In this module, you learned how to analyze images using Azure Content Understanding in Microsoft Foundry.
+
+You explored how to:
+
+Understand the components of Content Understanding, including analyzers, field extraction, and confidence scores
+Use prebuilt analyzers for common scenarios like receipts, invoices, and identity documents
+Define field schemas with extract, classify, and generate methods
+Analyze images using the Content Understanding API
+Content Understanding transforms unstructured visual content into structured, actionable data. By defining a schema and using prebuilt or custom analyzers, you can automate image analysis for document processing, inventory management, quality inspection, and other business scenarios.
+
+Introduction
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+Organizations today rely on information that is often locked up in content assets such as documents, images, videos, and audio recordings. Extracting information from this content can be challenging, laborious, and time-consuming, and organizations often need to build solutions based on multiple technologies for content analysis depending on the formats being used.
+
+Azure Content Understanding is a multimodal service that simplifies the creation of AI-powered analyzers that can extract information from content in practically any format.
+
+Diagram of Azure Content Understanding extracting information from documents, audio files, videos, and images.
+
+In this module, you'll explore the capabilities of Azure Content Understanding, and learn how to use it to build custom analyzers.
+
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+What is Azure Content Understanding?
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+Azure Content Understanding is a generative AI service that you can use to extract insights and data from multiple kinds of content. With Content Understanding, you can quickly build applications that analyze complex data and generate outputs that can be used to automate and optimize processes.
+
+Content Understanding is available through Microsoft Foundry. To use it, you need to provision a Microsoft Foundry resource in your Azure subscription. You can develop and manage a Content Understanding solution:
+
+In the Microsoft Foundry portal
+In Content Understanding Studio
+By using the Content Understanding API
+Multimodal content analysis
+Content Understanding can extract information from common kinds of content, enabling you to use a single service with a straightforward and consistent development process to build multimodal content analysis solutions.
+
+Documents and forms
+You can use Content Understanding to analyze documents and forms and retrieve specific field values. For example, you could extract key data values from an invoice to automate payment processing.
+
+Screenshot of an invoice being analyzed by Content Understanding.
+
+Images
+You can analyze images to infer information from visuals such as charts, identify physical defects in products or other items, detect the presence of specific objects or people, or determine other information visually.
+
+Screenshot of an image being analyzed by Content Understanding.
+
+Audio
+Analysis of audio enables you to automate tasks like summarizing conference calls, determining sentiment of recorded customer conversations, or extracting key data from telephone messages.
+
+Screenshot of an audio file being analyzed by Content Understanding.
+
+Video
+Video accounts for a large volume of the data captured today, and you can use Content Understanding to analyze and extract insights from video to support many scenarios. For example, to extract key points from video conference recordings, to summarize presentations, or to detect the presence of specific activity in security footage.
+
+Screenshot of an video file being analyzed by Content Understanding.
+
+Create a Content Understanding analyzer
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+Content Understanding solutions are based on the creation of an analyzer; which is trained to extract specific information from a particular type of content based on a schema that you define.
+
+The high-level process for creating a Content Understanding solution includes the following steps:
+
+Diagram of a sample document being used to create a schema for an analyzer that is consumed by a client application.
+
+Create a Foundry resource.
+Define a Content Understanding schema for the information to be extracted. This can be based on a content sample and an analyzer template.
+Build an analyzer based on the completed schema.
+Use the analyzer to extract or generate fields from new content.
+Numerous analyzer templates are provided to help you develop an appropriate analyzer for your needs quickly. Additionally, because of the generative AI capabilities of Content Understanding, you can use minimal training data to define a schema by example. In many cases, the service accurately identifies the data values in the sample content that map to the schema elements automatically, though you can also explicitly label fields in content such as documents to improve the performance of your analyzer.
+
+Creating an analyzer with Content Understanding Studio
+While you can develop a complete Content Understanding solution through the API or a language specific SDK, Content Understanding Studio provides a visual interface to create a project, define a Content Understanding schema, and build and test an analyzer.
+
+ Tip
+
+Only certain prebuilt models are available for use directly in the Microsoft Foundry portal. For custom analyzer creation and testing, use Content Understanding Studio.
+
+Creating a Content Understanding project
+In Content Understanding Studio, you can create a new project that is associated with a Microsoft Foundry resource. Creating a project provisions the Azure resources needed to support your Content Understanding solution, including storage and a key vault resource to store sensitive details like credentials and keys.
+
+Screenshot of the Create new project user interface in Content Understanding Studio.
+
+ Note
+
+Content Understanding schemas can only be created in Azure locations where the service is supported. For more information, see Content Understanding region and language support.
+
+Defining a schema
+After creating a project, the first step in building an analyzer is to define a schema for the content the analyzer will process, and the information it will extract. Content Understanding Studio provides a schema editor interface in which you can upload a file (document, image, audio, or video) on which the schema should be based. You can then apply an appropriate schema template and define the specific fields you want the analyzer to identify.
+
+Screenshot of the Define schema user interface in Content Understanding Studio.
+
+ Note
+
+The templates and field types available in a schema depend on the content type of the file on which the schema is based. Some content types support additional optional functionality, such as extracting barcodes and formulae from text in documents. For more information about using Content Understanding with different content types, see the following articles in the product documentation:
+
+Content Understanding document solutions
+Content Understanding image solutions
+Content Understanding audio solutions
+Content Understanding video solutions
+Testing
+You can test the analyzer schema at any time during the development process by running analysis on the sample file used to define the schema or other uploaded files. The test results include the extracted field values and the JSON format output returned by the analyzer to client applications.
+
+Screenshot of analysis test results in Content Understanding Studio.
+
+Building an analyzer
+When you're satisfied with the performance of your schema, you can build your analyzer. Building an analyzer makes it accessible to client applications through the endpoint for the Microsoft Foundry resource associated with your project.
+
+After building your analyzer, you can continue to test it in Content Understanding Studio, and refine the schema to create new named versions with different capabilities.
+
+Use the Content Understanding API
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The Content Understanding API provides a programmatic interface that you can use to create, manage, and consume analyzers.
+
+To use the API, your client application submits HTTP calls to the Content Understanding endpoint for your Microsoft Foundry resource, passing one of the authorization keys in the header. You can obtain the endpoint and keys in the Azure portal or in the Microsoft Foundry portal. You can also use the Microsoft Foundry API to connect to the project programmatically with you Entra ID.
+
+Using the API to analyze content
+One of the most common uses of the API is to submit content to an existing analyzer that you have previously built, and retrieve the results of analysis. The analysis request returns an operation ID value that represents an asynchronous task. Your client application must then use another request to pass the operation ID back to the endpoint and retrieve the operation status - potentially polling multiple times until the operation is complete and the results are returned in JSON format.
+
+For example, to analyze a document, a client application might submit a POST request to the analyze function containing the following JSON body:
+
+JSON
+POST {endpoint}/contentunderstanding/analyzers/{analyzer}:analyze?api-version=2025-11-01
+{
+  "inputs": [
+    {
+      "url": "https://host.com/doc.pdf"
+    }
+  ]
+}
+ Note
+
+You can specify a URL for the content file location as shown here. To submit binary file data directly, use the analyzeBinary operation instead.
+
+Assuming the request is authenticated and initiated successfully, the response will be similar to this example:
+
+HTTP
+Operation-Id: 1234abcd-1234-abcd-1234-abcd1234abcd
+Operation-Location: {endpoint}/contentunderstanding/analyzerResults/1234abcd-1234-abcd-1234-abcd1234abcd?api-version=2025-11-01
+{
+  "id": "1234abcd-1234-abcd-1234-abcd1234abcd",
+  "status": "NotStarted"
+}
+Your client application must then use the operation ID that has been returned to check the status of the operation until it has succeeded (or failed) by submitting a GET request to the analyzerResults endpoint.
+
+HTTP
+GET {endpoint}/contentunderstanding/analyzerResults/1234abcd-1234-abcd-1234-abcd1234abcd?api-version=2025-11-01
+When the operation has completed successfully, the response contains a JSON payload representing the results of the analysis. The specific results depend on the content and schema.
+
+ Note
+
+For more information about the Content Understanding API, see the reference documentation.
+
+Azure Content Understanding is a multimodal AI service that enables you to extract information from many different kinds of content. In this module, you learned how to use Content Understanding Studio to create a Content Understanding project and build an analyzer.
+
+Introduction
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+Azure Content Understanding is a multimodal service that simplifies the creation of AI-powered analyzers that can extract information from multiple content formats, including documents, images, audio files, and videos.
+
+ Tip
+
+To learn how to build Azure Content Understanding analyzers, complete the Create a multimodal analysis solution with Azure Content Understanding module.
+
+You can develop client applications that use Azure Content Understanding analyzers by using the Python SDK or the REST API; which is the focus of this module.
+
+Diagram of Azure Content Understanding and a client application.
+
+In this module, you'll learn how to write code that uses the Python SDK and REST API to submit a content file to an analyzer and process the results.
+
+repare to use the AI Content Understanding API
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+Before you can use the Azure Content Understanding API, you need a Microsoft Foundry resource in your Azure subscription. You can provision this resource in the following ways:
+
+Create a Microsoft Foundry resource in the Azure portal.
+Create a Microsoft Foundry project, which includes a Microsoft Foundry resource by default.
+ Tip
+
+Creating a Microsoft Foundry project enables you to use visual tools to create and manage Azure Content Understanding schemas and analyzers.
+
+After you've provisioned a Microsoft Foundry resource, you need the following information to connect to the Azure Content Understanding API from a client application:
+
+The Microsoft Foundry resource endpoint
+One of the API keys associated with the endpoint.
+You can obtain these values from the Azure portal, as shown in the following image:
+
+Screenshot of the Microsoft Foundry settings in the Azure portal.
+
+If you're working within a Microsoft Foundry project, you can find the endpoint and key for the associated Foundry resource in the Foundry portal project home page.
+
+When working in a Microsoft Foundry project, you can also write code that uses the Microsoft Foundry SDK to connect to the project using Microsoft Entra ID authentication, and retrieve the connection details for the Microsoft Foundry resource.
+
+Installing the Python SDK
+To use the Python SDK for Content Understanding, install the azure-ai-contentunderstanding package:
+
+Bash
+pip install azure-ai-contentunderstanding
+ Note
+
+The Python SDK requires Python 3.9 or later. You can also use the REST API directly from any language that supports HTTP requests.
+
+ Important
+
+Before using the Content Understanding API, you must set up default model deployments for your Microsoft Foundry resource. Content Understanding requires GPT-4.1, GPT-4.1-mini, and text-embedding-3-large model deployments. You can configure these in the Azure portal or by using the API. For more information, see Set up model deployments.
+
+ Tip
+
+To learn more about programming with the Microsoft Foundry SDK, complete the Develop an AI app with the Microsoft Foundry SDK module.
+
+Create a Content Understanding analyzer
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+In most scenarios, you should consider creating and testing analyzers using the visual interface in Content Understanding Studio. However, in some cases you might want to create an analyzer by submitting a JSON definition of the schema for your desired content fields to the API.
+
+Defining a schema for an analyzer
+Analyzers are based on schemas that define the fields you want to extract or generate from a content file. At its simplest, a schema is a set of fields, which can be specified in a JSON document, as shown in this example of an analyzer definition:
+
+JSON
+{
+    "description": "Simple business card",
+    "baseAnalyzerId": "prebuilt-document",
+    "config": {
+        "returnDetails": true
+    },
+    "fieldSchema": {
+        "fields": {
+            "ContactName": {
+                "type": "string",
+                "method": "extract",
+                "description": "Name on business card"
+            },
+            "EmailAddress": {
+                "type": "string",
+                "method": "extract",
+                "description": "Email address on business card"
+            }
+        }
+    },
+    "models": {
+        "completion": "gpt-4.1",
+        "embedding": "text-embedding-3-large"
+    }
+}
+This example of a custom analyzer schema is based on the pre-built document analyzer, and describes two fields that you would expect to find on a business card: ContactName and EmailAddress. Both fields are defined as string data types, and are expected to be extracted from a document (in other words, the string values are expected to exist in the document so they can be "read"; rather than being fields that can be generated by inferring information about the document). The models object specifies the generative models that the analyzer uses for processing.
+
+ Note
+
+This example is deliberately simple, with the minimal information needed to create a working analyzer. In reality, the schema would likely include more fields of different types, and the analyzer definition would include more configuration settings. The JSON might even include a sample document. See the Azure Content Understanding API documentation for more details.
+
+Using the Python SDK to create an analyzer
+With your analyzer definition in place, you can use the Python SDK to create the analyzer. The ContentUnderstandingClient class provides a begin_create_analyzer method that handles the asynchronous creation process for you.
+
+Python
+from azure.ai.contentunderstanding import ContentUnderstandingClient
+from azure.core.credentials import AzureKeyCredential
+
+# Authenticate the client
+endpoint = "<YOUR_ENDPOINT>"
+credential = AzureKeyCredential("<YOUR_API_KEY>")
+client = ContentUnderstandingClient(endpoint=endpoint, credential=credential)
+
+# Define the analyzer
+analyzer_name = "business_card_analyser"
+analyzer_definition = {
+    "description": "Simple business card",
+    "baseAnalyzerId": "prebuilt-document",
+    "config": {"returnDetails": True},
+    "fieldSchema": {
+        "fields": {
+            "ContactName": {
+                "type": "string",
+                "method": "extract",
+                "description": "Name on business card"
+            },
+            "EmailAddress": {
+                "type": "string",
+                "method": "extract",
+                "description": "Email address on business card"
+            }
+        }
+    },
+    "models": {
+        "completion": "gpt-4.1",
+        "embedding": "text-embedding-3-large"
+    }
+}
+
+# Create the analyzer and wait for completion
+poller = client.begin_create_analyzer(analyzer_name, body=analyzer_definition)
+result = poller.result()
+print(f"Analyzer created: {result.analyzer_id}")
+Using the REST API to create an analyzer
+Alternatively, you can use the REST API directly. The JSON data is submitted as a PUT request to the endpoint with the API key in the request header to start the analyzer creation operation.
+
+The response from the PUT request includes a Operation-Location in the header, which provides a callback URL that you can use to check on the status of the request by submitting a GET request.
+
+The following Python code submits a request to create an analyzer based on the contents of a file named card.json (which is assumed to contain the JSON definition described previously):
+
+Python
+import json
+import requests
+
+# Get the business card schema
+with open("card.json", "r") as file:
+    schema_json = json.load(file)
+
+# Use a PUT request to submit the schema for a new analyzer
+analyzer_name = "business_card_analyser"
+
+headers = {
+    "Ocp-Apim-Subscription-Key": "<YOUR_API_KEY>",
+    "Content-Type": "application/json"}
+
+url = f"{<YOUR_ENDPOINT>}/contentunderstanding/analyzers/{analyzer_name}?api-version=2025-11-01"
+
+response = requests.put(url, headers=headers, data=json.dumps(schema_json))
+
+# Get the response and extract the ID assigned to the operation
+callback_url = response.headers["Operation-Location"]
+
+# Use a GET request to check the status of the operation
+result_response = requests.get(callback_url, headers=headers)
+
+# Keep polling until the operation is complete
+status = result_response.json().get("status")
+while status == "Running":
+    result_response = requests.get(callback_url, headers=headers)
+    status = result_response.json().get("status")
+
+print("Done!")
+
+Analyze content
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+To analyze the contents of a file, you can use the Azure Content Understanding API to submit it to the endpoint. You can specify the content as a URL (for a file hosted in an Internet-accessible location) or upload binary file data directly (for example, a .pdf document, a .png image, an .mp3 audio file, or an .mp4 video file). The analysis request includes the analyzer to be used.
+
+Analysis is an asynchronous operation. After submitting the request, you receive an operation ID that you can use to check the status and retrieve the results when the operation is complete.
+
+For example, suppose you want to use the business card analyzer discussed previously to extract the name and email address from the following scanned business card image:
+
+Photograph of a business card for John Smith.
+
+Using the Python SDK
+The Python SDK for Content Understanding (azure-ai-contentunderstanding) provides a ContentUnderstandingClient class that simplifies interaction with the service. The SDK handles authentication, request formatting, and automatic polling for asynchronous operations.
+
+The following Python code uses the SDK to submit a business card for analysis and retrieve the results:
+
+Python
+from azure.ai.contentunderstanding import ContentUnderstandingClient
+from azure.ai.contentunderstanding.models import AnalysisInput
+from azure.core.credentials import AzureKeyCredential
+
+# Authenticate the client
+endpoint = "<YOUR_ENDPOINT>"
+credential = AzureKeyCredential("<YOUR_API_KEY>")
+client = ContentUnderstandingClient(endpoint=endpoint, credential=credential)
+
+# Analyze the business card using the custom analyzer
+analyzer_name = "business_card_analyser"
+poller = client.begin_analyze(
+    analyzer_id=analyzer_name,
+    inputs=[AnalysisInput(url="https://host.com/business-card.png")]
+)
+
+# Wait for the operation to complete and get the results
+result = poller.result()
+
+# Extract field values from the results
+content = result.contents[0]
+if content.fields:
+    for field_name, field_data in content.fields.items():
+        if field_data.type == "string":
+            print(f"{field_name}: {field_data.value}")
+ Tip
+
+The SDK's begin_analyze method returns a poller object. Calling .result() on the poller automatically handles polling until the operation completes, so you don't need to write your own polling loop.
+
+Using the REST API
+You can also submit analysis requests directly by using the REST API. Your client application submits HTTP calls to the Content Understanding endpoint for your Microsoft Foundry resource, passing an API key in the header.
+
+The following Python code submits a request for analysis using a URL, and then polls the service until the operation is complete and the results are returned.
+
+Python
+import json
+import requests
+
+## Use a POST request to submit the file URL to the analyzer
+analyzer_name = "business_card_analyser"
+
+headers = {
+        "Ocp-Apim-Subscription-Key": "<YOUR_API_KEY>",
+        "Content-Type": "application/json"}
+
+url = f"{<YOUR_ENDPOINT>}/contentunderstanding/analyzers/{analyzer_name}:analyze?api-version=2025-11-01"
+
+request_body = {
+    "inputs": [
+        {
+            "url": "https://host.com/business-card.png"
+        }
+    ]
+}
+
+response = requests.post(url, headers=headers, json=request_body)
+
+# Get the response and extract the ID assigned to the analysis operation
+response_json = response.json()
+id_value = response_json.get("id")
+
+# Use a GET request to check the status of the analysis operation
+result_url = f"{<YOUR_ENDPOINT>}/contentunderstanding/analyzerResults/{id_value}?api-version=2025-11-01"
+
+result_response = requests.get(result_url, headers=headers)
+
+# Keep polling until the analysis is complete
+status = result_response.json().get("status")
+while status == "Running":
+        result_response = requests.get(result_url, headers=headers)
+        status = result_response.json().get("status")
+
+# Get the analysis results
+if status == "Succeeded":
+    result_json = result_response.json()
+
+
+ Note
+
+You can specify a URL for the content file location as shown here. To submit binary file data directly, use the analyzeBinary operation instead.
+
+Processing analysis results
+The results depend on:
+
+The kind of content the analyzer is designed to analyze (for example, document, video, image, or audio).
+The schema for the analyzer.
+The contents of the file that was analyzed.
+For example, the response from the document-based business card analyzer when analyzing the business card described previously contain:
+
+The extracted fields
+The optical character recognition (OCR) layout of the document, including locations of lines of text, individual words, and paragraphs on each page.
+Using the Python SDK
+When using the SDK, the AnalysisResult object provides typed access to the results. The contents property contains a list of content objects, each with fields, markdown, and metadata. The following code shows how to extract string field values:
+
+Python
+# (continued from previous SDK code example)
+
+content = result.contents[0]
+if content.fields:
+    for field_name, field_data in content.fields.items():
+        if field_data.type == "string":
+            print(f"{field_name}: {field_data.value}")
+Using the REST API
+When using the REST API, the response is a JSON payload that your application must parse. Here's the complete JSON response for the business card analysis:
+
+JSON
+{
+    "id": "00000000-0000-0000-0000-a00000000000",
+    "status": "Succeeded",
+    "result": {
+        "analyzerId": "biz_card_analyser_2",
+        "apiVersion": "2025-11-01",
+        "createdAt": "2025-05-16T03:51:46Z",
+        "warnings": [],
+        "contents": [
+            {
+                "markdown": "John Smith\nEmail: john@contoso.com\n",
+                "fields": {
+                    "ContactName": {
+                        "type": "string",
+                        "valueString": "John Smith",
+                        "spans": [
+                            {
+                                "offset": 0,
+                                "length": 10
+                            }
+                        ],
+                        "confidence": 0.994,
+                        "source": "D(1,69,234,333,234,333,283,69,283)"
+                    },
+                    "EmailAddress": {
+                        "type": "string",
+                        "valueString": "john@contoso.com",
+                        "spans": [
+                            {
+                                "offset": 18,
+                                "length": 16
+                            }
+                        ],
+                        "confidence": 0.998,
+                        "source": "D(1,179,309,458,309,458,341,179,341)"
+                    }
+                },
+                "kind": "document",
+                "startPageNumber": 1,
+                "endPageNumber": 1,
+                "unit": "pixel",
+                "pages": [
+                    {
+                        "pageNumber": 1,
+                        "angle": 0.03410444,
+                        "width": 1000,
+                        "height": 620,
+                        "spans": [
+                            {
+                                "offset": 0,
+                                "length": 35
+                            }
+                        ],
+                        "words": [
+                            {
+                                "content": "John",
+                                "span": {
+                                    "offset": 0,
+                                    "length": 4
+                                },
+                                "confidence": 0.992,
+                                "source": "D(1,69,234,181,234,180,283,69,283)"
+                            },
+                            {
+                                "content": "Smith",
+                                "span": {
+                                    "offset": 5,
+                                    "length": 5
+                                },
+                                "confidence": 0.998,
+                                "source": "D(1,200,234,333,234,333,282,200,283)"
+                            },
+                            {
+                                "content": "Email:",
+                                "span": {
+                                    "offset": 11,
+                                    "length": 6
+                                },
+                                "confidence": 0.995,
+                                "source": "D(1,75,310,165,309,165,340,75,340)"
+                            },
+                            {
+                                "content": "john@contoso.com",
+                                "span": {
+                                    "offset": 18,
+                                    "length": 16
+                                },
+                                "confidence": 0.977,
+                                "source": "D(1,179,309,458,311,458,340,179,341)"
+                            }
+                        ],
+                        "lines": [
+                            {
+                                "content": "John Smith",
+                                "source": "D(1,69,234,333,233,333,282,69,282)",
+                                "span": {
+                                    "offset": 0,
+                                    "length": 10
+                                }
+                            },
+                            {
+                                "content": "Email: john@contoso.com",
+                                "source": "D(1,75,309,458,309,458,340,75,340)",
+                                "span": {
+                                    "offset": 11,
+                                    "length": 23
+                                }
+                            }
+                        ]
+                    }
+                ],
+                "paragraphs": [
+                    {
+                        "content": "John Smith Email: john@contoso.com",
+                        "source": "D(1,69,233,458,233,458,340,69,340)",
+                        "span": {
+                            "offset": 0,
+                            "length": 34
+                        }
+                    }
+                ],
+                "sections": [
+                    {
+                        "span": {
+                            "offset": 0,
+                            "length": 34
+                        },
+                        "elements": [
+                            "/paragraphs/0"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}
+Your application must typically parse the JSON to retrieve field values. For example, the following Python code extracts all of the string values:
+
+Python
+# (continued from previous code example)
+
+# Iterate through the fields and extract the names and type-specific values
+contents = result_json["result"]["contents"]
+for content in contents:
+    if "fields" in content:
+        fields = content["fields"]
+        for field_name, field_data in fields.items():
+            if field_data['type'] == "string":
+                print(f"{field_name}: {field_data['valueString']}")
+
+The output from this code is shown here:
+
+ContactName: John Smith
+EmailAddress: john@contoso.com
+
+Azure Content Understanding is a multimodal AI service that enables you to extract information from many different kinds of content. The Python SDK and REST API for the service enable you to create client applications that analyze content to extract and generate field values.
+
+Introduction
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Forms and documents are used to communicate information in every industry, every day. Many organizations still manually extract data from forms to exchange information, whether it's filing claims, enrolling patients, processing receipts for expense reports, or reviewing operations data.
+
+Imagine you work for a company that processes thousands of invoices, receipts, and tax forms each month. You want to automate the extraction of key data from these documents to reduce manual effort and improve accuracy. Azure Document Intelligence provides the AI-powered tools you need to build this kind of solution.
+
+Azure Document Intelligence is a cloud-based service in Microsoft Foundry that uses optical character recognition (OCR) and deep learning models to extract text, key-value pairs, tables, and structured data from forms and documents. It offers prebuilt models for common document types, document analysis models for general text extraction, and the ability to train custom models for your specific forms.
+
+Learning objectives
+By the end of this module, you'll be able to:
+
+Describe the capabilities and components of Azure Document Intelligence.
+Use the Document Intelligence Studio to explore and test models.
+Use prebuilt models to extract data from common document types.
+Train and use custom models for industry-specific forms.
+Prerequisites
+Familiarity with Azure and the Azure portal.
+Programming experience with C# or Python.
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+
+What is Azure Document Intelligence?
+Completed
+100 XP
+8 minutes
+Choose your preferred content format
+Azure Document Intelligence is a cloud-based AI service in Microsoft Foundry that uses OCR and deep learning models to extract text, key-value pairs, selection marks, and tables from documents.
+
+OCR captures document structure by creating bounding boxes around detected objects in an image. The locations of the bounding boxes are recorded as coordinates in relation to the rest of the page. Azure Document Intelligence returns bounding box data and other information in a structured JSON format that preserves the relationships from the original document.
+
+Screenshot showing Document Intelligence analyzing a sample document with extracted fields and bounding boxes.
+
+To build a high-accuracy document extraction model from scratch requires deep learning expertise, large amounts of compute, and long training times. Azure Document Intelligence provides underlying models already trained on thousands of form examples, so you can achieve high-accuracy data extraction with minimal effort.
+
+Document Intelligence service components
+Azure Document Intelligence is composed of three categories of models:
+
+Document analysis models: Extract text, structure, tables, and selection marks from documents. The read model extracts text and detects languages, while the layout model adds table and structure extraction. You'll explore these models in detail in the Use prebuilt models unit.
+
+Prebuilt models: Extract information from common document types — such as invoices, receipts, tax forms, ID documents, and more — without any training required. You'll see the full list of available prebuilt models in the Use prebuilt models unit.
+
+Custom models: Extract data from forms specific to your business using your own labeled datasets. Options include custom template models (fast and cost-effective for fixed layouts), custom neural models (higher accuracy for varying layouts), composed models, and custom classifiers. You'll learn about training and using custom models in the Train and use custom models unit.
+
+Access Document Intelligence services
+You can access Azure Document Intelligence in several ways:
+
+REST API: Call the service directly using HTTP requests.
+Client library SDKs: Use SDKs for Python, C#, Java, and JavaScript.
+Document Intelligence Studio: An online tool for visually exploring, testing, and building Document Intelligence solutions.
+Microsoft Foundry portal: Integrate Document Intelligence with other Foundry tools.
+ Tip
+
+This module's exercise focuses on the Python SDK. The underlying REST services can be used by any language.
+
+Create a Document Intelligence resource
+To use Azure Document Intelligence, you need an Azure resource. You can use either:
+
+A Foundry resource: A multi-service subscription that provides access to multiple AI services under a single endpoint and key.
+An Azure Document Intelligence resource: A single-service resource used only with Document Intelligence.
+ Note
+
+Create a Foundry resource if you plan to access multiple Foundry tools under a single endpoint and key. For Document Intelligence access only, create a dedicated Document Intelligence resource.
+
+Input requirements
+Azure Document Intelligence works on input documents that meet these requirements:
+
+Format must be JPEG, PNG, BMP, PDF (text or scanned), or TIFF. The read model also accepts Microsoft Office file formats.
+File size must be less than 500 MB for the standard tier and 4 MB for the free tier.
+Image dimensions must be between 50 x 50 pixels and 10,000 x 10,000 pixels.
+PDF documents must have dimensions less than 17 x 17 inches (A3 paper size).
+PDF documents must not be password-protected.
+
+Use the Document Intelligence Studio
+Completed
+100 XP
+6 minutes
+Choose your preferred content format
+The Azure Document Intelligence Studio is an online tool for visually exploring, understanding, and integrating features from the Document Intelligence service. You can use the Studio to analyze form layouts, extract data from prebuilt models, and train custom models—all through a visual interface.
+
+You can access the Studio at documentintelligence.ai.azure.com.
+
+Screenshot showing the Document Intelligence Studio home page.
+
+Studio capabilities
+The Document Intelligence Studio supports the following project types:
+
+Document analysis models: Test the read and layout models against your own documents to see extracted text, tables, and structure.
+
+Prebuilt models: Analyze documents using any available prebuilt model, such as invoices, receipts, ID documents, and tax forms.
+
+Custom models: Build, label, train, and test custom extraction models and custom classifiers.
+
+Analyze documents with prebuilt models
+To extract data from documents using prebuilt models in the Studio:
+
+Create an Azure Document Intelligence or Foundry Tools resource in the Azure portal.
+Open the Document Intelligence Studio and select a prebuilt model (for example, Invoice, Receipt, or ID Document).
+Provide your resource endpoint and key.
+Upload or provide a URL to the document you want to analyze.
+Review the extracted fields and their confidence scores.
+Build custom model projects
+You can use the Studio to handle the entire process of labeling, training, and testing custom models — without manually creating JSON files. The Studio generates the required ocr.json, labels.json, and fields.json files automatically.
+
+The high-level workflow is:
+
+Create an Azure Document Intelligence or Foundry resource.
+Upload at least 5-6 sample forms to an Azure Blob Storage container.
+Configure cross-origin resource sharing (CORS) so the Studio can access your storage container.
+Create a custom model project in the Studio, linking your storage container and Document Intelligence resource.
+Label fields in your sample documents using the Studio's visual interface.
+Train your model and review accuracy metrics.
+Test the model against a new document that wasn't used during training.
+You'll learn more about the custom model types and the alternative REST API/SDK training workflow in the Train and use custom models unit.
+
+Add-on capabilities
+Document Intelligence supports optional features that you can enable depending on your extraction scenario:
+
+Capability	Description
+High resolution extraction	Extract text from high-resolution documents with greater accuracy.
+Formula extraction	Detect and extract mathematical formulas from documents.
+Font property extraction	Extract font information such as style, weight, and color.
+Barcode extraction	Detect and read barcodes in documents.
+Searchable PDF	Convert scanned documents into searchable PDF files.
+Query fields	Use natural language queries to extract specific fields from documents.
+Key-value pairs	Extract key-value pair relationships from documents using the layout model.
+
+Use prebuilt models
+Completed
+100 XP
+10 minutes
+Choose your preferred content format
+Prebuilt models in Azure Document Intelligence enable you to extract data from common form types without training your own models. Microsoft trains these models on large numbers of sample documents, so you can expect accurate and reliable results for standard document types.
+
+Document analysis models
+Before looking at the domain-specific prebuilt models, it's important to understand the document analysis models that underpin them.
+
+Read model
+The read model extracts printed and handwritten text from documents and images. It detects the language of each text line and classifies whether text is handwritten or printed. The read model is used as the foundation for text extraction in all other Document Intelligence models.
+
+For multi-page PDF or TIFF files, you can use the pages parameter in your request to specify a page range for analysis.
+
+The read model is ideal when you want to extract words and lines from documents with no fixed or predictable structure.
+
+Screenshot showing the read model analyzing a sample document in the Document Intelligence Studio.
+
+Layout model
+The layout model extends the read model's text extraction with detection of selection marks, tables, and document structure information. It also supports an optional keyValuePairs feature to extract key-value pairs.
+
+When you digitize a document, it might be angled, or tables might have complex structures with merged cells or incomplete rows. The layout model can handle these difficulties. Each table cell is extracted with its content, bounding box position, and row/column indexes.
+
+Selection marks (checkboxes and radio buttons) are extracted with their bounding box, confidence level, and whether they're selected.
+
+Screenshot showing the layout model extracting tables and structure from a sample document in the Document Intelligence Studio.
+
+ Note
+
+The general document model was available in earlier versions of Document Intelligence, but was deprecated in the 2023-10-31-preview release. Its functionality for key-value pair and entity extraction has been incorporated into the layout model and other features.
+
+Prebuilt models for specific document types
+Azure Document Intelligence includes prebuilt models trained on specific document types. The following prebuilt models are some examples available to extract fields from common business documents:
+
+Financial and legal documents
+Model	Description
+Invoice	Extracts customer name, vendor details, purchase order number, invoice and due dates, billing and shipping addresses, line items, and totals.
+Receipt	Extracts merchant details, transaction date and time, line items, and totals. Supports single-page hotel receipt processing.
+Bank statement	Extracts account information, beginning and ending balances, and transaction details.
+Check	Extracts payee, amount, date, and other relevant information.
+Pay stub	Extracts wages, hours, deductions, net pay, and other common pay stub fields.
+Credit card	Extracts payment card information.
+Contract	Extracts agreement and party details.
+US tax documents
+Model	Description
+Unified US tax	A single model that extracts from any supported US tax form type.
+W-2	Extracts taxable compensation details.
+1098 and variations	Extracts mortgage interest and related details.
+1099 and variations	Extracts income from various sources.
+1040 and variations	Extracts individual income tax return details.
+US mortgage documents
+Model	Description
+1003 (URLA)	Extracts loan application details.
+1004 (URAR)	Extracts information from property appraisals.
+1005	Extracts validation-of-employment information.
+1008	Extracts loan transmittal details.
+Closing disclosure	Extracts final closing loan terms.
+Personal identification documents
+Model	Description
+ID document	Extracts details from US driver's licenses, European Union IDs and driver's licenses, and international passports. Includes names, dates of birth, document numbers, and endorsements or restrictions.
+Health insurance card	Extracts common fields from US health insurance cards.
+Marriage certificate	Extracts certified marriage information.
+ Important
+
+The ID document model extracts personal information covered by data protection laws in most jurisdictions. Ensure you have the individual's permission to store their data and that you comply with all applicable legal requirements.
+
+Features of prebuilt models
+Prebuilt models are designed to extract different types of data from documents. These features include:
+
+Text extraction: All prebuilt models extract lines and words from handwritten and printed text.
+Key-value pairs: Spans of text that identify a label and its response. For example, Weight and 31 kg.
+Selection marks: Checkboxes and radio buttons, including whether they're selected or not.
+Tables: Data in cells, including the number of columns and rows, column and row headings, and merged cells.
+Fields: Models trained for a specific form type identify a fixed set of fields. For example, the invoice model extracts CustomerName and InvoiceTotal.
+When to use prebuilt vs. custom models
+Prebuilt models cover the most common document types. If you have an industry-specific or unique form type, you might get more accurate results with a custom model. However, custom models require time and sample data to train. Always check whether a prebuilt model exists for your scenario before investing in custom model development.
+
+Train and use custom models
+Completed
+100 XP
+8 minutes
+Choose your preferred content format
+When prebuilt models don't cover your specific document types, you can train custom models to extract data from your own forms. Azure Document Intelligence supports supervised machine learning, where you label sample documents with the fields you want to extract, and the service trains a model to recognize those fields in new documents.
+
+Custom model types
+Azure Document Intelligence offers two types of custom extraction models, plus a classification model:
+
+Custom template models
+Custom template models rely on a consistent visual template to extract labeled data. They work best for structured forms where the layout is static from one document instance to the next, such as questionnaires, applications, or standard government forms.
+
+Template models accurately extract labeled key-value pairs, selection marks, tables, regions, and signatures. Training takes only a few minutes, and more than 100 languages are supported. Because template models are fast to train and cost-effective to run, they're a good starting point when your documents have a uniform visual layout.
+
+Custom neural models
+Custom neural models use deep learning and are fine-tuned on your labeled data. They combine layout and language features to extract fields from structured, semi-structured, and unstructured documents. Neural models support:
+
+Overlapping fields
+Signature detection
+Table, row, and cell level confidence
+Neural models deliver higher accuracy than template models, especially for semi-structured or unstructured documents where the layout varies between instances. However, they take longer to train and consume more resources.
+
+Choose between template and neural models
+When deciding which custom model type to use, consider the tradeoffs:
+
+Factor	Custom template	Custom neural
+Best for	Structured forms with a consistent visual layout	Semi-structured or unstructured documents with varying layouts
+Training time	Minutes	Longer (depends on dataset size)
+Training cost	Lower	Higher
+Accuracy	High for fixed-layout forms; decreases when layout varies	Higher overall, especially for documents with format variation
+Language support	100+ languages	Fewer languages (check documentation for current support)
+Feature support	Key-value pairs, selection marks, tables, regions, signatures	Overlapping fields, signature detection, table/row/cell confidence
+ Tip
+
+Start with a custom template model if your forms have a consistent visual layout. It's faster and cheaper to train. If accuracy is insufficient or your documents vary in format, switch to a custom neural model.
+
+Custom classifiers
+Custom classification models identify the type of a document before invoking an extraction model. You can use a classifier to route incoming documents to the appropriate extraction model when you're handling multiple form types.
+
+Train a custom model
+To train a custom extraction model:
+
+Store sample forms in an Azure blob container, along with JSON files containing layout and label field information:
+An ocr.json file for each sample form (generated using the Analyze document function).
+A single fields.json file describing the fields you want to extract.
+A labels.json file for each sample form, mapping fields to their location in the form.
+Generate a shared access signature (SAS) URL for the container.
+Use the Build model REST API function or the equivalent SDK method.
+Use the Get model REST API function to retrieve the trained model ID.
+You can also train custom models visually using the Document Intelligence Studio, as described in the Use the Document Intelligence Studio unit.
+
+ Tip
+
+Use at least five to six sample forms for training. A larger and more varied dataset produces more accurate models.
+
+Use a custom model
+To extract form data with a custom model, call the Analyze document function with your model ID. You can use either a supported SDK or the REST API.
+
+C#
+
+C#
+string endpoint = "<endpoint>";
+string apiKey = "<apiKey>";
+AzureKeyCredential credential = new AzureKeyCredential(apiKey);
+DocumentAnalysisClient client = new DocumentAnalysisClient(new Uri(endpoint), credential);
+
+string modelId = "<modelId>";
+Uri fileUri = new Uri("<fileUri>");
+
+AnalyzeDocumentOperation operation = await client.AnalyzeDocumentFromUriAsync(WaitUntil.Completed, modelId, fileUri);
+AnalyzeResult result = operation.Value;
+Python
+
+Python
+endpoint = "YOUR_DOC_INTELLIGENCE_ENDPOINT"
+key = "YOUR_DOC_INTELLIGENCE_KEY"
+
+model_id = "YOUR_CUSTOM_BUILT_MODEL_ID"
+formUrl = "YOUR_DOCUMENT"
+
+document_analysis_client = DocumentAnalysisClient(
+    endpoint=endpoint, credential=AzureKeyCredential(key)
+)
+
+task = document_analysis_client.begin_analyze_document_from_url(model_id, formUrl)
+result = task.result()
+A successful response contains an analyzeResult object with the extracted content and an array of pages containing information about the document.
+
+Composed models
+You can combine multiple custom models into a single composed model. When you submit a document to a composed model, Document Intelligence classifies it to determine the most appropriate component model, and then returns the extraction results from that model. This approach is useful when you handle multiple form types that each require their own extraction model.
+
+Azure Document Intelligence provides powerful capabilities for extracting data from documents at scale. In this module, you explored the full range of the service's functionality.
+
+You learned how to:
+
+Describe the capabilities and components of Azure Document Intelligence, including document analysis, prebuilt, and custom models.
+Use the Document Intelligence Studio to visually explore, test, and build document processing solutions.
+Use prebuilt models to extract data from common document types like invoices, receipts, tax forms, and ID documents.
+Train and use custom template and neural models for industry-specific forms.
+Azure Document Intelligence is one part of the broader set of AI services available in Microsoft Foundry. You can integrate Document Intelligence with other services, such as Azure AI Search for knowledge mining scenarios or generative AI models for document summarization.
+
+Introduction
+Completed
+100 XP
+1 minute
+Choose your preferred content format
+Azure AI Search is a powerful cloud-based service that enables you to extract, enrich, and explore information from a wide variety of data sources. In this module, you'll learn how to build intelligent search and knowledge mining solutions using Azure AI Search.
+
+We'll start by introducing the core concepts of Azure AI Search, including how to connect to data sources and create indexes. You'll discover how the indexing process works, and how AI skills can be used to enrich your data with insights such as language detection, key phrase extraction, and image analysis.
+
+After learning how to implement an index, you'll explore how to query and filter results using full-text search. Finally, you'll see how to use the knowledge store to persist enriched data for further analysis and integration with other systems.
+
+ Note
+
+We recognize that different people like to learn in different ways. You can choose to complete this module in video-based format or you can read the content as text and images. The text contains greater detail than the videos, so in some cases you might want to refer to it as supplemental material to the video presentation.
+
+What is Azure AI Search?
+Completed
+100 XP
+3 minutes
+Choose your preferred content format
+Azure AI Search provides a cloud-based solution for indexing and querying a wide range of data sources, and creating comprehensive and high-scale search solutions. It provides the infrastructure and tools to create search solutions that extract data from structured, semi-structured, and non-structured documents and other data sources.
+
+With Azure AI Search, you can:
+
+Index documents and data from a range of sources.
+Use AI skills to enrich index data.
+Store extracted insights in a knowledge store for analysis and integration.
+Azure AI Search indexes contain insights extracted from your data; which can include text inferred or read using OCR from images, entities and key phrases detection through text analytics, and other derived information based on AI skills that are integrated into the indexing process.
+
+Diagram of Azure AI Search supporting multiple applications.
+
+Azure AI Search has many applications, including:
+
+Implementing an enterprise search solution to help employees or customers find information in websites or applications.
+Supporting retrieval augmented generation (RAG) in generative AI applications by using vector-based indexes for prompt grounding data.
+Creating knowledge mining solutions in which the indexing process is used to infer insights and extract granular data assets from documents to support data analytics.
+In this module, we'll focus on Azure AI Search in knowledge mining scenarios.
+
+Extract data with an indexer
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+At the heart of Azure AI Search solutions is the creation of an index An index contains your searchable content and is created and updated, unsurprisingly, by an indexer.
+
+Diagram of an indexer extracting documents from a source and creating an index.
+
+The indexing process starts with a data source: the storage location of your original data artifacts; for example, an Azure blob store container full of documents, a database, or some other store.
+
+The Indexer automates the extraction and indexing of data fields through an enrichment pipeline, in which it applies document cracking to extract the contents of the source documents and applies incremental steps to create a hierarchical (JSON-based) document with the required fields for the index definition.
+
+The result is a populated index, which can be queried to return specified fields from documents that match the query criteria.
+
+How documents are constructed during indexing
+The indexing process works by creating a document for each indexed entity. During indexing, an enrichment pipeline iteratively builds the documents that combine metadata from the data source with enriched fields extracted or generated by skills. You can think of each indexed document as a JSON structure, which initially consists of a document with the index fields you have mapped to fields extracted directly from the source data, like this:
+
+document
+metadata_storage_name
+metadata_author
+content
+When the documents in the data source contain images, you can configure the indexer to extract the image data and place each image in a normalized_images collection, like this:
+
+document
+metadata_storage_name
+metadata_author
+content
+normalized_images
+image0
+image1
+Normalizing the image data in this way enables you to use the collection of images as an input for skills that extract information from image data.
+
+Each skill adds fields to the document, so for example a skill that detects the language in which a document is written might store its output in a language field, like this:
+
+document
+metadata_storage_name
+metadata_author
+content
+normalized_images
+image0
+image1
+language
+The document is structured hierarchically, and the skills are applied to a specific context within the hierarchy, enabling you to run the skill for each item at a particular level of the document. For example, you could run an optical character recognition (OCR) skill for each image in the normalized images collection to extract any text they contain:
+
+document
+metadata_storage_name
+metadata_author
+content
+normalized_images
+image0
+Text
+image1
+Text
+language
+The output fields from each skill can be used as inputs for other skills later in the pipeline, which in turn store their outputs in the document structure. For example, we could use a merge skill to combine the original text content with the text extracted from each image to create a new merged_content field that contains all of the text in the document, including image text.
+
+document
+metadata_storage_name
+metadata_author
+content
+normalized_images
+image0
+Text
+image1
+Text
+language
+merged_content
+The fields in the final document structure at the end of the pipeline are mapped to index fields by the indexer in one of two ways:
+
+Fields extracted directly from the source data are all mapped to index fields. These mappings can be implicit (fields are automatically mapped to in fields with the same name in the index) or explicit (a mapping is defined to match a source field to an index field, often to rename the field to something more useful or to apply a function to the data value as it is mapped).
+Output fields from the skills in the skillset are explicitly mapped from their hierarchical location in the output to the target field in the index.
+
+
+Enrich extracted data with AI skills
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The enrichment pipeline that is orchestrated by an indexer uses a skillset of AI skills to create AI-enriched fields. The indexer applies each skill in order, refining the index document at each step.
+
+Diagram of an indexer using a skillset to enrich data.
+
+Built-in skills
+Azure AI Search provides a collection of built-in skills that you can include in a skillset for your indexer. Built-in skills include functionality from Foundry Tools such as Azure Vision and Azure Language, enabling you to apply enrichments such as:
+
+Detecting the language that text is written in.
+Detecting and extracting places, locations, and other entities in the text.
+Determining and extracting key phrases within a body of text.
+Translating text.
+Identifying and extracting (or removing) personally identifiable information (PII) within the text.
+Extracting text from images.
+Generating captions and tags to describe images.
+To use the built-in skills, your indexer must have access to a Foundry Tools resource. You can use a restricted Azure AI search resource that is included in Azure AI Search (and which is limited to indexing 20 or fewer documents) or you can attach a Foundry Tools resource in your Azure subscription (which must be in the same region as your Azure AI Search resource).
+
+Custom skills
+You can further extend the enrichment capabilities of your index by creating custom skills. As the name suggests, custom skills perform custom logic on input data from your index document to return new field values that can be incorporated into the index. Often, custom skills are "wrappers" around services that are specifically designed to extract data from documents. For example, you could implement a custom skill as an Azure Function, and use it to pass data from your index document to an Azure Document Intelligence model, which can extract fields from a form.
+
+ Tip
+
+To learn more about using custom skills with Azure AI Search, see Add a custom skill to an Azure AI Search enrichment pipeline in the Azure AI Search documentation.
+
+Search an index
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The index is the searchable result of the indexing process. It consists of a collection of JSON documents, with fields that contain the values extracted during indexing. Client applications can query the index to retrieve, filter, and sort information.
+
+Diagram of a client searching an Azure AI Search index.
+
+Each index field can be configured with the following attributes:
+
+key: Fields that define a unique key for index records.
+searchable: Fields that can be queried using full-text search.
+filterable: Fields that can be included in filter expressions to return only documents that match specified constraints.
+sortable: Fields that can be used to order the results.
+facetable: Fields that can be used to determine values for facets (user interface elements used to filter the results based on a list of known field values).
+retrievable: Fields that can be included in search results (by default, all fields are retrievable unless this attribute is explicitly removed).
+Full-text search
+While you could retrieve index entries based on simple field value matching, most search solutions use full-text search semantics to query an index.
+
+Full-text search describes search solutions that parse text-based document contents to find query terms. Full-text search queries in Azure AI Search are based on the Lucene query syntax, which provides a rich set of query operations for searching, filtering, and sorting data in indexes. Azure AI Search supports two variants of the Lucene syntax:
+
+Simple - An intuitive syntax that makes it easy to perform basic searches that match literal query terms submitted by a user.
+Full - An extended syntax that supports complex filtering, regular expressions, and other more sophisticated queries.
+Client applications submit queries to Azure AI Search by specifying a search expression along with other parameters that determine how the expression is evaluated and the results returned. Some common parameters submitted with a query include:
+
+search - A search expression that includes the terms to be found.
+queryType - The Lucene syntax to be evaluated (simple or full).
+searchFields - The index fields to be searched.
+select - The fields to be included in the results.
+searchMode - Criteria for including results based on multiple search terms. For example, suppose you search an index of travel-related documents for comfortable hotel. A searchMode value of Any returns documents that contain "comfortable", "hotel", or both; while a searchMode value of All restricts results to documents that contain both "comfortable" and "hotel".
+Query processing consists of four stages:
+
+Query parsing. The search expression is evaluated and reconstructed as a tree of appropriate subqueries. Subqueries might include term queries (finding specific individual words in the search expression - for example hotel), phrase queries (finding multi-term phrases specified in quotation marks in the search expression - for example, "free parking"), and prefix queries (finding terms with a specified prefix - for example air*, which would match airway, air-conditioning, and airport).
+Lexical analysis - The query terms are analyzed and refined based on linguistic rules. For example, text is converted to lower case and nonessential stopwords (such as "the", "a", "is", and so on) are removed. Then words are converted to their root form (for example, "comfortable" might be simplified to "comfort") and composite words are split into their constituent terms.
+Document retrieval - The query terms are matched against the indexed terms, and the set of matching documents is identified.
+Scoring - A relevance score is assigned to each result based on a term frequency/inverse document frequency (TF/IDF) calculation.
+ Tip
+
+For more information about querying an index, and details about simple and full syntax, see Query types and composition in Azure AI Search in the Azure AI Search documentation.
+
+It's common in a search solution for users to want to refine query results by filtering and sorting based on field values. Azure AI Search supports both of these capabilities through the search query API.
+
+Filtering results
+You can apply filters to queries in two ways:
+
+By including filter criteria in a simple search expression.
+By providing an OData filter expression as a $filter parameter with a full syntax search expression.
+You can apply a filter to any filterable field in the index.
+
+For example, suppose you want to find documents containing the text London that have an author field value of Reviewer.
+
+You can achieve this result by submitting the following simple search expression:
+
+search=London+author='Reviewer'
+queryType=Simple
+Alternatively, you can use an OData filter in a $filter parameter with a full Lucene search expression like this:
+
+search=London
+$filter=author eq 'Reviewer'
+queryType=Full
+ Note
+
+OData $filter expressions are case-sensitive!
+
+Filtering with facets
+Facets are a useful way to present users with filtering criteria based on field values in a result set. They work best when a field has a small number of discrete values that can be displayed as links or options in the user interface.
+
+To use facets, you must specify facetable fields for which you want to retrieve the possible values in an initial query. For example, you could use the following parameters to return all of the possible values for the author field:
+
+search=*
+facet=author
+The results from this query include a collection of discrete facet values that you can display in the user interface for the user to select. Then in a subsequent query, you can use the selected facet value to filter the results:
+
+search=*
+$filter=author eq 'selected-facet-value-here'
+Sorting results
+By default, results are sorted based on the relevancy score assigned by the query process, with the highest scoring matches listed first. However, you can override this sort order by including an OData orderby parameter that specifies one or more sortable fields and a sort order (asc or desc).
+
+For example, to sort the results so that the most recently modified documents are listed first, you could use the following parameter values:
+
+search=*
+$orderby=last_modified desc
+
+Search an index
+Completed
+100 XP
+5 minutes
+Choose your preferred content format
+The index is the searchable result of the indexing process. It consists of a collection of JSON documents, with fields that contain the values extracted during indexing. Client applications can query the index to retrieve, filter, and sort information.
+
+Diagram of a client searching an Azure AI Search index.
+
+Each index field can be configured with the following attributes:
+
+key: Fields that define a unique key for index records.
+searchable: Fields that can be queried using full-text search.
+filterable: Fields that can be included in filter expressions to return only documents that match specified constraints.
+sortable: Fields that can be used to order the results.
+facetable: Fields that can be used to determine values for facets (user interface elements used to filter the results based on a list of known field values).
+retrievable: Fields that can be included in search results (by default, all fields are retrievable unless this attribute is explicitly removed).
+Full-text search
+While you could retrieve index entries based on simple field value matching, most search solutions use full-text search semantics to query an index.
+
+Full-text search describes search solutions that parse text-based document contents to find query terms. Full-text search queries in Azure AI Search are based on the Lucene query syntax, which provides a rich set of query operations for searching, filtering, and sorting data in indexes. Azure AI Search supports two variants of the Lucene syntax:
+
+Simple - An intuitive syntax that makes it easy to perform basic searches that match literal query terms submitted by a user.
+Full - An extended syntax that supports complex filtering, regular expressions, and other more sophisticated queries.
+Client applications submit queries to Azure AI Search by specifying a search expression along with other parameters that determine how the expression is evaluated and the results returned. Some common parameters submitted with a query include:
+
+search - A search expression that includes the terms to be found.
+queryType - The Lucene syntax to be evaluated (simple or full).
+searchFields - The index fields to be searched.
+select - The fields to be included in the results.
+searchMode - Criteria for including results based on multiple search terms. For example, suppose you search an index of travel-related documents for comfortable hotel. A searchMode value of Any returns documents that contain "comfortable", "hotel", or both; while a searchMode value of All restricts results to documents that contain both "comfortable" and "hotel".
+Query processing consists of four stages:
+
+Query parsing. The search expression is evaluated and reconstructed as a tree of appropriate subqueries. Subqueries might include term queries (finding specific individual words in the search expression - for example hotel), phrase queries (finding multi-term phrases specified in quotation marks in the search expression - for example, "free parking"), and prefix queries (finding terms with a specified prefix - for example air*, which would match airway, air-conditioning, and airport).
+Lexical analysis - The query terms are analyzed and refined based on linguistic rules. For example, text is converted to lower case and nonessential stopwords (such as "the", "a", "is", and so on) are removed. Then words are converted to their root form (for example, "comfortable" might be simplified to "comfort") and composite words are split into their constituent terms.
+Document retrieval - The query terms are matched against the indexed terms, and the set of matching documents is identified.
+Scoring - A relevance score is assigned to each result based on a term frequency/inverse document frequency (TF/IDF) calculation.
+ Tip
+
+For more information about querying an index, and details about simple and full syntax, see Query types and composition in Azure AI Search in the Azure AI Search documentation.
+
+It's common in a search solution for users to want to refine query results by filtering and sorting based on field values. Azure AI Search supports both of these capabilities through the search query API.
+
+Filtering results
+You can apply filters to queries in two ways:
+
+By including filter criteria in a simple search expression.
+By providing an OData filter expression as a $filter parameter with a full syntax search expression.
+You can apply a filter to any filterable field in the index.
+
+For example, suppose you want to find documents containing the text London that have an author field value of Reviewer.
+
+You can achieve this result by submitting the following simple search expression:
+
+search=London+author='Reviewer'
+queryType=Simple
+Alternatively, you can use an OData filter in a $filter parameter with a full Lucene search expression like this:
+
+search=London
+$filter=author eq 'Reviewer'
+queryType=Full
+ Note
+
+OData $filter expressions are case-sensitive!
+
+Filtering with facets
+Facets are a useful way to present users with filtering criteria based on field values in a result set. They work best when a field has a small number of discrete values that can be displayed as links or options in the user interface.
+
+To use facets, you must specify facetable fields for which you want to retrieve the possible values in an initial query. For example, you could use the following parameters to return all of the possible values for the author field:
+
+search=*
+facet=author
+The results from this query include a collection of discrete facet values that you can display in the user interface for the user to select. Then in a subsequent query, you can use the selected facet value to filter the results:
+
+search=*
+$filter=author eq 'selected-facet-value-here'
+Sorting results
+By default, results are sorted based on the relevancy score assigned by the query process, with the highest scoring matches listed first. However, you can override this sort order by including an OData orderby parameter that specifies one or more sortable fields and a sort order (asc or desc).
+
+For example, to sort the results so that the most recently modified documents are listed first, you could use the following parameter values:
+
+search=*
+$orderby=last_modified desc
+
+
 
 
 
