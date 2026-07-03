@@ -1,0 +1,633 @@
+1. Czym jest AI?
+
+Artificial Intelligence (AI) – systemy, które potrafią wykonywać zadania wymagające ludzkiej inteligencji.
+
+Główne obszary AI
+Generative AI
+wykorzystuje LLM (Large Language Models)
+generuje tekst, kod, obrazy, odpowiedzi
+podstawa chatbotów i AI Agents
+NLP (Natural Language Processing)
+
+Przetwarzanie tekstu:
+
+analiza tekstu
+rozpoznawanie języka
+analiza sentymentu
+podsumowania
+ekstrakcja informacji
+Computer Vision
+
+Praca z obrazami:
+
+rozpoznawanie obiektów
+analiza zdjęć
+OCR
+generowanie obrazów
+Speech AI
+Speech to Text
+Text to Speech
+tłumaczenie mowy
+Information Extraction
+
+Wyciąganie danych z:
+
+dokumentów
+formularzy
+faktur
+obrazów
+2. Microsoft Foundry
+
+Microsoft Foundry = platforma do budowania aplikacji AI.
+
+Projekt (Project) zawiera:
+
+Models
+Agents
+Tools
+Knowledge
+
+Portal pozwala:
+
+wdrażać modele
+testować modele
+tworzyć agentów
+zarządzać projektami
+3. Foundry Tools
+
+Najważniejsze usługi:
+
+Azure Language
+wykrywanie języka
+rozpoznawanie encji
+analiza tekstu
+PII
+Azure Speech
+Speech to Text
+Text to Speech
+Azure Translator
+tłumaczenia
+Document Intelligence
+odczytywanie faktur
+formularzy
+dokumentów
+Content Understanding
+
+Analiza:
+
+tekstu
+obrazów
+audio
+video
+4. Responsible AI (BARDZO WAŻNE)
+
+Microsoft ma 6 zasad.
+
+Fairness
+
+Brak dyskryminacji.
+
+Reliability & Safety
+
+System działa poprawnie i bezpiecznie.
+
+Privacy & Security
+
+Chroni dane użytkowników.
+
+Inclusiveness
+
+Działa dla wszystkich użytkowników.
+
+Transparency
+
+Użytkownik wie:
+
+że rozmawia z AI
+jak działa system
+Accountability
+
+Za AI odpowiada człowiek.
+
+5. AI Agents
+
+Agent AI:
+
+rozumie polecenia
+podejmuje decyzje
+korzysta z narzędzi
+wykonuje zadania
+
+To NIE jest zwykły chatbot.
+
+Agent =
+
+Model
++
+Instructions
++
+Tools
++
+Memory/Knowledge
+
+6. Microsoft Foundry Agent Service
+
+Służy do budowania agentów.
+
+Najważniejsze funkcje:
+
+automatyczne wywoływanie narzędzi
+zarządzanie rozmową
+File Search
+Web Search
+Code Interpreter
+integracja z Azure
+7. Typy agentów
+Prompt-based Agent
+
+Najprostszy.
+
+Składa się z:
+
+modelu
+instrukcji
+narzędzi
+Workflow Agent
+
+Kilku agentów współpracuje.
+
+Hosted Agent
+
+Pisany w kodzie.
+
+8. Bezpieczeństwo agentów
+
+Ryzyka:
+
+Prompt Injection
+Data Leakage
+Unauthorized Access
+Data Poisoning
+Supply Chain Attack
+
+Jak ograniczać?
+
+RBAC
+najmniejsze uprawnienia
+logowanie
+walidacja promptów
+Human in the Loop
+9. Azure Language
+
+Najważniejsze funkcje:
+
+Detect Language
+
+Wykrywa język.
+
+Zwraca:
+
+język
+confidence score
+Named Entity Recognition (NER)
+
+Rozpoznaje:
+
+Person
+Organization
+Location
+Date
+Address
+URL
+Email
+PII
+
+Rozpoznaje dane osobowe:
+
+nazwiska
+adresy
+telefony
+e-mail
+PESEL/SSN
+
+Może je również zamaskować (redaction).
+
+10. MCP (Model Context Protocol)
+
+Standard komunikacji AI z narzędziami.
+
+Elementy:
+
+Host
+
+↓
+
+Client
+
+↓
+
+Server
+
+Agent sam wybiera odpowiednie narzędzie.
+
+11. Vision Models
+
+Modele multimodalne:
+
+tekst
+obraz
+
+Przykłady:
+
+GPT-4.1
+GPT-4.1-mini
+Phi-4 Multimodal
+
+Potrafią:
+
+analizować zdjęcia
+odpowiadać na pytania o obrazie
+interpretować wykresy
+oceniać uszkodzenia
+12. Jak wysłać obraz?
+
+Obraz można przekazać jako:
+
+URL
+Base64
+
+API:
+
+Responses API
+
+lub
+
+Chat Completions API
+
+13. Image Generation
+
+Modele:
+
+GPT-image-1
+FLUX
+
+Tworzą obrazy na podstawie promptu.
+
+Przykład:
+
+"Robot eating spaghetti"
+
+Model generuje NOWY obraz.
+
+Nie wyszukuje gotowych grafik.
+
+14. Video Generation
+
+Model:
+
+Sora 2
+
+Potrafi:
+
+Text → Video
+Image → Video
+Video Remix
+
+Obsługuje:
+
+4 s
+8 s
+12 s
+
+Rozdzielczości:
+
+1280×720
+720×1280
+15. Dobre prompty dla Sora
+
+Prompt powinien zawierać:
+
+opis sceny
+kamerę
+ruch
+styl
+oświetlenie
+akcję
+
+Im bardziej szczegółowy prompt, tym lepszy film.
+
+16. Foundry Portal vs VS Code
+Foundry Portal
+
+Do:
+
+szybkiego tworzenia
+testowania
+konfiguracji
+VS Code
+
+Do:
+
+pisania kodu
+YAML
+Git
+debugowania
+17. Model Catalog
+
+Pozwala:
+
+znaleźć model
+porównać modele
+wdrożyć model
+testować modele
+18. Najważniejsze API
+OpenAI API
+Microsoft Foundry SDK
+Azure Language SDK
+REST API
+19. Najczęstsze pytania egzaminacyjne
+
+✅ Co robi Azure Language?
+
+Detect Language
+NER
+PII
+
+✅ Co robi Agent?
+
+korzysta z narzędzi
+wykonuje zadania
+podejmuje decyzje
+
+✅ Co to MCP?
+
+protokół komunikacji agenta z narzędziami
+
+✅ Vision model?
+
+analizuje obrazy
+
+✅ GPT-image?
+
+generuje obrazy
+
+✅ Sora?
+
+generuje filmy
+
+✅ Responsible AI?
+
+Fairness
+Reliability & Safety
+Privacy & Security
+Inclusiveness
+Transparency
+Accountability
+Co warto zapamiętać na 100%
+
+Jeśli masz mało czasu, naucz się przede wszystkim:
+
+Responsible AI (6 zasad).
+Microsoft Foundry – Projects, Models, Agents, Tools, Knowledge.
+AI Agents – czym są i z czego się składają.
+Azure Language – Detect Language, NER, PII.
+Vision / Image / Video – różnice między analizą obrazu, generowaniem obrazów i generowaniem wideo.
+MCP – Host → Client → Server.
+Foundry Portal vs VS Code – kiedy używać którego.
+
+To obejmuje zdecydowaną większość kluczowych pojęć z materiałów, które przesłałaś.
+
+Fairness
+Reliability & Safety
+Privacy & Security
+Inclusiveness
+Transparency
+Accountability wytlumacz mi to
+
+Te 6 zasad Responsible AI bardzo często pojawia się na AI-103. Najłatwiej zapamiętać je na prostych przykładach.
+
+1. Fairness (Sprawiedliwość) ⚖️
+
+Co oznacza?
+AI powinno traktować wszystkich ludzi tak samo i nie dyskryminować nikogo.
+
+Przykład:
+
+Bank używa AI do przyznawania kredytów.
+
+❌ Źle:
+
+odrzuca kobiety częściej niż mężczyzn,
+odrzuca osoby z określonego kraju,
+faworyzuje jedną grupę ludzi.
+
+✅ Dobrze:
+
+decyzja zależy tylko od dochodów, historii kredytowej itd., a nie od płci czy pochodzenia.
+
+Zapamiętaj:
+
+Fairness = brak dyskryminacji.
+
+2. Reliability & Safety (Niezawodność i bezpieczeństwo) 🛡️
+
+Co oznacza?
+AI powinno działać poprawnie, stabilnie i nie stwarzać zagrożenia.
+
+Przykład:
+
+AI pomaga lekarzowi wykrywać raka.
+
+❌ Źle:
+
+często się myli,
+działa tylko czasami,
+daje przypadkowe odpowiedzi.
+
+✅ Dobrze:
+
+jest dokładnie przetestowane,
+działa przewidywalnie,
+nie podejmuje ryzykownych decyzji bez kontroli.
+
+Zapamiętaj:
+
+Reliability & Safety = AI działa poprawnie i bezpiecznie.
+
+3. Privacy & Security (Prywatność i bezpieczeństwo danych) 🔒
+
+Co oznacza?
+AI musi chronić dane użytkowników.
+
+Przykład:
+
+Chatbot zna Twój:
+
+PESEL,
+adres,
+numer telefonu,
+e-mail.
+
+❌ Źle:
+pokazuje te dane każdemu.
+
+✅ Dobrze:
+przechowuje dane bezpiecznie i pokazuje je tylko uprawnionym osobom.
+
+Zapamiętaj:
+
+Privacy = ochrona danych osobowych.
+
+4. Inclusiveness (Dostępność dla wszystkich) 🌍
+
+Co oznacza?
+AI powinno być użyteczne dla każdego.
+
+Przykład:
+
+Osoba:
+
+niewidoma,
+niesłysząca,
+starsza,
+z niepełnosprawnością
+
+powinna móc korzystać z aplikacji.
+
+Przykłady:
+
+napisy do filmów,
+czytnik ekranu,
+obsługa wielu języków,
+możliwość sterowania głosem.
+
+Zapamiętaj:
+
+Inclusiveness = AI dla wszystkich.
+
+5. Transparency (Przejrzystość) 👁️
+
+Co oznacza?
+Użytkownik powinien wiedzieć:
+
+że rozmawia z AI,
+jak AI działa,
+jakie ma ograniczenia.
+Przykład
+
+❌ Źle:
+AI udaje człowieka.
+
+✅ Dobrze:
+Aplikacja informuje:
+
+"Rozmawiasz z asystentem AI."
+
+lub
+
+"Odpowiedź została wygenerowana przez sztuczną inteligencję."
+
+Czasami AI pokazuje też pewność odpowiedzi (confidence score).
+
+Zapamiętaj:
+
+Transparency = użytkownik wie, że korzysta z AI.
+
+6. Accountability (Odpowiedzialność) 👨‍💼
+
+Co oznacza?
+Za decyzje AI zawsze odpowiada człowiek lub firma.
+
+Nie można powiedzieć:
+
+"To AI zrobiło błąd."
+
+Odpowiedzialny jest twórca systemu.
+
+Przykład
+
+Firma stworzyła AI do diagnozowania chorób.
+
+Jeśli AI popełni błąd:
+
+❌ nie odpowiada komputer,
+
+✅ odpowiada firma i osoby, które stworzyły system.
+
+Zapamiętaj:
+
+Accountability = człowiek odpowiada za AI.
+
+Szybka ściąga na egzamin
+Zasada	Zapamiętaj jednym zdaniem
+⚖️ Fairness	Nie dyskryminuje ludzi.
+🛡️ Reliability & Safety	Działa poprawnie i bezpiecznie.
+🔒 Privacy & Security	Chroni dane użytkowników.
+🌍 Inclusiveness	Jest dostępne dla wszystkich.
+👁️ Transparency	Użytkownik wie, że korzysta z AI i zna jego ograniczenia.
+👨‍💼 Accountability	Za AI odpowiada człowiek lub organizacja.
+Mnemotechnika
+
+Możesz zapamiętać skrót FRPITA:
+
+F – Fairness
+R – Reliability & Safety
+P – Privacy & Security
+I – Inclusiveness
+T – Transparency
+A – Accountability
+
+Na AI-103 często pojawiają się pytania typu „Która zasada Responsible AI dotyczy ochrony danych?” albo „Która zasada oznacza, że użytkownik powinien wiedzieć, że rozmawia z AI?”. Jeśli zapamiętasz powyższe skojarzenia, takie pytania są bardzo łatwe.
+
+„Która zasada oznacza, że użytkownik powinien wiedzieć, że rozmawia z AI Transparency
+
+Dokładnie! ✅
+
+Jeśli na AI-103 zobaczysz pytanie:
+
+"Która zasada Responsible AI oznacza, że użytkownik powinien wiedzieć, że rozmawia z AI?"
+
+✅ Odpowiedź: Transparency (Przejrzystość).
+
+Dlaczego?
+
+Transparency oznacza, że AI nie powinno ukrywać swojej natury. Użytkownik powinien wiedzieć:
+
+że rozmawia z AI, a nie z człowiekiem,
+do czego AI służy,
+jakie ma ograniczenia,
+że odpowiedzi mogą nie być w 100% poprawne.
+Przykład
+
+✅ Dobra praktyka:
+
+"Cześć! Jestem asystentem AI i pomagam odpowiadać na pytania."
+
+❌ Zła praktyka:
+AI udaje człowieka i nie informuje, że jest sztuczną inteligencją.
+
+Inne podobne pytania egzaminacyjne:
+
+Pytanie: Która zasada dotyczy ochrony danych osobowych?
+➡️ Privacy & Security
+
+Pytanie: Która zasada mówi o braku dyskryminacji?
+➡️ Fairness
+
+Pytanie: Która zasada oznacza, że AI powinno działać poprawnie i bezpiecznie?
+➡️ Reliability & Safety
+
+Pytanie: Która zasada mówi, że AI powinno być dostępne dla wszystkich użytkowników?
+➡️ Inclusiveness
+
+Pytanie: Kto odpowiada za decyzje AI?
+➡️ Accountability
+
+💡 Na AI-103 bardzo często pojawiają się właśnie takie pytania sytuacyjne, więc warto kojarzyć każdą zasadę z jednym charakterystycznym słowem:
+
+Fairness → brak dyskryminacji
+Reliability & Safety → bezpieczeństwo
+Privacy & Security → ochrona danych
+Inclusiveness → dostępność dla wszystkich
+Transparency → użytkownik wie, że korzysta z AI
+Accountability → odpowiedzialność człowieka lub organizacji
