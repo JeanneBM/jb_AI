@@ -1,0 +1,2788 @@
+CZĘŚĆ 1 – PODSTAWY AI I MICROSOFT FOUNDRY
+Rozdział 1. Czym jest Artificial Intelligence (AI)?
+Definicja
+
+Artificial Intelligence (Sztuczna Inteligencja) to dziedzina informatyki zajmująca się tworzeniem systemów, które potrafią wykonywać zadania wymagające inteligencji człowieka.
+
+Do takich zadań należą:
+
+rozumienie tekstu,
+prowadzenie rozmowy,
+rozpoznawanie obrazów,
+rozpoznawanie mowy,
+tłumaczenie języków,
+podejmowanie decyzji,
+przewidywanie wyników,
+generowanie nowych treści.
+
+Dzisiejsza AI opiera się głównie na Machine Learning (ML) oraz Large Language Models (LLM), które uczą się zależności z ogromnych zbiorów danych.
+
+Jak działa współczesna AI?
+
+Proces można przedstawić w kilku krokach:
+
+Model otrzymuje ogromną ilość danych (teksty, obrazy, dźwięki).
+Uczy się wzorców występujących w tych danych.
+Nie zapamiętuje wszystkiego dosłownie, lecz poznaje zależności.
+Podczas pracy przewiduje najbardziej prawdopodobną odpowiedź.
+
+Przykład:
+
+Użytkownik wpisuje:
+
+"Napisz mail do klienta."
+
+Model:
+
+rozpoznaje polecenie,
+analizuje kontekst,
+generuje nowy tekst.
+
+Nie kopiuje gotowej wiadomości, lecz tworzy ją na podstawie wyuczonych wzorców.
+
+Machine Learning
+
+Machine Learning (uczenie maszynowe) jest poddziedziną AI.
+
+Nie programujemy każdej reguły ręcznie.
+
+Zamiast tego komputer:
+
+analizuje dane,
+znajduje zależności,
+sam tworzy model.
+
+Przykład:
+
+Program ma rozpoznawać spam.
+
+Stare podejście:
+
+Jeżeli wiadomość zawiera słowo "FREE"
+→ Spam
+
+Machine Learning:
+
+Pokazujemy milion wiadomości.
+
+Model sam uczy się:
+
+jakie słowa,
+jakie układy zdań,
+jakie cechy
+
+oznaczają spam.
+
+Large Language Models (LLM)
+
+LLM to ogromne modele językowe.
+
+Przykłady:
+
+GPT
+Phi
+Claude
+Llama
+Mistral
+Gemini
+
+Ich zadaniem jest:
+
+odpowiadanie na pytania,
+pisanie tekstów,
+programowanie,
+tłumaczenie,
+streszczanie,
+analizowanie dokumentów,
+prowadzenie rozmowy.
+Generative AI
+Co to jest?
+
+Generative AI tworzy nowe treści.
+
+Nie wyszukuje gotowych odpowiedzi.
+
+Tworzy nowe:
+
+teksty,
+obrazy,
+kod,
+muzykę,
+filmy.
+
+Przykłady:
+
+ChatGPT
+Microsoft Copilot
+GitHub Copilot
+DALL·E
+Sora
+AI Agents
+
+Coraz częściej zamiast zwykłego modelu używa się AI Agentów.
+
+Agent =
+
+LLM
++
+Instrukcje
++
+Pamięć
++
+Narzędzia
++
+Możliwość wykonywania zadań
+
+Agent może:
+
+wyszukać informacje,
+przeczytać dokument,
+uruchomić kod,
+wysłać wiadomość,
+wykonać serię kroków bez udziału użytkownika.
+Natural Language Processing (NLP)
+
+NLP oznacza przetwarzanie języka naturalnego.
+
+Pozwala komputerowi rozumieć tekst pisany przez człowieka.
+
+Typowe zadania:
+
+klasyfikacja tekstu,
+analiza sentymentu,
+wykrywanie języka,
+streszczanie,
+rozpoznawanie encji,
+odpowiadanie na pytania.
+Przykład
+
+Tekst:
+
+"Telefon jest świetny, ale bateria szybko się rozładowuje."
+
+Analiza sentymentu:
+
+Pozytywne:
+
+✔ telefon
+
+Negatywne:
+
+✔ bateria
+
+Computer Speech
+
+To technologia związana z mową.
+
+Obejmuje:
+
+Speech to Text (STT)
+
+Mowa → tekst
+
+Przykład:
+
+Dyktowanie wiadomości.
+
+Text to Speech (TTS)
+
+Tekst → mowa
+
+Przykład:
+
+Czytnik ekranu.
+
+Rozpoznawanie mówcy
+
+System potrafi rozpoznać osobę po głosie.
+
+Tłumaczenie rozmów
+
+Przykład:
+
+Polak mówi po polsku.
+
+Francuz słyszy po francusku.
+
+Computer Vision
+
+Pozwala komputerowi analizować obrazy.
+
+Możliwości:
+
+wykrywanie twarzy,
+rozpoznawanie produktów,
+OCR,
+analiza zdjęć,
+analiza filmów,
+analiza kamer.
+
+Przykład:
+
+Sklep bez kas.
+
+Kamery rozpoznają produkty.
+
+Klient wychodzi.
+
+Płatność odbywa się automatycznie.
+
+Information Extraction
+
+Łączenie:
+
+NLP,
+Vision,
+Speech,
+Generative AI.
+
+Cel:
+
+Automatyczne wyciąganie informacji.
+
+Przykład:
+
+Paragon.
+
+System odczytuje:
+
+nazwę sklepu,
+datę,
+kwotę,
+produkty,
+VAT.
+Rozdział 2. Microsoft Foundry
+
+Microsoft Foundry to platforma Microsoft Azure służąca do budowy aplikacji AI.
+
+Jest to centralne miejsce do:
+
+zarządzania projektami,
+wdrażania modeli,
+tworzenia agentów,
+zarządzania danymi,
+testowania AI,
+oceniania jakości modeli.
+Dlaczego powstał Foundry?
+
+Bez Foundry trzeba byłoby osobno:
+
+tworzyć modele,
+zarządzać zasobami Azure,
+tworzyć endpointy,
+zarządzać agentami,
+konfigurować narzędzia.
+
+Foundry integruje wszystko w jednym miejscu.
+
+Microsoft Foundry składa się z
+1. Resource
+
+To główny zasób Azure.
+
+Zawiera:
+
+obliczenia,
+pamięć,
+modele,
+endpointy,
+narzędzia.
+2. Project
+
+Projekt jest miejscem pracy programisty.
+
+Każdy projekt zawiera:
+
+modele,
+agentów,
+dane,
+konfigurację,
+połączenia.
+
+Jeden Resource może posiadać wiele projektów.
+
+Elementy projektu
+Models
+
+Są to wdrożone modele AI.
+
+Przykłady:
+
+GPT-4.1
+GPT-4o
+Phi
+Claude
+Llama
+Mistral
+Agents
+
+Agent to inteligentny pracownik AI.
+
+Składa się z:
+
+modelu,
+instrukcji,
+pamięci,
+narzędzi.
+
+Może sam wykonywać zadania.
+
+Tools
+
+Agent może korzystać z narzędzi.
+
+Np.
+
+wyszukiwarka,
+interpreter kodu,
+tłumacz,
+analiza tekstu,
+analiza dokumentów.
+Knowledge
+
+Źródła wiedzy.
+
+Przykłady:
+
+PDF,
+Word,
+SharePoint,
+strony internetowe,
+SQL,
+Azure Storage.
+
+Agent korzysta z nich podczas odpowiadania.
+
+Portal Microsoft Foundry
+
+Portal umożliwia:
+
+wdrażanie modeli,
+testowanie modeli,
+tworzenie agentów,
+konfigurację projektów,
+zarządzanie użytkownikami,
+pobieranie endpointów,
+pobieranie kluczy API,
+monitorowanie zasobów.
+Rozdział 3. Foundry Tools
+
+Microsoft oferuje gotowe usługi AI.
+
+Nie trzeba trenować własnego modelu.
+
+Najważniejsze:
+
+Narzędzie	Funkcja
+Azure Language	analiza tekstu
+Azure Speech	rozpoznawanie i synteza mowy
+Azure Translator	tłumaczenia
+Document Intelligence	analiza dokumentów
+Content Understanding	analiza obrazów, audio i wideo
+Azure Language
+
+Obsługuje:
+
+wykrywanie języka,
+analizę sentymentu,
+rozpoznawanie encji,
+streszczanie,
+klasyfikację tekstu.
+Azure Speech
+
+Pozwala:
+
+zamieniać mowę na tekst,
+tekst na mowę,
+rozpoznawać rozmowy.
+Azure Translator
+
+Automatyczne tłumaczenie wielu języków.
+
+Azure Document Intelligence
+
+Analiza:
+
+faktur,
+umów,
+formularzy,
+paragonów.
+Azure Content Understanding
+
+Analiza:
+
+dokumentów,
+obrazów,
+filmów,
+nagrań audio.
+Rozdział 4. Responsible AI (Odpowiedzialna AI)
+
+Microsoft definiuje sześć podstawowych zasad odpowiedzialnego projektowania systemów AI.
+
+Fairness (Sprawiedliwość) – model nie powinien dyskryminować użytkowników.
+Reliability & Safety (Niezawodność i bezpieczeństwo) – modele muszą być dokładnie testowane i działać przewidywalnie.
+Privacy & Security (Prywatność i bezpieczeństwo danych) – należy chronić dane użytkowników i odpowiednio je zabezpieczać.
+Inclusiveness (Dostępność i inkluzywność) – rozwiązania powinny być użyteczne dla wszystkich użytkowników, niezależnie od ich możliwości czy pochodzenia.
+Transparency (Przejrzystość) – użytkownik powinien wiedzieć, że korzysta z AI, rozumieć jego możliwości i ograniczenia.
+Accountability (Odpowiedzialność) – za działanie systemu AI odpowiadają ludzie: projektanci, programiści i organizacja wdrażająca rozwiązanie.
+📌 Najważniejsze rzeczy do zapamiętania z Części 1
+AI wykorzystuje głównie Machine Learning i Large Language Models (LLM).
+Generative AI tworzy nowe treści (tekst, obrazy, kod, filmy).
+AI Agent = LLM + instrukcje + narzędzia + pamięć + wykonywanie zadań.
+Główne obszary AI: NLP, Computer Speech, Computer Vision, Information Extraction.
+Microsoft Foundry jest platformą do budowy aplikacji AI na Azure.
+Projekt Foundry zawiera Models, Agents, Tools i Knowledge.
+Foundry Tools obejmują m.in. Azure Language, Speech, Translator, Document Intelligence i Content Understanding.
+Odpowiedzialne AI opiera się na 6 zasadach: Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency, Accountability.
+
+CZĘŚĆ 2 – FOUNDRY MODELS, KATALOG MODELI I WYBÓR MODELU
+
+Ta część obejmuje materiał dotyczący Foundry Models, katalogu modeli, typów modeli oraz benchmarków używanych do ich porównywania. Dzięki temu będziesz wiedzieć jak wybrać odpowiedni model do konkretnego zastosowania.
+
+Rozdział 1. Dlaczego wybór modelu jest ważny?
+
+Obecnie dostępnych jest ponad 1900 modeli AI. Nie istnieje jeden model najlepszy do wszystkich zastosowań.
+
+Dobór modelu zależy od:
+
+rodzaju zadania,
+szybkości działania,
+kosztów,
+jakości odpowiedzi,
+bezpieczeństwa,
+ilości danych wejściowych,
+wymagań biznesowych.
+Przykład
+
+Firma chce stworzyć chatbota dla sklepu internetowego.
+
+Model powinien:
+
+✔ odpowiadać poprawnie
+
+✔ być tani
+
+✔ odpowiadać szybko
+
+✔ być bezpieczny
+
+✔ obsługiwać język klienta
+
+Nie zawsze najlepszy będzie największy model.
+
+Microsoft Foundry Model Catalog
+
+Model Catalog jest biblioteką modeli AI.
+
+Znajdziemy w nim:
+
+modele Microsoft
+OpenAI
+Meta
+Anthropic
+Mistral
+Hugging Face
+Cohere
+DeepSeek
+Phi
+wiele innych.
+
+Portal umożliwia:
+
+wyszukiwanie modeli,
+filtrowanie,
+porównywanie,
+wdrażanie,
+testowanie.
+Dwie grupy modeli
+1. Foundry Models (Azure)
+
+Są rozliczane przez Azure.
+
+Przykłady:
+
+GPT-4.1
+GPT-4o
+GPT-4o mini
+
+Zalety:
+
+łatwe wdrożenie,
+integracja z Azure,
+wsparcie Microsoft.
+2. Partner & Community Models
+
+Modele dostarczane przez partnerów.
+
+Przykłady:
+
+Llama
+Mistral
+Claude
+Cohere
+
+Mogą posiadać:
+
+własne licencje,
+własny cennik,
+dodatkowe wymagania.
+Jak wyszukiwać modele?
+
+Portal pozwala filtrować modele według:
+
+Collection
+
+Źródło modelu.
+
+Przykład:
+
+Azure
+Hugging Face
+Capabilities
+
+Możliwości modelu.
+
+Przykłady:
+
+reasoning
+tool calling
+multimodal
+vision
+Source
+
+Producent.
+
+Przykłady:
+
+Microsoft
+OpenAI
+Meta
+Anthropic
+Mistral
+Cohere
+Inference Tasks
+
+Rodzaj zadania.
+
+Np.
+
+Chat
+Summarization
+Translation
+Speech
+Image Generation
+Fine-tuning
+
+Czy model można dostroić.
+
+Industry
+
+Modele wyspecjalizowane dla:
+
+medycyny,
+prawa,
+finansów,
+przemysłu.
+Rodzaje modeli AI
+
+Microsoft dzieli modele na kilka grup.
+
+1. Large Language Models (LLM)
+
+Największe modele.
+
+Przykłady:
+
+GPT-5
+Llama 3 70B
+Mistral Large
+
+Cechy:
+
+✔ bardzo inteligentne
+
+✔ świetnie rozwiązują problemy
+
+✔ dobrze programują
+
+✔ rozumieją długi kontekst
+
+Wady:
+
+❌ drogie
+
+❌ wolniejsze
+
+❌ wymagają większej mocy obliczeniowej.
+
+2. Small Language Models (SLM)
+
+Mniejsze modele.
+
+Przykłady:
+
+Phi-4
+Llama 3 8B
+Mistral OSS
+
+Zalety:
+
+✔ szybkie
+
+✔ tanie
+
+✔ mogą działać lokalnie
+
+✔ idealne dla urządzeń Edge
+
+Wady:
+
+gorzej radzą sobie z bardzo trudnym rozumowaniem.
+Kiedy używać SLM?
+
+Gdy liczy się:
+
+koszt,
+szybkość,
+małe urządzenia,
+proste zadania.
+Chat Completion Models
+
+To klasyczne modele konwersacyjne.
+
+Potrafią:
+
+prowadzić rozmowę,
+odpowiadać na pytania,
+pisać tekst,
+programować.
+
+Są najczęściej używane w chatbotach.
+
+Reasoning Models
+
+Specjalna grupa modeli.
+
+Projektowane do:
+
+matematyki,
+logiki,
+strategii,
+nauki,
+programowania.
+
+Przykład:
+
+Claude Opus.
+
+Modele te:
+
+rozkładają problem na etapy,
+analizują zależności,
+lepiej rozwiązują trudne zadania.
+Modele specjalistyczne
+
+Nie wszystkie modele służą do rozmowy.
+
+Embedding Models
+
+Przykłady:
+
+Ada
+Cohere Embed
+
+Nie generują tekstu.
+
+Zamieniają tekst na liczby (wektory).
+
+Służą do:
+
+wyszukiwania semantycznego,
+rekomendacji,
+RAG,
+podobieństwa dokumentów.
+Image Generation Models
+
+Tworzą obrazy.
+
+Przykład:
+
+GPT-image-1.
+
+Zastosowania:
+
+marketing,
+grafika,
+ilustracje,
+projektowanie.
+Video Generation Models
+
+Przykład:
+
+Sora.
+
+Tworzą filmy na podstawie tekstu.
+
+Vision Models
+
+Analizują obrazy.
+
+Przykład:
+
+GPT-4.1 Vision.
+
+Potrafią:
+
+opisywać zdjęcia,
+odczytywać dokumenty,
+analizować wykresy,
+OCR.
+Text-to-Speech
+
+Tworzą mowę.
+
+Przykład:
+
+GPT-4o-tts.
+
+Speech-to-Text
+
+Rozpoznają mowę.
+
+Przykład:
+
+GPT-4o-transcribe.
+
+Modele regionalne
+
+Niektóre modele są trenowane specjalnie dla:
+
+konkretnego języka,
+kraju,
+branży.
+
+Przykłady:
+
+modele medyczne,
+modele prawnicze,
+modele finansowe.
+
+Często osiągają lepsze wyniki od modeli ogólnych w swojej dziedzinie.
+
+Rozdział 2. Benchmarki modeli
+
+Benchmark to obiektywny test porównujący modele AI.
+
+Microsoft Foundry porównuje modele w czterech głównych obszarach:
+
+Quality
+Safety
+Cost
+Performance
+QUALITY
+
+Ocena jakości odpowiedzi.
+
+Sprawdzane są:
+
+poprawność,
+wiedza,
+rozumowanie,
+kodowanie,
+matematyka,
+wykonywanie instrukcji.
+
+Najważniejszy wskaźnik:
+
+Quality Index
+
+Średnia z wielu benchmarków.
+
+Im wyższy wynik,
+
+tym lepszy model.
+
+Najważniejsze benchmarki
+Arena-Hard
+
+Bardzo trudne pytania.
+
+BIG Bench Hard
+
+Logiczne rozumowanie.
+
+GPQA
+
+Pytania akademickie.
+
+HumanEval+
+
+Programowanie.
+
+MBPP+
+
+Kodowanie.
+
+MATH
+
+Matematyka.
+
+MMLU-Pro
+
+Wiedza ogólna.
+
+IFEval
+
+Wykonywanie instrukcji.
+
+Wszystkie wyniki są normalizowane od 0 do 1.
+
+Im bliżej 1,
+
+tym lepiej.
+
+SAFETY
+
+Ocena bezpieczeństwa.
+
+Sprawdza:
+
+czy model generuje szkodliwe treści,
+czy można go łatwo oszukać,
+czy przestrzega zasad.
+HarmBench
+
+Sprawdza:
+
+cyberprzestępczość,
+nielegalne działania,
+przemoc,
+dezinformację,
+nękanie,
+naruszenia praw autorskich.
+
+Miernik:
+
+Attack Success Rate (ASR)
+
+Im niższy, tym bezpieczniejszy model.
+
+ToxiGen
+
+Ocena wykrywania mowy nienawiści.
+
+Wyższy wynik F1 = lepiej.
+
+WMDP
+
+Sprawdza wiedzę dotyczącą:
+
+broni biologicznej,
+chemicznej,
+cyberbezpieczeństwa.
+
+Im większa wiedza modelu,
+
+tym większe potencjalne ryzyko.
+
+COST
+
+Koszty działania modelu.
+
+Microsoft pokazuje:
+
+Input Tokens
+
+Cena za milion tokenów wejściowych.
+
+Output Tokens
+
+Cena za milion tokenów odpowiedzi.
+
+Estimated Cost
+
+Szacowany koszt całkowity.
+
+Uwzględnia typowy stosunek:
+
+3 tokeny wejściowe
+
+↓
+
+1 token wyjściowy.
+
+Im niższy koszt,
+
+tym tańszy model.
+
+PERFORMANCE
+
+Ocena szybkości.
+
+Najważniejsze parametry:
+
+Latency Mean
+
+Średni czas odpowiedzi.
+
+P50
+
+Mediana.
+
+P90
+
+90% odpowiedzi szybszych od tej wartości.
+
+P95
+
+95%.
+
+P99
+
+99%.
+
+TTFT
+
+Time To First Token.
+
+Jak szybko pojawia się pierwszy znak odpowiedzi.
+
+Im mniejszy,
+
+tym lepiej.
+
+GTPS
+
+Generated Tokens Per Second.
+
+Ile tokenów generuje model na sekundę.
+
+Więcej = lepiej.
+
+TTPS
+
+Total Tokens Per Second.
+
+Łączna przepustowość.
+
+Time Between Tokens
+
+Przerwa pomiędzy kolejnymi tokenami.
+
+Im mniejsza,
+
+tym płynniejsza odpowiedź.
+
+Leaderboards
+
+Foundry umożliwia ranking modeli.
+
+Można sortować według:
+
+jakości,
+kosztów,
+bezpieczeństwa,
+szybkości.
+Trade-off Charts
+
+Wykres pokazujący kompromisy.
+
+Np.
+
+Jakość
+↑
+|
+|
+|
+|
+|        GPT
+|
+|  Phi
+|
+|________________________→ Koszt
+
+Można szybko zobaczyć:
+
+czy warto dopłacić,
+czy tańszy model jest wystarczający.
+Side-by-side Comparison
+
+Microsoft pozwala porównywać jednocześnie 2–3 modele.
+
+Porównywane są:
+
+benchmarki,
+kontekst,
+języki,
+funkcje,
+endpointy,
+obsługa vision,
+function calling,
+structured output.
+📌 Najważniejsze rzeczy do zapamiętania z Części 2
+Rodzaje modeli
+LLM – największe, najwyższa jakość, wyższy koszt.
+SLM – mniejsze, szybsze i tańsze.
+Embedding – zamiana tekstu na wektory (RAG, wyszukiwanie semantyczne).
+Vision – analiza obrazów.
+Image Generation – tworzenie obrazów.
+Speech – zamiana mowy na tekst i odwrotnie.
+Cztery główne benchmarki
+Benchmark	Co mierzy?
+Quality	jakość odpowiedzi
+Safety	bezpieczeństwo
+Cost	koszt działania
+Performance	szybkość działania
+Najważniejsze pojęcia
+Quality Index – ogólna jakość modelu.
+ASR – skuteczność ataku (im niższa, tym lepiej).
+TTFT – czas do pierwszego tokena.
+GTPS – liczba generowanych tokenów na sekundę.
+Trade-off chart – wykres pokazujący kompromis między jakością, kosztem i wydajnością.
+Side-by-side comparison – bezpośrednie porównanie modeli.
+
+CZĘŚĆ 3 – WDRAŻANIE MODELI (DEPLOYMENT), PLAYGROUND I EWALUACJA MODELI
+
+W tej części omówimy cały proces po wyborze modelu:
+
+wdrożenie modelu (Deployment),
+rodzaje endpointów,
+testowanie w Playground,
+ewaluację modeli (Evaluation),
+metryki jakości i bezpieczeństwa. Materiał odpowiada sekcjom dotyczącym wdrażania i oceny modeli w Microsoft Foundry.
+Rozdział 1. Co oznacza Deploy Model?
+
+Deployment oznacza udostępnienie modelu w taki sposób, aby mogła korzystać z niego aplikacja.
+
+Przed wdrożeniem model istnieje tylko w katalogu modeli.
+
+Po wdrożeniu otrzymujemy:
+
+Endpoint URL
+nazwę deploymentu
+klucz API lub możliwość logowania przez Microsoft Entra ID
+możliwość wykonywania zapytań z poziomu aplikacji.
+Proces wdrażania modelu
+
+Schemat wygląda następująco:
+
+Model Catalog
+        ↓
+Wybór modelu
+        ↓
+Deploy
+        ↓
+Endpoint
+        ↓
+Playground
+        ↓
+Aplikacja
+Rodzaje Deploymentów
+
+Microsoft Foundry oferuje kilka sposobów wdrażania modeli.
+
+1. Global Standard
+
+Najczęściej używany.
+
+Cechy:
+
+działa w dowolnym regionie Azure,
+rozliczanie za liczbę tokenów,
+największe limity (quota),
+zalecany dla większości aplikacji.
+
+Zastosowanie:
+
+chatboty,
+aplikacje webowe,
+API.
+2. Global Provisioned
+
+Przeznaczony dla dużego ruchu.
+
+Płacimy za zarezerwowaną przepustowość (PTU – Provisioned Throughput Units).
+
+Zalety:
+
+przewidywalna wydajność,
+stabilne czasy odpowiedzi.
+3. Global Batch
+
+Do dużych zadań wykonywanych asynchronicznie.
+
+Przykłady:
+
+analiza milionów dokumentów,
+generowanie raportów.
+
+Zaleta:
+
+około 50% niższy koszt niż standardowe wywołania.
+4. Data Zone Standard
+
+Dane pozostają w określonej strefie (np. UE lub USA).
+
+Stosowane, gdy wymagają tego przepisy dotyczące przechowywania danych.
+
+5. Data Zone Provisioned
+
+Łączy:
+
+rezerwowaną przepustowość,
+wymóg przechowywania danych w konkretnej strefie.
+6. Data Zone Batch
+
+Batch z zachowaniem lokalizacji danych.
+
+7. Regional Standard
+
+Model działa wyłącznie w jednym regionie Azure.
+
+Przykład:
+
+tylko West Europe.
+8. Regional Provisioned
+
+Jak wyżej, ale z rezerwowaną przepustowością.
+
+9. Developer Deployment
+
+Przeznaczony głównie do:
+
+testów,
+oceny modeli po fine-tuningu.
+
+Nie jest zalecany do środowiska produkcyjnego.
+
+Jak wdrożyć model?
+
+Proces jest prosty:
+
+Krok 1
+
+Model Catalog
+
+↓
+
+wybieramy model.
+
+Krok 2
+
+Klikamy:
+
+Deploy
+
+Krok 3
+
+Wybieramy:
+
+ustawienia domyślne (Default),
+lub
+ustawienia własne (Custom).
+Krok 4
+
+Jeżeli model pochodzi od partnera (np. Meta, Anthropic), należy zaakceptować warunki licencji.
+
+Krok 5
+
+Konfigurujemy:
+
+nazwę deploymentu,
+typ deploymentu,
+maszynę wirtualną (jeśli dotyczy),
+liczbę instancji.
+Krok 6
+
+Klikamy:
+
+Deploy
+
+↓
+
+Po kilku minutach model jest gotowy.
+
+Zarządzanie Deploymentami
+
+Po wdrożeniu możemy zobaczyć:
+
+status deploymentu,
+adres endpointu,
+klucze API,
+wykorzystanie,
+metryki,
+konfigurację.
+
+Można również:
+
+usunąć deployment,
+zmienić konfigurację.
+Endpoint
+
+Każdy deployment posiada własny endpoint.
+
+Endpoint jest adresem URL, pod który aplikacja wysyła zapytania.
+
+Przykład działania:
+
+Aplikacja
+      ↓
+Endpoint
+      ↓
+Model
+      ↓
+Odpowiedź
+
+Do połączenia potrzebne są:
+
+Endpoint URL,
+Authentication Key lub Microsoft Entra ID,
+Deployment Name.
+Playground
+
+Po wdrożeniu model można natychmiast przetestować.
+
+Playground jest interaktywnym środowiskiem testowym.
+
+Nie trzeba pisać kodu.
+
+Można:
+
+wpisywać prompty,
+analizować odpowiedzi,
+zmieniać parametry,
+eksperymentować z instrukcjami systemowymi,
+kopiować przykładowy kod do aplikacji.
+Co testować w Playground?
+
+Microsoft zaleca sprawdzić:
+
+Proste pytania
+
+Czy model odpowiada poprawnie?
+
+Trudne zadania
+
+Czy potrafi rozwiązywać problemy wieloetapowe?
+
+Nietypowe przypadki
+
+Czy model zachowuje się poprawnie przy nietypowych danych?
+
+Styl odpowiedzi
+
+Czy odpowiada zgodnie z oczekiwaniami?
+
+Parametry modelu
+
+Najważniejsze ustawienia:
+
+Temperature
+
+Kontroluje kreatywność.
+
+0
+
+↓
+
+odpowiedzi przewidywalne
+
+1
+
+↓
+
+bardziej kreatywne
+
+2
+
+↓
+
+bardzo losowe
+
+Max Tokens
+
+Maksymalna długość odpowiedzi.
+
+Top-p
+
+Alternatywny sposób sterowania losowością odpowiedzi.
+
+Kod w Playground
+
+Playground potrafi automatycznie wygenerować kod dla:
+
+Python,
+C#,
+JavaScript.
+
+Kod zawiera już:
+
+endpoint,
+nazwę modelu,
+sposób uwierzytelnienia.
+Rozdział 2. Ewaluacja modeli (Evaluation)
+
+Samo wdrożenie modelu nie oznacza, że jest on gotowy do użycia.
+
+Model trzeba ocenić.
+
+Dlaczego?
+
+sprawdzenie jakości,
+wykrycie błędów,
+poprawa odpowiedzi,
+bezpieczeństwo,
+zgodność z wymaganiami firmy.
+Cele ewaluacji
+Quality Assurance
+
+Czy model odpowiada poprawnie?
+
+User Satisfaction
+
+Czy użytkownicy są zadowoleni?
+
+Continuous Improvement
+
+Czy po zmianach model działa lepiej?
+
+Compliance
+
+Czy model spełnia wymagania bezpieczeństwa i ochrony danych?
+
+Manual Evaluation
+
+Ocena wykonywana przez człowieka.
+
+Tester wpisuje prompty i ocenia odpowiedzi.
+
+Najczęściej ocenia się:
+
+poprawność,
+przydatność,
+styl,
+bezpieczeństwo,
+zgodność z instrukcjami.
+
+To najbardziej wartościowy sposób wykrywania problemów jakościowych.
+
+Kryteria oceny odpowiedzi
+
+Microsoft proponuje ocenę w skali (np. 1–5) według:
+
+Relevance
+
+Czy odpowiedź odpowiada na pytanie?
+
+Informativeness
+
+Czy zawiera wystarczającą ilość informacji?
+
+Engagement
+
+Czy odpowiedź jest naturalna i angażująca?
+
+Accuracy
+
+Czy informacje są poprawne?
+
+Safety
+
+Czy odpowiedź nie zawiera szkodliwych treści?
+
+User Studies
+
+Najbardziej wiarygodna metoda.
+
+Polega na przekazaniu aplikacji prawdziwym użytkownikom.
+
+Ich opinie pomagają wykryć problemy, których nie widać podczas testów technicznych.
+
+Automated Evaluation
+
+Ocena wykonywana automatycznie.
+
+Microsoft Foundry analizuje odpowiedzi przy pomocy gotowych metryk.
+
+Metryki jakości
+Groundedness
+
+Czy odpowiedź opiera się na dostarczonych danych?
+
+Przykład:
+
+Model otrzymał dokument.
+
+Jeżeli odpowiada zgodnie z dokumentem,
+
+Groundedness jest wysoki.
+
+Jeżeli wymyśla informacje,
+
+Groundedness jest niski.
+
+Relevance
+
+Czy odpowiedź dotyczy pytania?
+
+Coherence
+
+Czy odpowiedź jest logiczna?
+
+Fluency
+
+Czy język jest naturalny?
+
+Metryki bezpieczeństwa
+
+Microsoft automatycznie wykrywa:
+
+Self-harm,
+Hate Speech,
+Violence,
+Sexual Content,
+Copyright,
+Jailbreak.
+
+Dla tych metryk obliczany jest Defect Rate – procent odpowiedzi przekraczających ustalony próg zagrożenia. Im niższy wynik, tym lepiej.
+
+NLP Metrics
+
+Jeżeli mamy poprawne odpowiedzi referencyjne (ground truth), można użyć klasycznych metryk NLP:
+
+F1-score
+
+Łączy precyzję i kompletność.
+
+BLEU
+
+Porównuje wygenerowany tekst z tekstem wzorcowym. Popularny w tłumaczeniach.
+
+METEOR
+
+Rozszerzenie BLEU uwzględniające synonimy i parafrazy.
+
+ROUGE
+
+Najczęściej stosowany do oceny streszczeń – sprawdza, czy uwzględniono najważniejsze informacje.
+
+GLEU
+
+Odmiana BLEU przeznaczona do oceny pojedynczych zdań.
+
+Evaluation Flow
+
+Microsoft Foundry umożliwia kompleksową ocenę modelu.
+
+Można ocenić:
+
+model,
+agenta,
+gotowy zestaw odpowiedzi (dataset).
+
+Źródła danych testowych:
+
+własny plik CSV,
+plik JSONL,
+wcześniej zapisany dataset,
+syntetycznie wygenerowany zbiór danych.
+
+Po uruchomieniu ewaluacji system oblicza wszystkie wybrane metryki i prezentuje wyniki zbiorcze oraz szczegóły dla każdego testowego przypadku.
+
+Co zrobić po ewaluacji?
+
+Jeśli wyniki są słabe, Microsoft sugeruje:
+
+poprawić prompt (Prompt Engineering),
+wybrać lepszy model,
+zastosować RAG,
+przeprowadzić Fine-tuning (jeśli model to wspiera).
+
+Jeżeli problem dotyczy bezpieczeństwa:
+
+zastosować Azure AI Content Safety,
+dodać instrukcje bezpieczeństwa do system promptu,
+sprawdzać odpowiedzi przed pokazaniem ich użytkownikowi. Regularne ponawianie ewaluacji pozwala śledzić poprawę jakości i wykrywać regresję.
+📌 Najważniejsze rzeczy do zapamiętania z Części 3
+Deployment
+Deploy = udostępnienie modelu aplikacji.
+Po wdrożeniu otrzymujemy:
+Endpoint URL,
+Deployment Name,
+Authentication Key lub Microsoft Entra ID.
+Najważniejsze deploymenty
+Typ	Charakterystyka
+Global Standard	domyślny, płatność za tokeny
+Provisioned	zarezerwowana przepustowość (PTU)
+Batch	zadania asynchroniczne, niższy koszt
+Data Zone	dane pozostają w określonej strefie
+Regional	wdrożenie w jednym regionie
+Playground
+
+Służy do:
+
+testowania promptów,
+zmiany parametrów (Temperature, Max Tokens, Top-p),
+generowania przykładowego kodu.
+Evaluation
+
+Rodzaje:
+
+Manual Evaluation – ocena przez człowieka,
+Automated Evaluation – automatyczne metryki.
+Najważniejsze metryki
+Metryka	Znaczenie
+Groundedness	odpowiedź oparta na dostarczonych danych
+Relevance	zgodność z pytaniem
+Coherence	spójność odpowiedzi
+Fluency	naturalność języka
+F1-score	precyzja i kompletność
+BLEU	jakość tłumaczeń
+ROUGE	jakość streszczeń
+METEOR	podobieństwo z uwzględnieniem synonimów
+GLEU	ocena zdań
+
+CZĘŚĆ 4 – MICROSOFT FOUNDRY SDK, OPENAI SDK, ENDPOINTY I UWIERZYTELNIANIE
+
+Ta część opisuje, jak programista łączy swoją aplikację z Microsoft Foundry. To jeden z najważniejszych rozdziałów, ponieważ wyjaśnia różnice między Foundry SDK, OpenAI SDK, endpointami oraz sposobami uwierzytelniania.
+
+Rozdział 1. Jak wygląda tworzenie aplikacji AI?
+
+Po wybraniu modelu i jego wdrożeniu następuje etap tworzenia aplikacji.
+
+Microsoft proponuje następujący proces:
+
+Model
+     ↓
+Playground
+     ↓
+Testowanie Promptów
+     ↓
+Generowanie kodu
+     ↓
+Programowanie aplikacji
+     ↓
+Testy
+     ↓
+Produkcja
+
+Najpierw testujemy model w Playground, a dopiero później piszemy kod. Dzięki temu łatwiej dobrać odpowiedni prompt i parametry modelu.
+
+Model Playground
+
+Model Playground to środowisko testowe dostępne w Microsoft Foundry.
+
+Pozwala bez programowania:
+
+zadawać pytania modelowi,
+zmieniać parametry,
+testować różne modele,
+porównywać odpowiedzi,
+generować gotowy kod.
+Co można zmieniać?
+
+Najważniejsze ustawienia:
+
+Temperature
+
+Steruje kreatywnością modelu.
+
+Wartość	Efekt
+0	odpowiedzi bardzo przewidywalne
+0.3	niewielka kreatywność
+0.7	dobra równowaga
+1	bardzo kreatywne odpowiedzi
+Max Tokens
+
+Określa maksymalną długość odpowiedzi.
+
+System Message
+
+Instrukcja dla modelu.
+
+Przykład:
+
+"Jesteś nauczycielem informatyki."
+
+Od tej chwili model odpowiada zgodnie z tą rolą.
+
+Code Generator
+
+Jedna z najlepszych funkcji Playground.
+
+Po kliknięciu Code Microsoft automatycznie generuje kod dla:
+
+Python
+C#
+JavaScript
+
+Kod zawiera:
+
+endpoint,
+nazwę modelu,
+sposób logowania,
+przykładowe wywołanie API.
+Typowy workflow programisty
+
+Microsoft zaleca następującą kolejność:
+
+Testowanie promptów.
+Dopracowanie parametrów.
+Wygenerowanie kodu.
+Rozbudowa aplikacji.
+Powrót do Playground w celu kolejnych testów.
+Ponowne wdrożenie.
+
+To znacznie skraca czas tworzenia aplikacji.
+
+Rozdział 2. Endpointy
+
+Każdy projekt Microsoft Foundry posiada dwa endpointy.
+
+1. Project Endpoint
+
+Obsługuje funkcje specyficzne dla Foundry.
+
+Przykładowy adres:
+
+https://resource.services.ai.azure.com/api/projects/project-name
+
+Pozwala korzystać z:
+
+agentów,
+projektów,
+danych,
+narzędzi,
+ewaluacji,
+połączeń MCP,
+Foundry IQ.
+2. Azure OpenAI Endpoint
+
+Przykładowy adres:
+
+https://resource.openai.azure.com/openai/v1
+
+Służy głównie do:
+
+wykonywania zapytań do modeli,
+korzystania z OpenAI SDK,
+Responses API,
+Chat Completions API.
+
+Jest zgodny z API OpenAI, co ułatwia przenoszenie istniejących aplikacji.
+
+Różnice między endpointami
+Project Endpoint	Azure OpenAI Endpoint
+Foundry SDK	OpenAI SDK
+Agenci	Modele
+Projekty	Chat
+Ewaluacja	Responses API
+Tracing	Chat Completions
+Dane projektu	Image Generation
+Rozdział 3. SDK
+
+SDK (Software Development Kit) to biblioteka ułatwiająca korzystanie z API.
+
+Microsoft wspiera dwa główne SDK.
+
+Microsoft Foundry SDK
+
+To oficjalne SDK Microsoft Foundry.
+
+Obsługuje:
+
+Python,
+.NET,
+JavaScript.
+
+Najważniejsza klasa:
+
+AIProjectClient
+
+Pozwala:
+
+łączyć się z projektem,
+zarządzać agentami,
+pobierać konfigurację,
+korzystać z połączeń,
+uruchamiać ewaluacje,
+korzystać z narzędzi Foundry.
+Instalacja Foundry SDK
+
+Python:
+
+pip install azure-ai-projects
+
+Dodatkowo:
+
+pip install azure-identity
+
+oraz
+
+pip install openai
+
+Biblioteka openai jest nadal potrzebna, ponieważ klient czatu Foundry korzysta z mechanizmów OpenAI SDK.
+
+AIProjectClient
+
+Najważniejszy obiekt Foundry SDK.
+
+Pozwala:
+
+pobierać konfigurację,
+zarządzać projektem,
+korzystać z połączeń,
+uzyskać klienta OpenAI.
+
+Schemat:
+
+Project Endpoint
+        ↓
+AIProjectClient
+        ↓
+OpenAI Client
+        ↓
+Model
+get_openai_client()
+
+Najważniejsza metoda.
+
+Tworzy klienta zgodnego z OpenAI.
+
+Od tego momentu można korzystać z:
+
+Responses API,
+Chat Completions,
+modeli GPT.
+OpenAI SDK
+
+Drugie rozwiązanie.
+
+To oficjalna biblioteka OpenAI.
+
+Obsługuje:
+
+OpenAI,
+Azure OpenAI,
+Microsoft Foundry.
+
+Instalacja:
+
+pip install openai
+
+Najważniejsza klasa:
+
+OpenAI()
+
+Jej zadaniem jest wysyłanie zapytań do modeli.
+
+Uwierzytelnianie (Authentication)
+
+Microsoft umożliwia kilka metod logowania.
+
+1. Microsoft Entra ID ⭐ (zalecane)
+
+Najbezpieczniejsze rozwiązanie.
+
+Aplikacja loguje się za pomocą tożsamości Azure.
+
+Zalety:
+
+brak kluczy w kodzie,
+większe bezpieczeństwo,
+zalecane dla środowiska produkcyjnego.
+2. API Key
+
+Najprostsza metoda.
+
+Aplikacja używa klucza API.
+
+Schemat:
+
+Program
+      ↓
+API Key
+      ↓
+Endpoint
+
+Wady:
+
+trzeba chronić klucz,
+nie powinien znajdować się bezpośrednio w kodzie.
+
+Microsoft zaleca przechowywanie kluczy w Azure Key Vault.
+
+3. Environment Variables
+
+Klucz zapisujemy w zmiennych środowiskowych.
+
+Przykład:
+
+OPENAI_API_KEY
+
+Program odczytuje go automatycznie.
+
+To bezpieczniejsze rozwiązanie niż wpisywanie klucza w kodzie.
+
+Co robi OpenAI Client?
+
+OpenAI Client odpowiada za:
+
+Responses API,
+Chat Completions,
+Image Generation,
+Foundry Models,
+wysyłanie promptów.
+AzureOpenAI Client
+
+Specjalna wersja klienta.
+
+Używana, gdy potrzebna jest konkretna wersja Azure OpenAI API.
+
+Najważniejszy parametr:
+
+api_version
+Foundry SDK vs OpenAI SDK
+
+To jedno z najczęściej zadawanych pytań.
+
+Foundry SDK	OpenAI SDK
+Zarządza projektami	Rozmawia z modelami
+Obsługuje agentów	Obsługuje GPT
+Ewaluacja	Responses API
+Tracing	Chat Completions
+MCP	Image API
+Foundry IQ	Maksymalna zgodność z OpenAI
+Kiedy używać Foundry SDK?
+
+Jeżeli potrzebujesz:
+
+Agent Service,
+MCP,
+Foundry IQ,
+Tracing,
+Cloud Evaluation,
+zarządzania projektem,
+połączeń.
+Kiedy używać OpenAI SDK?
+
+Jeżeli aplikacja ma tylko:
+
+wysyłać prompty,
+odbierać odpowiedzi,
+korzystać z GPT,
+generować obrazy,
+być zgodna z OpenAI API.
+Czy można używać obu jednocześnie?
+
+Tak.
+
+To bardzo częste rozwiązanie.
+
+Przykład:
+
+Foundry SDK
+        ↓
+Zarządzanie agentem
+
+OpenAI SDK
+        ↓
+Rozmowa z GPT
+
+Microsoft zaleca takie podejście w bardziej rozbudowanych projektach.
+
+📌 Najważniejsze rzeczy do zapamiętania z Części 4
+Dwa endpointy
+Endpoint	Zastosowanie
+Project Endpoint	projekty, agenci, narzędzia, ewaluacja
+Azure OpenAI Endpoint	modele, Responses API, Chat Completions
+Dwa SDK
+SDK	Do czego służy?
+Foundry SDK	zarządzanie projektami i funkcjami Foundry
+OpenAI SDK	komunikacja z modelami AI
+Metody uwierzytelniania
+⭐ Microsoft Entra ID (zalecane)
+API Key
+Environment Variables
+Najważniejsze klasy
+AIProjectClient – główny klient Foundry.
+OpenAI – klient do komunikacji z modelami.
+AzureOpenAI – klient dla określonych wersji Azure OpenAI API.
+Co warto zapamiętać na egzamin?
+Project Endpoint służy do funkcji specyficznych dla Foundry (agenci, projekty, narzędzia).
+Azure OpenAI Endpoint służy do wywoływania modeli zgodnych z API OpenAI.
+Foundry SDK wybieramy, gdy potrzebujemy agentów, ewaluacji, MCP lub zarządzania projektem.
+OpenAI SDK wybieramy, gdy zależy nam na prostym korzystaniu z modeli i zgodności z OpenAI API.
+W środowisku produkcyjnym preferowaną metodą uwierzytelniania jest Microsoft Entra ID, a nie klucze API.
+
+CZĘŚĆ 5 – RESPONSES API (NAJWAŻNIEJSZE API MICROSOFT FOUNDRY)
+
+Ta część jest jedną z najważniejszych w całym kursie. Microsoft zaleca, aby w nowych projektach używać Responses API zamiast ChatCompletions API. Responses API łączy możliwości starszego ChatCompletions API oraz Assistants API i upraszcza tworzenie aplikacji konwersacyjnych.
+
+Rozdział 1. Czym jest Responses API?
+
+Responses API to nowoczesny interfejs komunikacji z modelami AI.
+
+Jego zadaniem jest:
+
+wysyłanie promptów,
+odbieranie odpowiedzi,
+prowadzenie rozmów,
+zapamiętywanie kontekstu,
+obsługa różnych modeli.
+
+Microsoft rekomenduje używanie go we wszystkich nowych aplikacjach.
+
+Dlaczego powstało Responses API?
+
+Wcześniej istniały dwa oddzielne API:
+
+ChatCompletions API
+Assistants API
+
+Każde miało inne możliwości.
+
+Responses API łączy je w jedno rozwiązanie.
+
+Zalety Responses API
+1. Stateful Conversations
+
+Model pamięta historię rozmowy.
+
+Nie trzeba za każdym razem przesyłać całej konwersacji.
+
+2. Unified API
+
+Jedno API obsługuje większość scenariuszy.
+
+3. Foundry Models
+
+Działa nie tylko z GPT.
+
+Obsługuje także:
+
+Phi
+DeepSeek
+Mistral
+Llama
+inne modele Foundry.
+4. Prostsza integracja
+
+Jedna metoda obsługuje większość zastosowań.
+
+Schemat działania
+Program
+     ↓
+Responses API
+     ↓
+Model AI
+     ↓
+Response Object
+     ↓
+Program
+Rozdział 2. Tworzenie odpowiedzi
+
+Najważniejsza metoda:
+
+responses.create()
+
+To właśnie ona wysyła prompt do modelu.
+
+Przykład:
+
+response = client.responses.create(
+    model="gpt-4.1",
+    input="What is AI?"
+)
+
+Następnie odpowiedź odczytujemy z:
+
+response.output_text
+
+Parametr model
+
+Określa, który deployment zostanie użyty.
+
+Przykłady:
+
+gpt-4.1
+gpt-4o
+microsoft-phi-4
+llama
+Parametr input
+
+To prompt użytkownika.
+
+Przykład:
+
+Explain Machine Learning.
+Response Object
+
+Odpowiedź modelu zawiera znacznie więcej niż sam tekst.
+
+Najważniejsze pola:
+
+Pole	Znaczenie
+output_text	odpowiedź modelu
+id	identyfikator odpowiedzi
+status	status wykonania
+usage	liczba tokenów
+model	wykorzystany model
+
+Rozdział 3. Instructions (System Prompt)
+
+Model można odpowiednio "ustawić".
+
+Służy do tego parametr:
+
+instructions
+
+Przykład:
+
+You are a helpful teacher.
+
+Od tej chwili model odpowiada jak nauczyciel.
+
+Dlaczego Instructions są ważne?
+
+Bez instrukcji:
+
+Wyjaśnij SQL.
+
+Model odpowie dowolnym stylem.
+
+Z instrukcją:
+
+Jesteś profesorem informatyki.
+
+Odpowiedź będzie:
+
+bardziej techniczna,
+uporządkowana,
+zgodna z rolą.
+
+Rozdział 4. Sterowanie odpowiedzią
+
+Responses API posiada wiele parametrów.
+
+Najważniejsze:
+
+Temperature
+
+Steruje losowością.
+
+Temperature	Efekt
+0	odpowiedzi przewidywalne
+0.2	niewielka kreatywność
+0.7	kompromis
+1.5	bardzo kreatywne
+max_output_tokens
+
+Ogranicza długość odpowiedzi.
+
+Przykład:
+
+200 tokenów
+
+↓
+
+maksymalnie około 150 słów.
+
+top_p
+
+Alternatywa dla Temperature.
+
+Również steruje różnorodnością odpowiedzi.
+
+Microsoft zaleca zwykle zmieniać Temperature lub top_p, a nie oba jednocześnie.
+
+Rozdział 5. Foundry Direct Models
+
+Responses API działa nie tylko z GPT.
+
+Można używać:
+
+Phi
+DeepSeek
+Llama
+Mistral
+innych modeli z katalogu Foundry.
+
+Zmienia się jedynie parametr:
+
+model=
+
+Cały kod pozostaje praktycznie taki sam.
+
+Rozdział 6. Rozmowy wieloetapowe
+
+Największa zaleta Responses API.
+
+Model pamięta wcześniejsze odpowiedzi.
+
+Przykład:
+
+Użytkownik:
+
+Co to jest Machine Learning?
+
+Model odpowiada.
+
+Następnie użytkownik:
+
+Podaj przykład.
+
+Model wie, że chodzi o Machine Learning.
+
+Nie trzeba ponownie pisać całego pytania.
+
+previous_response_id
+
+To najważniejszy parametr rozmów.
+
+Schemat:
+
+Prompt 1
+      ↓
+Response 1
+      ↓
+ID odpowiedzi
+      ↓
+Prompt 2
+      ↓
+previous_response_id
+      ↓
+Model pamięta kontekst
+Jak wygląda rozmowa?
+
+Pierwsze pytanie:
+
+What is Machine Learning?
+
+↓
+
+Model odpowiada.
+
+Drugie pytanie:
+
+Can you give me an example?
+
+Do zapytania dołączany jest:
+
+previous_response_id
+
+Dzięki temu model rozumie, czego dotyczy rozmowa.
+
+Chat Loop
+
+Typowa aplikacja działa w pętli.
+
+Schemat:
+
+Użytkownik
+      ↓
+Prompt
+      ↓
+Responses API
+      ↓
+Odpowiedź
+      ↓
+Zapamiętanie response_id
+      ↓
+Nowe pytanie
+
+Program cały czas zapisuje ostatni response_id.
+
+Rozdział 7. Manual Conversation History
+
+Niektórzy programiści wolą sami przechowywać historię rozmowy.
+
+Tworzą wtedy listę:
+
+User
+
+↓
+
+Assistant
+
+↓
+
+User
+
+↓
+
+Assistant
+
+↓
+
+User
+
+Cała historia jest wysyłana przy każdym kolejnym zapytaniu.
+
+Zalety:
+
+pełna kontrola,
+możliwość usuwania starych wiadomości,
+zapis do bazy danych,
+łatwe przywracanie rozmowy.
+
+Wady:
+
+większa liczba tokenów,
+wyższy koszt.
+Pobieranie wcześniejszych odpowiedzi
+
+Responses API umożliwia odczyt wcześniejszej odpowiedzi po jej identyfikatorze (response_id).
+
+Może to być przydatne do:
+
+debugowania,
+audytu,
+ponownego wykorzystania odpowiedzi.
+Context Window
+
+Każdy model posiada ograniczoną pamięć.
+
+Do jednego zapytania trafiają:
+
+System Prompt,
+aktualne pytanie,
+historia rozmowy,
+definicje narzędzi,
+wyniki narzędzi,
+dokumenty z RAG,
+pamięć.
+
+Wszystko to zamieniane jest na tokeny.
+
+Im więcej tokenów,
+
+tym:
+
+większy koszt,
+dłuższy czas odpowiedzi.
+
+Dlatego historię rozmowy warto okresowo skracać.
+
+Rozdział 8. Streaming
+
+Normalnie:
+
+Program czeka.
+
+↓
+
+Model kończy odpowiedź.
+
+↓
+
+Wyświetla całość.
+
+Streaming działa inaczej.
+
+Model wysyła odpowiedź kawałek po kawałku.
+
+Przykład:
+
+Artificial...
+Artificial Intelligence...
+Artificial Intelligence is...
+
+Użytkownik widzi tekst natychmiast.
+
+To poprawia wrażenia z korzystania z aplikacji.
+
+Zalety streamingu
+
+✔ szybsza reakcja interfejsu,
+
+✔ lepsze doświadczenie użytkownika,
+
+✔ możliwość wyświetlania odpowiedzi "na żywo".
+
+Rozdział 9. Async
+
+Standardowo:
+
+Program czeka na odpowiedź.
+
+To wywołanie synchroniczne.
+
+Async działa inaczej.
+
+Program może wykonywać inne zadania podczas oczekiwania.
+
+Schemat:
+
+Zapytanie
+
+↓
+
+Program robi inne rzeczy
+
+↓
+
+Model kończy odpowiedź
+
+↓
+
+Program odbiera wynik
+Kiedy używać Async?
+
+Przy:
+
+wielu użytkownikach,
+serwerach,
+aplikacjach webowych,
+chatbotach,
+długich odpowiedziach.
+
+Asynchroniczny klient (AsyncOpenAI) umożliwia także strumieniowanie odpowiedzi.
+
+📌 Najważniejsze rzeczy do zapamiętania z Części 5
+Responses API
+
+Microsoft zaleca używanie Responses API we wszystkich nowych projektach.
+
+Najważniejsza metoda
+responses.create()
+Najważniejsze parametry
+Parametr	Znaczenie
+model	nazwa deploymentu
+input	prompt
+instructions	system prompt
+temperature	kreatywność
+max_output_tokens	długość odpowiedzi
+top_p	losowość
+previous_response_id	pamięć rozmowy
+Response Object
+
+Najważniejsze pola:
+
+output_text
+id
+usage
+status
+model
+Cztery najważniejsze pojęcia
+Instructions – określają rolę i zachowanie modelu.
+previous_response_id – utrzymuje kontekst rozmowy.
+Streaming – odpowiedź pojawia się stopniowo.
+Async – aplikacja nie blokuje się podczas oczekiwania na odpowiedź.
+⭐ Co bardzo często pojawia się na egzaminach?
+Dlaczego Responses API jest zalecane zamiast ChatCompletions API?
+Do czego służy previous_response_id?
+Czym różni się Temperature od top_p?
+Co znajduje się w Response Object?
+Na czym polega streaming?
+Jakie elementy wchodzą do context window i wpływają na liczbę tokenów?
+
+CZĘŚĆ 6 – CHATCOMPLETIONS API + PORÓWNANIE Z RESPONSES API + ŚCIĄGA DO EGZAMINU
+
+To ostatnia część opracowania. Obejmuje ChatCompletions API, porównanie z Responses API oraz najważniejsze informacje z całego kursu w formie powtórki. Materiał odpowiada końcowej części przesłanego pliku dotyczącej komunikacji z modelami.
+
+Rozdział 1. Czym jest ChatCompletions API?
+
+ChatCompletions API to starszy interfejs komunikacji z modelami AI.
+
+Przez wiele lat był podstawowym sposobem tworzenia chatbotów.
+
+Obecnie:
+
+nadal jest wspierany,
+nadal działa,
+jest bardzo popularny,
+
+ale Microsoft zaleca używanie Responses API w nowych projektach.
+
+Jak działa ChatCompletions?
+
+W przeciwieństwie do Responses API model nie przechowuje automatycznie historii rozmowy.
+
+Za każdym razem aplikacja musi przesłać całą historię wiadomości.
+
+Schemat:
+
+User
+↓
+
+Assistant
+
+↓
+
+User
+
+↓
+
+Assistant
+
+↓
+
+User
+
+↓
+
+API
+Messages
+
+ChatCompletions używa listy wiadomości.
+
+Każda wiadomość posiada rolę.
+
+Najczęściej spotykane role:
+
+System
+
+Instrukcja.
+
+Przykład:
+
+Jesteś nauczycielem.
+User
+
+Pytanie użytkownika.
+
+Przykład:
+
+Co to jest SQL?
+Assistant
+
+Poprzednia odpowiedź modelu.
+
+Dlaczego przesyłamy całą historię?
+
+Model sam niczego nie pamięta.
+
+Jeżeli użytkownik zapyta:
+
+Podaj przykład.
+
+bez wcześniejszych wiadomości,
+
+model nie będzie wiedział:
+
+przykład czego?
+
+Dlatego aplikacja przesyła całą historię rozmowy.
+
+Schemat działania
+messages =
+
+System
+
+↓
+
+User
+
+↓
+
+Assistant
+
+↓
+
+User
+
+↓
+
+Assistant
+
+↓
+
+User
+
+Cała lista trafia do modelu.
+
+Wady ChatCompletions
+
+Największą wadą jest koszt.
+
+Każde kolejne pytanie wysyła:
+
+wszystkie wcześniejsze pytania,
+wszystkie odpowiedzi.
+
+Im dłuższa rozmowa,
+
+tym:
+
+więcej tokenów,
+większy koszt,
+dłuższy czas odpowiedzi.
+Zalety ChatCompletions
+
+Mimo wieku API nadal ma wiele zalet.
+
+✔ bardzo popularne
+
+✔ ogromna liczba przykładów
+
+✔ zgodność z wieloma platformami
+
+✔ działa praktycznie wszędzie
+
+✔ łatwa migracja starszych aplikacji
+
+ChatCompletions vs Responses API
+
+To najważniejsze porównanie w całym kursie.
+
+ChatCompletions	Responses API
+Starsze API	Nowoczesne API
+Historia przekazywana ręcznie	Historia utrzymywana przez previous_response_id
+Mniej funkcji	Więcej funkcji
+Bardzo kompatybilne	Zalecane przez Microsoft
+Nadal wspierane	Preferowane w nowych projektach
+
+Najważniejszy wniosek:
+
+Nowe aplikacje → Responses API.
+
+Starsze aplikacje → ChatCompletions może pozostać.
+
+Responses API – zalety
+
+Microsoft wskazuje kilka powodów, dla których warto korzystać z Responses API:
+
+Prostszy kod
+
+Mniej ręcznego zarządzania historią.
+
+Lepsza obsługa kontekstu
+
+Nie trzeba każdorazowo budować listy wiadomości.
+
+Jedno API
+
+Łączy możliwości:
+
+ChatCompletions,
+Assistants API.
+Obsługa większej liczby modeli
+
+Działa z:
+
+GPT,
+Phi,
+DeepSeek,
+Llama,
+Mistral.
+Kiedy używać ChatCompletions?
+
+Przede wszystkim gdy:
+
+utrzymujesz starszy projekt,
+korzystasz z gotowego kodu,
+potrzebujesz maksymalnej kompatybilności.
+Kiedy używać Responses API?
+
+Prawie zawsze w nowych aplikacjach.
+
+Microsoft wyraźnie rekomenduje właśnie to API.
+
+Najważniejsze pojęcia z całego kursu
+AI
+
+System wykonujący zadania wymagające inteligencji człowieka.
+
+Machine Learning
+
+Model uczy się na danych.
+
+LLM
+
+Duży model językowy.
+
+Przykłady:
+
+GPT
+Phi
+Llama
+Claude
+SLM
+
+Mniejszy model językowy.
+
+Szybszy.
+
+Tańszy.
+
+Generative AI
+
+Tworzy:
+
+tekst,
+obrazy,
+kod,
+filmy.
+AI Agent
+
+Składa się z:
+
+LLM
+
++
+
+Instructions
+
++
+
+Tools
+
++
+
+Knowledge
+
++
+
+Memory
+Microsoft Foundry
+
+Platforma do budowy aplikacji AI.
+
+Foundry Project
+
+Zawiera:
+
+modele,
+agentów,
+dane,
+konfigurację.
+Model Catalog
+
+Biblioteka modeli.
+
+Playground
+
+Środowisko testowe.
+
+Deployment
+
+Udostępnienie modelu.
+
+Endpoint
+
+Adres API modelu.
+
+SDK
+
+Biblioteka programistyczna.
+
+Responses API
+
+Nowoczesny sposób komunikacji z modelem.
+
+ChatCompletions API
+
+Starszy sposób komunikacji.
+
+Najważniejsze benchmarki
+Benchmark	Co mierzy?
+Quality	jakość
+Safety	bezpieczeństwo
+Cost	koszt
+Performance	wydajność
+Najważniejsze metryki
+Metryka	Znaczenie
+Quality Index	ogólna jakość
+Groundedness	odpowiedź oparta na danych
+Relevance	trafność
+Coherence	spójność
+Fluency	poprawność językowa
+TTFT	czas do pierwszego tokena
+GTPS	tokeny na sekundę
+F1	precyzja + kompletność
+BLEU	tłumaczenia
+ROUGE	streszczenia
+METEOR	podobieństwo tekstów
+Najważniejsze parametry modelu
+Parametr	Znaczenie
+Temperature	kreatywność
+Top-p	losowość
+Max Tokens	długość odpowiedzi
+Instructions	rola modelu
+previous_response_id	pamięć rozmowy
+Najważniejsze typy modeli
+Typ	Zastosowanie
+LLM	trudne zadania
+SLM	szybkie aplikacje
+Embedding	RAG
+Vision	analiza obrazów
+Image	generowanie obrazów
+Speech	mowa
+Translator	tłumaczenia
+Foundry SDK vs OpenAI SDK
+Foundry SDK	OpenAI SDK
+Projekty	Modele
+Agenci	GPT
+Ewaluacja	Responses API
+MCP	Chat API
+Tracing	Image API
+Rodzaje Deployment
+Typ	Zastosowanie
+Global Standard	większość aplikacji
+Provisioned	duży ruch
+Batch	zadania wsadowe
+Data Zone	wymagania dotyczące lokalizacji danych
+Regional	pojedynczy region
+Responsible AI – 6 zasad
+Fairness
+Reliability & Safety
+Privacy & Security
+Inclusiveness
+Transparency
+Accountability
+Co najczęściej pojawia się na egzaminach?
+Definicje
+AI
+Machine Learning
+LLM
+SLM
+AI Agent
+Deployment
+Endpoint
+Playground
+Prompt
+Token
+RAG
+Porównania
+Foundry SDK vs OpenAI SDK
+Responses API vs ChatCompletions API
+LLM vs SLM
+Manual Evaluation vs Automated Evaluation
+Global Standard vs Provisioned
+Temperature vs Top-p
+Metryki
+Groundedness
+Relevance
+Fluency
+Coherence
+TTFT
+GTPS
+Quality Index
+BLEU
+ROUGE
+F1-score
+Microsoft Foundry
+
+Umieć wyjaśnić:
+
+czym jest Project,
+czym jest Resource,
+czym jest Agent,
+czym są Tools,
+czym jest Knowledge,
+czym jest Playground,
+czym jest Deployment,
+czym jest Evaluation.
+⭐ Szybka ściąga (10 najważniejszych faktów)
+Microsoft Foundry to platforma do tworzenia aplikacji AI na Azure.
+LLM służą do zaawansowanego rozumowania i generowania treści, SLM są szybsze i tańsze.
+AI Agent = model + instrukcje + narzędzia + wiedza + pamięć.
+Modele wybieramy na podstawie Quality, Safety, Cost i Performance.
+Po wdrożeniu (Deployment) otrzymujemy Endpoint URL, nazwę deploymentu oraz sposób uwierzytelniania.
+Playground służy do testowania modeli bez pisania kodu.
+Responses API jest zalecane do nowych projektów; ChatCompletions API pozostaje ważne dla zgodności ze starszymi aplikacjami.
+W środowisku produkcyjnym preferowaną metodą uwierzytelniania jest Microsoft Entra ID.
+Ewaluacja modeli może być manualna lub automatyczna i wykorzystuje metryki jakości oraz bezpieczeństwa.
+Odpowiedzialne AI opiera się na sześciu zasadach: Fairness, Reliability & Safety, Privacy & Security, Inclusiveness, Transparency i Accountability.
+
