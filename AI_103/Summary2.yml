@@ -1,0 +1,222 @@
+1. AI Agents – czym są?
+AI Agent to inteligentny system wykorzystujący generatywną AI do samodzielnego wykonywania zadań.
+W przeciwieństwie do zwykłych aplikacji potrafi:
+rozumieć kontekst,
+podejmować decyzje,
+korzystać z narzędzi,
+wykonywać akcje bez ciągłego udziału użytkownika.
+
+Zastosowania:
+
+obsługa klienta,
+sprzedaż,
+badania i analiza danych,
+produktywność (np. Microsoft 365 Copilot),
+programowanie (GitHub Copilot).
+2. Microsoft Foundry Agent Service
+
+Platforma Microsoft do budowania, wdrażania i zarządzania agentami AI.
+
+Najważniejsze funkcje:
+
+automatyczne wywoływanie narzędzi (Tool Calling),
+zarządzanie historią rozmowy,
+obsługa wielu modeli AI,
+bezpieczeństwo klasy enterprise,
+monitoring i logowanie,
+integracja z Azure.
+3. Typy agentów
+Declarative Agents
+
+Konfigurowane bez dużej ilości kodu.
+
+Rodzaje:
+
+Prompt-based Agent
+Workflow Agent
+Hosted Agents
+tworzone programistycznie,
+większa kontrola nad logiką,
+hostowane przez Foundry.
+4. Tworzenie agenta
+
+Można tworzyć na dwa sposoby:
+
+Foundry Portal
+graficzny interfejs,
+szybkie prototypowanie,
+konfiguracja bez kodu.
+Visual Studio Code
+rozszerzenie Microsoft Foundry,
+konfiguracja YAML,
+Git,
+lokalny development,
+łatwiejsza praca programistyczna.
+5. Konfiguracja agenta
+
+Najważniejsze elementy:
+
+nazwa,
+opis,
+model AI,
+instrukcje (System Prompt),
+Temperature,
+Top P.
+
+Instrukcje definiują:
+
+rolę agenta,
+styl odpowiedzi,
+ograniczenia,
+zachowanie.
+6. YAML
+
+Agent jest opisany w pliku YAML zawierającym:
+
+metadata,
+model,
+instructions,
+tools.
+
+Zalety:
+
+łatwy version control,
+Git,
+szablony,
+automatyzacja.
+7. Narzędzia (Tools)
+
+Agent może korzystać z narzędzi takich jak:
+
+Code Interpreter
+File Search (RAG)
+Bing Search
+Azure AI Search
+Browser Automation
+SharePoint
+Image Generation
+OpenAPI
+MCP Servers
+
+Schemat działania:
+
+użytkownik zadaje pytanie,
+agent wybiera odpowiednie narzędzie,
+wykonuje je,
+zwraca odpowiedź.
+8. Testowanie i wdrażanie
+
+Przed publikacją należy:
+
+testować różne scenariusze,
+sprawdzić użycie narzędzi,
+testować rozmowy wieloetapowe.
+
+Następnie:
+
+Deploy do Foundry,
+Publish jako endpoint REST API.
+9. Custom Tools
+
+Agent może korzystać z własnych narzędzi.
+
+Dostępne opcje:
+
+Function Calling
+Azure Functions
+OpenAPI
+Logic Apps
+
+Pozwala to integrować agenta z:
+
+CRM,
+ERP,
+bazami danych,
+API,
+własnym kodem.
+10. Function Calling
+
+Model sam decyduje kiedy wywołać funkcję.
+
+Programista:
+
+definiuje funkcję,
+opisuje parametry,
+dodaje ją do agenta.
+
+Agent sam wybiera moment użycia.
+
+11. OpenAPI
+
+Agent może korzystać z dowolnego API opisanego w standardzie OpenAPI 3.0.
+
+Obsługiwane metody uwierzytelniania:
+
+Anonymous
+API Key
+Managed Identity
+12. MCP (Model Context Protocol)
+
+MCP umożliwia agentom dynamiczne odkrywanie narzędzi.
+
+Korzyści:
+
+brak ręcznego dodawania narzędzi,
+centralne zarządzanie,
+łatwe aktualizacje,
+skalowalność,
+współpraca z różnymi modelami LLM.
+
+Architektura:
+
+MCP Server → udostępnia narzędzia,
+MCP Client → pobiera narzędzia,
+Agent → korzysta z nich automatycznie.
+13. Foundry IQ i RAG
+
+Foundry IQ to platforma wiedzy dla agentów.
+
+Pozwala agentom korzystać z:
+
+dokumentów,
+polityk firmy,
+baz wiedzy,
+stron WWW,
+SharePoint,
+Azure Blob Storage.
+
+Wykorzystuje Retrieval Augmented Generation (RAG), dzięki czemu agent:
+
+odpowiada na podstawie firmowych danych,
+ogranicza halucynacje,
+korzysta z aktualnych informacji.
+14. Bezpieczeństwo
+
+Najważniejsze zagrożenia:
+
+Data Leakage,
+Prompt Injection,
+Unauthorized Access,
+Data Poisoning,
+Supply Chain Attacks,
+Model Inversion.
+
+Rekomendacje:
+
+RBAC,
+Least Privilege,
+walidacja promptów,
+audyt,
+logowanie,
+Human-in-the-loop,
+monitorowanie modeli.
+Najważniejsze rzeczy do zapamiętania (egzamin)
+AI Agent = LLM + instrukcje + narzędzia.
+Microsoft Foundry Agent Service służy do budowy i hostowania agentów AI.
+Agenci można tworzyć w Foundry Portal lub VS Code.
+Zachowanie agenta definiują głównie System Instructions.
+Najważniejsze narzędzia: Code Interpreter, File Search, Bing Search, Azure AI Search, OpenAPI.
+Function Calling pozwala agentowi samodzielnie wywoływać funkcje.
+MCP umożliwia dynamiczne odkrywanie narzędzi.
+Foundry IQ + RAG pozwalają agentom korzystać z wiedzy organizacji.
+Przed wdrożeniem należy testować, monitorować i zabezpieczać agentów.
